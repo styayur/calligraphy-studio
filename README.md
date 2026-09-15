@@ -282,3 +282,14 @@ calligraphy-studio/
 ├── docs/
 └── docker-compose.yml
 ```
+
+## 授权与第三方资产
+
+本仓库中的软件代码采用 MIT License。字体、书法图片、结构数据和字库元数据不自动继承代码许可证，它们分别遵循各自目录和 Glyph 来源中记录的许可证：
+
+- OFL 字体：SIL Open Font License 1.1
+- NCCU 草书子集：MIT
+- Hanzi Writer 结构数据：ARPHIC PUBLIC LICENSE
+- MCCD/HCSU 等非商用数据：不上传到公开静态演示，仅通过本地导入器使用
+
+完整说明见 [docs/FONT_LICENSES.md](docs/FONT_LICENSES.md)、[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md) 和 [third_party/NOTICE.md](third_party/NOTICE.md)。
