@@ -110,7 +110,7 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" release-artifacts/windows-release/*.exe release-artifacts/android-release/*.apk --clobber
           else
-            gh release create "$TAG" release-artifacts/windows/*.exe release-artifacts/android/*.apk               --title "Calligraphy Studio $TAG"               --notes-file release/RELEASE_NOTES.md
+            gh release create "$TAG" release-artifacts/windows-release/*.exe release-artifacts/android-release/*.apk               --title "Calligraphy Studio $TAG"               --notes-file release/RELEASE_NOTES.md
           fi
       - name: Commit checksums and release metadata
         run: |
