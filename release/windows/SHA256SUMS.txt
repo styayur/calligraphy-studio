@@ -1,1 +1,2 @@
-# Updated by the release workflow.
+adb39af45e95f4393bce7913ef3fe95d8c9401b80bdee1bd26d4161868ee0509  CalligraphyStudio-Portable-0.4.0-x64.exe
+4e43561fc863a506156964eeb89671d53f0b84681874fbc6a8595f92fbd7a1a3  CalligraphyStudio-Setup-0.4.0-x64.exe

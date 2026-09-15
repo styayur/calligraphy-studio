@@ -1,1 +1,1 @@
-# Updated by the release workflow.
+cb27b048fe7d783622a1142af1383ad675101e5f18c8f0c6faefd8bb8164b91c  CalligraphyStudio-Android-0.4.0.apk
