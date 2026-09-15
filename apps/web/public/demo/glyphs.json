@@ -1,0 +1,5460 @@
+[
+  {
+    "id": "45b55f3b-006c-4603-a628-199ecdc24647",
+    "character": "山",
+    "source": {
+      "dataset": "Demo",
+      "calligrapher": "演示·王体",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/demo/aa/山-shan-kai-aa6043c7098b.svg",
+      "width": 512,
+      "height": 512,
+      "bbox": [
+        0.0,
+        0.0,
+        512.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "63a15fb2-41ff-4454-8ef1-9ed29e4894a4",
+    "character": "山",
+    "source": {
+      "dataset": "Demo",
+      "calligrapher": "演示·王体",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/demo/05/山-shan-xing-05d57070beb1.svg",
+      "width": 512,
+      "height": 512,
+      "bbox": [
+        0.0,
+        0.0,
+        512.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a2cf9212-6073-4e2e-aac3-d61f492456cb",
+    "character": "水",
+    "source": {
+      "dataset": "Demo",
+      "calligrapher": "演示·颜体",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/demo/80/水-shui-kai-80f51705ed18.svg",
+      "width": 512,
+      "height": 512,
+      "bbox": [
+        0.0,
+        0.0,
+        512.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "dee84dba-c5d4-4ca3-9631-e0b88eae47c8",
+    "character": "水",
+    "source": {
+      "dataset": "Demo",
+      "calligrapher": "演示·颜体",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/demo/b3/水-shui-xing-b39e2e7a48fc.svg",
+      "width": 512,
+      "height": 512,
+      "bbox": [
+        0.0,
+        0.0,
+        512.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "aa55b8b4-9c32-49d9-8612-dc14e89b2fc0",
+    "character": "云",
+    "source": {
+      "dataset": "Demo",
+      "calligrapher": "演示·王体",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/demo/30/云-yun-kai-30f1c8fe369a.svg",
+      "width": 512,
+      "height": 512,
+      "bbox": [
+        0.0,
+        0.0,
+        512.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "f401bfd6-818c-4715-8d65-7f2aa2298b5c",
+    "character": "云",
+    "source": {
+      "dataset": "Demo",
+      "calligrapher": "演示·王体",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/demo/cc/云-yun-xing-cc57f1a15d59.svg",
+      "width": 512,
+      "height": 512,
+      "bbox": [
+        0.0,
+        0.0,
+        512.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "853bd8de-dac1-40b5-95a5-ded009cc1e50",
+    "character": "一",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/d4/一-130983-d4004bf95810.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "bd3cfecd-e749-48b1-b28c-5177257d430e",
+    "character": "一",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/1e/一-130987-1e787e80b99b.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "f5b1cc00-7f7b-44f8-b62b-69b623ced873",
+    "character": "不",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/5e/不-131211-5e33a488c008.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "84d20a4d-757e-41a6-ab58-3511796c21c2",
+    "character": "不",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/e0/不-131216-e05ae6c7e651.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "bb9cf7ba-d47d-4f6d-8250-e86a35fc6264",
+    "character": "又",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/30/又-139014-303d4bf16f44.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "257327d7-4c7d-42c1-bbcc-4289ce45311b",
+    "character": "又",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/42/又-139017-4225e0de97cd.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "29a82b1f-c05f-4e19-82e6-b5e9418d3412",
+    "character": "啼",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/f4/啼-140934-f4785516fe6a.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "c0cd0bdc-8122-434e-bbda-4f643377efab",
+    "character": "啼",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/da/啼-140937-da29f1be53c9.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "ba2c44a4-4bb8-4a6f-a87e-67028c189cf3",
+    "character": "山",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/09/山-147406-09f6dc628331.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "3d25c9fe-f60d-4ab6-8564-10fa71546976",
+    "character": "山",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/62/山-147403-62e38f872193.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "13969d7f-91ab-4f86-8618-87c119550c09",
+    "character": "明",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/8f/明-156371-8fe2c40d84b0.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "0f71b73c-3735-4493-b805-00741fc16a87",
+    "character": "明",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/18/明-156372-1890efc5d9c8.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "1a3dea1e-8234-42b0-9a36-ff60c29fa762",
+    "character": "春",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/7b/春-156497-7b7d781e5214.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "04401819-6ee3-43d8-a959-ad0c7649b563",
+    "character": "春",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/fe/春-156501-fe6e8c634000.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "62d43a55-3a3d-4020-953b-013551771acd",
+    "character": "暗",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/14/暗-156969-14f3674a0ac1.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "7c7f3b13-aca9-4a6b-9bde-2edf84039f98",
+    "character": "暗",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/c0/暗-156972-c05eddb852b4.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "80509e42-6a9f-416a-851f-499c88b9884a",
+    "character": "村",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/2f/村-157954-2fa48d889474.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "0620564f-108c-4510-a623-864ad3aae33e",
+    "character": "村",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/ec/村-157962-ecaf471e384d.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "64a7b8ed-018d-4f76-a34d-12fe5307f183",
+    "character": "柳",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/bd/柳-158568-bd2c056c25ce.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a74c7e65-2320-44f1-b34e-229f5c37884d",
+    "character": "柳",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/17/柳-158575-173e82966091.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "2601bb05-4302-4b1d-b28b-9ec482b13905",
+    "character": "水",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/41/水-161279-41b42b0fea23.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "dbf5a54a-f43f-4991-9301-27b7a2403189",
+    "character": "水",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/97/水-161289-97a0387921fd.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "e3e67454-721a-4769-8331-fd3349383272",
+    "character": "疑",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/ad/疑-167698-ad2f7a3337b3.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "7187e634-9728-417a-8fce-893c501327ef",
+    "character": "疑",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/2c/疑-167702-2cfc4a0ec80b.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "abfa3f10-8380-4207-bd01-327d8f4af1bd",
+    "character": "眠",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/7e/眠-168773-7ec20f7741af.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "da7e0967-3156-4ccc-b3ad-75f8bb2fbe6c",
+    "character": "眠",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/66/眠-168774-66d8ec6f3bdd.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "1e221426-37d3-400e-b222-4cd48a8cc473",
+    "character": "花",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/6d/花-176285-6df126fb6530.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "ebcd8bed-0924-4c59-aa2d-e1ab67cd7b74",
+    "character": "花",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/91/花-176286-91cb26de2c1d.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "387e45d8-4a15-4929-bedf-cee0936ed917",
+    "character": "路",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/09/路-183706-09115f284726.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "5591bb17-bfa1-4565-bcaf-e9f2c67bd1d8",
+    "character": "路",
+    "source": {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "calligrapher": null,
+      "style": "草书",
+      "dynasty": "历代",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/nccu-cursive-chinese-calligraphy-dataset/f0/路-183709-f02141e868ee.jpg",
+      "width": 96,
+      "height": 96,
+      "bbox": [
+        0.0,
+        0.0,
+        96.0,
+        96.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "original",
+      "confidence": null
+    }
+  },
+  {
+    "id": "395c4847-d1bc-46df-a5d4-ff62bbaac430",
+    "character": "晓",
+    "source": {
+      "dataset": "Hanzi Writer Structural Data",
+      "calligrapher": null,
+      "style": "楷书结构",
+      "dynasty": null,
+      "work": "Make Me A Hanzi / Arphic Kaiti",
+      "license": "ARPHIC PUBLIC LICENSE",
+      "license_url": "https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "share_alike_required": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/hanzi-writer-structural-data/6c/晓-晓-hanzi-writer-6c7d49b6243f.svg",
+      "width": 1024,
+      "height": 1024,
+      "bbox": [
+        0.0,
+        0.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "bb65ae23-3ef5-47cc-8f73-6dea1edf3f58",
+    "character": "觉",
+    "source": {
+      "dataset": "Hanzi Writer Structural Data",
+      "calligrapher": null,
+      "style": "楷书结构",
+      "dynasty": null,
+      "work": "Make Me A Hanzi / Arphic Kaiti",
+      "license": "ARPHIC PUBLIC LICENSE",
+      "license_url": "https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "share_alike_required": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/hanzi-writer-structural-data/5b/觉-觉-hanzi-writer-5bd367f3007d.svg",
+      "width": 1024,
+      "height": 1024,
+      "bbox": [
+        0.0,
+        0.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "bdab1e47-67d4-417e-8f88-5b43cbdb71b5",
+    "character": "处",
+    "source": {
+      "dataset": "Hanzi Writer Structural Data",
+      "calligrapher": null,
+      "style": "楷书结构",
+      "dynasty": null,
+      "work": "Make Me A Hanzi / Arphic Kaiti",
+      "license": "ARPHIC PUBLIC LICENSE",
+      "license_url": "https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "share_alike_required": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/hanzi-writer-structural-data/3b/处-处-hanzi-writer-3b5d64c6eb2e.svg",
+      "width": 1024,
+      "height": 1024,
+      "bbox": [
+        0.0,
+        0.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "8bef7711-e338-4e83-b625-768b299569e8",
+    "character": "闻",
+    "source": {
+      "dataset": "Hanzi Writer Structural Data",
+      "calligrapher": null,
+      "style": "楷书结构",
+      "dynasty": null,
+      "work": "Make Me A Hanzi / Arphic Kaiti",
+      "license": "ARPHIC PUBLIC LICENSE",
+      "license_url": "https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "share_alike_required": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/hanzi-writer-structural-data/95/闻-闻-hanzi-writer-95ff1db859bb.svg",
+      "width": 1024,
+      "height": 1024,
+      "bbox": [
+        0.0,
+        0.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "6122c345-6c43-491b-ba19-683e4a2babc2",
+    "character": "鸟",
+    "source": {
+      "dataset": "Hanzi Writer Structural Data",
+      "calligrapher": null,
+      "style": "楷书结构",
+      "dynasty": null,
+      "work": "Make Me A Hanzi / Arphic Kaiti",
+      "license": "ARPHIC PUBLIC LICENSE",
+      "license_url": "https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "share_alike_required": true,
+        "attribution_required": true
+      }
+    },
+    "asset": {
+      "type": "svg",
+      "url": "demo/assets/hanzi-writer-structural-data/88/鸟-鸟-hanzi-writer-88143896ec20.svg",
+      "width": 1024,
+      "height": 1024,
+      "bbox": [
+        0.0,
+        0.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "fallback",
+      "confidence": null
+    }
+  },
+  {
+    "id": "58f2334b-fcdd-4644-bfa6-f8c47756ab72",
+    "character": "不",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/31/不-ma-shan-zheng-不-31d88b4eaa5b.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        111.0,
+        165.0,
+        532.0,
+        488.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "b3bc9d30-bed9-4e08-b8f6-dc7831e7afb4",
+    "character": "书",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/a5/书-ma-shan-zheng-书-a5f60eef4b31.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        180.0,
+        109.0,
+        408.0,
+        585.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d9357138-3a28-4684-ad5a-46af3d69dcad",
+    "character": "云",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/17/云-ma-shan-zheng-云-17b59e559988.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        96.0,
+        182.0,
+        575.0,
+        439.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "c2977432-a9df-4326-b493-1bf1ac832391",
+    "character": "字",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/93/字-ma-shan-zheng-字-932edae2a501.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        162.0,
+        103.0,
+        444.0,
+        598.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "231ed9cd-218c-4222-a9b4-f1d288cd3035",
+    "character": "山",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/70/山-ma-shan-zheng-山-70ec0196dd98.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        113.0,
+        171.0,
+        541.0,
+        462.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "b0842bbf-f7a6-451c-b8d6-48052430c1f1",
+    "character": "明",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/1a/明-ma-shan-zheng-明-1a4c99d195a5.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        155.0,
+        129.0,
+        459.0,
+        546.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a3f7e709-e598-4eb4-91ab-473c538881e3",
+    "character": "春",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/e8/春-ma-shan-zheng-春-e80081426ce7.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        83.0,
+        99.0,
+        602.0,
+        606.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "ed0e93fa-63a8-41a6-8b3c-3e6dfbd58a01",
+    "character": "晓",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/02/晓-ma-shan-zheng-晓-02a294cb47d8.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        112.0,
+        127.0,
+        543.0,
+        550.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a0721281-bfc9-447c-b4a7-65cf7c20bb00",
+    "character": "月",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/c2/月-ma-shan-zheng-月-c261dbe813d1.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        206.0,
+        114.0,
+        356.0,
+        576.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "4a279ee1-2cd1-40c5-a3e1-31eae4ff4bb0",
+    "character": "楷",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/11/楷-ma-shan-zheng-楷-116879348d21.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        103.0,
+        109.0,
+        561.0,
+        586.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d3d7df8a-ebba-4163-b2c8-03af37c6b2a4",
+    "character": "水",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/12/水-ma-shan-zheng-水-128b076970ab.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        98.0,
+        122.0,
+        572.0,
+        560.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d2f67ced-7b42-4623-a482-490d3367b22a",
+    "character": "法",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/53/法-ma-shan-zheng-法-532fef404605.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        108.0,
+        136.0,
+        553.0,
+        531.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "11af1e35-a27f-45d5-9c9e-2c25b39736d6",
+    "character": "清",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/58/清-ma-shan-zheng-清-58589b02b846.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        129.0,
+        97.0,
+        510.0,
+        610.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "1f4c4c72-e85a-4347-b40a-6561eb15a5fa",
+    "character": "真",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/15/真-ma-shan-zheng-真-15ea47401b61.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        112.0,
+        109.0,
+        543.0,
+        585.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "2b768bfd-d3c3-411b-a7df-f7a606190823",
+    "character": "眠",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/20/眠-ma-shan-zheng-眠-20ae984ca489.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        95.0,
+        146.0,
+        578.0,
+        512.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "dec903f3-e063-47d3-869b-81854aa8db2b",
+    "character": "花",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/7e/花-ma-shan-zheng-花-7ed660095f04.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        101.0,
+        111.0,
+        566.0,
+        582.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "70c5aa91-6fe0-41d4-b0ea-708915a740fd",
+    "character": "草",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/99/草-ma-shan-zheng-草-99cf93841845.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        164.0,
+        100.0,
+        440.0,
+        603.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "aa66be58-4e33-4d62-b9b6-1a5b17df8ae8",
+    "character": "行",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/8d/行-ma-shan-zheng-行-8ddd7180b112.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        100.0,
+        120.0,
+        568.0,
+        564.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "58d01c20-fcb0-4364-91c8-0aeef356cdf5",
+    "character": "觉",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/57/觉-ma-shan-zheng-觉-57ed48636740.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        144.0,
+        109.0,
+        480.0,
+        585.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "0b74a032-93aa-4649-8f46-55df76f6a417",
+    "character": "集",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/6d/集-ma-shan-zheng-集-6dc199dabc28.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        138.0,
+        101.0,
+        492.0,
+        601.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a7af724c-1d6f-4ec5-8508-9aac10326ea5",
+    "character": "风",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/71/风-ma-shan-zheng-风-71aabf43127c.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        97.0,
+        136.0,
+        575.0,
+        532.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "90d7bc85-b1e3-4f2e-b19e-f9422da691ce",
+    "character": "鸟",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/21/鸟-ma-shan-zheng-鸟-21cfca8d30d6.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        168.0,
+        103.0,
+        431.0,
+        597.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "4011ecf5-54b1-4ceb-a3c4-c62d74b86d1d",
+    "character": "龙",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/8a/龙-ma-shan-zheng-龙-8aef8757e988.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        128.0,
+        158.0,
+        550.0,
+        524.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "650e50fb-b185-4d7d-852c-ba990a4455f8",
+    "character": "不",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/b4/不-zhi-mang-xing-不-b4683201586e.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        127.0,
+        174.0,
+        514.0,
+        399.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "08e1bc78-eac9-460e-92ba-fc4bf8018fbc",
+    "character": "书",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/f9/书-zhi-mang-xing-书-f91b653e6a77.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        219.0,
+        172.0,
+        331.0,
+        402.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "45bc3a8c-e7bb-48b7-b0a4-07f08896c491",
+    "character": "云",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/aa/云-zhi-mang-xing-云-aa2a8630ca7a.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        146.0,
+        160.0,
+        476.0,
+        428.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "aba4174e-d2fc-4dbc-a157-5fad6b058ea7",
+    "character": "字",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/9c/字-zhi-mang-xing-字-9c96288e0852.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        183.0,
+        119.0,
+        402.0,
+        509.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "47199338-54b6-464b-af39-b528a2a9213d",
+    "character": "山",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/2f/山-zhi-mang-xing-山-2f58ba49e8ee.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        163.0,
+        203.0,
+        442.0,
+        341.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "abd07c10-934f-40ba-ad13-6d80b17dc4ba",
+    "character": "明",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/a1/明-zhi-mang-xing-明-a195f8070504.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        181.0,
+        201.0,
+        406.0,
+        345.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "3a1a39d6-5153-4301-99bc-837bf6743264",
+    "character": "春",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/af/春-zhi-mang-xing-春-afb4a915f197.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        59.0,
+        107.0,
+        650.0,
+        533.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "13759e18-a6fe-4c8e-af96-6eb504dcc783",
+    "character": "晓",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/e7/晓-zhi-mang-xing-晓-e7c2ce326f07.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        141.0,
+        103.0,
+        485.0,
+        541.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d770bc8b-69b0-4931-bf47-67b61e51477c",
+    "character": "月",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/21/月-zhi-mang-xing-月-21a36d5487f2.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        216.0,
+        97.0,
+        336.0,
+        554.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "41d6d09b-5825-4fc3-9505-6cf1dfb8b536",
+    "character": "楷",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/46/楷-zhi-mang-xing-楷-4616db377253.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        129.0,
+        134.0,
+        509.0,
+        478.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d3515659-06d1-4cec-b635-2aceb375ea88",
+    "character": "水",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/87/水-zhi-mang-xing-水-873e27c7333c.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        168.0,
+        139.0,
+        432.0,
+        469.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "877edc28-e610-454b-bf75-f6ea068fd6f8",
+    "character": "法",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/1c/法-zhi-mang-xing-法-1c06489cf53a.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        191.0,
+        148.0,
+        386.0,
+        451.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "747afd55-2120-4147-b620-af8f74ed261c",
+    "character": "清",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/60/清-zhi-mang-xing-清-605e69658c40.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        164.0,
+        91.0,
+        440.0,
+        566.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "ec298bdd-c15c-420c-8adf-b7e1c97fc450",
+    "character": "真",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/0a/真-zhi-mang-xing-真-0a70cdfcef4d.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        123.0,
+        98.0,
+        521.0,
+        551.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a85036e1-1198-40d8-905c-066d968b4fac",
+    "character": "眠",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/ad/眠-zhi-mang-xing-眠-ad1805ee1ffb.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        92.0,
+        111.0,
+        583.0,
+        526.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "16ef42de-15a2-4b5e-a466-8f90a9543237",
+    "character": "花",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/1c/花-zhi-mang-xing-花-1c0e5bdad847.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        179.0,
+        117.0,
+        411.0,
+        513.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "f31be841-e104-4b43-9e3f-3ee609b26134",
+    "character": "草",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/2f/草-zhi-mang-xing-草-2fc905ea99cb.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        172.0,
+        80.0,
+        424.0,
+        588.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "c556b6bf-88d2-4e72-8d5b-27adef2d61e5",
+    "character": "行",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/e7/行-zhi-mang-xing-行-e79c5ba1e1b9.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        200.0,
+        114.0,
+        368.0,
+        519.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d57e47de-77a6-4c0c-8498-198d7344bee2",
+    "character": "觉",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/c3/觉-zhi-mang-xing-觉-c3e8cd3e6aab.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        120.0,
+        103.0,
+        527.0,
+        541.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "93f5ada6-bb4a-416a-9c44-2a7cfb6b6f97",
+    "character": "集",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/c6/集-zhi-mang-xing-集-c619c69718e9.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        174.0,
+        105.0,
+        421.0,
+        538.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a9ad7655-6521-4b54-97c6-f1a4bba7c33f",
+    "character": "风",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/62/风-zhi-mang-xing-风-6240cdd323c4.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        120.0,
+        105.0,
+        528.0,
+        536.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "138fef92-df58-4721-a798-a2174da53766",
+    "character": "鸟",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/5e/鸟-zhi-mang-xing-鸟-5ea41470040d.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        210.0,
+        102.0,
+        347.0,
+        543.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "0f1ada80-6ef1-42b6-b86f-1a41d0dab4f0",
+    "character": "龙",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/a8/龙-zhi-mang-xing-龙-a8b847cf45ee.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        147.0,
+        141.0,
+        474.0,
+        464.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "59cb71bb-d38d-47d7-81d6-9bea73823bf7",
+    "character": "不",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/61/不-liu-jian-mao-cao-不-613e93c15844.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        113.0,
+        210.0,
+        551.0,
+        408.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d038aaf8-90a1-4f27-aefe-0a09cae2fd14",
+    "character": "书",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/9e/书-liu-jian-mao-cao-书-9e497d899768.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        163.0,
+        200.0,
+        436.0,
+        446.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "68f4f064-1c92-4f65-8db9-e5e9fbedff5e",
+    "character": "云",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/da/云-liu-jian-mao-cao-云-da93c5557cfa.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        168.0,
+        112.0,
+        429.0,
+        604.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "2ba1f35b-4198-475f-acc1-9d9c88b20d3f",
+    "character": "字",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/54/字-liu-jian-mao-cao-字-544a4595f7e9.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        178.0,
+        110.0,
+        408.0,
+        606.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "d8a51afa-5347-47db-abb4-0f66fc9f4b4a",
+    "character": "山",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/d1/山-liu-jian-mao-cao-山-d1023c47d76e.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        132.0,
+        173.0,
+        502.0,
+        481.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "a1ac5903-d34f-45ba-8663-0568ddd9ecad",
+    "character": "明",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/ea/明-liu-jian-mao-cao-明-ea3a0fab7e2a.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        145.0,
+        149.0,
+        479.0,
+        531.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "47479c0a-e8ee-49be-acca-f0f2471fd7ff",
+    "character": "春",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/db/春-liu-jian-mao-cao-春-db69ca4125fb.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        157.0,
+        98.0,
+        458.0,
+        628.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "fc1e5d31-f0f9-4f31-8672-02a1d698eff8",
+    "character": "晓",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/53/晓-liu-jian-mao-cao-晓-5384c2714bcc.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        102.0,
+        146.0,
+        589.0,
+        536.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "13082685-4dad-40c8-bd1e-4d821246f64f",
+    "character": "月",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/fc/月-liu-jian-mao-cao-月-fc7cb315891b.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        262.0,
+        124.0,
+        245.0,
+        584.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "363b6b93-5e62-4b0a-97c8-00bae9602544",
+    "character": "楷",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/48/楷-liu-jian-mao-cao-楷-48ac4c3ea758.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        112.0,
+        118.0,
+        546.0,
+        590.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "fa534ea2-f752-4fdb-bf7a-acd0dc4e4a4e",
+    "character": "水",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/87/水-liu-jian-mao-cao-水-87fd48e7f0da.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        255.0,
+        96.0,
+        259.0,
+        636.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "dcb65579-3e21-4216-9e09-365b6bd2fd19",
+    "character": "法",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/7a/法-liu-jian-mao-cao-法-7acf93cabb0a.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        164.0,
+        118.0,
+        448.0,
+        592.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "64585f6c-1cac-480a-a6cd-e3e71eff31ff",
+    "character": "清",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/d7/清-liu-jian-mao-cao-清-d748421161b2.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        189.0,
+        113.0,
+        388.0,
+        604.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "eb8ae029-d695-463d-9756-2ed2e375c187",
+    "character": "真",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/d7/真-liu-jian-mao-cao-真-d72828aeeacc.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        214.0,
+        115.0,
+        341.0,
+        599.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "915ffe83-4b60-465e-9536-f3ed0ff6275e",
+    "character": "眠",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/8f/眠-liu-jian-mao-cao-眠-8f6c3c884a4b.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        145.0,
+        116.0,
+        480.0,
+        594.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "39124b08-0144-4528-ae5b-4abdd076bd6c",
+    "character": "花",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/6f/花-liu-jian-mao-cao-花-6fe5d92080e9.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        224.0,
+        110.0,
+        320.0,
+        611.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "bfe32129-dd40-4102-b013-cc2ce004cbf9",
+    "character": "草",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/94/草-liu-jian-mao-cao-草-94bc45ac2a5e.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        201.0,
+        119.0,
+        360.0,
+        605.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "b76ef170-e3dd-4fc7-b0dd-76b0512c7826",
+    "character": "行",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/b8/行-liu-jian-mao-cao-行-b80b68c9f475.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        248.0,
+        110.0,
+        274.0,
+        610.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "771551d2-78b5-4cbe-bec1-5f9784934677",
+    "character": "觉",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/08/觉-liu-jian-mao-cao-觉-084558826f49.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        137.0,
+        103.0,
+        495.0,
+        621.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "7bc9b4b5-2df6-4e9b-a9ca-cd596330fd8f",
+    "character": "集",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/56/集-liu-jian-mao-cao-集-56ea8b029e70.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        168.0,
+        98.0,
+        439.0,
+        630.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "e1adb4a4-231d-44bf-a65b-fcc69e69ff4a",
+    "character": "风",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/a9/风-liu-jian-mao-cao-风-a9fe91875ea9.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        145.0,
+        121.0,
+        477.0,
+        584.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "319af338-1c87-4fdf-ac82-00ea6b8334af",
+    "character": "鸟",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/ee/鸟-liu-jian-mao-cao-鸟-ee0fa0d2a48f.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        278.0,
+        109.0,
+        219.0,
+        612.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  },
+  {
+    "id": "4ad3a05a-624e-4a1d-ad3e-4708d1ad4ca3",
+    "character": "龙",
+    "source": {
+      "dataset": "OFL Calligraphy Fonts",
+      "calligrapher": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    "asset": {
+      "type": "raster",
+      "url": "demo/assets/ofl-calligraphy-fonts/5b/龙-liu-jian-mao-cao-龙-5b6ffd2d9488.png",
+      "width": 768,
+      "height": 768,
+      "bbox": [
+        77.0,
+        119.0,
+        619.0,
+        592.0
+      ]
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "source-over"
+    },
+    "provenance": {
+      "type": "font",
+      "confidence": null
+    }
+  }
+]

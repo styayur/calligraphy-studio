@@ -1,0 +1,7 @@
+character,asset,calligrapher,style,dynasty,work,dataset,provenance
+山,assets/shan-kai.svg,演示·王体,楷书,当代,示例集字,Demo,fallback
+山,assets/shan-xing.svg,演示·王体,行书,当代,示例集字,Demo,fallback
+水,assets/shui-kai.svg,演示·颜体,楷书,当代,示例集字,Demo,fallback
+水,assets/shui-xing.svg,演示·颜体,行书,当代,示例集字,Demo,fallback
+云,assets/yun-kai.svg,演示·王体,楷书,当代,示例集字,Demo,fallback
+云,assets/yun-xing.svg,演示·王体,行书,当代,示例集字,Demo,fallback

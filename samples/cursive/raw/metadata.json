@@ -1,0 +1,160 @@
+{
+  "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+  "repository": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset",
+  "license": "MIT",
+  "license_file": "LICENSE",
+  "attribution": "VIPLab, Department of Computer Science, National Chengchi University; images reorganized with permission from shufa.supfree.net.",
+  "split": "Test",
+  "items": [
+    {
+      "character": "一",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/一/130983.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/一/130983.jpg"
+    },
+    {
+      "character": "一",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/一/130987.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/一/130987.jpg"
+    },
+    {
+      "character": "不",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/不/131211.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/不/131211.jpg"
+    },
+    {
+      "character": "不",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/不/131216.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/不/131216.jpg"
+    },
+    {
+      "character": "又",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/又/139014.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/又/139014.jpg"
+    },
+    {
+      "character": "又",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/又/139017.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/又/139017.jpg"
+    },
+    {
+      "character": "啼",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/啼1/140934.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/啼1/140934.jpg"
+    },
+    {
+      "character": "啼",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/啼1/140937.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/啼1/140937.jpg"
+    },
+    {
+      "character": "山",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/山/147406.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/山/147406.jpg"
+    },
+    {
+      "character": "山",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/山2/147403.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/山2/147403.jpg"
+    },
+    {
+      "character": "明",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/明/156371.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/明/156371.jpg"
+    },
+    {
+      "character": "明",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/明/156372.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/明/156372.jpg"
+    },
+    {
+      "character": "春",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/春/156497.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/春/156497.jpg"
+    },
+    {
+      "character": "春",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/春/156501.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/春/156501.jpg"
+    },
+    {
+      "character": "暗",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/暗/156969.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/暗/156969.jpg"
+    },
+    {
+      "character": "暗",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/暗/156972.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/暗/156972.jpg"
+    },
+    {
+      "character": "村",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/村/157954.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/村/157954.jpg"
+    },
+    {
+      "character": "村",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/村/157962.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/村/157962.jpg"
+    },
+    {
+      "character": "柳",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/柳/158568.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/柳/158568.jpg"
+    },
+    {
+      "character": "柳",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/柳/158575.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/柳/158575.jpg"
+    },
+    {
+      "character": "水",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/水/161279.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/水/161279.jpg"
+    },
+    {
+      "character": "水",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/水/161289.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/水/161289.jpg"
+    },
+    {
+      "character": "疑",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/疑/167698.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/疑/167698.jpg"
+    },
+    {
+      "character": "疑",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/疑/167702.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/疑/167702.jpg"
+    },
+    {
+      "character": "眠",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/眠/168773.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/眠/168773.jpg"
+    },
+    {
+      "character": "眠",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/眠/168774.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/眠/168774.jpg"
+    },
+    {
+      "character": "花",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/花/176285.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/花/176285.jpg"
+    },
+    {
+      "character": "花",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/花/176286.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/花/176286.jpg"
+    },
+    {
+      "character": "路",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/路/183706.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/路/183706.jpg"
+    },
+    {
+      "character": "路",
+      "path": "samples/cursive/raw/Cursive_Chinese_Calligraphy_Dataset/Test/路/183709.jpg",
+      "source_path": "Cursive_Chinese_Calligraphy_Dataset/Test/路/183709.jpg"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[project]
+name = "calligraphy-studio-api"
+version = "0.1.0"
+description = "Glyph store and project API for Calligraphy Studio"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.116.1",
+  "uvicorn[standard]==0.35.0",
+  "sqlalchemy==2.0.43",
+  "pydantic==2.11.7",
+  "pydantic-settings==2.10.1",
+  "python-multipart==0.0.20",
+  "Pillow==11.3.0",
+  "lmdb==2.3.0",
+  "numpy==2.3.1",
+  "fonttools==4.65.0",
+  "httpx==0.28.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

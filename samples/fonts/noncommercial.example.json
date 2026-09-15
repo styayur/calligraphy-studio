@@ -1,0 +1,21 @@
+{
+  "fonts": [
+    {
+      "id": "user-provided-noncommercial-kai",
+      "enabled": true,
+      "family": "Your licensed non-commercial Kai font",
+      "designer": "Replace with font designer",
+      "style": "楷书",
+      "dataset": "User-provided non-commercial fonts",
+      "path": "../licensed/YourFont.ttf",
+      "license": "Replace with the exact license name",
+      "license_url": "https://example.invalid/license",
+      "rights": {
+        "commercial_use": false,
+        "derivatives_allowed": false,
+        "redistribution_allowed": false,
+        "research_use": true
+      }
+    }
+  ]
+}

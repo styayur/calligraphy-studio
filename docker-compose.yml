@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: ./apps/api
+    environment:
+      CALLISTUDIO_DATABASE_URL: sqlite:////data/calligraphy.db
+      CALLISTUDIO_ASSETS_DIR: /storage/assets
+      CALLISTUDIO_SEED_DEMO: "false"
+    volumes:
+      - calligraphy-data:/data
+      - calligraphy-assets:/storage/assets
+    ports:
+      - "8000:8000"
+
+  web:
+    build:
+      context: ./apps/web
+    depends_on:
+      - api
+    ports:
+      - "5173:80"
+
+volumes:
+  calligraphy-data:
+  calligraphy-assets:

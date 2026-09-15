@@ -1,0 +1,58 @@
+{
+  "calligraphers": [
+    {
+      "id": 1,
+      "name": "Liu Zhengjiang, Kimberly Geswein, ZhongQi"
+    },
+    {
+      "id": 2,
+      "name": "Ma ShanZheng"
+    },
+    {
+      "id": 3,
+      "name": "Wei Zhimang"
+    },
+    {
+      "id": 4,
+      "name": "演示·王体"
+    },
+    {
+      "id": 5,
+      "name": "演示·颜体"
+    }
+  ],
+  "styles": [
+    {
+      "id": 1,
+      "name": "楷书"
+    },
+    {
+      "id": 2,
+      "name": "楷书结构"
+    },
+    {
+      "id": 3,
+      "name": "草书"
+    },
+    {
+      "id": 4,
+      "name": "行书"
+    }
+  ],
+  "dynasties": [
+    {
+      "id": 1,
+      "name": "历代"
+    },
+    {
+      "id": 2,
+      "name": "当代"
+    }
+  ],
+  "datasets": [
+    "Demo",
+    "Hanzi Writer Structural Data",
+    "NCCU Cursive Chinese Calligraphy Dataset",
+    "OFL Calligraphy Fonts"
+  ]
+}

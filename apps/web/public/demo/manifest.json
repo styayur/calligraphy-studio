@@ -1,0 +1,89 @@
+{
+  "static_mode": true,
+  "glyph_count": 110,
+  "model_name": "visual-geometry-256-v1",
+  "sources": [
+    {
+      "dataset": "Demo",
+      "work": "示例集字",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true
+      }
+    },
+    {
+      "dataset": "NCCU Cursive Chinese Calligraphy Dataset",
+      "work": "CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_url": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset/blob/master/LICENSE",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true
+      }
+    },
+    {
+      "dataset": "Hanzi Writer Structural Data",
+      "work": "Make Me A Hanzi / Arphic Kaiti",
+      "license": "ARPHIC PUBLIC LICENSE",
+      "license_url": "https://github.com/chanind/hanzi-writer-data/blob/master/ARPHICPL.TXT",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "share_alike_required": true,
+        "attribution_required": true
+      }
+    },
+    {
+      "dataset": "OFL Calligraphy Fonts",
+      "work": "Ma Shan Zheng",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    {
+      "dataset": "OFL Calligraphy Fonts",
+      "work": "Zhi Mang Xing",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    {
+      "dataset": "OFL Calligraphy Fonts",
+      "work": "Liu Jian Mao Cao",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    }
+  ],
+  "policy": "Only sources with redistribution_allowed=true are exported."
+}

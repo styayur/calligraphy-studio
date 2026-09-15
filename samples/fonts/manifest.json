@@ -1,0 +1,68 @@
+{
+  "characters": "山水春眠不觉晓明月清风花鸟云龙书法行楷草真集字",
+  "fonts": [
+    {
+      "id": "ma-shan-zheng",
+      "enabled": true,
+      "family": "Ma Shan Zheng",
+      "designer": "Ma ShanZheng",
+      "style": "楷书",
+      "dynasty": "当代",
+      "dataset": "OFL Calligraphy Fonts",
+      "path": "ofl/mashanzheng/MaShanZheng-Regular.ttf",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "source_uri": "https://github.com/googlefonts/mashanzheng",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    {
+      "id": "zhi-mang-xing",
+      "enabled": true,
+      "family": "Zhi Mang Xing",
+      "designer": "Wei Zhimang",
+      "style": "行书",
+      "dynasty": "当代",
+      "dataset": "OFL Calligraphy Fonts",
+      "path": "ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "source_uri": "https://github.com/m4rc1e/zhimangxing",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    },
+    {
+      "id": "liu-jian-mao-cao",
+      "enabled": true,
+      "family": "Liu Jian Mao Cao",
+      "designer": "Liu Zhengjiang, Kimberly Geswein, ZhongQi",
+      "style": "草书",
+      "dynasty": "当代",
+      "dataset": "OFL Calligraphy Fonts",
+      "path": "ofl/liujianmaocao/LiuJianMaoCao-Regular.ttf",
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "source_uri": "https://github.com/googlefonts/liujianmaocao",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true
+      }
+    }
+  ]
+}

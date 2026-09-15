@@ -1,0 +1,38 @@
+# secrets and local configuration
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Runtime data
+data/*.db
+data/*.sqlite*
+data/raw/*
+data/processed/*
+data/hanzi-writer/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+storage/assets/*
+!storage/assets/.gitkeep
+work/
+*.log
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
