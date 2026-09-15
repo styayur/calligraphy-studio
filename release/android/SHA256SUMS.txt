@@ -1,1 +1,1 @@
-cb27b048fe7d783622a1142af1383ad675101e5f18c8f0c6faefd8bb8164b91c  CalligraphyStudio-Android-0.4.0.apk
+e3d36bbd7fcba0d6435729ef908af440a25f494cc7dd96d379e4fac8ff279619  CalligraphyStudio-Android-0.4.0.apk
