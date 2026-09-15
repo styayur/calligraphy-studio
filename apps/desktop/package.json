@@ -1,0 +1,65 @@
+{
+  "name": "calligraphy-studio-desktop",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Offline desktop build of Calligraphy Studio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis portable --x64"
+  },
+  "devDependencies": {
+    "electron": "44.3.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "io.github.styayur.calligraphystudio",
+    "productName": "Calligraphy Studio",
+    "copyright": "Copyright © 2026 Calligraphy Studio contributors",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      {
+        "from": "../web/dist",
+        "to": "dist",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "asar": true,
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "CalligraphyStudio-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Calligraphy Studio",
+      "artifactName": "CalligraphyStudio-Setup-${version}-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "CalligraphyStudio-Portable-${version}-${arch}.${ext}"
+    }
+  }
+}

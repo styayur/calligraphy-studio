@@ -201,6 +201,19 @@ python -m app.cli import-font-manifest `
 
 非商用字体不会被打包或自动下载。将本地授权字体路径和真实授权字段写入 [noncommercial.example.json](samples/fonts/noncommercial.example.json)；CLI 会保留 `commercial_use=false`、`derivatives_allowed=false` 等限制。现有非商用数据源还包括 MCCD 和 HCSU。
 
+## 下载 Windows 与 Android
+
+Windows：
+
+- [安装版 CalligraphyStudio-Setup-0.4.0-x64.exe](https://github.com/styayur/calligraphy-studio/releases/latest/download/CalligraphyStudio-Setup-0.4.0-x64.exe)
+- [便携版 CalligraphyStudio-Portable-0.4.0-x64.exe](https://github.com/styayur/calligraphy-studio/releases/latest/download/CalligraphyStudio-Portable-0.4.0-x64.exe)
+
+Android：
+
+- [APK: CalligraphyStudio-Android-0.4.0.apk](https://github.com/styayur/calligraphy-studio/releases/latest/download/CalligraphyStudio-Android-0.4.0.apk)
+
+Windows 安装包和 APK 都是预览版：Windows 未使用商业代码签名证书，Android 使用 debug key 签名，因此适合直接安装测试，不建议直接提交应用商店。Release 同时提供 SHA-256 校验值。
+
 ## 帮助与本地字库导入
 
 页面顶部的问号按钮会打开帮助对话框，包含：
@@ -218,6 +231,33 @@ python -m app.cli import-font-manifest `
 - 草书：`Liu Jian Mao Cao`、`Cursive Chinese Calligraphy Dataset`、`Caoshu font`
 - 开源检索：`SIL OFL Chinese fonts`、`Google Fonts chinese handwriting`、`Open Source Chinese Fonts`
 - 非商用：`free for personal use Chinese font`、`non-commercial Chinese calligraphy font`、`CC BY-NC font`
+
+## 构建桌面端和 Android
+
+Windows：
+
+```powershell
+cd apps/web
+npm ci
+npm run build:desktop
+
+cd ..\desktop
+npm ci
+npm run dist:win
+```
+
+Android：
+
+```powershell
+cd apps/web
+npm ci
+npm run build:android
+npx cap sync android
+cd android
+.\gradlew assembleRelease
+```
+
+生成的 APK 位于 `apps/web/android/app/build/outputs/apk/release/app-release.apk`。仓库的 `.github/workflows/release-all.yml` 会在 GitHub Actions 中同时构建 Windows EXE、NSIS 安装器和 Android APK，并上传到 GitHub Release。
 
 ## GitHub Pages 发布
 
