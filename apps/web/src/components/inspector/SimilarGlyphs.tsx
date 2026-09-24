@@ -1,56 +1,67 @@
-import { ScanSearch } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { getSimilarGlyphs } from '../../api/client'
+import { fontGlyphs } from '../../api/fonts'
+import { searchGlyphs } from '../../api/client'
 import { useEditorStore } from '../../stores/editor'
-import type { SimilarGlyphItem } from '../../types'
+import type { GlyphInstance, Glyph } from '../../types'
 
-export function SimilarGlyphs({ glyphId }: { glyphId: string }) {
-  const [items, setItems] = useState<SimilarGlyphItem[]>([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const addGlyph = useEditorStore((state) => state.addGlyph)
-
+export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
+  const [items, setItems] = useState<Glyph[]>([])
+  const [status, setStatus] = useState('')
+  const replace = useEditorStore((s) => s.replaceGlyph)
   useEffect(() => {
     let active = true
-    setLoading(true)
-    setError('')
-    getSimilarGlyphs(glyphId, { limit: 8, sameStyle: true })
-      .then((response) => {
-        if (active) setItems(response.items)
-      })
-      .catch((caught) => {
-        if (active) setError(caught instanceof Error ? caught.message : '相似检索失败')
-      })
-      .finally(() => {
-        if (active) setLoading(false)
-      })
+    setItems([])
+    setStatus('正在查找同字字形…')
+    Promise.allSettled([
+      fontGlyphs(glyph.character),
+      searchGlyphs({ character: glyph.character, limit: 60 }),
+    ]).then(([fonts, library]) => {
+      if (!active) return
+      const results = [
+        ...(fonts.status === 'fulfilled' ? fonts.value : []),
+        ...(library.status === 'fulfilled'
+          ? library.value.items.filter(
+              (g) => g.provenance.type !== 'font' && g.source.dataset !== 'Demo',
+            )
+          : []),
+      ]
+      setItems(results)
+      setStatus(
+        results.length
+          ? library.status === 'rejected'
+            ? '原帖字库未连接，显示内置字体。'
+            : ''
+          : '暂无其他字形，请检查字库连接。',
+      )
+    })
     return () => {
       active = false
     }
-  }, [glyphId])
-
+  }, [glyph.character])
   return (
-    <section className="border-b border-black/10 p-4">
-      <h3 className="mb-1 flex items-center gap-2 text-xs font-semibold text-ink/70">
-        <ScanSearch className="h-3.5 w-3.5" /> 相似字形
-      </h3>
-      <p className="mb-3 text-[10px] text-ink/40">visual-geometry-256-v1 · 同书体推荐</p>
-      {loading && <p className="text-xs text-ink/40">计算视觉向量…</p>}
-      {error && <p className="text-xs text-cinnabar">{error}</p>}
-      {!loading && !error && items.length === 0 && <p className="text-xs text-ink/40">暂无相似结果，请先建立 embedding。</p>}
-      <div className="grid grid-cols-4 gap-2">
+    <section className="variants-section">
+      <div className="section-title">
+        <h3>换个字形</h3>
+        <span>保留位置与大小</span>
+      </div>
+      {status && (
+        <p className="field-hint" role="status">
+          {status}
+        </p>
+      )}
+      <div className="variant-grid">
         {items.map((item) => (
           <button
-            key={item.glyph.id}
-            type="button"
-            onClick={() => addGlyph(item.glyph)}
-            className="group rounded-lg border border-black/10 bg-white/65 p-1.5 transition hover:border-cinnabar/35 hover:bg-white"
-            title={`${item.glyph.character} · 相似度 ${Math.round(item.score * 100)}%`}
+            key={item.id}
+            onClick={() => replace(glyph.id, item)}
+            aria-label={`替换为${item.source.work || item.source.style || item.character}`}
+            aria-pressed={item.id === glyph.glyph_id}
+            title={`${item.source.work || item.source.dataset} · ${item.source.license || '授权未标注'}`}
           >
-            <div className="aspect-square overflow-hidden rounded bg-[#f6f1e7] p-1">
-              <img src={item.glyph.asset.url} alt={item.glyph.character} className="h-full w-full object-contain mix-blend-multiply" />
-            </div>
-            <span className="mt-1 block text-center text-[10px] text-ink/45">{Math.round(item.score * 100)}%</span>
+            <img src={item.asset.url} alt={item.character} />
+            <span>
+              {item.provenance.type === 'original' ? '原帖' : item.source.style || '结构替补'}
+            </span>
           </button>
         ))}
       </div>

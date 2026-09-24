@@ -9,12 +9,10 @@ import { useHtmlImage } from './useImage'
 
 function GlyphImage({
   glyph,
-  selected,
   nodeRef,
   onReady,
 }: {
   glyph: GlyphInstance
-  selected: boolean
   nodeRef: (node: Konva.Node | null) => void
   onReady: () => void
 }) {
@@ -42,6 +40,8 @@ function GlyphImage({
     opacity: glyph.appearance.opacity,
     globalCompositeOperation: glyph.appearance.blendMode as GlobalCompositeOperation,
     draggable: true,
+    onClick: () => selectGlyph(glyph.id),
+    onTap: () => selectGlyph(glyph.id),
     onDragStart: () => {
       beginHistory()
       selectGlyph(glyph.id)
@@ -110,7 +110,9 @@ export function GlyphCanvas() {
     const update = () => {
       const width = element.clientWidth - 48
       const height = element.clientHeight - 48
-      setDisplayScale(Math.min(1, width / project.canvas.width, height / project.canvas.height))
+      setDisplayScale(
+        Math.max(0.01, Math.min(1, width / project.canvas.width, height / project.canvas.height)),
+      )
     }
     update()
     const observer = new ResizeObserver(update)
@@ -127,16 +129,25 @@ export function GlyphCanvas() {
   }, [selectedId, project.glyphs, nodeVersion])
 
   useEffect(() => {
-    registerStageExporter(() => {
+    registerStageExporter(({ scale, transparent }) => {
       const stage = stageRef.current
       const transformer = transformerRef.current
-      if (!stage) throw new Error('Canvas is not ready')
+      if (!stage) throw new Error('画布尚未准备好')
+      if (stage.width() * stage.height() * scale * scale > 40_000_000)
+        throw new Error('导出尺寸过大，请选择原尺寸或减小纸面')
+      if (stage.find('Image').length !== useEditorStore.getState().project.glyphs.length)
+        throw new Error('部分字形图片尚未加载，请稍后重试或检查字库连接')
+      const background = stage.findOne('.paper-background')
       const transformerWasVisible = transformer?.visible() ?? false
       transformer?.visible(false)
-      const result = stage.toDataURL({ pixelRatio: 1, mimeType: 'image/png' })
-      transformer?.visible(transformerWasVisible)
-      stage.batchDraw()
-      return result
+      if (transparent) background?.visible(false)
+      try {
+        return stage.toDataURL({ pixelRatio: scale, mimeType: 'image/png' })
+      } finally {
+        transformer?.visible(transformerWasVisible)
+        background?.visible(true)
+        stage.batchDraw()
+      }
     })
     return () => registerStageExporter(null)
   }, [])
@@ -147,12 +158,10 @@ export function GlyphCanvas() {
     if (!raw) return
     try {
       const glyph = JSON.parse(raw) as Glyph
-      const rect = containerRef.current?.getBoundingClientRect()
+      const rect = stageRef.current?.container().getBoundingClientRect()
       if (!rect) return
-      const frameWidth = project.canvas.width * displayScale
-      const frameHeight = project.canvas.height * displayScale
-      const left = rect.left + (rect.width - frameWidth) / 2
-      const top = rect.top + (rect.height - frameHeight) / 2
+      const left = rect.left
+      const top = rect.top
       addGlyph(
         glyph,
         Math.max(0, Math.min(project.canvas.width, (event.clientX - left) / displayScale)),
@@ -176,7 +185,7 @@ export function GlyphCanvas() {
       onDrop={handleDrop}
     >
       <div
-        className="relative shadow-[0_24px_80px_rgba(42,32,22,0.18)]"
+        className="paper-frame relative"
         style={{
           width: project.canvas.width * displayScale,
           height: project.canvas.height * displayScale,
@@ -203,6 +212,7 @@ export function GlyphCanvas() {
           >
             <Layer listening={false}>
               <Rect
+                name="paper-background"
                 x={0}
                 y={0}
                 width={project.canvas.width}
@@ -215,7 +225,6 @@ export function GlyphCanvas() {
                 <GlyphImage
                   key={glyph.id}
                   glyph={glyph}
-                  selected={glyph.id === selectedId}
                   nodeRef={(node) => {
                     nodeRefs.current[glyph.id] = node
                   }}
@@ -228,10 +237,10 @@ export function GlyphCanvas() {
                 ref={transformerRef}
                 rotateEnabled
                 keepRatio={false}
-                borderStroke="#a23a2b"
+                borderStroke="#48675a"
                 borderStrokeWidth={1.5}
-                anchorStroke="#a23a2b"
-                anchorFill="#fff8ed"
+                anchorStroke="#48675a"
+                anchorFill="#ffffff"
                 anchorSize={8}
                 anchorCornerRadius={2}
                 boundBoxFunc={(oldBox, newBox) =>
@@ -244,9 +253,10 @@ export function GlyphCanvas() {
       </div>
       {project.glyphs.length === 0 && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="rounded-xl border border-dashed border-ink/20 bg-white/60 px-6 py-5 text-center backdrop-blur-sm">
-            <p className="font-display text-3xl text-ink/65">落笔于此</p>
-            <p className="mt-1 text-xs text-ink/45">从左侧点击或拖入字形</p>
+          <div className="canvas-empty">
+            <div className="empty-character">字</div>
+            <p>把喜欢的文字，集成一幅作品</p>
+            <span>输入一句诗或一段文字，点击「生成作品」</span>
           </div>
         </div>
       )}

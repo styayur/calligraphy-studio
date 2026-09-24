@@ -11,7 +11,7 @@ const HISTORY_LIMIT = 60
 
 const emptyProject = (): ProjectDocument => ({
   version: 1,
-  canvas: { width: 1200, height: 800, background: '#f8f4ea' },
+  canvas: { width: 1000, height: 1200, background: '#ffffff' },
   glyphs: [],
 })
 
@@ -29,18 +29,24 @@ interface EditorState {
   past: ProjectDocument[]
   future: ProjectDocument[]
   dirty: boolean
-  batchOpen: boolean
+  localStatus: string
+  setLocalStatus: (status: string) => void
+  compose: (
+    glyphs: GlyphInstance[],
+    canvas: ProjectDocument['canvas'],
+    text: string,
+    composition: ProjectDocument['composition'],
+  ) => void
+  replaceGlyph: (id: string, glyph: Glyph) => void
+  duplicateGlyph: (id: string) => void
+  setCanvas: (patch: Partial<ProjectDocument['canvas']>) => void
   setProjectName: (name: string) => void
   selectGlyph: (id: string | null) => void
   addGlyph: (glyph: Glyph, x?: number, y?: number) => string
   addGlyphs: (glyphs: GlyphInstance[]) => void
   removeGlyph: (id: string) => void
   setGlyphTransform: (id: string, patch: Partial<GlyphTransform>, options?: PatchOptions) => void
-  setGlyphAppearance: (
-    id: string,
-    patch: Partial<GlyphAppearance>,
-    options?: PatchOptions,
-  ) => void
+  setGlyphAppearance: (id: string, patch: Partial<GlyphAppearance>, options?: PatchOptions) => void
   reorderGlyph: (id: string, direction: 'forward' | 'backward') => void
   beginHistory: () => void
   undo: () => void
@@ -48,7 +54,6 @@ interface EditorState {
   newProject: () => void
   loadProject: (name: string, document: ProjectDocument, id?: string | null) => void
   markSaved: (id?: string) => void
-  setBatchOpen: (open: boolean) => void
 }
 
 function pushHistory(state: EditorState, project: ProjectDocument) {
@@ -68,7 +73,48 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   past: [],
   future: [],
   dirty: false,
-  batchOpen: false,
+  localStatus: '正在恢复草稿…',
+  setLocalStatus: (localStatus) => set({ localStatus }),
+  compose: (glyphs, canvas, text, composition) =>
+    set((state) => ({
+      ...pushHistory(state, { ...state.project, canvas, glyphs, text, composition }),
+      selectedId: null,
+    })),
+  setCanvas: (patch) =>
+    set((state) =>
+      pushHistory(state, { ...state.project, canvas: { ...state.project.canvas, ...patch } }),
+    ),
+  replaceGlyph: (id, glyph) =>
+    set((state) => {
+      const glyphs = state.project.glyphs.map((current) => {
+        if (current.id !== id) return current
+        return {
+          ...structuredClone(glyph),
+          id,
+          glyph_id: glyph.id,
+          appearance: current.appearance,
+          transform: {
+            ...current.transform,
+            scaleX: (current.transform.scaleX * current.asset.width) / glyph.asset.width,
+            scaleY: (current.transform.scaleY * current.asset.height) / glyph.asset.height,
+          },
+        }
+      })
+      return pushHistory(state, { ...state.project, glyphs })
+    }),
+  duplicateGlyph: (id) =>
+    set((state) => {
+      const original = state.project.glyphs.find((glyph) => glyph.id === id)
+      if (!original) return state
+      const copy = structuredClone(original)
+      copy.id = crypto.randomUUID()
+      copy.transform.x += 20
+      copy.transform.y += 20
+      return {
+        ...pushHistory(state, { ...state.project, glyphs: [...state.project.glyphs, copy] }),
+        selectedId: copy.id,
+      }
+    }),
 
   setProjectName: (name) => set({ projectName: name, dirty: true }),
   selectGlyph: (id) => set({ selectedId: id }),
@@ -126,9 +172,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       const next = {
         ...state.project,
         glyphs: state.project.glyphs.map((glyph) =>
-          glyph.id === id
-            ? { ...glyph, transform: { ...glyph.transform, ...patch } }
-            : glyph,
+          glyph.id === id ? { ...glyph, transform: { ...glyph.transform, ...patch } } : glyph,
         ),
       }
       if (options.recordHistory === false) return { project: next, dirty: true }
@@ -140,9 +184,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       const next = {
         ...state.project,
         glyphs: state.project.glyphs.map((glyph) =>
-          glyph.id === id
-            ? { ...glyph, appearance: { ...glyph.appearance, ...patch } }
-            : glyph,
+          glyph.id === id ? { ...glyph, appearance: { ...glyph.appearance, ...patch } } : glyph,
         ),
       }
       if (options.recordHistory === false) return { project: next, dirty: true }
@@ -154,7 +196,8 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       const glyphs = [...state.project.glyphs]
       const index = glyphs.findIndex((glyph) => glyph.id === id)
       if (index < 0) return state
-      const target = direction === 'forward' ? Math.min(glyphs.length - 1, index + 1) : Math.max(0, index - 1)
+      const target =
+        direction === 'forward' ? Math.min(glyphs.length - 1, index + 1) : Math.max(0, index - 1)
       if (target === index) return state
       const [item] = glyphs.splice(index, 1)
       glyphs.splice(target, 0, item)
@@ -217,5 +260,4 @@ export const useEditorStore = create<EditorState>((set, get) => ({
     }),
 
   markSaved: (id) => set({ projectId: id ?? get().projectId, dirty: false }),
-  setBatchOpen: (open) => set({ batchOpen: open }),
 }))

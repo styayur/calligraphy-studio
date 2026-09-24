@@ -10,6 +10,7 @@ export interface GlyphSource {
 }
 
 export interface GlyphAsset {
+  processing?: 'ink-mask'
   type: 'raster' | 'svg' | 'generated'
   url: string
   width: number

@@ -5,6 +5,7 @@ export function useHtmlImage(url: string): HTMLImageElement | null {
 
   useEffect(() => {
     let active = true
+    setImage(null)
     const next = new window.Image()
     next.crossOrigin = 'anonymous'
     next.onload = () => {

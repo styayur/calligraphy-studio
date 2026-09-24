@@ -1,15 +1,9 @@
-# Windows desktop build
+# Windows v0.5.0
 
-Assets:
+- [安装版](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Setup-0.5.0-x64.exe)
+- [便携版](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Portable-0.5.0-x64.exe)
+- [SHA-256 校验值](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/SHA256SUMS.txt)
 
-- `CalligraphyStudio-Setup-0.4.0-x64.exe` — NSIS installer with Start Menu and desktop shortcuts.
-- `CalligraphyStudio-Portable-0.4.0-x64.exe` — portable executable.
+适用于 Windows x64。字库随 Electron 应用分发，无需启动 API。草稿存于应用本机数据，长期保存请下载项目 JSON。
 
-Direct download:
-
-- Installer: https://github.com/styayur/calligraphy-studio/releases/latest/download/CalligraphyStudio-Setup-0.4.0-x64.exe
-- Portable: https://github.com/styayur/calligraphy-studio/releases/latest/download/CalligraphyStudio-Portable-0.4.0-x64.exe
-
-The desktop build is an Electron shell around the offline static Glyph Store. Search, batch typesetting, layers, similarity recommendations, JSON export and PNG export work without a server.
-
-The current binaries are not code-signed with a commercial certificate, so Windows SmartScreen may show an unknown-publisher warning. Verify `SHA256SUMS.txt` before running.
+安装包尚未使用商业代码签名，系统可能显示未知发布者提示。请确认来自本仓库的 Release，并核对校验值。

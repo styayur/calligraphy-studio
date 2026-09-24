@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#181512',
-        paper: '#f4efe5',
-        cinnabar: '#a23a2b',
+        ink: '#25342b',
+        paper: '#ffffff',
+        cinnabar: '#456b52',
         bamboo: '#53655a',
       },
       fontFamily: {

@@ -1,155 +1,259 @@
-import { LayoutGrid, Rows3, WandSparkles } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { composeBatch, getMetadata } from '../../api/client'
+import { useEffect, useRef, useState } from 'react'
+import { ArrowRight, Loader2 } from 'lucide-react'
+import { fontGlyphs } from '../../api/fonts'
+import { searchGlyphs } from '../../api/client'
+import { layoutText, placeGlyph, textLines } from '../../lib/composition'
 import { useEditorStore } from '../../stores/editor'
-import type { BatchLayout, MetadataResponse } from '../../types'
-import { Button, cn } from '../ui'
-
-const DEFAULT_TEXT = '春眠不觉晓\n处处闻啼鸟'
+import type { BatchLayout, Glyph } from '../../types'
+import { Button } from '../ui'
 
 export function BatchComposer() {
-  const [text, setText] = useState(DEFAULT_TEXT)
-  const [layout, setLayout] = useState<BatchLayout>('grid')
+  const projectText = useEditorStore((s) => s.project.text)
+  const settings = useEditorStore((s) => s.project.composition)
+  const [text, setText] = useState(() => {
+    try {
+      const draft = JSON.parse(localStorage.getItem('calligraphy-input') || 'null')
+      if (draft?.projectText === (projectText ?? null) && typeof draft.text === 'string')
+        return draft.text as string
+    } catch {
+      /* A blocked browser store should not prevent editing. */
+    }
+    return projectText ?? '明月松间照\n清泉石上流'
+  })
+  const previousText = useRef(projectText)
+  const [layout, setLayout] = useState<BatchLayout>('vertical-rtl')
   const [columns, setColumns] = useState(5)
-  const [cellSize, setCellSize] = useState(170)
-  const [gap, setGap] = useState(4)
-  const [style, setStyle] = useState('草书')
-  const [dataset, setDataset] = useState('')
-  const [calligrapher, setCalligrapher] = useState('')
-  const [useFallback, setUseFallback] = useState(true)
-  const [meta, setMeta] = useState<MetadataResponse | null>(null)
+  const [size, setSize] = useState(160)
+  const [gap, setGap] = useState(12)
+  const [margin, setMargin] = useState(64)
+  const [style, setStyle] = useState('行书')
+  const [source, setSource] = useState<'fonts' | 'original'>('fonts')
+  const [punctuation, setPunctuation] = useState(false)
   const [status, setStatus] = useState('')
   const [loading, setLoading] = useState(false)
-  const addGlyphs = useEditorStore((state) => state.addGlyphs)
-
+  const compose = useEditorStore((s) => s.compose)
   useEffect(() => {
-    getMetadata().then((payload) => {
-      setMeta(payload)
-      const cursiveDataset = payload.datasets.find((item) => item.includes('Cursive'))
-      if (cursiveDataset) setDataset(cursiveDataset)
-    }).catch(() => undefined)
-  }, [])
-
-  const createLayout = async () => {
-    setLoading(true)
-    setStatus('')
+    if (previousText.current !== projectText) setText(projectText ?? '')
+    previousText.current = projectText
+  }, [projectText])
+  useEffect(() => {
     try {
-      const response = await composeBatch({
-        text,
-        layout,
-        columns,
-        cell_width: cellSize,
-        cell_height: cellSize,
-        gap_x: gap,
-        gap_y: gap,
-        start_x: 80,
-        start_y: 80,
-        calligrapher: calligrapher || undefined,
-        style: style || undefined,
-        dataset: dataset || undefined,
-        use_structural_fallback: useFallback,
+      localStorage.setItem(
+        'calligraphy-input',
+        JSON.stringify({ projectText: projectText ?? null, text }),
+      )
+    } catch {
+      setStatus('输入文字未能保存到本机，请及时生成并下载项目。')
+    }
+  }, [text, projectText])
+  useEffect(() => {
+    if (!settings) return
+    setLayout(settings.layout)
+    setColumns(settings.columns)
+    setSize(settings.size)
+    setGap(settings.gap)
+    setMargin(settings.margin)
+    setPunctuation(settings.punctuation)
+    setStyle(settings.style)
+    setSource(settings.source)
+  }, [settings])
+  const count = textLines(text, punctuation).flat().length
+
+  const create = async () => {
+    const previousProject = useEditorStore.getState().project
+    setLoading(true)
+    setStatus('正在加载字库…')
+    try {
+      const plan = layoutText(text, { layout, columns, size, gap, margin, punctuation })
+      const resolved = new Map<string, Glyph>()
+      for (const character of new Set(plan.positions.map((p) => p.character))) {
+        const items =
+          source === 'fonts'
+            ? await fontGlyphs(character, style)
+            : (await searchGlyphs({ character, style, limit: 60 })).items.filter(
+                (g) => g.provenance.type === 'original' && g.source.dataset !== 'Demo',
+              )
+        if (items[0]) resolved.set(character, items[0])
+      }
+      const missing = [
+        ...new Set(
+          plan.positions.filter((p) => !resolved.has(p.character)).map((p) => p.character),
+        ),
+      ]
+      if (!resolved.size)
+        throw new Error(`未找到可用字形：${missing.join('')}。请切换书体或字形来源。`)
+      const glyphs = plan.positions.flatMap((p) => {
+        const glyph = resolved.get(p.character)
+        return glyph ? [placeGlyph(glyph, p.x, p.y, size)] : []
       })
-      addGlyphs(response.placements.map((placement) => placement.glyph))
+      if (useEditorStore.getState().project !== previousProject)
+        throw new Error('作品已更改，请重新生成以应用这段文字。')
+      compose(
+        glyphs,
+        {
+          width: Math.max(100, plan.width),
+          height: Math.max(100, plan.height),
+          background: previousProject.canvas.background,
+        },
+        text,
+        { layout, columns, size, gap, margin, punctuation, style, source },
+      )
       setStatus(
-        response.missing.length
-          ? `已排入 ${response.resolved_characters}/${response.total_characters} 字；缺字：${response.missing.join(' ')}`
-          : `已将 ${response.resolved_characters} 字排入画布`,
+        missing.length
+          ? `已排入 ${glyphs.length}/${count} 字，缺字「${missing.join('、')}」已留空位。可换书体重新集字。`
+          : `已排入 ${glyphs.length} 字。点击纸面上的字，可选择其他字形。`,
       )
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : '批量排版失败')
+      setStatus(error instanceof Error ? error.message : '集字失败，请重试')
     } finally {
       setLoading(false)
     }
   }
-
-  const layoutOptions: Array<{ value: BatchLayout; label: string; icon: typeof LayoutGrid }> = [
-    { value: 'grid', label: '顺序网格', icon: LayoutGrid },
-    { value: 'horizontal-ltr', label: '横排', icon: Rows3 },
-    { value: 'vertical-rtl', label: '竖排右起', icon: Rows3 },
-  ]
-
   return (
-    <div className="space-y-4 p-4">
-      <div>
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cinnabar">Batch Typesetting</p>
-        <h2 className="font-display text-2xl">批量文本集字</h2>
-        <p className="mt-1 text-xs leading-5 text-ink/50">每行可独立成句；竖排按右起列方向排列。</p>
+    <fieldset className="composer" disabled={loading} aria-label="集字排版">
+      <div className="section-title">
+        <h2>文字集字</h2>
+        <span>{count} / 200 字</span>
       </div>
-
-      <textarea
-        value={text}
-        onChange={(event) => setText(event.target.value)}
-        rows={7}
-        placeholder="输入或粘贴文本，每个汉字将成为一个 Glyph 图层"
-        className="w-full resize-none rounded-lg border border-black/10 bg-white/75 p-3 text-sm leading-6 outline-none ring-cinnabar/15 focus:ring-2"
-      />
-
-      <div className="grid grid-cols-3 gap-2">
-        {layoutOptions.map((option) => {
-          const Icon = option.icon
-          return (
-            <button
-              key={option.value}
-              type="button"
-              onClick={() => setLayout(option.value)}
-              className={cn(
-                'rounded-lg border px-2 py-2 text-[11px] transition',
-                layout === option.value ? 'border-cinnabar/45 bg-cinnabar/5 text-cinnabar' : 'border-black/10 bg-white/55 text-ink/60',
-              )}
-            >
-              <Icon className="mx-auto mb-1 h-4 w-4" />
-              {option.label}
-            </button>
-          )
-        })}
-      </div>
-
-      <div className="grid grid-cols-2 gap-3 text-xs text-ink/60">
-        <label>
-          <span className="mb-1 block">列数</span>
-          <input type="number" min={1} max={30} value={columns} onChange={(event) => setColumns(Number(event.target.value))} className="h-8 w-full rounded-md border border-black/10 bg-white/75 px-2" />
-        </label>
-        <label>
-          <span className="mb-1 block">字格</span>
-          <input type="number" min={60} max={500} value={cellSize} onChange={(event) => setCellSize(Number(event.target.value))} className="h-8 w-full rounded-md border border-black/10 bg-white/75 px-2" />
-        </label>
-        <label>
-          <span className="mb-1 block">间距</span>
-          <input type="number" min={-20} max={100} value={gap} onChange={(event) => setGap(Number(event.target.value))} className="h-8 w-full rounded-md border border-black/10 bg-white/75 px-2" />
-        </label>
-        <label>
-          <span className="mb-1 block">书体</span>
-          <select value={style} onChange={(event) => setStyle(event.target.value)} className="h-8 w-full rounded-md border border-black/10 bg-white/75 px-2">
-            <option value="">自动</option>
-            {meta?.styles.map((item) => <option key={item.id}>{item.name}</option>)}
-          </select>
-        </label>
-        <label className="col-span-2">
-          <span className="mb-1 block">数据源</span>
-          <select value={dataset} onChange={(event) => setDataset(event.target.value)} className="h-8 w-full rounded-md border border-black/10 bg-white/75 px-2">
-            <option value="">全部、优先草书</option>
-            {meta?.datasets.map((item) => <option key={item}>{item}</option>)}
-          </select>
-        </label>
-        <label className="col-span-2">
-          <span className="mb-1 block">书家</span>
-          <select value={calligrapher} onChange={(event) => setCalligrapher(event.target.value)} className="h-8 w-full rounded-md border border-black/10 bg-white/75 px-2">
-            <option value="">不限</option>
-            {meta?.calligraphers.map((item) => <option key={item.id}>{item.name}</option>)}
-          </select>
-        </label>
-      </div>
-
-      <label className="flex items-start gap-2 rounded-lg border border-black/10 bg-white/45 p-3 text-xs text-ink/60">
-        <input type="checkbox" checked={useFallback} onChange={(event) => setUseFallback(event.target.checked)} className="mt-0.5" />
-        <span><strong className="font-medium text-ink/75">缺字结构替补</strong><br />真实字形缺失时使用 Hanzi Writer，并明确标记为 fallback。</span>
+      <label className="sr-only" htmlFor="compose-text">
+        集字内容
       </label>
-
-      <Button className="w-full" onClick={createLayout} disabled={loading || !text.trim()}>
-        <WandSparkles className="h-4 w-4" />
-        {loading ? '正在排版…' : '生成到画布'}
+      <textarea
+        id="compose-text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        rows={5}
+        placeholder="输入文字，换行分句"
+      />
+      <div className="sample-row">
+        <span>试一试</span>
+        {['明月松间照\n清泉石上流', '春眠不觉晓\n处处闻啼鸟', '山水清音'].map((sample, i) => (
+          <button key={sample} onClick={() => setText(sample)}>
+            {['山居秋暝', '春晓', '四字横幅'][i]}
+          </button>
+        ))}
+      </div>
+      <div className="field-grid">
+        <label>
+          书体
+          <select aria-label="书体" value={style} onChange={(e) => setStyle(e.target.value)}>
+            <option>楷书</option>
+            <option>行书</option>
+            <option>草书</option>
+          </select>
+        </label>
+        <label>
+          字形来源
+          <select
+            aria-label="字形来源"
+            value={source}
+            onChange={(e) => setSource(e.target.value as 'fonts' | 'original')}
+          >
+            <option value="fonts">开源字体</option>
+            <option value="original">原帖字库</option>
+          </select>
+        </label>
+      </div>
+      <p className="field-hint">
+        {source === 'fonts'
+          ? '内置三款开源字体，按实际字库覆盖集字。'
+          : '使用已收录的原帖图片；缺字会留空并提示。'}
+      </p>
+      <div className="segmented" aria-label="排版方向">
+        {(
+          [
+            ['vertical-rtl', '竖排'],
+            ['horizontal-ltr', '横排'],
+            ['grid', '方格'],
+          ] as const
+        ).map(([value, label]) => (
+          <button key={value} aria-pressed={layout === value} onClick={() => setLayout(value)}>
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="field-grid">
+        <label>
+          {layout === 'vertical-rtl' ? '每列最多' : '每行最多'}
+          <div className="unit-input">
+            <input
+              aria-label="每行或列字数"
+              type="number"
+              min={1}
+              max={30}
+              step={1}
+              value={columns}
+              onChange={(e) => setColumns(Math.floor(Number(e.target.value)))}
+            />
+            <span>字</span>
+          </div>
+        </label>
+        <label>
+          字格大小
+          <div className="unit-input">
+            <input
+              aria-label="字格大小"
+              type="number"
+              min={40}
+              max={400}
+              value={size}
+              onChange={(e) => setSize(Number(e.target.value))}
+            />
+            <span>px</span>
+          </div>
+        </label>
+      </div>
+      <details className="advanced">
+        <summary>间距与留白</summary>
+        <div className="field-grid">
+          <label>
+            字距
+            <input
+              type="number"
+              min={0}
+              max={160}
+              value={gap}
+              onChange={(e) => setGap(Number(e.target.value))}
+            />
+          </label>
+          <label>
+            页边距
+            <input
+              type="number"
+              min={0}
+              max={300}
+              value={margin}
+              onChange={(e) => setMargin(Number(e.target.value))}
+            />
+          </label>
+        </div>
+        <label className="check-field">
+          <input
+            type="checkbox"
+            checked={punctuation}
+            onChange={(e) => setPunctuation(e.target.checked)}
+          />
+          保留标点
+        </label>
+      </details>
+      <Button
+        className="compose-button"
+        onClick={create}
+        disabled={loading || !count || count > 200}
+      >
+        {loading ? (
+          <Loader2 className="h-4 w-4 animate-spin" />
+        ) : (
+          <ArrowRight className="h-4 w-4" />
+        )}
+        {loading ? '正在集字…' : '生成作品'}
       </Button>
-      {status && <p className="rounded-md bg-black/5 p-2 text-[11px] leading-5 text-ink/60">{status}</p>}
-    </div>
+      <p className="field-hint">自动适配纸面尺寸。重新生成会替换当前排版，可撤销。</p>
+      {status && (
+        <p className="feedback" role="status">
+          {status}
+        </p>
+      )}
+    </fieldset>
   )
 }

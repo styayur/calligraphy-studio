@@ -1,4 +1,5 @@
 import { STATIC_MODE } from '../config/runtime'
+import { prepareInk } from './ink'
 import type {
   BatchComposeRequest,
   BatchComposeResponse,
@@ -64,12 +65,16 @@ export interface GlyphListResponse {
 }
 
 export async function searchGlyphs(params: GlyphSearchParams): Promise<GlyphListResponse> {
-  if (STATIC_MODE) return (await import('./static')).staticSearch(params)
+  if (STATIC_MODE) {
+    const result = await (await import('./static')).staticSearch(params)
+    return { ...result, items: await Promise.all(result.items.map(prepareInk)) }
+  }
   const query = new URLSearchParams()
   Object.entries(params).forEach(([key, value]) => {
     if (value !== undefined && value !== null && value !== '') query.set(key, String(value))
   })
-  return request<GlyphListResponse>(`/api/search?${query.toString()}`)
+  const result = await request<GlyphListResponse>(`/api/search?${query.toString()}`)
+  return { ...result, items: await Promise.all(result.items.map(prepareInk)) }
 }
 
 export async function getMetadata(): Promise<MetadataResponse> {
@@ -82,8 +87,12 @@ export async function listProjects(): Promise<ProjectListItem[]> {
   return request<ProjectListItem[]>('/api/projects')
 }
 
-export async function createProject(name: string, document: ProjectDocument): Promise<ProjectRecord> {
-  if (STATIC_MODE) throw new ApiError('GitHub Pages 静态版不支持服务端保存，请使用“保存 JSON”。', 501)
+export async function createProject(
+  name: string,
+  document: ProjectDocument,
+): Promise<ProjectRecord> {
+  if (STATIC_MODE)
+    throw new ApiError('GitHub Pages 静态版不支持服务端保存，请使用“保存 JSON”。', 501)
   return request<ProjectRecord>('/api/projects', {
     method: 'POST',
     body: JSON.stringify({ name, document }),
@@ -95,7 +104,8 @@ export async function updateProject(
   name: string,
   document: ProjectDocument,
 ): Promise<ProjectRecord> {
-  if (STATIC_MODE) throw new ApiError('GitHub Pages 静态版不支持服务端保存，请使用“保存 JSON”。', 501)
+  if (STATIC_MODE)
+    throw new ApiError('GitHub Pages 静态版不支持服务端保存，请使用“保存 JSON”。', 501)
   return request<ProjectRecord>(`/api/projects/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ name, document }),

@@ -1,4 +1,4 @@
-import { X } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { GlyphCanvas } from './canvas/GlyphCanvas'
 import { Toolbar } from './components/editor/Toolbar'
 import { BatchComposer } from './components/glyph-browser/BatchComposer'
@@ -6,39 +6,185 @@ import { GlyphBrowser } from './components/glyph-browser/GlyphBrowser'
 import { Inspector } from './components/inspector/Inspector'
 import { LayersPanel } from './components/layers/LayersPanel'
 import { useEditorStore } from './stores/editor'
-import { Button } from './components/ui'
+import { readDraft, validateProject, writeDraft } from './lib/project'
+import type { Draft } from './lib/project'
 
 export default function App() {
-  const batchOpen = useEditorStore((state) => state.batchOpen)
-  const setBatchOpen = useEditorStore((state) => state.setBatchOpen)
+  const [tab, setTab] = useState('compose')
+  const [searchVisited, setSearchVisited] = useState(false)
+  const [ready, setReady] = useState(false)
+  const [mobilePanel, setMobilePanel] = useState('edit')
+  const canvas = useEditorStore((s) => s.project.canvas)
+  const glyphCount = useEditorStore((s) => s.project.glyphs.length)
+  const selectedId = useEditorStore((s) => s.selectedId)
+  const setCanvas = useEditorStore((s) => s.setCanvas)
+
+  useEffect(() => {
+    let active = true
+    readDraft()
+      .then((draft) => {
+        if (!active) return
+        if (draft)
+          useEditorStore.getState().loadProject(draft.name, validateProject(draft.document))
+        useEditorStore.getState().setLocalStatus(draft ? '已恢复本机草稿' : '草稿自动保存在本机')
+      })
+      .catch(() => {
+        if (active) useEditorStore.getState().setLocalStatus('草稿恢复失败，请从项目文件载入')
+      })
+      .finally(() => {
+        if (active) setReady(true)
+      })
+    return () => {
+      active = false
+    }
+  }, [])
+  useEffect(() => {
+    if (!ready) return
+    let pending: Draft | null = null
+    let writing = false
+    const save = async () => {
+      if (writing) return
+      writing = true
+      while (pending) {
+        const draft = pending
+        pending = null
+        try {
+          await writeDraft(draft)
+          const latest = useEditorStore.getState()
+          if (latest.project === draft.document && latest.projectName === draft.name)
+            latest.setLocalStatus('草稿已保存到本机')
+        } catch {
+          useEditorStore.getState().setLocalStatus('本机保存失败，请下载项目备份')
+        }
+      }
+      writing = false
+    }
+    return useEditorStore.subscribe((state, previous) => {
+      if (state.project === previous.project && state.projectName === previous.projectName) return
+      pending = { name: state.projectName, document: state.project }
+      state.setLocalStatus('正在保存草稿…')
+      void save()
+    })
+  }, [ready])
+  useEffect(() => {
+    const keyboard = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement
+      if (target.closest('input, textarea, select, [contenteditable="true"], [role="dialog"]'))
+        return
+      const state = useEditorStore.getState()
+      const modifier = e.ctrlKey || e.metaKey
+      if (modifier && e.key.toLowerCase() === 'z') {
+        e.preventDefault()
+        e.shiftKey ? state.redo() : state.undo()
+        return
+      }
+      if (modifier && e.key.toLowerCase() === 'y') {
+        e.preventDefault()
+        state.redo()
+        return
+      }
+      if (e.key === 'Escape') state.selectGlyph(null)
+      if (!state.selectedId) return
+      if (e.key === 'Delete' || e.key === 'Backspace') {
+        e.preventDefault()
+        state.removeGlyph(state.selectedId)
+      }
+      if (modifier && e.key.toLowerCase() === 'd') {
+        e.preventDefault()
+        state.duplicateGlyph(state.selectedId)
+      }
+      const glyph = state.project.glyphs.find((g) => g.id === state.selectedId)
+      if (glyph && ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
+        e.preventDefault()
+        const step = e.shiftKey ? 10 : 1
+        if (!e.repeat) state.beginHistory()
+        state.setGlyphTransform(
+          glyph.id,
+          {
+            x:
+              glyph.transform.x +
+              (e.key === 'ArrowLeft' ? -step : e.key === 'ArrowRight' ? step : 0),
+            y: glyph.transform.y + (e.key === 'ArrowUp' ? -step : e.key === 'ArrowDown' ? step : 0),
+          },
+          { recordHistory: false },
+        )
+      }
+    }
+    window.addEventListener('keydown', keyboard)
+    return () => window.removeEventListener('keydown', keyboard)
+  }, [])
 
   return (
-    <div className="flex h-full min-h-0 flex-col bg-paper text-ink">
+    <div className="studio-shell">
       <Toolbar />
-      <main className="relative flex min-h-0 flex-1">
-        <GlyphBrowser />
-        <section className="flex min-h-0 min-w-0 flex-1 flex-col">
-          <GlyphCanvas />
-          <LayersPanel />
-        </section>
-        <Inspector />
-        {batchOpen && (
-          <div className="absolute inset-0 z-50 bg-ink/15 backdrop-blur-[1px]" onMouseDown={() => setBatchOpen(false)}>
-            <aside
-              className="panel-scroll absolute bottom-3 left-[316px] top-3 w-[420px] overflow-y-auto rounded-xl border border-black/10 bg-[#f4efe5] shadow-2xl"
-              onMouseDown={(event) => event.stopPropagation()}
-            >
-              <div className="flex items-center justify-between border-b border-black/10 px-4 py-3">
-                <span className="text-xs font-semibold text-ink/55">批量排版</span>
-                <Button variant="ghost" size="icon" onClick={() => setBatchOpen(false)} aria-label="关闭批量集字">
-                  <X className="h-4 w-4" />
-                </Button>
-              </div>
+      <nav className="mobile-nav" aria-label="工作区">
+        <button aria-pressed={mobilePanel === 'edit'} onClick={() => setMobilePanel('edit')}>
+          文字与字库
+        </button>
+        <button aria-pressed={mobilePanel === 'canvas'} onClick={() => setMobilePanel('canvas')}>
+          作品预览 {glyphCount > 0 && `(${glyphCount})`}
+        </button>
+      </nav>
+      {ready ? (
+        <main className={`workspace mobile-${mobilePanel} ${selectedId ? 'has-selection' : ''}`}>
+          <aside className="library-panel">
+            <div className="panel-tabs">
+              <button aria-pressed={tab === 'compose'} onClick={() => setTab('compose')}>
+                集字
+              </button>
+              <button
+                aria-pressed={tab === 'search'}
+                onClick={() => {
+                  setSearchVisited(true)
+                  setTab('search')
+                }}
+              >
+                查字
+              </button>
+            </div>
+            <div className={tab === 'compose' ? 'panel-scroll composition-body' : 'hidden'}>
               <BatchComposer />
-            </aside>
-          </div>
-        )}
-      </main>
+            </div>
+            <div className={tab === 'search' ? 'search-body' : 'hidden'}>
+              {searchVisited && <GlyphBrowser />}
+            </div>
+            <footer className="library-footer">
+              集字工作台 <span>写一句，成一幅。</span>
+            </footer>
+          </aside>
+          <section className="canvas-column">
+            <div className="canvas-toolbar">
+              <span>
+                纸面{' '}
+                <span className="dimension">
+                  {canvas.width} × {canvas.height}
+                </span>
+              </span>
+              <div className="paper-swatches" aria-label="纸色">
+                {[
+                  ['#ffffff', '白纸'],
+                  ['#f5f0e4', '米纸'],
+                  ['#e7ebe4', '青纸'],
+                ].map(([color, label]) => (
+                  <button
+                    key={color}
+                    aria-label={label}
+                    aria-pressed={canvas.background === color}
+                    style={{ background: color }}
+                    onClick={() => setCanvas({ background: color })}
+                  />
+                ))}
+              </div>
+              <span className="canvas-help">点击选字 · 拖动调整</span>
+            </div>
+            <GlyphCanvas />
+            <LayersPanel />
+          </section>
+          <Inspector />
+        </main>
+      ) : (
+        <div className="loading-workspace">正在恢复工作台…</div>
+      )}
     </div>
   )
 }

@@ -1,185 +1,176 @@
-import { Search, SlidersHorizontal } from 'lucide-react'
-import { FormEvent, useEffect, useMemo, useState } from 'react'
+import { Search } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { getMetadata, searchGlyphs } from '../../api/client'
+import { fontGlyphs } from '../../api/fonts'
 import { useEditorStore } from '../../stores/editor'
 import type { Glyph, MetadataResponse } from '../../types'
-import { Button, cn } from '../ui'
 
 export const GLYPH_DRAG_TYPE = 'application/x-calligraphy-glyph'
-
-function ProvenanceBadge({ glyph }: { glyph: Glyph }) {
-  const labels = glyph.source.dataset === 'Demo'
-    ? { original: '演示字形', font: '演示字形', fallback: '演示字形', generated: '演示字形' }
-    : { original: '真实字形', font: '字体字形', fallback: '结构替补', generated: 'AI 生成' }
-  return (
-    <span
-      className={cn(
-        'rounded-full px-2 py-0.5 text-[10px] font-semibold',
-        glyph.provenance.type === 'original' && 'bg-emerald-900/10 text-emerald-900',
-        glyph.provenance.type === 'font' && 'bg-sky-900/10 text-sky-900',
-        glyph.provenance.type === 'fallback' && 'bg-amber-900/10 text-amber-900',
-        glyph.provenance.type === 'generated' && 'bg-cinnabar/10 text-cinnabar',
-      )}
-    >
-      {labels[glyph.provenance.type]}
-    </span>
-  )
-}
-
-function GlyphCard({ glyph }: { glyph: Glyph }) {
-  const addGlyph = useEditorStore((state) => state.addGlyph)
-  return (
-    <button
-      type="button"
-      draggable
-      onClick={() => addGlyph(glyph)}
-      onDragStart={(event) => {
-        event.dataTransfer.effectAllowed = 'copy'
-        event.dataTransfer.setData(GLYPH_DRAG_TYPE, JSON.stringify(glyph))
-      }}
-      className="group min-w-0 rounded-lg border border-black/10 bg-white/75 p-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-cinnabar/35 hover:shadow-md"
-      title="点击加入画布，或拖到画布指定位置"
-    >
-      <div className="flex aspect-square items-center justify-center overflow-hidden rounded-md bg-[#f6f1e7]">
-        <img
-          src={glyph.asset.url}
-          alt={glyph.character}
-          draggable={false}
-          className="glyph-thumbnail h-full w-full object-contain p-3 mix-blend-multiply"
-        />
-      </div>
-      <div className="mt-2 flex items-center justify-between gap-2">
-        <span className="font-display text-3xl leading-none">{glyph.character}</span>
-        <ProvenanceBadge glyph={glyph} />
-      </div>
-      <p className="mt-1 truncate text-xs font-medium text-ink/75">
-        {[glyph.source.calligrapher, glyph.source.style].filter(Boolean).join(' · ') || '未标注'}
-      </p>
-      <p className="truncate text-[10px] text-ink/45">
-        {[glyph.source.dynasty, glyph.source.work, glyph.source.dataset].filter(Boolean).join(' / ')}
-      </p>
-    </button>
-  )
-}
-
 export function GlyphBrowser() {
   const [query, setQuery] = useState('山')
-  const [calligrapher, setCalligrapher] = useState('')
   const [style, setStyle] = useState('')
-  const [dynasty, setDynasty] = useState('')
   const [dataset, setDataset] = useState('')
+  const [calligrapher, setCalligrapher] = useState('')
   const [results, setResults] = useState<Glyph[]>([])
   const [meta, setMeta] = useState<MetadataResponse | null>(null)
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-
-  const runSearch = async (term = query) => {
-    setLoading(true)
-    setError(null)
-    try {
-      const response = await searchGlyphs({ q: term, calligrapher, style, dynasty, dataset, limit: 60 })
-      setResults(response.items)
-    } catch (caught) {
-      setError(caught instanceof Error ? caught.message : '搜索失败')
-    } finally {
-      setLoading(false)
-    }
-  }
-
+  const [message, setMessage] = useState('')
+  const [limit, setLimit] = useState(40)
+  const [total, setTotal] = useState(0)
+  const [retry, setRetry] = useState(0)
+  const addGlyph = useEditorStore((s) => s.addGlyph)
   useEffect(() => {
     getMetadata()
       .then(setMeta)
       .catch(() => undefined)
-    void runSearch('山')
-    // Initial request intentionally ignores later filter dependencies.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  const activeFilterCount = useMemo(
-    () => [calligrapher, style, dynasty, dataset].filter(Boolean).length,
-    [calligrapher, style, dynasty, dataset],
-  )
-
-  const submit = (event: FormEvent) => {
-    event.preventDefault()
-    void runSearch()
-  }
-
+  useEffect(() => {
+    let active = true
+    setLoading(true)
+    const timer = setTimeout(async () => {
+      const term = query.trim()
+      const [library, fonts] = await Promise.allSettled([
+        searchGlyphs({ q: term, style, dataset, calligrapher, limit }),
+        [...term].length === 1 && (!dataset || dataset === 'OFL Calligraphy Fonts')
+          ? fontGlyphs(term, style, calligrapher)
+          : Promise.resolve([]),
+      ])
+      if (!active) return
+      const generated = fonts.status === 'fulfilled' ? fonts.value : []
+      const stored = library.status === 'fulfilled' ? library.value.items : []
+      const items = [
+        ...generated,
+        ...stored.filter(
+          (g) =>
+            !generated.some((f) => f.character === g.character && f.source.work === g.source.work),
+        ),
+      ]
+      setResults(items)
+      setTotal(library.status === 'fulfilled' ? library.value.total : 0)
+      setMessage(
+        library.status === 'rejected'
+          ? generated.length
+            ? '原帖字库未连接，当前显示内置字体。'
+            : '字库未连接，请检查服务，或输入单个汉字查询内置字体。'
+          : fonts.status === 'rejected'
+            ? '内置字体加载失败，请重试。'
+            : '',
+      )
+      setLoading(false)
+    }, 200)
+    return () => {
+      active = false
+      clearTimeout(timer)
+    }
+  }, [query, style, dataset, calligrapher, limit, retry])
   return (
-    <aside className="flex h-full min-h-0 w-[300px] shrink-0 flex-col border-r border-black/10 bg-[#ece7dc]/90">
-      <div className="border-b border-black/10 p-4">
-        <div className="mb-3 flex items-center justify-between">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cinnabar">Glyph Store</p>
-            <h2 className="font-display text-2xl">集字簿</h2>
-          </div>
-          <span className="rounded-full bg-black/5 px-2 py-1 text-[10px] text-ink/55">
-            {results.length} 项
-          </span>
-        </div>
-        <form onSubmit={submit} className="flex gap-2">
-          <div className="relative min-w-0 flex-1">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-ink/40" />
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="输入汉字、书家或作品"
-              className="h-9 w-full rounded-md border border-black/10 bg-white/80 pl-8 pr-2 text-sm outline-none ring-cinnabar/20 transition focus:ring-2"
-            />
-          </div>
-          <Button size="icon" aria-label="搜索">
-            <Search className="h-4 w-4" />
-          </Button>
-        </form>
+    <div className="glyph-browser panel-scroll">
+      <div className="section-title">
+        <h2>查找字形</h2>
+        <span>{results.length} 个结果</span>
       </div>
-
-      <div className="border-b border-black/10 px-4 py-3">
-        <div className="mb-2 flex items-center gap-2 text-xs font-medium text-ink/60">
-          <SlidersHorizontal className="h-3.5 w-3.5" />
-          筛选
-          {activeFilterCount > 0 && (
-            <span className="rounded-full bg-cinnabar px-1.5 text-[10px] text-white">
-              {activeFilterCount}
-            </span>
+      <div className="search-field">
+        <Search size={16} />
+        <input
+          aria-label="搜索字形"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value)
+            setLimit(40)
+          }}
+          placeholder="汉字、书家或作品"
+        />
+      </div>
+      <div className="field-grid">
+        <label>
+          书体
+          <select aria-label="书体" value={style} onChange={(e) => setStyle(e.target.value)}>
+            <option value="">全部书体</option>
+            <option>楷书</option>
+            <option>行书</option>
+            <option>草书</option>
+          </select>
+        </label>
+        <label>
+          来源
+          <select
+            aria-label="字库来源"
+            value={dataset}
+            onChange={(e) => setDataset(e.target.value)}
+          >
+            <option value="">全部字库</option>
+            {(meta?.datasets || ['OFL Calligraphy Fonts']).map((item) => (
+              <option key={item}>{item}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <details className="advanced">
+        <summary>筛选书家</summary>
+        <select
+          aria-label="书家筛选"
+          value={calligrapher}
+          onChange={(e) => setCalligrapher(e.target.value)}
+        >
+          <option value="">全部书家</option>
+          {meta?.calligraphers.map((item) => (
+            <option key={item.id}>{item.name}</option>
+          ))}
+        </select>
+      </details>
+      <p className="field-hint">点击加入作品，或拖到纸面指定位置。</p>
+      {loading ? (
+        <p className="feedback" role="status">
+          正在查字…
+        </p>
+      ) : (
+        <>
+          {message && (
+            <div className="feedback" role="status">
+              {message}
+              <button onClick={() => setRetry(retry + 1)}>重试</button>
+            </div>
           )}
-        </div>
-        <div className="grid grid-cols-1 gap-2">
-          <select value={calligrapher} onChange={(event) => setCalligrapher(event.target.value)} className="h-8 rounded-md border border-black/10 bg-white/70 px-2 text-xs">
-            <option value="">全部书家</option>
-            {meta?.calligraphers.map((item) => <option key={item.id}>{item.name}</option>)}
-          </select>
-          <select value={dataset} onChange={(event) => setDataset(event.target.value)} className="h-8 min-w-0 rounded-md border border-black/10 bg-white/70 px-2 text-xs">
-            <option value="">全部数据源</option>
-            {meta?.datasets.map((item) => <option key={item}>{item}</option>)}
-          </select>
-          <div className="grid grid-cols-2 gap-2">
-            <select value={style} onChange={(event) => setStyle(event.target.value)} className="h-8 min-w-0 rounded-md border border-black/10 bg-white/70 px-2 text-xs">
-              <option value="">全部书体</option>
-              {meta?.styles.map((item) => <option key={item.id}>{item.name}</option>)}
-            </select>
-            <select value={dynasty} onChange={(event) => setDynasty(event.target.value)} className="h-8 min-w-0 rounded-md border border-black/10 bg-white/70 px-2 text-xs">
-              <option value="">全部朝代</option>
-              {meta?.dynasties.map((item) => <option key={item.id}>{item.name}</option>)}
-            </select>
+          {!results.length && !message && (
+            <p className="feedback">未找到字形。试试输入单个汉字，或清除筛选条件。</p>
+          )}
+          <div className="glyph-grid">
+            {results.map((glyph) => (
+              <button
+                key={glyph.id}
+                className="glyph-card"
+                draggable
+                onClick={() => addGlyph(glyph)}
+                onDragStart={(e) => {
+                  e.dataTransfer.effectAllowed = 'copy'
+                  e.dataTransfer.setData(GLYPH_DRAG_TYPE, JSON.stringify(glyph))
+                }}
+                title={`${glyph.character} · ${glyph.source.work || glyph.source.dataset}`}
+              >
+                <img src={glyph.asset.url} alt={glyph.character} draggable={false} />
+                <div>
+                  <strong>{glyph.character}</strong>
+                  <span>{glyph.source.style}</span>
+                </div>
+                <small>{glyph.source.work || glyph.source.dataset}</small>
+                <small className="glyph-kind">
+                  {glyph.source.dataset === 'Demo'
+                    ? '演示字形'
+                    : { font: '字体', original: '原帖', fallback: '结构替补', generated: '生成' }[
+                        glyph.provenance.type
+                      ]}{' '}
+                  · {glyph.source.license || '授权未标注'}
+                </small>
+              </button>
+            ))}
           </div>
-        </div>
-      </div>
-
-      <div className="panel-scroll min-h-0 flex-1 overflow-y-auto p-3">
-        {loading && <div className="py-10 text-center text-sm text-ink/45">检索字形…</div>}
-        {error && (
-          <div className="rounded-lg border border-cinnabar/20 bg-cinnabar/5 p-3 text-xs text-cinnabar">
-            <p className="font-semibold">无法连接 Glyph API</p>
-            <p className="mt-1 text-cinnabar/75">{error}</p>
-          </div>
-        )}
-        {!loading && !error && results.length === 0 && (
-          <div className="py-10 text-center text-sm text-ink/45">暂无匹配字形</div>
-        )}
-        <div className="grid grid-cols-2 gap-3">
-          {results.map((glyph) => <GlyphCard key={glyph.id} glyph={glyph} />)}
-        </div>
-      </div>
-    </aside>
+          {total > limit && (
+            <button className="load-more" onClick={() => setLimit(limit + 40)}>
+              加载更多（共 {total} 个）
+            </button>
+          )}
+        </>
+      )}
+    </div>
   )
 }
