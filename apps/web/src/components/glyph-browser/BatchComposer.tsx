@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Loader2 } from 'lucide-react'
-import { fontGlyphs } from '../../api/fonts'
-import { searchGlyphs } from '../../api/client'
+import { initialCandidates, resolveCharacters } from '../../api/candidates'
 import { layoutText, placeGlyph, textLines } from '../../lib/composition'
 import { useEditorStore } from '../../stores/editor'
 import type { BatchLayout, Glyph } from '../../types'
@@ -64,17 +63,27 @@ export function BatchComposer() {
     setLoading(true)
     setStatus('正在加载字库…')
     try {
-      const plan = layoutText(text, { layout, columns, size, gap, margin, punctuation })
+      const plan = layoutText(text, {
+        layout,
+        columns,
+        size,
+        gap,
+        margin,
+        punctuation,
+      })
+      const found = await resolveCharacters(
+        plan.positions.map((p) => p.character),
+        async (character) => {
+          // Initial composition fetches a small page; further variants load only on selection.
+          const page = await initialCandidates(character, source, style, 4)
+          return page.items[0]
+        },
+        (done, total) => setStatus(`正在加载字库 ${done}/${total} 个不同字…`),
+      )
       const resolved = new Map<string, Glyph>()
-      for (const character of new Set(plan.positions.map((p) => p.character))) {
-        const items =
-          source === 'fonts'
-            ? await fontGlyphs(character, style)
-            : (await searchGlyphs({ character, style, limit: 60 })).items.filter(
-                (g) => g.provenance.type === 'original' && g.source.dataset !== 'Demo',
-              )
-        if (items[0]) resolved.set(character, items[0])
-      }
+      found.forEach((glyph, character) => {
+        if (glyph) resolved.set(character, glyph)
+      })
       const missing = [
         ...new Set(
           plan.positions.filter((p) => !resolved.has(p.character)).map((p) => p.character),
@@ -84,7 +93,7 @@ export function BatchComposer() {
         throw new Error(`未找到可用字形：${missing.join('')}。请切换书体或字形来源。`)
       const glyphs = plan.positions.flatMap((p) => {
         const glyph = resolved.get(p.character)
-        return glyph ? [placeGlyph(glyph, p.x, p.y, size)] : []
+        return glyph ? [placeGlyph(glyph, p.x, p.y, plan.size)] : []
       })
       if (useEditorStore.getState().project !== previousProject)
         throw new Error('作品已更改，请重新生成以应用这段文字。')
@@ -101,7 +110,7 @@ export function BatchComposer() {
       setStatus(
         missing.length
           ? `已排入 ${glyphs.length}/${count} 字，缺字「${missing.join('、')}」已留空位。可换书体重新集字。`
-          : `已排入 ${glyphs.length} 字。点击纸面上的字，可选择其他字形。`,
+          : `已排入 ${glyphs.length} 字。${plan.fit < 1 ? '纸面已等比缩小；可调整每行或列字数改善阅读。' : ''}点击纸面上的字，可选择其他字形。`,
       )
     } catch (error) {
       setStatus(error instanceof Error ? error.message : '集字失败，请重试')
@@ -113,7 +122,7 @@ export function BatchComposer() {
     <fieldset className="composer" disabled={loading} aria-label="集字排版">
       <div className="section-title">
         <h2>文字集字</h2>
-        <span>{count} / 200 字</span>
+        <span>{count} / 1000 字</span>
       </div>
       <label className="sr-only" htmlFor="compose-text">
         集字内容
@@ -239,7 +248,7 @@ export function BatchComposer() {
       <Button
         className="compose-button"
         onClick={create}
-        disabled={loading || !count || count > 200}
+        disabled={loading || !count || count > 1000}
       >
         {loading ? (
           <Loader2 className="h-4 w-4 animate-spin" />

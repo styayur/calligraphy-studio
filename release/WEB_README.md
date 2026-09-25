@@ -9,3 +9,5 @@
 字库随压缩包分发，运行时不需要联网。草稿保存在当前浏览器和地址下，长期保存请下载项目 JSON。
 
 字体许可位于 `demo/licenses/`；其他第三方说明见 `THIRD_PARTY_NOTICE.md`。
+
+工作台支持 1000 字；长卷模式支持最多 20000 字。长卷结果仅保留于当前会话，刷新前请导出 ZIP。Visual Profile 与特征缓存需要现代浏览器的 Worker、Web Crypto 与 IndexedDB 支持。

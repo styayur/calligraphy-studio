@@ -1,33 +1,41 @@
-# Calligraphy Studio v0.5.0
+# Calligraphy Studio v0.6.0
 
-将演示编辑器升级为可直接使用的集字工作台，并重新整理界面。
+可解释的字形比较、1000 字集字工作台与自动长卷。
 
-## 新功能与修复
+## 新功能
 
-- 内置楷、行、草三款 OFL 字体，各覆盖 7,015 个字符；按需生成透明字形，不依赖 API。
-- 横排、竖排右起与方格布局自动适配纸面，修复竖排越界，缺字留位并提示。
-- 同字替换保留位置与大小；支持复制、删除、键盘微移、撤销重做与精细调整。
-- NCCU 黑底白字原帖自动净底，保留来源和授权。
-- 本机输入及作品恢复；JSON 保留名称、排版参数和字形；PNG 支持透明背景与 2 倍尺寸。
-- 精简工具栏和面板，适配手机；Android 导出接入原生文件写入与系统分享面板。
-- 发布流程绑定版本标签，统一提供安装包、离线网页包和 SHA-256 校验文件。
+- **Visual Profile**：bbox、宽高比、墨量、重心、图像矩与 Hu 不变量、横纵投影、四象限密度、留白、欧氏距离统计、骨架长度/端点/分支、方向分布。
+- **上下文比较**：Context Profile、作品协调度、已加载候选按协调度排序、差异解释、置入作品预览。
+- **千字工作台**：从 200 字扩展到 1000 字；自动适配大纸面、虚拟选字条、按显示尺寸分配画布像素，导出恢复原尺寸。
+- **按需计算**：候选分页、图片懒加载、Web Worker、内容哈希与版本化 IndexedDB 缓存、局部重算。
+- **长卷模式**：最多 20000 字，beam search 与局部代价自动选字，重复字变化、分页分栏、虚拟化预览、异常字与缺字检测、任务取消。
+- **批量导出**：ZIP 包含每页 PNG、输入与选择参数、字形来源/位置清单、缺字 CSV。
+- **实验分析**：投影 1D OT、连通/孔洞拓扑和 H0 持久条码；独立于默认排序。
+- 重写 README，新增当前界面截图、算法定义、文献映射和性能测量。
 
 ## 下载
 
 | 文件 | 说明 |
 | --- | --- |
-| `CalligraphyStudio-Setup-0.5.0-x64.exe` | Windows x64 安装版 |
-| `CalligraphyStudio-Portable-0.5.0-x64.exe` | Windows x64 便携版 |
-| `CalligraphyStudio-Android-0.5.0.apk` | Android 7.0+ 预览版 |
-| `CalligraphyStudio-Web-0.5.0.zip` | 已构建的网页离线包，解压后通过本地 HTTP 服务运行 |
-| `SHA256SUMS.txt` | 全部附件的 SHA-256 校验值 |
+| `CalligraphyStudio-Setup-0.6.0-x64.exe` | Windows x64 安装版 |
+| `CalligraphyStudio-Portable-0.6.0-x64.exe` | Windows x64 便携版 |
+| `CalligraphyStudio-Android-0.6.0.apk` | Android 7.0+ 预览版 |
+| `CalligraphyStudio-Web-0.6.0.zip` | 离线网页包，解压后通过 localhost HTTP 服务运行 |
+| `SHA256SUMS.txt` | 所有附件的 SHA-256 校验值 |
 
-[在线使用](https://styayur.github.io/calligraphy-studio/) · [使用说明](https://github.com/styayur/calligraphy-studio#readme)
+[在线体验](https://styayur.github.io/calligraphy-studio/) · [使用说明](https://github.com/styayur/calligraphy-studio#readme) · [算法与文献](https://github.com/styayur/calligraphy-studio/blob/v0.6.0/docs/visual-profiles.md)
 
-## 验证与边界
+## 验证
 
-生产构建与浏览器回归覆盖排版、纸面选字、同字替换、历史记录、本机恢复、PNG 尺寸/透明通道、项目往返导入、原帖净底、搜索及手机布局。Windows 与 Android 安装包由 GitHub Actions 构建；Android 原生分享入口尚未经过物理设备验证。
+数值测试覆盖特征、骨架、距离变换、拓扑、H0、OT、1000 字边界、分页、beam search、重复变化及取消。生产网页回归覆盖现有工作台，以及 1031 字长卷、缺字留位、ZIP 完整性、实际墨迹与手机布局。
 
-单幅文本最多 200 字；原帖字库仍是样本及用户自行导入的数据。草稿仅保存在本机，升级或卸载前请导出 JSON 备份。
+本机 Edge 开发模式测量：1000 个不同汉字排版约 13.43 s，首次特征分析约 3.91 s，缓存复用生成 1001 字长卷约 1.90 s。耗时随设备和字库变化，不是跨设备保证。
 
-Windows 安装包未使用商业代码签名。Android 使用 debug 预览签名，旧版可能需要先备份再卸载安装；不适用于应用商店发行。包内保留 OFL / MIT 等许可证，MCCD 等受限数据不随包分发。
+## 使用边界与升级
+
+- 协调度是原始字形与上下文的相近度，不是审美评分，未纳入手动变形与墨色。
+- 实验 OT 为投影 1D 距离；持久性为 H0，未实现完整 2D OT 或 H1。
+- 长卷结果仅保留在当前会话，刷新前请导出 ZIP；工作台草稿仅存于本机，建议升级前导出 JSON。
+- 每字最多分析 8 个候选，beam search 不保证全局最优。大型 ZIP 在内存中组装，实际容量取决于设备。
+- Windows 未使用商业代码签名；Android 使用 debug 预览签名，物理设备分享未验证。若 Android 升级遇到签名冲突，先备份后卸载旧版。
+- 字库和许可证随包分发，MCCD 等受限数据不包含在发行包中。

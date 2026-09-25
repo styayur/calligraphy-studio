@@ -34,7 +34,7 @@ export function Inspector() {
           <X size={16} />
         </Button>
       </div>
-      <SimilarGlyphs glyph={glyph} />
+      <SimilarGlyphs key={glyph.id} glyph={glyph} />
       <section className="adjust-section">
         <div className="section-title">
           <h3>调整单字</h3>

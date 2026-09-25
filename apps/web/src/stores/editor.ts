@@ -45,8 +45,16 @@ interface EditorState {
   addGlyph: (glyph: Glyph, x?: number, y?: number) => string
   addGlyphs: (glyphs: GlyphInstance[]) => void
   removeGlyph: (id: string) => void
-  setGlyphTransform: (id: string, patch: Partial<GlyphTransform>, options?: PatchOptions) => void
-  setGlyphAppearance: (id: string, patch: Partial<GlyphAppearance>, options?: PatchOptions) => void
+  setGlyphTransform: (
+    id: string,
+    patch: Partial<GlyphTransform>,
+    options?: PatchOptions,
+  ) => void
+  setGlyphAppearance: (
+    id: string,
+    patch: Partial<GlyphAppearance>,
+    options?: PatchOptions,
+  ) => void
   reorderGlyph: (id: string, direction: 'forward' | 'backward') => void
   beginHistory: () => void
   undo: () => void
@@ -77,12 +85,21 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   setLocalStatus: (localStatus) => set({ localStatus }),
   compose: (glyphs, canvas, text, composition) =>
     set((state) => ({
-      ...pushHistory(state, { ...state.project, canvas, glyphs, text, composition }),
+      ...pushHistory(state, {
+        ...state.project,
+        canvas,
+        glyphs,
+        text,
+        composition,
+      }),
       selectedId: null,
     })),
   setCanvas: (patch) =>
     set((state) =>
-      pushHistory(state, { ...state.project, canvas: { ...state.project.canvas, ...patch } }),
+      pushHistory(state, {
+        ...state.project,
+        canvas: { ...state.project.canvas, ...patch },
+      }),
     ),
   replaceGlyph: (id, glyph) =>
     set((state) => {
@@ -104,6 +121,8 @@ export const useEditorStore = create<EditorState>((set, get) => ({
     }),
   duplicateGlyph: (id) =>
     set((state) => {
+      if (state.project.glyphs.length >= 1000)
+        return { localStatus: '工作台已达 1000 字，请使用长卷模式' }
       const original = state.project.glyphs.find((glyph) => glyph.id === id)
       if (!original) return state
       const copy = structuredClone(original)
@@ -111,7 +130,10 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       copy.transform.x += 20
       copy.transform.y += 20
       return {
-        ...pushHistory(state, { ...state.project, glyphs: [...state.project.glyphs, copy] }),
+        ...pushHistory(state, {
+          ...state.project,
+          glyphs: [...state.project.glyphs, copy],
+        }),
         selectedId: copy.id,
       }
     }),
@@ -120,6 +142,10 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   selectGlyph: (id) => set({ selectedId: id }),
 
   addGlyph: (glyph, x, y) => {
+    if (get().project.glyphs.length >= 1000) {
+      set({ localStatus: '工作台已达 1000 字，请使用长卷模式' })
+      return ''
+    }
     const instanceId = crypto.randomUUID()
     set((state) => {
       const count = state.project.glyphs.length
@@ -144,6 +170,8 @@ export const useEditorStore = create<EditorState>((set, get) => ({
 
   addGlyphs: (glyphs) =>
     set((state) => {
+      if (state.project.glyphs.length + glyphs.length > 1000)
+        return { localStatus: '工作台最多 1000 字，请使用长卷模式' }
       if (glyphs.length === 0) return state
       const next = {
         ...state.project,
@@ -197,7 +225,9 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       const index = glyphs.findIndex((glyph) => glyph.id === id)
       if (index < 0) return state
       const target =
-        direction === 'forward' ? Math.min(glyphs.length - 1, index + 1) : Math.max(0, index - 1)
+        direction === 'forward'
+          ? Math.min(glyphs.length - 1, index + 1)
+          : Math.max(0, index - 1)
       if (target === index) return state
       const [item] = glyphs.splice(index, 1)
       glyphs.splice(target, 0, item)

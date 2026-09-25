@@ -1,7 +1,7 @@
-# Android v0.5.0
+# Android v0.6.0
 
-- [下载 APK](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Android-0.5.0.apk)
-- [SHA-256 校验值](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/SHA256SUMS.txt)
+- [下载 APK](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/CalligraphyStudio-Android-0.6.0.apk)
+- [SHA-256 校验值](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/SHA256SUMS.txt)
 
 要求 Android 7.0+。允许对应浏览器或文件管理器安装应用，安装后即可使用包内字库。
 

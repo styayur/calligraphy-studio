@@ -107,7 +107,7 @@ with sync_playwright() as p:
     assert len(project()['glyphs']) == 2
 
     # Large text and invalid layout inputs must not mutate the artwork.
-    page.get_by_label('集字内容').fill('山' * 201)
+    page.get_by_label('集字内容').fill('山' * 1001)
     expect(page.get_by_role('button', name='生成作品', exact=True)).to_be_disabled()
     page.get_by_label('集字内容').fill('山水')
     page.get_by_label('每行或列字数').fill('0')

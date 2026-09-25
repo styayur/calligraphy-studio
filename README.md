@@ -1,86 +1,135 @@
-# Calligraphy Studio · 集字工作台
+<div align="center">
 
-输入喜欢的文字，挑选字形，排成一幅可以保存、继续编辑和导出的书法作品。
+# Calligraphy Studio
 
-[在线使用](https://styayur.github.io/calligraphy-studio/) · [下载 v0.5.0](https://github.com/styayur/calligraphy-studio/releases/tag/v0.5.0) · [更新说明](release/RELEASE_NOTES.md)
+**集字工作台 · 可解释的字形比较与长卷创作**
 
-![Calligraphy Studio 集字与单字调整界面](docs/github-pages-preview.png)
+输入文字，挑选字形，排成可以编辑、比较和导出的书法作品。
+
+[![Release](https://img.shields.io/github/v/release/styayur/calligraphy-studio)](https://github.com/styayur/calligraphy-studio/releases/latest)
+[![Build](https://github.com/styayur/calligraphy-studio/actions/workflows/release-all.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/release-all.yml)
+[![Pages](https://github.com/styayur/calligraphy-studio/actions/workflows/pages.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/pages.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+[在线体验](https://styayur.github.io/calligraphy-studio/) · [下载安装](https://github.com/styayur/calligraphy-studio/releases/latest) · [更新日志](release/RELEASE_NOTES.md) · [反馈问题](https://github.com/styayur/calligraphy-studio/issues)
+
+</div>
+
+![集字工作台：同字候选、协调度排序与上下文预览](docs/visual-profile.png)
+
+## 目录
+
+- [功能](#功能)
+- [下载与安装](#下载与安装)
+- [使用指南](#使用指南)
+- [快速开始](#快速开始)
+- [视觉分析](#视觉分析)
+- [开发与测试](#开发与测试)
+- [项目结构](#项目结构)
+- [参与贡献](#参与贡献)
+- [许可证与致谢](#许可证与致谢)
+
+## 功能
+
+| 功能 | 说明 |
+| --- | --- |
+| **千字工作台** | 最多 1000 字；横排、竖排、方格；单字替换、移动、缩放、旋转、墨色与图层调整 |
+| **Visual Profile** | 包围盒、宽高比、墨量、重心、图像矩、投影、象限密度、留白、距离变换、骨架与方向分布 |
+| **字形比较** | Context Profile、作品协调度、候选排序、可解释差异面板与置入作品预览 |
+| **长卷模式** | 最多 20000 字；自动选字、重复字变化、分页分栏、异常字检测与缺字清单 |
+| **批量导出** | 工作台 PNG / 项目 JSON；长卷 ZIP 含逐页 PNG、字形来源与位置清单、缺字 CSV |
+| **按需计算** | 候选分页、图片懒加载、Web Worker、IndexedDB 特征缓存、局部重算与虚拟化浏览 |
+| **离线使用** | Windows、Android 与网页离线包内置楷、行、草三款 OFL 字体，各覆盖 7015 个字符 |
+| **原帖字库** | NCCU 草书样本自动净底；可通过本地 API 扩展字库，保留来源和授权信息 |
+
+### 长卷预览
+
+![长卷模式：自动选字、重复字变化与分页预览](docs/long-roll.png)
+
+长卷按页浏览，专注自动生成与批量输出，不提供逐字拖动。小幅精修请使用集字工作台。
 
 ## 下载与安装
 
-| 平台 | 下载 | 使用方式 |
+当前版本：**v0.6.0**。
+
+| 平台 | 下载 | 运行方式 |
 | --- | --- | --- |
-| Windows x64 安装版 | [Setup 0.5.0](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Setup-0.5.0-x64.exe) | 安装后从桌面或开始菜单打开 |
-| Windows x64 便携版 | [Portable 0.5.0](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Portable-0.5.0-x64.exe) | 下载后直接运行 |
-| Android 7.0+ | [APK 0.5.0](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Android-0.5.0.apk) | 允许对应浏览器或文件管理器安装应用 |
-| 网页离线包 | [Web 0.5.0 ZIP](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/CalligraphyStudio-Web-0.5.0.zip) | 解压后启动本地 HTTP 服务，见包内 README |
+| Windows x64 | [安装版](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/CalligraphyStudio-Setup-0.6.0-x64.exe) | 安装后从桌面或开始菜单打开 |
+| Windows x64 | [便携版](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/CalligraphyStudio-Portable-0.6.0-x64.exe) | 下载后直接运行 |
+| Android 7.0+ | [APK](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/CalligraphyStudio-Android-0.6.0.apk) | 安装预览版应用 |
+| 浏览器 | [网页离线包](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/CalligraphyStudio-Web-0.6.0.zip) | 解压后启动本地 HTTP 服务 |
 
-安装包包含字库，不需要启动 API。Release 附带 [SHA256SUMS.txt](https://github.com/styayur/calligraphy-studio/releases/download/v0.5.0/SHA256SUMS.txt)，可用 PowerShell `Get-FileHash 文件路径 -Algorithm SHA256` 校验。
+所有发行包自带字库，无需启动 API。通过 [SHA256SUMS.txt](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/SHA256SUMS.txt) 校验下载文件；Windows 可运行 `Get-FileHash 文件路径 -Algorithm SHA256`。
 
-Windows 安装包尚未使用商业代码签名；Android 使用 debug 预览签名，不是应用商店发行包。Android 旧版遇到签名不兼容时，请先导出项目备份，再卸载旧版并安装新版。
+Windows 安装包未使用商业代码签名；Android 使用 debug 预览签名，原生分享尚未经过物理设备验证。升级 Android 若遇到签名不兼容，请先导出作品备份，再卸载旧版安装。
 
-## 开始集字
+<details>
+<summary>网页离线包怎么运行？</summary>
 
-1. **输入文字**：在“集字”页输入一段文字，换行分句，也可以选用内置示例。
-2. **选择字形**：选择楷书、行书或草书，以及开源字体或原帖字库。
-3. **生成作品**：选择竖排、横排或方格，调整每行/列字数、字格大小、间距和留白。纸面自动适配，竖排从右向左排列。
-4. **逐字打磨**：点击纸面或底部选字条，替换同一个字的其他字形，拖动位置，调整大小、旋转和墨色。精细调整中保留倾斜、混合模式和图层顺序。
-5. **保存与导出**：保存项目 JSON 便于继续编辑；导出原尺寸或 2 倍尺寸 PNG，可选纸色或透明背景。
+解压并保留 `fonts/`、`demo/`、`assets/` 目录，在解压目录运行：
 
-Android 的导出使用系统“保存或分享”面板，选择文件管理器或目标应用完成保存。手机通过“文字与字库 / 作品预览”切换工作区。
+```shell
+python -m http.server 8080
+```
 
-## v0.5.0 带来了什么
+打开 `http://localhost:8080`。不要直接双击 `index.html`：字体请求、Worker 和本机存储需要 HTTP 环境。字库随包分发，运行时不需要联网。
 
-- 三款完整的内置开源字体各覆盖 **7,015 个字符**，在浏览器按需生成透明字形，不再局限于少量预导出样本。
-- 竖排、横排和方格自动计算纸面，缺字保留位置并明确提示。
-- 同字候选一键替换，保留位置、大小和变换；支持复制、删除、撤销与重做。
-- NCCU 黑底白字原帖自动净底为透明墨迹，同时保留来源、授权和处理标记。
-- 输入文字和作品草稿在本机恢复；项目文件保留名称、字形来源、排版参数和作品内容。
-- 白色工具栏、浅灰工作区和独立纸面，单字调整按需出现，适配手机宽度。
+</details>
 
-## 保存、快捷键与使用边界
+## 使用指南
 
-作品草稿保存在当前浏览器或应用的本机存储中，**不是云同步**。等待“草稿已保存到本机”后可刷新恢复；清理浏览器数据、卸载应用或更换访问地址可能失去该草稿。长期保留或跨设备编辑请下载项目 JSON。
+### 集字与逐字调整
+
+1. 输入文字，选择书体与字形来源。
+2. 选择横排、竖排或方格，设置每行 / 列字数、字格、间距和留白。
+3. 点击“生成作品”，缺字会保留位置并提示。
+4. 点击纸面或底部选字条，查看同字候选。勾选“按协调度排序”；悬停或聚焦候选预览，点击替换。
+5. 展开 Visual Profile 与差异面板；点击“作品协调度”按需分析整幅作品。
+6. 保存项目 JSON 以便继续编辑，或导出 PNG（原尺寸 / 2 倍尺寸、纸色 / 透明背景）。
+
+### 千字长卷
+
+切换“长卷模式”，输入长文，设置行列数与重复字变化，点击“自动生成长卷”。可浏览各页、查看异常字和缺字位置，再批量导出 ZIP。任务支持取消；取消后保留上一次成功结果。
+
+**长卷生成结果仅保留在当前会话，刷新前请导出 ZIP。** 工作台草稿和特征缓存保存在当前浏览器的本机存储中，不会云端同步。长期保存或跨设备编辑请下载项目文件。
+
+<details>
+<summary>工作台快捷键</summary>
 
 | 操作 | 快捷键 |
 | --- | --- |
 | 撤销 | Ctrl / Command + Z |
 | 重做 | Ctrl / Command + Shift + Z，或 Ctrl + Y |
 | 复制选中字形 | Ctrl / Command + D |
-| 删除选中字形 | Delete / Backspace |
-| 移动选中字形 | 方向键；按住 Shift 每次移动 10 px |
+| 删除 | Delete / Backspace |
+| 移动 | 方向键；Shift 加速 |
 | 取消选择 | Escape |
 
-- 单幅文本最多 200 字；重新生成会替换当前排版，可撤销。
-- 字体覆盖以实际字符表为准，生僻字可能缺失；字体字形不代表历史书家原迹。
-- 原帖覆盖取决于已收录或自行导入的字库。公开版含 30 张 NCCU 草书样本，不是完整碑帖数据库。
-- PNG 清晰度受原始图片分辨率限制，2 倍导出不会恢复低清原帖中缺失的细节。
-- 当前未提供 AI 生成字形、云端同步和原帖自动识别裁字。
+</details>
 
-## 本地运行
+## 快速开始
 
-需要 Node.js 22+。只使用内置字体与静态原帖时，不需要 Python 或 API。
+需要 **Node.js 22+**。静态模式不需要 Python 或 API。
 
-```powershell
+```shell
 git clone https://github.com/styayur/calligraphy-studio.git
 cd calligraphy-studio/apps/web
 npm ci
 npm run dev -- --mode desktop
 ```
 
-打开终端显示的地址，默认是 `http://localhost:5173`。
+打开终端显示的本地地址，默认 `http://localhost:5173`。
 
-构建静态站点或客户端资源：
-
-```powershell
+```shell
 npm run build:pages    # GitHub Pages 子路径
-npm run build:desktop  # 相对路径离线资源
+npm run build:desktop  # 桌面端与离线网页资源
 npm run build:android  # Android 资源
 ```
 
-### 扩展本地字库与 API
+<details>
+<summary>扩展本地字库与 API（Python 3.11+）</summary>
 
-需要 Python 3.11+，先从仓库根目录启动 API：
+从仓库根目录运行：
 
 ```powershell
 cd apps/api
@@ -89,56 +138,85 @@ python -m venv .venv
 .venv/Scripts/python -m uvicorn app.main:app --reload --port 8000
 ```
 
-另开终端，在 `apps/web` 运行 `npm run dev`，连接 `/api` 和 `/assets`。服务提供 Glyph 查询、书家/书体筛选、项目存储、视觉相似检索和结构替补接口，API 文档位于 `http://127.0.0.1:8000/docs`。
+macOS / Linux 将 `.venv/Scripts/python` 改为 `.venv/bin/python`。另开终端，在 `apps/web` 执行 `npm run dev`，连接本地 `/api` 和 `/assets`。API 文档位于 `http://127.0.0.1:8000/docs`。
 
 - [MCCD 与清单导入](docs/MCCD_IMPORT.md)
 - [字体导入与授权](docs/FONT_LICENSES.md)
 - [数据源说明](docs/DATA_SOURCES.md)
-- [功能阶段与边界](docs/PHASE_GATES.md)
 - [字体导入清单](samples/fonts/manifest.json)
 
-MCCD/HCSU 等受限数据不随公开包分发。导入及使用前请核对数据自身的授权条件。
+MCCD/HCSU 等受限数据不随公开包分发，使用时遵循数据自身的授权条件。
 
-## 开发验证与发布
+</details>
 
-```powershell
+## 视觉分析
+
+特征在保持比例的 64×64 图像上计算。比较使用墨量、形状和结构差异；协调度表示字形与上下文的相近程度，**不代表审美优劣**。当前不计入工作台手动变形和墨色设置。
+
+实验面板提供投影 **1D Optimal Transport**、连通分量 / 孔洞拓扑及灰度过滤 **H0 persistent homology**。这些指标不参与默认排序；尚未实现完整 2D OT、H1 持久性或基于人工偏好验证的审美模型。
+
+长卷使用有界 beam search，结合上下文、相邻字差异和重复惩罚；不保证全局最优。每个不同字最多分析 8 个候选，只有一种候选时不会伪造字形变化。
+
+算法定义、文献映射、缓存策略和本机性能测量见 [视觉分析实现说明](docs/visual-profiles.md)。参考研究：[Yoshida et al., 2025](https://doi.org/10.1587/transfun.2024SML0003)；[Fu et al., 2024](https://doi.org/10.3233/FAIA231510)。
+
+## 开发与测试
+
+```shell
 # apps/web
 npm run typecheck
-npm run build:pages
-
-# 仓库根目录；先保持网页开发服务运行
-python -m pip install playwright pillow
-python scripts/test_studio_browser.py --url http://127.0.0.1:5173 --channel msedge
+npm run test:visual
+npm run build:desktop
 ```
 
-其他系统可先运行 `python -m playwright install chromium`，再省略 `--channel msedge`。浏览器回归涵盖实际纸面选字、同字替换、排版边界、缺字留位、输入/作品恢复、PNG 像素与透明度、JSON 导入、原帖净底、搜索和手机布局。
+浏览器回归在仓库根目录执行，先启动静态服务：
 
-重新打包浏览器字库：`python scripts/build_browser_fonts.py`，需要 `fonttools brotli`。原字体在 `samples/fonts/`，浏览器资源在 `apps/web/public/fonts/`，字符覆盖直接从字体 cmap 生成。
+```shell
+python -m pip install playwright pillow
+python -m playwright install chromium
+python -m http.server 5178 --directory apps/web/dist
+```
 
-推送 `main` 后自动部署 GitHub Pages。发布时同步修改 Web/Desktop 版本及 Android `versionName` / `versionCode`，推送 `vX.Y.Z` 标签；[Release workflow](.github/workflows/release-all.yml) 校验版本，从同一提交构建 Windows、Android 和 Web，浏览器回归通过后发布附件与统一 SHA-256 清单。也可手动为现有标签重跑。
+在另一个终端运行：
 
-## 目录
+```shell
+python scripts/test_studio_browser.py --url http://127.0.0.1:5178
+python scripts/test_visual_browser.py --url http://127.0.0.1:5178 --built
+```
+
+Windows 可使用已安装的 Edge，为测试命令添加 `--channel msedge`。测试涵盖排版与历史记录、草稿恢复、PNG 尺寸和透明度、原帖净底、特征数值、缓存、1000 字边界、长卷分页、重复变化、缺字、取消、ZIP 完整性和手机布局。
+
+推送 `main` 后自动部署 [GitHub Pages](.github/workflows/pages.yml)。推送版本标签后，[Release workflow](.github/workflows/release-all.yml) 从同一提交构建 Windows、Android、Web，测试通过后发布附件与 SHA-256 清单。
+
+## 项目结构
 
 ```text
-apps/web/       React + Konva 集字工作台及 Android 容器
-apps/desktop/   Electron 桌面端
-apps/api/       FastAPI + SQLite、字库导入与检索
-samples/        演示字形、草书样本、原字体与许可证
-scripts/        数据工具、字库打包和浏览器回归
-release/        发行说明和离线网页使用说明
-docs/           数据源、授权和导入文档
+apps/
+  web/          React + TypeScript + Konva；Android 容器
+  desktop/      Electron 桌面端
+  api/          FastAPI + SQLite；字库导入与检索
+samples/        字形样本、原字体与许可证
+scripts/        数据工具、字库打包、浏览器回归
+docs/           实现说明、数据来源、授权与截图
+release/        发行说明与离线包使用指南
+third_party/    第三方声明
 ```
 
-## 授权
+## 参与贡献
 
-代码采用 [MIT License](LICENSE)。第三方字体、图片和结构数据遵循各自许可证，不自动继承代码许可。
+欢迎通过 [Issues](https://github.com/styayur/calligraphy-studio/issues) 提交问题和建议。问题报告请注明版本、平台、复现步骤，并附可公开的示例文字或截图。
+
+提交 Pull Request 前请运行类型检查、相关测试及构建。新增字库需保留来源与许可证；算法修改请同步更新特征版本和 [实现说明](docs/visual-profiles.md)。
+
+## 许可证与致谢
+
+代码采用 [MIT License](LICENSE)。字体、图片和结构数据分别遵循各自许可证。
 
 | 内容 | 来源与许可证 |
 | --- | --- |
-| 楷书字体 | Ma Shan Zheng，SIL OFL 1.1 |
-| 行书字体 | Zhi Mang Xing，SIL OFL 1.1 |
-| 草书字体 | Liu Jian Mao Cao，SIL OFL 1.1 |
-| 草书原帖样本 | NCCU Cursive Chinese Calligraphy Dataset，MIT |
-| 结构替补数据 | Hanzi Writer / ARPHIC PUBLIC LICENSE |
+| 楷书字体 | Ma Shan Zheng · SIL OFL 1.1 |
+| 行书字体 | Zhi Mang Xing · SIL OFL 1.1 |
+| 草书字体 | Liu Jian Mao Cao · SIL OFL 1.1 |
+| 草书原帖样本 | NCCU Cursive Chinese Calligraphy Dataset · MIT |
+| 结构替补数据 | Hanzi Writer · ARPHIC PUBLIC LICENSE |
 
-完整说明见 [第三方声明](third_party/NOTICE.md) 和 [字体授权文档](docs/FONT_LICENSES.md)。发行包保留 `demo/licenses/` 中的字体许可证。
+感谢开放字体、数据集及相关研究的作者。完整授权说明见 [第三方声明](third_party/NOTICE.md) 和 [字体授权](docs/FONT_LICENSES.md)。公开原帖仅含样本，字体字形不等同于历史书家原迹；生僻字覆盖以实际字库为准。

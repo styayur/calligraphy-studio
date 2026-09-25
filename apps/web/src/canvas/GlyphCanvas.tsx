@@ -111,7 +111,10 @@ export function GlyphCanvas() {
       const width = element.clientWidth - 48
       const height = element.clientHeight - 48
       setDisplayScale(
-        Math.max(0.01, Math.min(1, width / project.canvas.width, height / project.canvas.height)),
+        Math.max(
+          0.01,
+          Math.min(1, width / project.canvas.width, height / project.canvas.height),
+        ),
       )
     }
     update()
@@ -133,7 +136,8 @@ export function GlyphCanvas() {
       const stage = stageRef.current
       const transformer = transformerRef.current
       if (!stage) throw new Error('画布尚未准备好')
-      if (stage.width() * stage.height() * scale * scale > 40_000_000)
+      const logical = useEditorStore.getState().project.canvas
+      if (logical.width * logical.height * scale * scale > 40_000_000)
         throw new Error('导出尺寸过大，请选择原尺寸或减小纸面')
       if (stage.find('Image').length !== useEditorStore.getState().project.glyphs.length)
         throw new Error('部分字形图片尚未加载，请稍后重试或检查字库连接')
@@ -142,7 +146,14 @@ export function GlyphCanvas() {
       transformer?.visible(false)
       if (transparent) background?.visible(false)
       try {
-        return stage.toDataURL({ pixelRatio: scale, mimeType: 'image/png' })
+        const snapshot = stage.toCanvas({ pixelRatio: scale / stage.scaleX() })
+        // Canvas bitmap dimensions round fractional viewport sizes. Restore exact
+        // requested export dimensions (at most a one-pixel resampling correction).
+        const output = document.createElement('canvas')
+        output.width = Math.round(logical.width * scale)
+        output.height = Math.round(logical.height * scale)
+        output.getContext('2d')!.drawImage(snapshot, 0, 0, output.width, output.height)
+        return output.toDataURL('image/png')
       } finally {
         transformer?.visible(transformerWasVisible)
         background?.visible(true)
@@ -193,16 +204,16 @@ export function GlyphCanvas() {
       >
         <div
           style={{
-            width: project.canvas.width,
-            height: project.canvas.height,
-            transform: `scale(${displayScale})`,
-            transformOrigin: 'top left',
+            width: project.canvas.width * displayScale,
+            height: project.canvas.height * displayScale,
           }}
         >
           <Stage
             ref={stageRef}
-            width={project.canvas.width}
-            height={project.canvas.height}
+            width={project.canvas.width * displayScale}
+            height={project.canvas.height * displayScale}
+            scaleX={displayScale}
+            scaleY={displayScale}
             onMouseDown={(event) => {
               if (event.target === event.target.getStage()) selectGlyph(null)
             }}

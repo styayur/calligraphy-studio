@@ -35,7 +35,7 @@ export function layoutText(text: string, options: LayoutOptions) {
   const lines = textLines(text, options.punctuation)
   const count = lines.flat().length
   if (!count) throw new Error('请先输入需要集字的文字')
-  if (count > 200) throw new Error('单幅作品最多支持 200 字，请分幅集字')
+  if (count > 1000) throw new Error('工作台最多支持 1000 字，更多文字请使用长卷模式')
   const chunks: string[][] = []
   if (layout === 'grid') {
     const chars = lines.flat()
@@ -51,8 +51,7 @@ export function layoutText(text: string, options: LayoutOptions) {
   const down = vertical ? Math.max(...chunks.map((line) => line.length)) : chunks.length
   const width = margin * 2 + across * size + (across - 1) * gap
   const height = margin * 2 + down * size + (down - 1) * gap
-  if (width > 8000 || height > 8000 || width * height > 20_000_000)
-    throw new Error('纸面过大，请减小字格、间距或每行字数')
+  const fit = Math.min(1, 8000 / width, 8000 / height, Math.sqrt(20_000_000 / (width * height)))
   const positions = chunks.flatMap((line, row) =>
     line.map((character, column) => ({
       character,
@@ -60,7 +59,13 @@ export function layoutText(text: string, options: LayoutOptions) {
       y: margin + (vertical ? column : row) * (size + gap) + size / 2,
     })),
   )
-  return { positions, width, height }
+  return {
+    positions: positions.map((p) => ({ ...p, x: p.x * fit, y: p.y * fit })),
+    width: Math.floor(width * fit),
+    height: Math.floor(height * fit),
+    size: size * fit,
+    fit,
+  }
 }
 
 export function placeGlyph(glyph: Glyph, x: number, y: number, size: number): GlyphInstance {
