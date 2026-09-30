@@ -68,7 +68,7 @@ jobs:
         run: |
           npm ci
           npm run dist:win
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: windows-release
           path: apps/desktop/release/*.exe
@@ -112,7 +112,7 @@ jobs:
         run: |
           mkdir -p release-artifacts
           cp apps/web/android/app/build/outputs/apk/release/app-release.apk "release-artifacts/CalligraphyStudio-Android-$VERSION.apk"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: android-release
           path: release-artifacts/*.apk
@@ -157,7 +157,7 @@ jobs:
           cp third_party/NOTICE.md apps/web/dist/THIRD_PARTY_NOTICE.md
           cd apps/web/dist
           zip -qr "../../../CalligraphyStudio-Web-$VERSION.zip" .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: web-release
           path: CalligraphyStudio-Web-*.zip
