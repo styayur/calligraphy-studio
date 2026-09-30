@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a scoped editor, asset, or packaging improvement.
+title: '[Feature]: '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: assets
+    attributes:
+      label: Asset, font, or data impact
+      description: Include source URL, license, redistribution rights, checksum, and whether the asset is generated.
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Platform and compatibility impact
+      description: Note Windows, Android, Pages, offline use, IndexedDB, SQLite, project JSON, or release artifacts.
+    validations:
+      required: true

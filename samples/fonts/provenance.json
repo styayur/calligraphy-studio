@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-01",
+  "assets": [
+    {
+      "id": "ma-shan-zheng",
+      "source_uri": "https://github.com/googlefonts/mashanzheng",
+      "license": "OFL-1.1",
+      "original": {
+        "path": "samples/fonts/ofl/mashanzheng/MaShanZheng-Regular.ttf",
+        "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb"
+      },
+      "browser_derivative": {
+        "path": "apps/web/public/fonts/ma-shan-zheng.woff2",
+        "sha256": "4757400310bfa920fcdb98713a71b93d26b08c233a43bf25338b0a9d08da0c3b",
+        "generated_by": "scripts/build_browser_fonts.py"
+      }
+    },
+    {
+      "id": "zhi-mang-xing",
+      "source_uri": "https://github.com/m4rc1e/zhimangxing",
+      "license": "OFL-1.1",
+      "original": {
+        "path": "samples/fonts/ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+        "sha256": "644e0cae9b40f0b10ab729a01bd32032e3973bac22be3dccae01bf6ae7fde969"
+      },
+      "browser_derivative": {
+        "path": "apps/web/public/fonts/zhi-mang-xing.woff2",
+        "sha256": "8e4673e82ebbdff48700ff80fa91c4f51955c0f880806d5fec089a76bf2c54f6",
+        "generated_by": "scripts/build_browser_fonts.py"
+      }
+    },
+    {
+      "id": "liu-jian-mao-cao",
+      "source_uri": "https://github.com/googlefonts/liujianmaocao",
+      "license": "OFL-1.1",
+      "original": {
+        "path": "samples/fonts/ofl/liujianmaocao/LiuJianMaoCao-Regular.ttf",
+        "sha256": "cab396b91a5b7c0b4005a35891180d06e6751f5ac261fe680aec65c1ae209033"
+      },
+      "browser_derivative": {
+        "path": "apps/web/public/fonts/liu-jian-mao-cao.woff2",
+        "sha256": "92acddf5a5c6ea6d42b452c6edb53fdabbc887238625982d7975e275c1141b52",
+        "generated_by": "scripts/build_browser_fonts.py"
+      }
+    }
+  ],
+  "browser_catalog": {
+    "path": "apps/web/public/fonts/catalog.json",
+    "sha256": "9246282691ef1e29e1285049fa068a5aa054c7deebf3da1924deb63b54bca5dc",
+    "generated_by": "scripts/build_browser_fonts.py"
+  }
+}

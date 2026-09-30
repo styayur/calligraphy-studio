@@ -187,6 +187,10 @@ Windows 可使用已安装的 Edge，为测试命令添加 `--channel msedge`。
 
 推送 `main` 后自动部署 [GitHub Pages](.github/workflows/pages.yml)。推送版本标签后，[Release workflow](.github/workflows/release-all.yml) 从同一提交构建 Windows、Android、Web，测试通过后发布附件与 SHA-256 清单。
 
+## 资产来源与仓库边界
+
+第三方字体、原帖样本和结构数据的来源、许可证与 SHA-256 记录见 [资产政策](docs/asset-policy.md) 和 [字体 provenance](samples/fonts/provenance.json)。运行数据库、导入缓存、`storage/assets/`、`work/` 与平台构建产物均为 generated/runtime 内容，不提交到源码分支。新增字库或数据前必须确认再分发、修改和商业使用权利。
+
 ## 项目结构
 
 ```text
@@ -206,6 +210,14 @@ third_party/    第三方声明
 欢迎通过 [Issues](https://github.com/styayur/calligraphy-studio/issues) 提交问题和建议。问题报告请注明版本、平台、复现步骤，并附可公开的示例文字或截图。
 
 提交 Pull Request 前请运行类型检查、相关测试及构建。新增字库需保留来源与许可证；算法修改请同步更新特征版本和 [实现说明](docs/visual-profiles.md)。
+
+## 社区与治理
+
+- GitHub Issues：可复现 bug 与范围明确的功能请求。
+- Discord：[加入社区](https://discord.gg/wA2xy6VPK)，用于快速交流、设计讨论和早期反馈；不是 SLA 支持渠道。
+- Security：按 [SECURITY.md](SECURITY.md) 私下报告，不要开公开 Issue。
+- Contributing：开发、测试、资产准入与发行边界见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+- Release：使用 `vX.Y.Z` tag，由 Release workflow 从同一提交构建 Windows、Android、Web，附件包含 SHA-256 清单；维护者负责发布。
 
 ## 许可证与致谢
 
