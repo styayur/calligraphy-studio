@@ -6,6 +6,8 @@
 
 **Chinese calligraphy glyph selection, comparison and composition.**
 
+**Status:** 🟢 Production
+
 [Live Demo](https://styayur.github.io/calligraphy-studio/) · [Download](https://github.com/styayur/calligraphy-studio/releases/latest) · [Documentation](docs/architecture.md) · [Releases](https://github.com/styayur/calligraphy-studio/releases) · [Discussions](https://github.com/styayur/calligraphy-studio/discussions)
 
 [![release](https://img.shields.io/github/v/release/styayur/calligraphy-studio)](https://github.com/styayur/calligraphy-studio/releases/latest)
@@ -212,6 +214,27 @@ third_party/    第三方声明
 欢迎通过 [Issues](https://github.com/styayur/calligraphy-studio/issues) 提交问题和建议。问题报告请注明版本、平台、复现步骤，并附可公开的示例文字或截图。
 
 提交 Pull Request 前请运行类型检查、相关测试及构建。新增字库需保留来源与许可证；算法修改请同步更新特征版本和 [实现说明](docs/visual-profiles.md)。
+
+## Roadmap
+
+### Current
+
+- Glyph selection, long-scroll composition, visual comparison, and export.
+- Web, Windows, and Android builds with OFL font provenance.
+
+### Next
+
+- Expand the font pack with recorded provenance and checksums.
+- Strengthen visual-comparison and layout tools.
+
+### Future
+
+- More composition presets and tablet/pen input.
+
+### Not planned
+
+- Auto-generated calligraphy that imitates a specific master's hand.
+- Cloud accounts or sync; the studio is offline.
 
 ## 社区与治理
 
