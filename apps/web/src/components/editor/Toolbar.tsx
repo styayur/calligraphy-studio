@@ -72,8 +72,19 @@ export function Toolbar() {
   }
   return (
     <header className="studio-header">
-      <div className="brand-mark" aria-label="集字工作台">
-        集
+      <div className="brand-mark" aria-label="Calligraphy Studio">
+        <svg viewBox="0 0 96 96" role="img" aria-hidden="true">
+          <rect width="96" height="96" rx="20" fill="#0f172a" />
+          <rect x="3.5" y="3.5" width="89" height="89" rx="17.5" fill="none" stroke="#d946ef" strokeWidth="3" />
+          <path
+            d="M48 14 C28 26 22 42 28 58 C31 66 38 72 48 76 C62 72 68 64 70 52 C56 50 47 48 45 41 C62 35 70 25 74 16 Z"
+            fill="none"
+            stroke="#d946ef"
+            strokeWidth="4"
+            strokeLinejoin="round"
+          />
+          <circle cx="48" cy="55" r="5" fill="#d946ef" />
+        </svg>
       </div>
       <div className="project-heading">
         <input

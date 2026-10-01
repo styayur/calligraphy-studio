@@ -21,33 +21,58 @@ def find_font() -> Path | None:
     return next((path for path in candidates if path.is_file()), None)
 
 
+DARK = (15, 23, 42, 255)
+PURPLE = (217, 70, 239, 255)
+
+
+def _glyph_points(scale: float) -> list[tuple[float, float]]:
+    segments = [
+        ((48, 14), (28, 26), (22, 42), (28, 58)),
+        ((28, 58), (31, 66), (38, 72), (48, 76)),
+        ((48, 76), (62, 72), (68, 64), (70, 52)),
+        ((70, 52), (56, 50), (47, 48), (45, 41)),
+        ((45, 41), (62, 35), (70, 25), (74, 16)),
+    ]
+    points: list[tuple[float, float]] = []
+    for (x0, y0), (x1, y1), (x2, y2), (x3, y3) in segments:
+        for i in range(1, 41):
+            t = i / 40.0
+            u = 1.0 - t
+            x = u**3 * x0 + 3 * u**2 * t * x1 + 3 * u * t**2 * x2 + t**3 * x3
+            y = u**3 * y0 + 3 * u**2 * t * y1 + 3 * u * t**2 * y2 + t**3 * y3
+            points.append((x * scale, y * scale))
+    points.append((48 * scale, 14 * scale))  # Z closes the path
+    return points
+
+
 def logo(size: int, *, transparent: bool = False) -> Image.Image:
-    image = Image.new("RGBA", (size, size), (0, 0, 0, 0) if transparent else PAPER)
+    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     draw = ImageDraw.Draw(image)
-    margin = int(size * 0.12)
-    radius = int(size * 0.18)
+    scale = size / 96.0
+
     if not transparent:
+        margin = max(1, int(size * 0.03))
+        radius = int(size * 0.20)
         draw.rounded_rectangle(
             (margin, margin, size - margin, size - margin),
             radius=radius,
-            fill=CINNABAR,
-            outline=INK,
-            width=max(2, size // 180),
+            fill=DARK,
         )
-    else:
-        draw.ellipse(
-            (margin, margin, size - margin, size - margin),
-            fill=CINNABAR,
-            outline=INK,
-            width=max(2, size // 180),
-        )
-    font_path = find_font()
-    font = ImageFont.truetype(str(font_path), int(size * 0.52)) if font_path else ImageFont.load_default()
-    text = "集"
-    box = draw.textbbox((0, 0), text, font=font)
-    x = (size - (box[2] - box[0])) / 2 - box[0]
-    y = (size - (box[3] - box[1])) / 2 - box[1] - size * 0.02
-    draw.text((x, y), text, font=font, fill=WHITE)
+
+    border_inset = max(1, int(size * 0.035))
+    draw.rounded_rectangle(
+        (border_inset, border_inset, size - border_inset, size - border_inset),
+        radius=int(size * 0.18),
+        outline=PURPLE,
+        width=max(1, size // 32),
+    )
+
+    stroke = max(2, int(size * 4 / 96.0) + 1)
+    draw.line(_glyph_points(scale), fill=PURPLE, width=stroke, joint="curve")
+
+    dot_r = max(2, int(size * 5 / 96.0))
+    cx, cy = 48 * scale, 55 * scale
+    draw.ellipse((cx - dot_r, cy - dot_r, cx + dot_r, cy + dot_r), fill=PURPLE)
     return image
 
 
