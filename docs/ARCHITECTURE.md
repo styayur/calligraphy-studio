@@ -101,3 +101,24 @@ Hanzi Writer 只提供字符结构，不承担书法风格。后端把 stroke pa
 - 不把 MCCD 作为不可替换核心
 - 不实现未经授权的生成式演绎
 - 不实现协作和云端权限系统
+
+## Canonical product boundaries
+
+Calligraphy Studio is a multi-surface product with one shared project model.
+
+| Boundary | Contract |
+| --- | --- |
+| Core domain | Glyph records, projects, visual profiles, long-roll composition, and deterministic exports |
+| UI | `apps/web/src` React + Konva coordinates projects; extraction, feature, schema, and export rules stay shared |
+| Platforms | Web/Pages, Electron Windows, Capacitor Android, and the optional local FastAPI service reuse the same domain model |
+| Persistence | Browser storage/IndexedDB and optional SQLite/API storage are compatibility surfaces requiring migration or versioning |
+| Assets | Source assets, generated derivatives, runtime stores, and caches remain separate; every bundled asset records source, license, rights, and checksum |
+| External services | Normal editor use is local; provider acquisition is build/import-time, not a runtime cloud dependency |
+| Release | A `vX.Y.Z` tag must match all platform manifests; automation builds exact tags and publishes stable assets plus `SHA256SUMS.txt` |
+
+## Extension rules
+
+- New glyph providers identify source/license/checksum and return the shared Glyph model.
+- New visual features require a feature version and cache-invalidation strategy.
+- New export fields require manifest/schema documentation.
+- New platform shells reuse the web build and document native-only capabilities.
