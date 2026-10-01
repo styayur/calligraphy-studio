@@ -1,21 +1,23 @@
 <div align="center">
 
+<img src="docs/assets/brand/logo-mark.svg" width="84" alt="Calligraphy Studio logo" />
+
 # Calligraphy Studio
 
-**集字工作台 · 可解释的字形比较与长卷创作**
+**Chinese calligraphy glyph selection, comparison and composition.**
 
-输入文字，挑选字形，排成可以编辑、比较和导出的书法作品。
+[Live Demo](https://styayur.github.io/calligraphy-studio/) · [Download](https://github.com/styayur/calligraphy-studio/releases/latest) · [Documentation](docs/architecture.md) · [Releases](https://github.com/styayur/calligraphy-studio/releases) · [Discussions](https://github.com/styayur/calligraphy-studio/discussions)
 
-[![Release](https://img.shields.io/github/v/release/styayur/calligraphy-studio)](https://github.com/styayur/calligraphy-studio/releases/latest)
-[![Build](https://github.com/styayur/calligraphy-studio/actions/workflows/release-all.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/release-all.yml)
-[![Pages](https://github.com/styayur/calligraphy-studio/actions/workflows/pages.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/pages.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![release](https://img.shields.io/github/v/release/styayur/calligraphy-studio)](https://github.com/styayur/calligraphy-studio/releases/latest)
+[![build](https://github.com/styayur/calligraphy-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)]()
+[![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)]()
+[![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)]()
 
-[在线体验](https://styayur.github.io/calligraphy-studio/) · [下载安装](https://github.com/styayur/calligraphy-studio/releases/latest) · [更新日志](release/RELEASE_NOTES.md) · [反馈问题](https://github.com/styayur/calligraphy-studio/issues)
+![Calligraphy workbench: glyph candidates, harmony ranking and context preview](docs/visual-profile.png)
 
 </div>
-
-![集字工作台：同字候选、协调度排序与上下文预览](docs/visual-profile.png)
 
 ## 目录
 
