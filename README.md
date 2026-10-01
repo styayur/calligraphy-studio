@@ -189,7 +189,7 @@ Windows 可使用已安装的 Edge，为测试命令添加 `--channel msedge`。
 
 ## 资产来源与仓库边界
 
-第三方字体、原帖样本和结构数据的来源、许可证与 SHA-256 记录见 [资产政策](docs/asset-policy.md) 和 [字体 provenance](samples/fonts/provenance.json)。运行数据库、导入缓存、`storage/assets/`、`work/` 与平台构建产物均为 generated/runtime 内容，不提交到源码分支。新增字库或数据前必须确认再分发、修改和商业使用权利。
+核心领域、UI、平台、持久化、资产与发布边界见 [架构文档](docs/architecture.md)。第三方字体、原帖样本和结构数据的来源、许可证与 SHA-256 记录见 [资产政策](docs/asset-policy.md) 和 [字体 provenance](samples/fonts/provenance.json)。运行数据库、导入缓存、`storage/assets/`、`work/` 与平台构建产物均为 generated/runtime 内容，不提交到源码分支。新增字库或数据前必须确认再分发、修改和商业使用权利。
 
 ## 项目结构
 
