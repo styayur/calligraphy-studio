@@ -12,7 +12,7 @@
 
 [![release](https://img.shields.io/github/v/release/styayur/calligraphy-studio)](https://github.com/styayur/calligraphy-studio/releases/latest)
 [![build](https://github.com/styayur/calligraphy-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/ci.yml)
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![license: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)]()
 [![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)]()
 [![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)]()
@@ -246,7 +246,7 @@ third_party/    第三方声明
 
 ## 许可证与致谢
 
-代码采用 [MIT License](LICENSE)。字体、图片和结构数据分别遵循各自许可证。
+应用源码采用 [GPL-3.0-or-later](LICENSE)。字体、图片和结构数据分别遵循各自许可证。
 
 | 内容 | 来源与许可证 |
 | --- | --- |
