@@ -1,6 +1,7 @@
 {
   "name": "calligraphy-studio-desktop",
   "version": "0.6.0",
+  "license": "GPL-3.0-or-later",
   "private": true,
   "description": "Offline desktop build of Calligraphy Studio",
   "main": "main.js",
