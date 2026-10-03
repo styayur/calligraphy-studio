@@ -1,0 +1,17 @@
+[commands.syntax]
+program = "npm"
+args = ["run", "typecheck"]
+cwd = "apps/web"
+timeout_secs = 600
+
+[commands.test]
+program = "python"
+args = ["-m", "pytest", "-q"]
+cwd = "apps/api"
+timeout_secs = 600
+
+[commands.build]
+program = "npm"
+args = ["run", "build"]
+cwd = "apps/web"
+timeout_secs = 900
