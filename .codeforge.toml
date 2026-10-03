@@ -1,3 +1,9 @@
+[commands.syntax]
+program = "npm"
+args = ["run", "typecheck"]
+cwd = "apps/web"
+timeout_secs = 600
+
 [commands.test]
 program = "python"
 args = ["-m", "pytest", "-q"]
