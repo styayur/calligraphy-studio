@@ -1,0 +1,16 @@
+{
+  "schema_version": 2,
+  "release": "0.7.0",
+  "font_packs": [
+    "fonts/manifest.json",
+    "fonts/japanese/manifest.json"
+  ],
+  "historical_samples": [
+    "japanese/historical/sample/manifest.json"
+  ],
+  "tiers": [
+    "core",
+    "historical-sample",
+    "optional-local-corpus"
+  ]
+}

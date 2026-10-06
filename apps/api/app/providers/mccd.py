@@ -9,6 +9,7 @@ from typing import Any, Literal
 from urllib.parse import urlparse
 
 from app.providers.base import DatasetProvider, RawGlyphRecord
+from app.domain import unicode_script
 
 MCCD_LICENSE = "CC BY-NC-ND 4.0"
 MCCD_LICENSE_URL = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
@@ -91,6 +92,7 @@ class MCCDManifestProvider(DatasetProvider):
         rights: dict[str, bool] | None = None,
         characters: set[str] | None = None,
         limit: int | None = None,
+        culture: dict | None = None,
     ) -> None:
         self.manifest_path = Path(manifest_path).resolve()
         self.dataset_root = (
@@ -102,6 +104,7 @@ class MCCDManifestProvider(DatasetProvider):
         self.rights = dict(rights or MCCD_RIGHTS)
         self.characters = characters or set()
         self.limit = limit
+        self.culture = culture or ({'writing_tradition':'Chinese','language':'zh'} if dataset_name == 'MCCD' else {})
 
     def _rows(self) -> Iterator[Mapping[str, Any]]:
         suffix = self.manifest_path.suffix.lower()
@@ -173,6 +176,7 @@ class MCCDManifestProvider(DatasetProvider):
             yield RawGlyphRecord(
                 character=character,
                 dataset=dataset,
+                culture={**self.culture, **{key:row[key] for key in ['language','locale','script','writing_tradition','orthography','period','region','source_collection'] if row.get(key)}, 'script':row.get('script') or unicode_script(character)},
                 calligrapher=_clean(_pick(row, "calligrapher")),
                 style=_clean(_pick(row, "style")),
                 dynasty=_clean(_pick(row, "dynasty")),
@@ -312,6 +316,7 @@ class MCCDLmdbProvider(DatasetProvider):
                 yield RawGlyphRecord(
                     character=character,
                     dataset=self.dataset_name,
+                    culture={'writing_tradition':'Chinese','language':'zh','script':unicode_script(character)},
                     calligrapher=calligrapher,
                     style=style,
                     dynasty=dynasty,

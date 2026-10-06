@@ -2,10 +2,11 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from app.domain import CharacterIdentity, GlyphVariant, ScriptMetadata, RightsRecord
 
 
-class GlyphSourceSchema(BaseModel):
+class GlyphSourceSchema(ScriptMetadata):
     dataset: str
     calligrapher: str | None = None
     style: str | None = None
@@ -14,6 +15,17 @@ class GlyphSourceSchema(BaseModel):
     license: str | None = None
     license_url: str | None = None
     rights: dict = Field(default_factory=dict)
+    source_uri: str | None = None
+    attribution: str | None = None
+    designer: str | None = None
+    dataset_version: str | None = None
+    source_checksum: str | None = None
+    license_text: str | None = None
+
+    @field_validator("rights")
+    @classmethod
+    def explicit_rights(cls, value):
+        return RightsRecord.model_validate(value).model_dump()
 
 
 class GlyphAssetSchema(BaseModel):
@@ -22,6 +34,8 @@ class GlyphAssetSchema(BaseModel):
     width: int = Field(gt=0)
     height: int = Field(gt=0)
     bbox: list[float] = Field(min_length=4, max_length=4)
+    checksum: str | None = None
+    processing: str | None = None
 
 
 class GlyphTransformSchema(BaseModel):
@@ -52,6 +66,17 @@ class GlyphRead(BaseModel):
     transform: GlyphTransformSchema = Field(default_factory=GlyphTransformSchema)
     appearance: GlyphAppearanceSchema = Field(default_factory=GlyphAppearanceSchema)
     provenance: GlyphProvenanceSchema = Field(default_factory=GlyphProvenanceSchema)
+    identity: CharacterIdentity | None = None
+    variant: GlyphVariant = Field(default_factory=GlyphVariant)
+    metadata: dict = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def legacy_identity(self):
+        if self.identity is None:
+            self.identity = CharacterIdentity(text=self.character)
+        if self.identity.text != self.character:
+            raise ValueError("Glyph character must equal semantic identity text")
+        return self
 
 
 class GlyphListResponse(BaseModel):
@@ -84,9 +109,16 @@ class CanvasConfig(BaseModel):
 
 
 class ProjectDocument(BaseModel):
-    version: Literal[1] = 1
+    version: Literal[1, 2] = 2
     canvas: CanvasConfig = Field(default_factory=CanvasConfig)
     glyphs: list[GlyphInstance] = Field(default_factory=list)
+    text: str | None = None
+    composition: dict | None = None
+
+    @model_validator(mode="after")
+    def migrate_version(self):
+        self.version = 2
+        return self
 
 
 class ProjectCreate(BaseModel):
@@ -162,6 +194,12 @@ class BatchComposeRequest(BaseModel):
     style: str | None = None
     dataset: str | None = None
     use_structural_fallback: bool = True
+    writing_tradition: str | None = None
+    locale: str | None = None
+    script: str | None = None
+    variant_type: str | None = None
+    mode: Literal["strict", "related", "cross-tradition"] = "strict"
+    commercial_only: bool = False
 
 
 class BatchPlacement(BaseModel):

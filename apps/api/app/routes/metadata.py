@@ -27,5 +27,5 @@ def dynasties(session: Session = Depends(get_session)):
 
 
 @router.get("/meta", response_model=MetadataResponse)
-def metadata(session: Session = Depends(get_session)) -> MetadataResponse:
-    return service.list(session)
+def metadata(writing_tradition: str = "Chinese", session: Session = Depends(get_session)) -> MetadataResponse:
+    return service.list(session, writing_tradition)

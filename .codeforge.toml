@@ -1,7 +1,7 @@
 [commands.syntax]
-program = "npm"
-args = ["run", "typecheck"]
-cwd = "apps/web"
+program = "python"
+args = ["scripts/verify_web.py", "typecheck"]
+cwd = "."
 timeout_secs = 600
 
 [commands.test]
@@ -11,7 +11,7 @@ cwd = "apps/api"
 timeout_secs = 600
 
 [commands.build]
-program = "npm"
-args = ["run", "build"]
-cwd = "apps/web"
+program = "python"
+args = ["scripts/verify_web.py", "build"]
+cwd = "."
 timeout_secs = 900

@@ -27,6 +27,7 @@ def seed_demo_if_empty(database: Database, settings: Settings) -> int:
     provider = MCCDManifestProvider(
         manifest_path=manifest,
         dataset_name="Demo",
+        culture={'writing_tradition':'Chinese','language':'zh'},
         license_name="CC0-1.0",
         license_url="https://creativecommons.org/publicdomain/zero/1.0/",
         rights={
@@ -82,3 +83,24 @@ def seed_fonts_if_missing(database: Database, settings: Settings) -> int:
     )
     result = GlyphImporter(AssetStore(settings.assets_dir), database).import_provider(provider)
     return result.imported
+
+
+def seed_japanese_if_missing(database: Database, settings: Settings) -> int:
+    from app.config import PROJECT_ROOT
+    from app.providers.codh import CODHKuzushijiProvider
+    if not settings.seed_fonts:
+        return 0
+    importer = GlyphImporter(AssetStore(settings.assets_dir), database)
+    imported = 0
+    for dataset, provider in [
+        ("Yuji Japanese Fonts", FontManifestProvider(PROJECT_ROOT / "samples/fonts/japanese/manifest.json")),
+        ("CODH Kuzushiji", CODHKuzushijiProvider(PROJECT_ROOT / "samples/japanese/historical/sample/manifest.json")),
+    ]:
+        with database.session() as session:
+            present = session.scalar(select(Glyph.id).where(Glyph.source.has(dataset=dataset)).limit(1))
+        if not present:
+            result = importer.import_provider(provider)
+            if result.failed:
+                raise ValueError(f"Japanese seed failed: {result.errors}")
+            imported += result.imported
+    return imported

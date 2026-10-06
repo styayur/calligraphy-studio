@@ -74,6 +74,7 @@ class HanziWriterProvider(DatasetProvider):
     def iter_records(self) -> Iterator[RawGlyphRecord]:
         payload = self._load_data()
         yield RawGlyphRecord(
+                    culture={"writing_tradition": "Chinese", "language": "zh", "script": "Han"},
             character=self.character,
             dataset=HANZI_DATASET,
             style="楷书结构",

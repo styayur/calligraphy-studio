@@ -1,0 +1,9 @@
+{
+  "harfbuzzjs_commit": "b2ec00c97159ee8aa563691792aa3081adbc8a50",
+  "harfbuzz_commit": "863d3f7787c6df18d20e4535c5906bf3eb803bd5",
+  "harfbuzzjs_version": "1.6.2",
+  "licenses": {
+    "engine_sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+    "wrapper_sha256": "5d09767b2cc476f08028b56d9384dc45061c5a3e90f9ad966e44addc8d26c8b1"
+  }
+}

@@ -4,8 +4,11 @@ import { useEditorStore } from '../../stores/editor'
 import { harmonyScore, profileCost } from '../../lib/visual'
 import { DifferencePanel, nearestNeighbors, ProfileReadout, useProfiles } from './VisualProfile'
 import type { GlyphInstance, Glyph } from '../../types'
+import { candidateCost, type CandidatePolicy } from '../../lib/candidatePolicy'
+import { SourcePolicyControls } from '../glyph-browser/SourcePolicyControls'
 
 export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
+  const [policy, setPolicy] = useState<CandidatePolicy>({ writing_tradition: glyph.source.writing_tradition || 'Chinese', locale: glyph.source.locale || undefined, mode: 'strict', variant_type: glyph.variant?.type === 'hentaigana' ? 'hentaigana' : undefined })
   const [items, setItems] = useState<Glyph[]>([]),
     [status, setStatus] = useState(''),
     [offset, setOffset] = useState(0)
@@ -20,11 +23,11 @@ export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
     setItems([])
     setOffset(0)
     setPreview(null)
-  }, [glyph.character])
+  }, [glyph.character, policy])
   useEffect(() => {
     let active = true
     setLoading(true)
-    candidatePage(glyph.character, 'all', '', offset)
+    candidatePage(glyph.character, 'all', '', offset, 12, { ...policy, vertical: (glyph.metadata?.shaping as { direction?: string } | undefined)?.direction === 'ttb' })
       .then((page) => {
         if (!active) return
         setItems((previous) =>
@@ -44,7 +47,7 @@ export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
     return () => {
       active = false
     }
-  }, [glyph.character, offset])
+  }, [glyph.character, offset, policy, glyph.metadata])
   const { profiles, pending, failed } = useProfiles([glyph, ...neighbors, ...items])
   const context = neighbors.flatMap((g) => {
     const p = profiles.get(g.id)
@@ -55,8 +58,8 @@ export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
         const pa = profiles.get(a.id),
           pb = profiles.get(b.id)
         return (
-          (pa ? profileCost(pa, context) : Infinity) -
-          (pb ? profileCost(pb, context) : Infinity)
+          (pa ? candidateCost(a, profileCost(pa, context), policy, neighbors) : Infinity) -
+          (pb ? candidateCost(b, profileCost(pb, context), policy, neighbors) : Infinity)
         )
       })
     : items
@@ -81,6 +84,7 @@ export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
         <h3>换个字形</h3>
         <span>保留位置与大小</span>
       </div>
+      <SourcePolicyControls policy={policy} onChange={setPolicy} />
       <label className="check-field">
         <input type="checkbox" checked={sort} onChange={(e) => setSort(e.target.checked)} />
         按协调度排序
@@ -105,8 +109,9 @@ export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
           >
             <img loading="lazy" src={item.asset.url} alt={item.character} />
             <span>
-              {item.provenance.type === 'original' ? '原帖' : item.source.style || '结构替补'}
+              {item.source.work || (item.provenance.type === 'original' ? '原帖' : item.source.style || '结构替补')}
             </span>
+            <small>{item.source.writing_tradition || 'Unknown'} · {item.provenance.type} · {item.source.license || 'Unknown licence'}</small>
             {sort && context.length > 0 && profiles.has(item.id) && (
               <small>{harmonyScore(profileCost(profiles.get(item.id)!, context))} / 100</small>
             )}

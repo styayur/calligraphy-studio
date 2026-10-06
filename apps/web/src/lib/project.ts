@@ -1,8 +1,9 @@
 import type { ProjectDocument } from '../types'
+import { codepoints, migrateGlyph } from './identity'
 
 export function validateProject(value: unknown): ProjectDocument {
   const p = value as ProjectDocument
-  if (!p || p.version !== 1 || !p.canvas || !Array.isArray(p.glyphs))
+  if (!p || ![1,2].includes(p.version) || !p.canvas || !Array.isArray(p.glyphs))
     throw new Error('请选择有效的集字项目文件')
   const { width, height, background } = p.canvas
   if (
@@ -17,7 +18,7 @@ export function validateProject(value: unknown): ProjectDocument {
     const c = p.composition
     if (
       !['grid', 'horizontal-ltr', 'vertical-rtl'].includes(c.layout) ||
-      !['fonts', 'original'].includes(c.source) ||
+      !['fonts', 'original', 'all', 'fallback'].includes(c.source) ||
       typeof c.style !== 'string' ||
       typeof c.punctuation !== 'boolean' ||
       ![c.columns, c.size, c.gap, c.margin].every(Number.isFinite) ||
@@ -32,14 +33,24 @@ export function validateProject(value: unknown): ProjectDocument {
       c.margin > 300
     )
       throw new Error('项目排版参数无效')
+    if (c.policy) {
+      const policy=c.policy
+      if (typeof policy !== 'object' || Array.isArray(policy) ||
+        !['writing_tradition','language','locale','script','variant_type','orthography','period','work','designer','dataset','provenance_type'].every((key) => {const value=policy[key as keyof typeof policy]; return value == null || (typeof value === 'string' && value.length <= 1000)}) ||
+        (policy.mode != null && !['strict','related','cross-tradition'].includes(policy.mode)) ||
+        (policy.commercial_only != null && typeof policy.commercial_only !== 'boolean') ||
+        (policy.vertical != null && typeof policy.vertical !== 'boolean')) throw new Error('项目选择规则无效')
+    }
   }
   const ids = new Set<string>()
   for (const g of p.glyphs) {
+    if (g?.identity && (g.identity.text !== g.character || JSON.stringify(g.identity.codepoints) !== JSON.stringify(codepoints(g.character)))) throw new Error('项目 Unicode 身份无效')
     if (
       !g ||
       typeof g.id !== 'string' ||
       ids.has(g.id) ||
       typeof g.character !== 'string' ||
+      g.character.length < 1 || g.character.length > 64 ||
       !g.source ||
       !g.asset ||
       !g.transform ||
@@ -51,13 +62,18 @@ export function validateProject(value: unknown): ProjectDocument {
     ids.add(g.id)
     if (
       typeof g.source.dataset !== 'string' ||
-      !['calligrapher', 'style', 'dynasty', 'work', 'license', 'license_url'].every((key) => {
+      !['calligrapher', 'style', 'dynasty', 'work', 'license', 'license_url','language','locale','script','writing_tradition','orthography','period','region','source_collection','source_uri','attribution','designer','dataset_version','source_checksum','license_text'].every((key) => {
         const value = g.source[key as keyof typeof g.source]
         return value == null || typeof value === 'string'
       }) ||
       !['font', 'original', 'fallback', 'generated'].includes(g.provenance.type)
     )
       throw new Error('项目字形来源无效')
+    if (g.variant && (
+      (g.variant.type != null && !['modern','traditional','simplified','shinjitai','kyujitai','hentaigana','historical','regional','font-alternate'].includes(g.variant.type)) ||
+      !['id','glyph_name'].every((key) => { const v=g.variant![key as 'id' | 'glyph_name']; return v == null || (typeof v === 'string' && v.length <= 256) }) ||
+      (g.variant.font_glyph_id != null && (!Number.isInteger(g.variant.font_glyph_id) || g.variant.font_glyph_id < 0))
+    )) throw new Error('项目字形变体无效')
     if (
       !['source-over', 'multiply', 'screen', 'overlay', 'darken', 'lighten'].includes(
         g.appearance.blendMode,
@@ -82,7 +98,7 @@ export function validateProject(value: unknown): ProjectDocument {
     )
       throw new Error('项目字形参数无效')
   }
-  return p
+  return { ...p, version: 2, glyphs: p.glyphs.map(migrateGlyph) }
 }
 
 export interface Draft {

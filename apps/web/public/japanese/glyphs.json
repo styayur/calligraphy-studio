@@ -1,0 +1,2042 @@
+[
+  {
+    "id": "codh:v2:200006663_00002_2:C0003:1688:585",
+    "character": "は",
+    "identity": {
+      "text": "は",
+      "codepoints": [
+        "U+306F"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00002_2:C0003:1688:585"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/3db827ec356dc8ffd7529a6fa4d43336230c68852308ea25b5f60e463042b973.png",
+      "width": 102,
+      "height": 58,
+      "bbox": [
+        0,
+        0,
+        102,
+        58
+      ],
+      "checksum": "3db827ec356dc8ffd7529a6fa4d43336230c68852308ea25b5f60e463042b973",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00002_2",
+      "source_bbox": [
+        1688,
+        585,
+        102,
+        58
+      ],
+      "upstream_unicode": [
+        "U+306F"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "a0eb65e91cae3e578dcc55fb84baf5d23d0948e98ee69068e3dbb9ce4b071256",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "a0eb65e91cae3e578dcc55fb84baf5d23d0948e98ee69068e3dbb9ce4b071256"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00002_2:C0006:881:474",
+    "character": "水",
+    "identity": {
+      "text": "水",
+      "codepoints": [
+        "U+6C34"
+      ],
+      "script": "Han",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00002_2:C0006:881:474"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Han",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/8e51528bf9be217cd7e7a11b1bc270608b5100171674cc04c353a3bf421a5347.png",
+      "width": 83,
+      "height": 186,
+      "bbox": [
+        0,
+        0,
+        83,
+        186
+      ],
+      "checksum": "8e51528bf9be217cd7e7a11b1bc270608b5100171674cc04c353a3bf421a5347",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00002_2",
+      "source_bbox": [
+        881,
+        474,
+        83,
+        186
+      ],
+      "upstream_unicode": [
+        "U+6C34"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "0553196192279827fabd1cbf4c4d9cf37ca81b7f3d7427418013ba6adfea25f1",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "0553196192279827fabd1cbf4c4d9cf37ca81b7f3d7427418013ba6adfea25f1"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00002_2:C0008:728:778",
+    "character": "の",
+    "identity": {
+      "text": "の",
+      "codepoints": [
+        "U+306E"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00002_2:C0008:728:778"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/3d9648ee4e330ef354802c377c50bc9bbf43813be5041af4465bc1ca002016be.png",
+      "width": 169,
+      "height": 117,
+      "bbox": [
+        0,
+        0,
+        169,
+        117
+      ],
+      "checksum": "3d9648ee4e330ef354802c377c50bc9bbf43813be5041af4465bc1ca002016be",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00002_2",
+      "source_bbox": [
+        728,
+        778,
+        169,
+        117
+      ],
+      "upstream_unicode": [
+        "U+306E"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "529cf1f1f9d279e37cc22913184b6492b04090d30abdba8c97f63491e24d4337",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "529cf1f1f9d279e37cc22913184b6492b04090d30abdba8c97f63491e24d4337"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00003_1:C0007:598:649",
+    "character": "に",
+    "identity": {
+      "text": "に",
+      "codepoints": [
+        "U+306B"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00003_1:C0007:598:649"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/dc934eaf7adc51348a3672e339021db6916af6904bf0a7670ed3ca2939c040aa.png",
+      "width": 47,
+      "height": 277,
+      "bbox": [
+        0,
+        0,
+        47,
+        277
+      ],
+      "checksum": "dc934eaf7adc51348a3672e339021db6916af6904bf0a7670ed3ca2939c040aa",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00003_1",
+      "source_bbox": [
+        598,
+        649,
+        47,
+        277
+      ],
+      "upstream_unicode": [
+        "U+306B"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "3ee68371941a7537635ecde8041e35bd63e47588c948fd2b4d0d5646b0c3e2a9",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "3ee68371941a7537635ecde8041e35bd63e47588c948fd2b4d0d5646b0c3e2a9"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00003_2:C0002:1564:563",
+    "character": "に",
+    "identity": {
+      "text": "に",
+      "codepoints": [
+        "U+306B"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00003_2:C0002:1564:563"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/08f1af9369dc16b4a8126734649a14bea7b6265077ddbea3a20575881ba41ba7.png",
+      "width": 45,
+      "height": 254,
+      "bbox": [
+        0,
+        0,
+        45,
+        254
+      ],
+      "checksum": "08f1af9369dc16b4a8126734649a14bea7b6265077ddbea3a20575881ba41ba7",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00003_2",
+      "source_bbox": [
+        1564,
+        563,
+        45,
+        254
+      ],
+      "upstream_unicode": [
+        "U+306B"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "b39fea9a12a86f044c9a0b23833c6e8f28b754f5e1a77d432ecd337c4c96f223",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "b39fea9a12a86f044c9a0b23833c6e8f28b754f5e1a77d432ecd337c4c96f223"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00003_2:C0008:587:378",
+    "character": "あ",
+    "identity": {
+      "text": "あ",
+      "codepoints": [
+        "U+3042"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00003_2:C0008:587:378"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/7780298abae296ea0d6b42f1e886d7f75d4bd5d0d6fc2bd2ab421cf2a8c7658c.png",
+      "width": 99,
+      "height": 85,
+      "bbox": [
+        0,
+        0,
+        99,
+        85
+      ],
+      "checksum": "7780298abae296ea0d6b42f1e886d7f75d4bd5d0d6fc2bd2ab421cf2a8c7658c",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00003_2",
+      "source_bbox": [
+        587,
+        378,
+        99,
+        85
+      ],
+      "upstream_unicode": [
+        "U+3042"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "a58862fa4d4ea4a41a21b0f59ec7202f2f46f13e08156213039289f22a36ad87",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "a58862fa4d4ea4a41a21b0f59ec7202f2f46f13e08156213039289f22a36ad87"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00003_2:C0011:439:559",
+    "character": "の",
+    "identity": {
+      "text": "の",
+      "codepoints": [
+        "U+306E"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00003_2:C0011:439:559"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/21d719a6e7bc31ee7700440c63bc3466256fd6f98489d0df3deed205ca14313c.png",
+      "width": 140,
+      "height": 105,
+      "bbox": [
+        0,
+        0,
+        140,
+        105
+      ],
+      "checksum": "21d719a6e7bc31ee7700440c63bc3466256fd6f98489d0df3deed205ca14313c",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00003_2",
+      "source_bbox": [
+        439,
+        559,
+        140,
+        105
+      ],
+      "upstream_unicode": [
+        "U+306E"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "72ae56d357eb3e97a8cd73df820c9918b851cac2fb64ef4d0d3b04a912db5e3c",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "72ae56d357eb3e97a8cd73df820c9918b851cac2fb64ef4d0d3b04a912db5e3c"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00004_1:C0002:1789:416",
+    "character": "い",
+    "identity": {
+      "text": "い",
+      "codepoints": [
+        "U+3044"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00004_1:C0002:1789:416"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/5826519bf10b573ffaf79109eaafc8ec3002d71a27a1c0bd2afc1624d540de12.png",
+      "width": 48,
+      "height": 103,
+      "bbox": [
+        0,
+        0,
+        48,
+        103
+      ],
+      "checksum": "5826519bf10b573ffaf79109eaafc8ec3002d71a27a1c0bd2afc1624d540de12",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00004_1",
+      "source_bbox": [
+        1789,
+        416,
+        48,
+        103
+      ],
+      "upstream_unicode": [
+        "U+3044"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "1a6d5b36dd66ad20287899263d428dfbd52e85693c7ec258c42fee4d74613ab8",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "1a6d5b36dd66ad20287899263d428dfbd52e85693c7ec258c42fee4d74613ab8"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00004_1:C0016:502:980",
+    "character": "の",
+    "identity": {
+      "text": "の",
+      "codepoints": [
+        "U+306E"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00004_1:C0016:502:980"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/d3ed57baa2d5d544bff6be7de7de0e8b26414dd0c987d7de43a34e399d14504d.png",
+      "width": 106,
+      "height": 82,
+      "bbox": [
+        0,
+        0,
+        106,
+        82
+      ],
+      "checksum": "d3ed57baa2d5d544bff6be7de7de0e8b26414dd0c987d7de43a34e399d14504d",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00004_1",
+      "source_bbox": [
+        502,
+        980,
+        106,
+        82
+      ],
+      "upstream_unicode": [
+        "U+306E"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "4de5ff284d036a53bff1113334c86eb6d0a06a9554f589fc7c4e40da3ed8f421",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "4de5ff284d036a53bff1113334c86eb6d0a06a9554f589fc7c4e40da3ed8f421"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00004_2:C0001:1760:407",
+    "character": "か",
+    "identity": {
+      "text": "か",
+      "codepoints": [
+        "U+304B"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00004_2:C0001:1760:407"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/dc5d78a9a6daafc51e48aff5a3d4a10dff5930ce6ebf8fce2fe022cbfa60bb91.png",
+      "width": 132,
+      "height": 77,
+      "bbox": [
+        0,
+        0,
+        132,
+        77
+      ],
+      "checksum": "dc5d78a9a6daafc51e48aff5a3d4a10dff5930ce6ebf8fce2fe022cbfa60bb91",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00004_2",
+      "source_bbox": [
+        1760,
+        407,
+        132,
+        77
+      ],
+      "upstream_unicode": [
+        "U+304B"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "b471d24521a3a831538f88991c78933537637778f203670c67eff2619a883c4b",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "b471d24521a3a831538f88991c78933537637778f203670c67eff2619a883c4b"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00004_2:C0006:833:515",
+    "character": "か",
+    "identity": {
+      "text": "か",
+      "codepoints": [
+        "U+304B"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00004_2:C0006:833:515"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/7d30b9e1d7874bb8118107f015808120b3920afdae2593c26b417a025a7ecbd3.png",
+      "width": 41,
+      "height": 73,
+      "bbox": [
+        0,
+        0,
+        41,
+        73
+      ],
+      "checksum": "7d30b9e1d7874bb8118107f015808120b3920afdae2593c26b417a025a7ecbd3",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00004_2",
+      "source_bbox": [
+        833,
+        515,
+        41,
+        73
+      ],
+      "upstream_unicode": [
+        "U+304B"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "a2d182e160d17611aa0fda187bd3fbc5a8b3e5dc552573d7d7804afaa74866a6",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "a2d182e160d17611aa0fda187bd3fbc5a8b3e5dc552573d7d7804afaa74866a6"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00004_2:C0008:726:781",
+    "character": "に",
+    "identity": {
+      "text": "に",
+      "codepoints": [
+        "U+306B"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00004_2:C0008:726:781"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/327ce1d4453f737b9181a2a35f703bba2d369a21ffdb2320b42e52434ce2e652.png",
+      "width": 44,
+      "height": 239,
+      "bbox": [
+        0,
+        0,
+        44,
+        239
+      ],
+      "checksum": "327ce1d4453f737b9181a2a35f703bba2d369a21ffdb2320b42e52434ce2e652",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00004_2",
+      "source_bbox": [
+        726,
+        781,
+        44,
+        239
+      ],
+      "upstream_unicode": [
+        "U+306B"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "eb8b3d373fdd6f7e62f1e882eae4fbfd659cb2caecdaeffabbf6aba0088bf14d",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "eb8b3d373fdd6f7e62f1e882eae4fbfd659cb2caecdaeffabbf6aba0088bf14d"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00005_1:C0003:1440:528",
+    "character": "は",
+    "identity": {
+      "text": "は",
+      "codepoints": [
+        "U+306F"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00005_1:C0003:1440:528"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/dd1f41b544581420dcc76e58f10ee91a5002bf3052b58537df80ef7e66a38d06.png",
+      "width": 60,
+      "height": 103,
+      "bbox": [
+        0,
+        0,
+        60,
+        103
+      ],
+      "checksum": "dd1f41b544581420dcc76e58f10ee91a5002bf3052b58537df80ef7e66a38d06",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00005_1",
+      "source_bbox": [
+        1440,
+        528,
+        60,
+        103
+      ],
+      "upstream_unicode": [
+        "U+306F"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "ab36c75a948fa0d3655cfad74438727c598e2384ece0de34ebdce00aecdd29e8",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "ab36c75a948fa0d3655cfad74438727c598e2384ece0de34ebdce00aecdd29e8"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00005_2:C0003:1337:500",
+    "character": "か",
+    "identity": {
+      "text": "か",
+      "codepoints": [
+        "U+304B"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00005_2:C0003:1337:500"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/e3995696692afa1ffbf7403932c2c21245ae336ec3a491e354f6a70982c89a87.png",
+      "width": 51,
+      "height": 53,
+      "bbox": [
+        0,
+        0,
+        51,
+        53
+      ],
+      "checksum": "e3995696692afa1ffbf7403932c2c21245ae336ec3a491e354f6a70982c89a87",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00005_2",
+      "source_bbox": [
+        1337,
+        500,
+        51,
+        53
+      ],
+      "upstream_unicode": [
+        "U+304B"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "65e1a0203cdb24df9267ce9404c1276e15ff9a5fa9b9f0a22a1415cfc083f712",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "65e1a0203cdb24df9267ce9404c1276e15ff9a5fa9b9f0a22a1415cfc083f712"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00005_2:C0006:850:410",
+    "character": "書",
+    "identity": {
+      "text": "書",
+      "codepoints": [
+        "U+66F8"
+      ],
+      "script": "Han",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00005_2:C0006:850:410"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Han",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/c6b361b9b369391b3b68e16c28a9b3acd22d7a0d8e56c298bae9ee602310be53.png",
+      "width": 107,
+      "height": 162,
+      "bbox": [
+        0,
+        0,
+        107,
+        162
+      ],
+      "checksum": "c6b361b9b369391b3b68e16c28a9b3acd22d7a0d8e56c298bae9ee602310be53",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00005_2",
+      "source_bbox": [
+        850,
+        410,
+        107,
+        162
+      ],
+      "upstream_unicode": [
+        "U+66F8"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "6b543b56e89162c69dc9b588956ae118421ec7fdca264e0c667d01e4149ddd22",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "6b543b56e89162c69dc9b588956ae118421ec7fdca264e0c667d01e4149ddd22"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00006_1:C0006:1233:571",
+    "character": "は",
+    "identity": {
+      "text": "は",
+      "codepoints": [
+        "U+306F"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00006_1:C0006:1233:571"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/d5341decd3d334692570943bf19d01af8bf4cae1b169f8e4ee0221b49c094462.png",
+      "width": 54,
+      "height": 93,
+      "bbox": [
+        0,
+        0,
+        54,
+        93
+      ],
+      "checksum": "d5341decd3d334692570943bf19d01af8bf4cae1b169f8e4ee0221b49c094462",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00006_1",
+      "source_bbox": [
+        1233,
+        571,
+        54,
+        93
+      ],
+      "upstream_unicode": [
+        "U+306F"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "68120c3f5024087789dcffb7026d6f32da4097dd98c44ccfea9afc7605da6456",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "68120c3f5024087789dcffb7026d6f32da4097dd98c44ccfea9afc7605da6456"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00006_2:C0011:326:668",
+    "character": "国",
+    "identity": {
+      "text": "国",
+      "codepoints": [
+        "U+56FD"
+      ],
+      "script": "Han",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00006_2:C0011:326:668"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Han",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/832881ee5c47316994d5a1a48ebe136f5bd3d6eb6e47a5629f5f4456d460525b.png",
+      "width": 108,
+      "height": 126,
+      "bbox": [
+        0,
+        0,
+        108,
+        126
+      ],
+      "checksum": "832881ee5c47316994d5a1a48ebe136f5bd3d6eb6e47a5629f5f4456d460525b",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00006_2",
+      "source_bbox": [
+        326,
+        668,
+        108,
+        126
+      ],
+      "upstream_unicode": [
+        "U+56FD"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "fb141658f9bcda783448cfd2f1fe6cf803774811fe5fe7f6af58edec03ba7a77",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "fb141658f9bcda783448cfd2f1fe6cf803774811fe5fe7f6af58edec03ba7a77"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00007_1:C0004:1414:598",
+    "character": "い",
+    "identity": {
+      "text": "い",
+      "codepoints": [
+        "U+3044"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00007_1:C0004:1414:598"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/ed32c298a425250cf46359d9898b0b60a41e32d396a6602f6c344fa5f917f3c7.png",
+      "width": 132,
+      "height": 87,
+      "bbox": [
+        0,
+        0,
+        132,
+        87
+      ],
+      "checksum": "ed32c298a425250cf46359d9898b0b60a41e32d396a6602f6c344fa5f917f3c7",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00007_1",
+      "source_bbox": [
+        1414,
+        598,
+        132,
+        87
+      ],
+      "upstream_unicode": [
+        "U+3044"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "35a420831f189f0e3a41f0ded0ed9cbf2111da0d809a59a8835f8c16b0135714",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "35a420831f189f0e3a41f0ded0ed9cbf2111da0d809a59a8835f8c16b0135714"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00007_1:C0008:854:418",
+    "character": "あ",
+    "identity": {
+      "text": "あ",
+      "codepoints": [
+        "U+3042"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00007_1:C0008:854:418"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/763235fd471e80cb5e8b17607d29920c24491b19e90f67c10048a9a2ea1ba718.png",
+      "width": 103,
+      "height": 108,
+      "bbox": [
+        0,
+        0,
+        103,
+        108
+      ],
+      "checksum": "763235fd471e80cb5e8b17607d29920c24491b19e90f67c10048a9a2ea1ba718",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00007_1",
+      "source_bbox": [
+        854,
+        418,
+        103,
+        108
+      ],
+      "upstream_unicode": [
+        "U+3042"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "2c81f697b7ed23f52d718e919160c938c6d3a1278a20f356d7199cc5e07ad52d",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "2c81f697b7ed23f52d718e919160c938c6d3a1278a20f356d7199cc5e07ad52d"
+    }
+  },
+  {
+    "id": "codh:v2:200006663_00007_1:C0017:243:814",
+    "character": "あ",
+    "identity": {
+      "text": "あ",
+      "codepoints": [
+        "U+3042"
+      ],
+      "script": "Hiragana",
+      "language": null,
+      "locale": null,
+      "canonical": null
+    },
+    "variant": {
+      "type": "historical",
+      "id": "codh:v2:200006663_00007_1:C0017:243:814"
+    },
+    "source": {
+      "language": null,
+      "locale": null,
+      "script": "Hiragana",
+      "writing_tradition": "Japanese",
+      "orthography": null,
+      "period": null,
+      "region": null,
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "dataset": "CODH Kuzushiji",
+      "work": "ぢぐち",
+      "calligrapher": null,
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": false,
+        "share_alike_required": true
+      },
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "dataset_version": "v2",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+    },
+    "asset": {
+      "type": "raster",
+      "url": "japanese/assets/c676da705e6417018096bb9acdb4b26dc0f97e1edc199ccbceca9b3ebd754a48.png",
+      "width": 98,
+      "height": 104,
+      "bbox": [
+        0,
+        0,
+        98,
+        104
+      ],
+      "checksum": "c676da705e6417018096bb9acdb4b26dc0f97e1edc199ccbceca9b3ebd754a48",
+      "processing": "ink-mask"
+    },
+    "transform": {
+      "x": 0,
+      "y": 0,
+      "scaleX": 0.3,
+      "scaleY": 0.3,
+      "rotation": 0,
+      "skewX": 0,
+      "skewY": 0
+    },
+    "appearance": {
+      "opacity": 1,
+      "blendMode": "multiply"
+    },
+    "provenance": {
+      "type": "original"
+    },
+    "metadata": {
+      "page": "200006663_00007_1",
+      "source_bbox": [
+        243,
+        814,
+        98,
+        104
+      ],
+      "upstream_unicode": [
+        "U+3042"
+      ],
+      "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+      "source_collection": "National Institute of Japanese Literature / CODH",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "asset_sha256": "0396af6bdfa7b10ccdd5dc450d5a330b9b36b896ee468845b235f970cbdb193b",
+      "dataset_version": "v2",
+      "book_id": "200006663",
+      "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+      "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+      "processing": "ink-mask",
+      "derivative_license": "CC-BY-SA-4.0",
+      "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+      "original_crop_checksum": "0396af6bdfa7b10ccdd5dc450d5a330b9b36b896ee468845b235f970cbdb193b"
+    }
+  }
+]

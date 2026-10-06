@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Loader2 } from 'lucide-react'
-import { initialCandidates, resolveCharacters } from '../../api/candidates'
+import { initialCandidates, resolveCharacters, type CandidateSource } from '../../api/candidates'
+import { SourcePolicyControls } from './SourcePolicyControls'
+import { DEFAULT_POLICY, type CandidatePolicy } from '../../lib/candidatePolicy'
 import { layoutText, placeGlyph, textLines } from '../../lib/composition'
 import { useEditorStore } from '../../stores/editor'
 import type { BatchLayout, Glyph } from '../../types'
@@ -26,7 +28,8 @@ export function BatchComposer() {
   const [gap, setGap] = useState(12)
   const [margin, setMargin] = useState(64)
   const [style, setStyle] = useState('行书')
-  const [source, setSource] = useState<'fonts' | 'original'>('fonts')
+  const [source, setSource] = useState<CandidateSource>('fonts')
+  const [policy, setPolicy] = useState<CandidatePolicy>(DEFAULT_POLICY)
   const [punctuation, setPunctuation] = useState(false)
   const [status, setStatus] = useState('')
   const [loading, setLoading] = useState(false)
@@ -55,6 +58,7 @@ export function BatchComposer() {
     setPunctuation(settings.punctuation)
     setStyle(settings.style)
     setSource(settings.source)
+    setPolicy(settings.policy || DEFAULT_POLICY)
   }, [settings])
   const count = textLines(text, punctuation).flat().length
 
@@ -75,7 +79,7 @@ export function BatchComposer() {
         plan.positions.map((p) => p.character),
         async (character) => {
           // Initial composition fetches a small page; further variants load only on selection.
-          const page = await initialCandidates(character, source, style, 4)
+          const page = await initialCandidates(character, source, policy.writing_tradition === 'Japanese' ? '' : style, 4, undefined, { ...policy, vertical: layout === 'vertical-rtl' })
           return page.items[0]
         },
         (done, total) => setStatus(`正在加载字库 ${done}/${total} 个不同字…`),
@@ -105,7 +109,7 @@ export function BatchComposer() {
           background: previousProject.canvas.background,
         },
         text,
-        { layout, columns, size, gap, margin, punctuation, style, source },
+        { layout, columns, size, gap, margin, punctuation, style, source, policy },
       )
       setStatus(
         missing.length
@@ -142,32 +146,37 @@ export function BatchComposer() {
           </button>
         ))}
       </div>
+      <SourcePolicyControls policy={policy} onChange={setPolicy} />
+      {policy.writing_tradition === 'Japanese' && <div className="sample-row"><span>日本語</span><button onClick={() => setText('日本の書道\nあいうえお\nアイウエオ')}>漢字とかな</button><button onClick={() => { setText('「春の海」、ゆらり。'); setPunctuation(true) }}>句読点</button></div>}
       <div className="field-grid">
         <label>
           书体
-          <select aria-label="书体" value={style} onChange={(e) => setStyle(e.target.value)}>
+          <select aria-label="书体" value={style} disabled={policy.writing_tradition === 'Japanese'} onChange={(e) => setStyle(e.target.value)}>
             <option>楷书</option>
             <option>行书</option>
             <option>草书</option>
           </select>
         </label>
         <label>
-          字形来源
+          来源 / Source
           <select
             aria-label="字形来源"
             value={source}
-            onChange={(e) => setSource(e.target.value as 'fonts' | 'original')}
+            onChange={(e) => setSource(e.target.value as CandidateSource)}
           >
-            <option value="fonts">开源字体</option>
-            <option value="original">原帖字库</option>
+            <option value="fonts">字体 / Font</option>
+            <option value="original">原帖 / Original</option>
+            <option value="all">字体与原帖 / Fonts & historical</option>
+            <option value="fallback">结构替补 / Structural fallback</option>
           </select>
         </label>
       </div>
       <p className="field-hint">
         {source === 'fonts'
-          ? '内置三款开源字体，按实际字库覆盖集字。'
+          ? policy.writing_tradition === 'Japanese' ? 'Yuji 字体；変体仮名需明确选择。Font glyphs are not manuscripts.' : '内置三款开源字体，按实际字库覆盖集字。'
           : '使用已收录的原帖图片；缺字会留空并提示。'}
       </p>
+      {policy.writing_tradition === 'Japanese' && layout === 'vertical-rtl' && <p className="field-hint">日文字体使用 vert / vrt2 与竖排句读点位置；不支持连绵字、禁则处理或縦中横。Japanese vertical layout is a glyph-cell composition.</p>}
       <div className="segmented" aria-label="排版方向">
         {(
           [

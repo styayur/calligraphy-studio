@@ -1,0 +1,716 @@
+{
+  "schema_version": 2,
+  "dataset_version": "v2",
+  "assets": [
+    {
+      "character": "は",
+      "file": "assets/U+306F_200006663_00002_2_X1688_Y0585.jpg",
+      "sha256": "a0eb65e91cae3e578dcc55fb84baf5d23d0948e98ee69068e3dbb9ce4b071256",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00002_2:C0003:1688:585",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00002_2",
+      "bbox": [
+        1688,
+        585,
+        102,
+        58
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "は",
+        "codepoints": [
+          "U+306F"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "水",
+      "file": "assets/U+6C34_200006663_00002_2_X0881_Y0474.jpg",
+      "sha256": "0553196192279827fabd1cbf4c4d9cf37ca81b7f3d7427418013ba6adfea25f1",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00002_2:C0006:881:474",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00002_2",
+      "bbox": [
+        881,
+        474,
+        83,
+        186
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "水",
+        "codepoints": [
+          "U+6C34"
+        ],
+        "script": "Han",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Han",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "の",
+      "file": "assets/U+306E_200006663_00002_2_X0728_Y0778.jpg",
+      "sha256": "529cf1f1f9d279e37cc22913184b6492b04090d30abdba8c97f63491e24d4337",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00002_2:C0008:728:778",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00002_2",
+      "bbox": [
+        728,
+        778,
+        169,
+        117
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "の",
+        "codepoints": [
+          "U+306E"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "に",
+      "file": "assets/U+306B_200006663_00003_1_X0598_Y0649.jpg",
+      "sha256": "3ee68371941a7537635ecde8041e35bd63e47588c948fd2b4d0d5646b0c3e2a9",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00003_1:C0007:598:649",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00003_1",
+      "bbox": [
+        598,
+        649,
+        47,
+        277
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "に",
+        "codepoints": [
+          "U+306B"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "に",
+      "file": "assets/U+306B_200006663_00003_2_X1564_Y0563.jpg",
+      "sha256": "b39fea9a12a86f044c9a0b23833c6e8f28b754f5e1a77d432ecd337c4c96f223",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00003_2:C0002:1564:563",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00003_2",
+      "bbox": [
+        1564,
+        563,
+        45,
+        254
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "に",
+        "codepoints": [
+          "U+306B"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "あ",
+      "file": "assets/U+3042_200006663_00003_2_X0587_Y0378.jpg",
+      "sha256": "a58862fa4d4ea4a41a21b0f59ec7202f2f46f13e08156213039289f22a36ad87",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00003_2:C0008:587:378",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00003_2",
+      "bbox": [
+        587,
+        378,
+        99,
+        85
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "あ",
+        "codepoints": [
+          "U+3042"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "の",
+      "file": "assets/U+306E_200006663_00003_2_X0439_Y0559.jpg",
+      "sha256": "72ae56d357eb3e97a8cd73df820c9918b851cac2fb64ef4d0d3b04a912db5e3c",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00003_2:C0011:439:559",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00003_2",
+      "bbox": [
+        439,
+        559,
+        140,
+        105
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "の",
+        "codepoints": [
+          "U+306E"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "い",
+      "file": "assets/U+3044_200006663_00004_1_X1789_Y0416.jpg",
+      "sha256": "1a6d5b36dd66ad20287899263d428dfbd52e85693c7ec258c42fee4d74613ab8",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00004_1:C0002:1789:416",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00004_1",
+      "bbox": [
+        1789,
+        416,
+        48,
+        103
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "い",
+        "codepoints": [
+          "U+3044"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "の",
+      "file": "assets/U+306E_200006663_00004_1_X0502_Y0980.jpg",
+      "sha256": "4de5ff284d036a53bff1113334c86eb6d0a06a9554f589fc7c4e40da3ed8f421",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00004_1:C0016:502:980",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00004_1",
+      "bbox": [
+        502,
+        980,
+        106,
+        82
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "の",
+        "codepoints": [
+          "U+306E"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "か",
+      "file": "assets/U+304B_200006663_00004_2_X1760_Y0407.jpg",
+      "sha256": "b471d24521a3a831538f88991c78933537637778f203670c67eff2619a883c4b",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00004_2:C0001:1760:407",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00004_2",
+      "bbox": [
+        1760,
+        407,
+        132,
+        77
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "か",
+        "codepoints": [
+          "U+304B"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "か",
+      "file": "assets/U+304B_200006663_00004_2_X0833_Y0515.jpg",
+      "sha256": "a2d182e160d17611aa0fda187bd3fbc5a8b3e5dc552573d7d7804afaa74866a6",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00004_2:C0006:833:515",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00004_2",
+      "bbox": [
+        833,
+        515,
+        41,
+        73
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "か",
+        "codepoints": [
+          "U+304B"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "に",
+      "file": "assets/U+306B_200006663_00004_2_X0726_Y0781.jpg",
+      "sha256": "eb8b3d373fdd6f7e62f1e882eae4fbfd659cb2caecdaeffabbf6aba0088bf14d",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00004_2:C0008:726:781",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00004_2",
+      "bbox": [
+        726,
+        781,
+        44,
+        239
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "に",
+        "codepoints": [
+          "U+306B"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "は",
+      "file": "assets/U+306F_200006663_00005_1_X1440_Y0528.jpg",
+      "sha256": "ab36c75a948fa0d3655cfad74438727c598e2384ece0de34ebdce00aecdd29e8",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00005_1:C0003:1440:528",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00005_1",
+      "bbox": [
+        1440,
+        528,
+        60,
+        103
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "は",
+        "codepoints": [
+          "U+306F"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "か",
+      "file": "assets/U+304B_200006663_00005_2_X1337_Y0500.jpg",
+      "sha256": "65e1a0203cdb24df9267ce9404c1276e15ff9a5fa9b9f0a22a1415cfc083f712",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00005_2:C0003:1337:500",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00005_2",
+      "bbox": [
+        1337,
+        500,
+        51,
+        53
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "か",
+        "codepoints": [
+          "U+304B"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "書",
+      "file": "assets/U+66F8_200006663_00005_2_X0850_Y0410.jpg",
+      "sha256": "6b543b56e89162c69dc9b588956ae118421ec7fdca264e0c667d01e4149ddd22",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00005_2:C0006:850:410",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00005_2",
+      "bbox": [
+        850,
+        410,
+        107,
+        162
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "書",
+        "codepoints": [
+          "U+66F8"
+        ],
+        "script": "Han",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Han",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "は",
+      "file": "assets/U+306F_200006663_00006_1_X1233_Y0571.jpg",
+      "sha256": "68120c3f5024087789dcffb7026d6f32da4097dd98c44ccfea9afc7605da6456",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00006_1:C0006:1233:571",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00006_1",
+      "bbox": [
+        1233,
+        571,
+        54,
+        93
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "は",
+        "codepoints": [
+          "U+306F"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "国",
+      "file": "assets/U+56FD_200006663_00006_2_X0326_Y0668.jpg",
+      "sha256": "fb141658f9bcda783448cfd2f1fe6cf803774811fe5fe7f6af58edec03ba7a77",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00006_2:C0011:326:668",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00006_2",
+      "bbox": [
+        326,
+        668,
+        108,
+        126
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "国",
+        "codepoints": [
+          "U+56FD"
+        ],
+        "script": "Han",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Han",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "い",
+      "file": "assets/U+3044_200006663_00007_1_X1414_Y0598.jpg",
+      "sha256": "35a420831f189f0e3a41f0ded0ed9cbf2111da0d809a59a8835f8c16b0135714",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00007_1:C0004:1414:598",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00007_1",
+      "bbox": [
+        1414,
+        598,
+        132,
+        87
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "い",
+        "codepoints": [
+          "U+3044"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "あ",
+      "file": "assets/U+3042_200006663_00007_1_X0854_Y0418.jpg",
+      "sha256": "2c81f697b7ed23f52d718e919160c938c6d3a1278a20f356d7199cc5e07ad52d",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00007_1:C0008:854:418",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00007_1",
+      "bbox": [
+        854,
+        418,
+        103,
+        108
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "あ",
+        "codepoints": [
+          "U+3042"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    },
+    {
+      "character": "あ",
+      "file": "assets/U+3042_200006663_00007_1_X0243_Y0814.jpg",
+      "sha256": "0396af6bdfa7b10ccdd5dc450d5a330b9b36b896ee468845b235f970cbdb193b",
+      "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+      "variant_id": "codh:v2:200006663_00007_1:C0017:243:814",
+      "book_id": "200006663",
+      "work": "ぢぐち",
+      "page": "200006663_00007_1",
+      "bbox": [
+        243,
+        814,
+        98,
+        104
+      ],
+      "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+      "identity": {
+        "text": "あ",
+        "codepoints": [
+          "U+3042"
+        ],
+        "script": "Hiragana",
+        "language": null,
+        "locale": null
+      },
+      "culture": {
+        "script": "Hiragana",
+        "writing_tradition": "Japanese",
+        "source_collection": "National Institute of Japanese Literature / CODH",
+        "language": null,
+        "locale": null,
+        "period": null,
+        "region": null
+      }
+    }
+  ],
+  "provenance": {
+    "archive_url": "https://codh.rois.ac.jp/char-shape/dataset/v2/200006663.zip",
+    "archive_sha256": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+    "archive_bytes": 8086518,
+    "book": "ぢぐち",
+    "doi": "10.20676/00000340",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+    "retrieved": "2026-10-05"
+  }
+}

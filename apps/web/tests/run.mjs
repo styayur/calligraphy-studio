@@ -9,3 +9,7 @@ await build({
   outfile: '../../work/visual.test.mjs',
 })
 await import('../../../work/visual.test.mjs')
+await build({ entryPoints: ['tests/eastAsian.test.ts'], bundle:true, platform:'node',format:'esm',outfile:'../../work/eastAsian.test.mjs' })
+await import('../../../work/eastAsian.test.mjs')
+await build({ entryPoints:['tests/releaseIntegrity.test.ts'],bundle:true,platform:'node',format:'esm',outfile:'../../work/releaseIntegrity.test.mjs' })
+await import('../../../work/releaseIntegrity.test.mjs')

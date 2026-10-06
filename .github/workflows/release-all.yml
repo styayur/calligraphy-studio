@@ -8,7 +8,12 @@ on:
       tag:
         description: Existing version tag to build
         required: true
-        default: v0.6.0
+        default: v0.7.0
+      release_channel:
+        description: Production publishes; preview only builds non-production RC artifacts
+        type: choice
+        options: [production, preview]
+        default: production
 
 permissions:
   contents: read
@@ -21,9 +26,11 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
+      android: ${{ steps.signing.outputs.android }}
       tag: ${{ steps.version.outputs.tag }}
       version: ${{ steps.version.outputs.version }}
       sha: ${{ steps.version.outputs.sha }}
+      production: ${{ github.event_name == 'push' || inputs.release_channel == 'production' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,6 +50,45 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Determine publishable Android signing availability
+        id: signing
+        env:
+          KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          python - <<'PY'
+          import os
+          provided = [bool(os.environ.get(key)) for key in ['KEYSTORE', 'STORE_PASSWORD', 'KEY_ALIAS', 'KEY_PASSWORD']]
+          if any(provided) and not all(provided):
+              raise SystemExit('Incomplete Android signing configuration')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('android=' + str(all(provided)).lower() + '\n')
+          PY
+      - name: Validate canonical assets and rights
+        run: |
+          python scripts/validate_assets.py
+          python scripts/validate_third_party.py
+          python scripts/validate_version.py
+
+  api:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify API and schema migrations
+        working-directory: apps/api
+        run: |
+          python -m pip install -r requirements.txt -r requirements-dev.txt
+          python -m pytest -q
+          python -m pip install -r ../../scripts/requirements-security.txt
+          python -m pip_audit -r requirements.txt
 
   windows:
     needs: prepare
@@ -61,20 +107,50 @@ jobs:
       - name: Build offline web bundle
         working-directory: apps/web
         run: |
+          $PSNativeCommandUseErrorActionPreference = $true
           npm ci
           npm run build:desktop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate desktop brand resources
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          python -m pip install pillow
+          python scripts/build_desktop_icon.py
       - name: Build installer and portable executable
         working-directory: apps/desktop
+        env:
+          CSC_LINK: ${{ secrets.WINDOWS_CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.WINDOWS_CSC_KEY_PASSWORD }}
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
         run: |
+          $PSNativeCommandUseErrorActionPreference = $true
           npm ci
+          node ../../scripts/test_desktop_proxy.cjs
           npm run dist:win
+          node ../../scripts/validate_desktop_package.cjs
+      - name: Verify final Windows payloads and native renderer
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          python scripts/validate_windows_distributables.py apps/desktop/release/CalligraphyStudio-Setup-0.7.0-x64.exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe
+          python -m pip install playwright pillow
+          python scripts/test_windows_native.py --exe "apps/desktop/release/win-unpacked/Calligraphy Studio.exe" --output work/windows-native-unpacked.json
+          python scripts/test_windows_native.py --exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe --output work/windows-native-portable.json
+          Copy-Item apps/web/dist/build-meta.json apps/desktop/release/windows-build-provenance.json
+          $taskSignatures = Get-ChildItem apps/desktop/release/*.exe | ForEach-Object { $taskSignature = Get-AuthenticodeSignature -LiteralPath $_.FullName; @{ name = $_.Name; status = [string]$taskSignature.Status; certificate_thumbprint = $taskSignature.SignerCertificate.Thumbprint } }
+          $taskSignatures | ConvertTo-Json | Set-Content -Encoding utf8 apps/desktop/release/windows-signing.json
       - uses: actions/upload-artifact@v4
         with:
           name: windows-release
-          path: apps/desktop/release/*.exe
+          path: |
+            apps/desktop/release/*.exe
+            apps/desktop/release/windows-build-provenance.json
+            apps/desktop/release/windows-signing.json
           if-no-files-found: error
 
   android:
+    if: needs.prepare.outputs.android == 'true' || (github.event_name == 'workflow_dispatch' && inputs.release_channel == 'preview')
     needs: prepare
     runs-on: ubuntu-latest
     steps:
@@ -101,21 +177,55 @@ jobs:
           npm ci
           npm run build:android
           npx cap sync android
-      - name: Build preview APK
+      - name: Prepare optional private Android signing material
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          python - <<'PY'
+          import base64, os
+          from pathlib import Path
+          encoded = os.environ.get('KEYSTORE_BASE64')
+          if encoded:
+              (Path(os.environ['RUNNER_TEMP']) / 'calligraphy-release.jks').write_bytes(base64.b64decode(encoded, validate=True))
+          PY
+      - name: Build and verify APK signing
         working-directory: apps/web/android
+        env:
+          CALLIGRAPHY_REQUIRE_PRODUCTION_SIGNING: ${{ needs.prepare.outputs.production == 'true' && '1' || '0' }}
+          CALLIGRAPHY_ANDROID_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && format('{0}/calligraphy-release.jks', runner.temp) || '' }}
+          CALLIGRAPHY_ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+          CALLIGRAPHY_ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          CALLIGRAPHY_ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          CALLIGRAPHY_ANDROID_CERT_SHA256: ${{ vars.ANDROID_CERT_SHA256 }}
         run: |
           chmod +x gradlew
           ./gradlew assembleRelease
+          python ../../../scripts/validate_package.py --apk app/build/outputs/apk/release/app-release.apk
+          if [ "$CALLIGRAPHY_REQUIRE_PRODUCTION_SIGNING" = "1" ]; then
+            python ../../../scripts/validate_android_release.py --apk app/build/outputs/apk/release/app-release.apk --output ../../../android-signing.json
+          else
+            python ../../../scripts/validate_android_release.py --apk app/build/outputs/apk/release/app-release.apk --allow-preview --output ../../../android-signing.json
+          fi
+      - name: Remove decoded keystore
+        if: always()
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          (Path(os.environ['RUNNER_TEMP']) / 'calligraphy-release.jks').unlink(missing_ok=True)
+          PY
       - name: Prepare APK
         env:
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
           mkdir -p release-artifacts
           cp apps/web/android/app/build/outputs/apk/release/app-release.apk "release-artifacts/CalligraphyStudio-Android-$VERSION.apk"
+          cp apps/web/dist/build-meta.json release-artifacts/android-build-provenance.json
+          cp android-signing.json release-artifacts/android-signing.json
       - uses: actions/upload-artifact@v4
         with:
           name: android-release
-          path: release-artifacts/*.apk
+          path: release-artifacts/*
           if-no-files-found: error
 
   web:
@@ -140,7 +250,10 @@ jobs:
           npm run build:desktop
       - name: Visual feature and search regression tests
         working-directory: apps/web
-        run: npm run test:visual
+        run: |
+          node ../../scripts/build_third_party_notices.cjs --check
+          npm run test:visual
+          python ../../scripts/audit_dependencies.py
       - name: Browser regression tests
         run: |
           python -m pip install playwright pillow
@@ -148,26 +261,32 @@ jobs:
           python -m http.server 5178 --directory apps/web/dist > /tmp/calligraphy-http.log 2>&1 &
           python scripts/test_studio_browser.py --url http://127.0.0.1:5178
           python scripts/test_visual_browser.py --url http://127.0.0.1:5178 --built
+          python scripts/test_japanese_browser.py --url http://127.0.0.1:5178
       - name: Package web bundle
         env:
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
-          cp release/WEB_README.md apps/web/dist/README.md
-          cp LICENSE apps/web/dist/LICENSE
-          cp third_party/NOTICE.md apps/web/dist/THIRD_PARTY_NOTICE.md
-          cd apps/web/dist
-          zip -qr "../../../CalligraphyStudio-Web-$VERSION.zip" .
+          python scripts/package_web.py --output "CalligraphyStudio-Web-$VERSION.zip"
+          cp apps/web/dist/build-meta.json web-build-provenance.json
+      - name: Verify packaged web assets
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: python scripts/validate_package.py --web-zip "CalligraphyStudio-Web-$VERSION.zip"
       - uses: actions/upload-artifact@v4
         with:
           name: web-release
-          path: CalligraphyStudio-Web-*.zip
+          path: |
+            CalligraphyStudio-Web-*.zip
+            web-build-provenance.json
           if-no-files-found: error
 
   publish:
-    needs: [prepare, windows, android, web]
+    if: always() && needs.prepare.outputs.production == 'true' && needs.prepare.result == 'success' && needs.api.result == 'success' && needs.windows.result == 'success' && needs.web.result == 'success' && (needs.android.result == 'success' || needs.android.result == 'skipped')
+    needs: [prepare, api, windows, android, web]
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    environment: release
     steps:
       - uses: actions/checkout@v4
         with:
@@ -177,16 +296,23 @@ jobs:
         with:
           path: release-artifacts
           merge-multiple: true
-      - name: Calculate checksums
-        working-directory: release-artifacts
-        run: sha256sum *.exe *.apk *.zip > SHA256SUMS.txt
+      - name: Verify one commit and create final receipts
+        env:
+          INCLUDE_ANDROID: ${{ needs.prepare.outputs.android }}
+          RELEASE_COMMIT: ${{ needs.prepare.outputs.sha }}
+        run: |
+          options=()
+          if [ "$INCLUDE_ANDROID" != "true" ]; then options+=(--without-android); fi
+          python scripts/create_release_manifest.py --directory release-artifacts --commit "$RELEASE_COMMIT" "${options[@]}"
       - name: Publish complete release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ needs.prepare.outputs.tag }}
         run: |
-          if ! gh release view "$TAG" >/dev/null 2>&1; then
-            gh release create "$TAG" --verify-tag --draft --title "Calligraphy Studio $TAG" --notes-file release/RELEASE_NOTES.md
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release already exists; refusing to overwrite it."
+            exit 1
           fi
-          gh release upload "$TAG" release-artifacts/* --clobber
-          gh release edit "$TAG" --draft=false --latest --notes-file release/RELEASE_NOTES.md
+          gh release create "$TAG" --verify-tag --draft --title "East Asian Calligraphy Workbench $TAG" --notes-file release/RELEASE_NOTES_0.7.0.md
+          gh release upload "$TAG" release-artifacts/*
+          gh release edit "$TAG" --draft=false --latest --notes-file release/RELEASE_NOTES_0.7.0.md

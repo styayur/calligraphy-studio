@@ -2,13 +2,13 @@
 
 <img src="docs/assets/brand/logo-mark.svg" width="84" alt="Calligraphy Studio logo" />
 
-# Calligraphy Studio
+# East Asian Calligraphy Workbench
 
-**Chinese calligraphy glyph selection, comparison and composition.**
+**Calligraphy Studio — Chinese and Japanese glyph selection, comparison and composition.**
 
-**Status:** 🟢 Production
+**Status:** v0.7.0 Release Candidate — production signing and native acceptance pending
 
-[Live Demo](https://styayur.github.io/calligraphy-studio/) · [Download](https://github.com/styayur/calligraphy-studio/releases/latest) · [Documentation](docs/architecture.md) · [Releases](https://github.com/styayur/calligraphy-studio/releases) · [Discussions](https://github.com/styayur/calligraphy-studio/discussions)
+[Live Demo](https://styayur.github.io/calligraphy-studio/) · [Download](https://github.com/styayur/calligraphy-studio/releases/latest) · [Documentation](docs/ARCHITECTURE.md) · [Releases](https://github.com/styayur/calligraphy-studio/releases) · [Discussions](https://github.com/styayur/calligraphy-studio/discussions)
 
 [![release](https://img.shields.io/github/v/release/styayur/calligraphy-studio)](https://github.com/styayur/calligraphy-studio/releases/latest)
 [![build](https://github.com/styayur/calligraphy-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/styayur/calligraphy-studio/actions/workflows/ci.yml)
@@ -35,6 +35,20 @@
 
 ## 功能
 
+0.7.0 源码将日文作为中文之外的首次主要扩展。保留原有中文简繁文字、三款中文字体、原帖资源、Visual Profile、千字工作台和长卷；新增 Yuji 五款字体、漢字／ひらがな／カタカナ、显式选择的変体仮名字体，以及 CODH 的 20 张历史字形样本。字体不是历史手稿，样本不代表整个日本书法传统。界面提供中英及关键日文术语，未实现全界面翻译。
+
+传统默认严格分离；跨传统探索必须明确启用。相同 Unicode 不保证地域字形适用。项目 JSON v1 自动迁移到 v2，来源不明的语言、地区、时期保持未知。日文竖排支持字体 `vert` / `vrt2` 和句读点位置；连绵字、禁则处理、縦中横和完整 UAX #50 混合拉丁文字方向仍未实现。
+
+内置资源、HarfBuzz WASM 与许可证随各平台离线包安装，编辑不访问外部服务。完整 CODH 语料只通过本地 API 可选导入，不进入 Windows、Android 或网页核心包。CC BY-SA 图像净底与组合作品导出 ZIP 保留归属、改作说明、JSON 清单和独立许可证。
+
+中文书法继续完整支持；其他东亚传统目前只有扩展架构，尚未作为功能交付。v0.7.0 本地 Windows 包未签名，Android 包为调试签名预览。正式发布前须完成生产签名配置和原生设备验收；本轮未发布 Release 或推送标签。
+
+[发布加固报告](docs/IMPLEMENTATION_REPORT_0.7.0.md#v070-release-readiness) · [依赖审计](docs/DEPENDENCY_AUDIT_0.7.0.md) · [签名配置](docs/RELEASE_SIGNING_0.7.0.md) · [原生验收](docs/RELEASE_SMOKE_TEST_0.7.0.md) · [版本说明](release/RELEASE_NOTES_0.7.0.md)
+
+[日文字形模型](docs/JAPANESE_GLYPH_MODEL.md) · [安装历史语料](docs/DATA_SOURCES.md#japanese-historical-corpus-installation) · [迁移](docs/MIGRATIONS.md) · [字体许可](docs/FONT_LICENSES.md)
+
+![Japanese workbench with locale-aware Yuji font glyphs and provenance](docs/japanese-workbench.png)
+
 | 功能 | 说明 |
 | --- | --- |
 | **千字工作台** | 最多 1000 字；横排、竖排、方格；单字替换、移动、缩放、旋转、墨色与图层调整 |
@@ -43,7 +57,7 @@
 | **长卷模式** | 最多 20000 字；自动选字、重复字变化、分页分栏、异常字检测与缺字清单 |
 | **批量导出** | 工作台 PNG / 项目 JSON；长卷 ZIP 含逐页 PNG、字形来源与位置清单、缺字 CSV |
 | **按需计算** | 候选分页、图片懒加载、Web Worker、IndexedDB 特征缓存、局部重算与虚拟化浏览 |
-| **离线使用** | Windows、Android 与网页离线包内置楷、行、草三款 OFL 字体，各覆盖 7015 个字符 |
+| **离线使用** | 原有三款中文 OFL 字体各覆盖 7015 字；另含 Yuji Syuku、Mai、Boku、Akari、Akebono 及 CODH 小样本 |
 | **原帖字库** | NCCU 草书样本自动净底；可通过本地 API 扩展字库，保留来源和授权信息 |
 
 ### 长卷预览
@@ -54,7 +68,7 @@
 
 ## 下载与安装
 
-当前版本：**v0.6.0**。
+已发布下载：**v0.6.0**。本分支源码版本：**0.7.0**；下列已有发行链接保留，待新版本正式发布后更新。
 
 | 平台 | 下载 | 运行方式 |
 | --- | --- | --- |
@@ -219,13 +233,14 @@ third_party/    第三方声明
 
 ### Current
 
-- Glyph selection, long-scroll composition, visual comparison, and export.
-- Web, Windows, and Android builds with OFL font provenance.
+- Chinese and Japanese glyph selection, long-scroll composition, visual comparison, and attributed export.
+- Five Yuji fonts, a 20-crop CODH historical sample, and optional local corpus import.
+- Web, Windows, and Android builds share a versioned, checksummed asset manifest.
 
 ### Next
 
-- Expand the font pack with recorded provenance and checksums.
-- Strengthen visual-comparison and layout tools.
+- Broader reviewed Japanese orthographic mappings and vertical typography coverage.
+- Corpus installation UI, import progress, and physical-device export validation.
 
 ### Future
 
@@ -253,7 +268,11 @@ third_party/    第三方声明
 | 楷书字体 | Ma Shan Zheng · SIL OFL 1.1 |
 | 行书字体 | Zhi Mang Xing · SIL OFL 1.1 |
 | 草书字体 | Liu Jian Mao Cao · SIL OFL 1.1 |
+| 日本字体 | Yuji Syuku / Mai / Boku / Akari / Akebono · SIL OFL 1.1 |
+| 日本历史样本 | CODH Kuzushiji v2 · CC BY-SA 4.0；20 个裁切及注明修改的墨迹蒙版 |
 | 草书原帖样本 | NCCU Cursive Chinese Calligraphy Dataset · MIT |
 | 结构替补数据 | Hanzi Writer · ARPHIC PUBLIC LICENSE |
 
 感谢开放字体、数据集及相关研究的作者。完整授权说明见 [第三方声明](third_party/NOTICE.md) 和 [字体授权](docs/FONT_LICENSES.md)。公开原帖仅含样本，字体字形不等同于历史书家原迹；生僻字覆盖以实际字库为准。
+
+0.7.0 的验证结果、构建体积、限制和完整改动清单见 [交付报告](docs/IMPLEMENTATION_REPORT_0.7.0.md)。本地 Windows 打包前，在仓库根目录运行 `python scripts/build_desktop_icon.py`，再运行 `npm --prefix apps/desktop ci` 与 `npm --prefix apps/desktop run dist:win`。图标由已提交的品牌 PNG 生成，不依赖系统字体。

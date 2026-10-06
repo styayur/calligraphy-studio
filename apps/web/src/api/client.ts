@@ -1,5 +1,7 @@
 import { STATIC_MODE } from '../config/runtime'
 import { prepareInk } from './ink'
+import { migrateGlyph } from '../lib/identity'
+import type { CandidatePolicy } from '../lib/candidatePolicy'
 import type {
   BatchComposeRequest,
   BatchComposeResponse,
@@ -45,7 +47,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return (await response.json()) as T
 }
 
-export interface GlyphSearchParams {
+export interface GlyphSearchParams extends CandidatePolicy {
   q?: string
   character?: string
   calligrapher?: string
@@ -67,19 +69,19 @@ export interface GlyphListResponse {
 export async function searchGlyphs(params: GlyphSearchParams): Promise<GlyphListResponse> {
   if (STATIC_MODE) {
     const result = await (await import('./static')).staticSearch(params)
-    return { ...result, items: await Promise.all(result.items.map(prepareInk)) }
+    return { ...result, items: await Promise.all(result.items.map((g) => prepareInk(migrateGlyph(g)))) }
   }
   const query = new URLSearchParams()
   Object.entries(params).forEach(([key, value]) => {
     if (value !== undefined && value !== null && value !== '') query.set(key, String(value))
   })
-  const result = await request<GlyphListResponse>(`/api/search?${query.toString()}`)
-  return { ...result, items: await Promise.all(result.items.map(prepareInk)) }
+  const result = await request<GlyphListResponse>(`/api/glyphs?${query.toString()}`)
+  return { ...result, items: await Promise.all(result.items.map((g) => prepareInk(migrateGlyph(g)))) }
 }
 
-export async function getMetadata(): Promise<MetadataResponse> {
-  if (STATIC_MODE) return (await import('./static')).loadStaticMetadata()
-  return request<MetadataResponse>('/api/meta')
+export async function getMetadata(writingTradition = 'Chinese'): Promise<MetadataResponse> {
+  if (STATIC_MODE) return (await import('./static')).loadStaticMetadata(writingTradition)
+  return request<MetadataResponse>(`/api/meta?writing_tradition=${encodeURIComponent(writingTradition)}`)
 }
 
 export async function listProjects(): Promise<ProjectListItem[]> {

@@ -38,6 +38,7 @@ def similar_glyphs(
     limit: int = Query(default=20, ge=1, le=100),
     same_style: bool = True,
     same_dataset: bool = False,
+    mode: str = Query(default="strict", pattern="^(strict|related|cross-tradition)$"),
     session: Session = Depends(get_session),
 ) -> SimilarityResponse:
     try:
@@ -47,6 +48,7 @@ def similar_glyphs(
             limit=limit,
             same_style=same_style,
             same_dataset=same_dataset,
+            mode=mode,
         )
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc

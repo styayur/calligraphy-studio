@@ -49,10 +49,17 @@ def _svg_number(value: str | None, fallback: float) -> float:
 
 
 def _inspect_svg(data: bytes, checksum: str) -> AssetMetadata:
+    if b"<!DOCTYPE" in data.upper() or b"<!ENTITY" in data.upper():
+        raise ValueError("SVG entities are not allowed")
     try:
         root = ElementTree.fromstring(data)
     except ElementTree.ParseError as exc:
         raise ValueError(f"Invalid SVG: {exc}") from exc
+    for node in root.iter():
+        if node.tag.split("}")[-1] in {"script", "foreignObject", "iframe", "image", "use", "style", "animate", "set"}:
+            raise ValueError("Active or external SVG content is not allowed")
+        if any(key.lower().startswith("on") or "href" in key.lower() or "url(" in value.lower() for key, value in node.attrib.items()):
+            raise ValueError("Unsafe SVG attribute")
 
     view_box = root.attrib.get("viewBox", "").replace(",", " ").split()
     if len(view_box) == 4:
@@ -93,6 +100,8 @@ def _content_bbox(image: Image.Image) -> list[float]:
 
 
 def inspect_asset_bytes(data: bytes, filename: str | None = None) -> AssetMetadata:
+    if len(data) > 40 * 1024 * 1024:
+        raise ValueError("Asset exceeds the 40 MB limit")
     checksum = sha256_bytes(data)
     if data.lstrip().startswith(b"<svg") or (
         filename is not None and filename.lower().endswith(".svg")
@@ -101,6 +110,8 @@ def inspect_asset_bytes(data: bytes, filename: str | None = None) -> AssetMetada
 
     try:
         with Image.open(io.BytesIO(data)) as opened:
+            if max(opened.size) > 16000 or opened.width * opened.height > 32_000_000:
+                raise ValueError("Excessive image dimensions")
             image = ImageOps.exif_transpose(opened)
             image.load()
             image_format = (opened.format or "").upper()

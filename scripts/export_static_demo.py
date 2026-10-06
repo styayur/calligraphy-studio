@@ -36,8 +36,7 @@ def export_database(database_path: Path, assets_dir: Path, output: Path) -> dict
     rows = connection.execute(
         """
         SELECT
-          g.id, g.character, g.asset_url, g.asset_type, g.width, g.height, g.bbox,
-          g.provenance_type, g.confidence, g.style_id, g.source_id,
+          g.*,
           c.name AS calligrapher, s.name AS style, d.name AS dynasty,
           gs.dataset, gs.work, gs.license, gs.license_url, gs.rights
         FROM glyphs g
@@ -78,10 +77,20 @@ def export_database(database_path: Path, assets_dir: Path, output: Path) -> dict
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source_asset, destination)
 
+        meta = parse_json(row['metadata'], {})
+        culture = {key:row[key] if key in row.keys() else None for key in ['language','locale','script','writing_tradition','orthography','period','region']}
+        source_details = {key:meta.get(key) for key in ['source_uri','attribution','designer','dataset_version','source_checksum','license_text','source_collection']}
+        if row['dataset'] == 'CODH Kuzushiji': source_details['license_text'] = 'demo/licenses/CC-BY-SA-4.0.txt'
+        if row['dataset'] == 'NCCU Cursive Chinese Calligraphy Dataset': source_details['license_text'] = 'demo/licenses/nccu-mit.txt'
+        if row['dataset'] == 'Hanzi Writer Structural Data': source_details['license_text'] = 'demo/licenses/arphic-public-license.txt'
         glyph = {
             "id": row["id"],
             "character": row["character"],
+            'identity':parse_json(row['identity'],None) if 'identity' in row.keys() else {'text':row['character'],'codepoints':[f'U+{ord(c):04X}' for c in row['character']]},
+            'variant':parse_json(row['variant'],{}) if 'variant' in row.keys() else {},
+            'metadata':meta,
             "source": {
+                **culture, **source_details,
                 "dataset": row["dataset"],
                 "calligrapher": row["calligrapher"],
                 "style": row["style"],
@@ -97,6 +106,7 @@ def export_database(database_path: Path, assets_dir: Path, output: Path) -> dict
                 "width": row["width"],
                 "height": row["height"],
                 "bbox": parse_json(row["bbox"], [0, 0, row["width"], row["height"]]),
+                'checksum':row['checksum'], 'processing':meta.get('processing'),
             },
             "transform": {
                 "x": 0,
@@ -158,10 +168,14 @@ def export_database(database_path: Path, assets_dir: Path, output: Path) -> dict
     similarity: dict[str, list[dict]] = {}
     ids = list(vectors)
     for target_id in ids:
+        target = next(g for g in glyphs if g['id'] == target_id)
+        cultural_ids = {g['id'] for g in glyphs if g['source']['writing_tradition'] == target['source']['writing_tradition'] and
+                        (not target['source']['locale'] or not g['source']['locale'] or g['source']['locale'] == target['source']['locale'])}
         candidates = [
             candidate_id
             for candidate_id in ids
             if candidate_id != target_id
+            and candidate_id in cultural_ids
             and (
                 style_by_id.get(target_id) is None
                 or style_by_id.get(candidate_id) == style_by_id.get(target_id)
@@ -193,6 +207,7 @@ def export_database(database_path: Path, assets_dir: Path, output: Path) -> dict
         json.dumps(
             {
                 "static_mode": True,
+                'schema_version':2,
                 "glyph_count": len(glyphs),
                 "model_name": "visual-geometry-256-v1",
                 "sources": list(sources.values()),
@@ -220,6 +235,8 @@ def copy_license_files(project_root: Path, output: Path) -> None:
             shutil.copy2(source, licenses / destination_name)
     for source in (project_root / "samples" / "fonts" / "licenses").glob("*.txt"):
         shutil.copy2(source, licenses / source.name)
+    shutil.copy2(project_root/'third_party/japanese/codh/CC-BY-SA-4.0.txt',licenses/'CC-BY-SA-4.0.txt')
+    shutil.copy2(project_root/'third_party/japanese/yuji/OFL.txt',licenses/'OFL-yuji.txt')
 
 
 def main() -> None:

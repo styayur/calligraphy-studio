@@ -23,6 +23,9 @@ import { textLines } from '../../lib/composition'
 import { saveFile } from '../../lib/download'
 import { useEditorStore } from '../../stores/editor'
 import type { Glyph } from '../../types'
+import { DEFAULT_POLICY, type CandidatePolicy } from '../../lib/candidatePolicy'
+import { SourcePolicyControls } from '../glyph-browser/SourcePolicyControls'
+import { assertExportRights, attributionFiles } from '../../lib/rights'
 
 interface RollResult {
   pages: RollPage[]
@@ -36,6 +39,7 @@ interface RollResult {
   style: string
   beam: number
   variation: number
+  policy: CandidatePolicy
 }
 function PagePreview({
   page,
@@ -67,6 +71,7 @@ function PagePreview({
   )
 }
 export function LongRoll({ active }: { active: boolean }) {
+  const [policy, setPolicy] = useState<CandidatePolicy>(() => useEditorStore.getState().project.composition?.policy || DEFAULT_POLICY)
   const [text, setText] = useState(
     () => useEditorStore.getState().project.text || '明月松间照\n清泉石上流',
   )
@@ -107,7 +112,7 @@ export function LongRoll({ active }: { active: boolean }) {
       const candidates = await resolveCharacters(
         characters,
         async (character) => {
-          const page = await initialCandidates(character, source, style, 8, abort.signal)
+          const page = await initialCandidates(character, source, policy.writing_tradition === 'Japanese' ? '' : style, 8, abort.signal, { ...policy, vertical })
           if (page.warning) warnings.add(page.warning)
           const items: ProfileCandidate[] = []
           for (const g of page.items.slice(0, 8)) {
@@ -117,7 +122,7 @@ export function LongRoll({ active }: { active: boolean }) {
               if (profile.empty) continue
               byId.set(g.id, g)
               profileById.set(g.id, profile)
-              items.push({ id: g.id, character, profile })
+              items.push({ id: g.id, character, profile, glyph: g })
             } catch {
               warnings.add(`「${character}」部分候选无法分析`)
             }
@@ -136,6 +141,7 @@ export function LongRoll({ active }: { active: boolean }) {
       const chosen = await selectSequence(characters, candidates, context, {
         width: beam,
         variation,
+        policy,
         signal: abort.signal,
         progress: (done) => setStatus(`自动选字 ${done}/${characters.length}`),
       })
@@ -168,6 +174,7 @@ export function LongRoll({ active }: { active: boolean }) {
         style,
         beam,
         variation,
+        policy,
         missing: [...missing].map(([character, positions]) => ({
           character,
           positions,
@@ -201,6 +208,8 @@ export function LongRoll({ active }: { active: boolean }) {
     controller.current = abort
     setBusy(true)
     try {
+      const selectedGlyphs = result.pages.flatMap((p) => p.slots.flatMap((s) => s.glyph ? [s.glyph] : []))
+      assertExportRights(selectedGlyphs, { commercialOnly: result.policy.commercial_only })
       const files: { name: string; data: Uint8Array }[] = [],
         canvas = document.createElement('canvas'),
         encoder = new TextEncoder()
@@ -226,7 +235,7 @@ export function LongRoll({ active }: { active: boolean }) {
         ),
       )
       const manifest = {
-        version: 1,
+        version: 2,
         featureVersion: FEATURE_VERSION,
         text: result.text,
         options: result.options,
@@ -235,6 +244,7 @@ export function LongRoll({ active }: { active: boolean }) {
           style: result.style,
           beam: result.beam,
           variation: result.variation,
+          policy: result.policy,
         },
         score: result.score,
         missing: result.missing,
@@ -259,6 +269,7 @@ export function LongRoll({ active }: { active: boolean }) {
           ),
         },
       )
+      files.push(...await attributionFiles(selectedGlyphs, { commercialOnly: result.policy.commercial_only }))
       abort.signal.throwIfAborted()
       await saveFile('长卷作品.zip', zipFiles(files))
       setStatus('已导出全部页面、缺字列表和字形来源清单。')
@@ -282,6 +293,7 @@ export function LongRoll({ active }: { active: boolean }) {
           自动选字、分栏、分页。适合 1000 字以上作品，预览按页浏览，不提供逐字拖动。
         </p>
         <fieldset disabled={busy}>
+          <SourcePolicyControls policy={policy} onChange={setPolicy} />
           <label>
             长卷内容 <span>{count} / 20000 字</span>
             <textarea
@@ -299,14 +311,14 @@ export function LongRoll({ active }: { active: boolean }) {
           </button>
           <div className="field-grid">
             <label>
-              字形来源
+              来源 / Source
               <select
                 aria-label="长卷字形来源"
                 value={source}
                 onChange={(e) => setSource(e.target.value as CandidateSource)}
               >
-                <option value="fonts">开源字体</option>
-                <option value="original">原帖字库</option>
+                <option value="fonts">字体 / Font</option>
+                <option value="original">原帖 / Original</option>
                 <option value="all">全部</option>
               </select>
             </label>

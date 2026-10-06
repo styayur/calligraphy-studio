@@ -13,6 +13,14 @@ The importer does not infer legal permission from a license name. Every font ent
 
 Bundled examples: Ma Shan Zheng (楷书), Zhi Mang Xing (行书), Liu Jian Mao Cao (草书).
 
+Also bundled: **Yuji Syuku / Mai / Boku / Akari / Akebono**, Version 3.002, Kinuta Font Factory / Yuji Kataoka, pinned commit `efec977b14b57c19eb85d468edcfbbad13139e67`. See [exact per-font checksums and attribution](../third_party/japanese/yuji/provenance.json), [original OFL text](../third_party/japanese/yuji/OFL.txt) and [font manifest](../samples/fonts/japanese/manifest.json). Runtime compressed TTFs decompress to the exact original binaries. No modified fonts are renamed or marketed as original manuscripts.
+
+Akari and Akebono historical kana outlines occupy modern hiragana codepoints. Their `hentaigana` visual variant and font ID remain distinct even though semantic text is identical; ordinary modern composition excludes them by default.
+
+### CC BY-SA 4.0 historical images
+
+CODH images are not font software. Original crop images and normalized ink masks retain CC BY-SA 4.0, attribution, DOI, modification notices and source checksum. Adapted artwork is exported with a machine-readable and human-readable attribution manifest plus complete licence. This does not impose CC BY-SA on the application's source code. [Historical provenance](../third_party/japanese/codh/provenance.json) and [licence](../third_party/japanese/codh/CC-BY-SA-4.0.txt) are independent from MIT and OFL.
+
 ### MIT
 
 - Commercial use, modification, and redistribution are allowed with copyright/license notice.
@@ -47,7 +55,7 @@ Bundled examples: Ma Shan Zheng (楷书), Zhi Mang Xing (行书), Liu Jian Mao C
 
 - Do not commit the font file when redistribution is forbidden.
 - Keep only a local absolute path and exact license metadata in the manifest.
-- Use `--commercial-only` to exclude entries with `commercial_use: false`.
+- Use `--commercial-only` to admit only entries with `commercial_use: true`; unknown is not permission.
 
 ## Required rights fields
 

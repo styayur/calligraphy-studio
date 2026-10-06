@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "version": "0.7.0",
+  "components": [
+    {
+      "id": "application",
+      "name": "Calligraphy Studio",
+      "category": "application",
+      "version": "0.7.0",
+      "source_uri": "https://github.com/styayur/calligraphy-studio",
+      "license": "MIT",
+      "license_text": {
+        "path": "LICENSE",
+        "sha256": "196ccba59e981404a1a3899b5397dfe7d8999f9de1a9fe7eae10245fc88493ad"
+      },
+      "notes": "Code licence; third-party assets retain their own licences."
+    },
+    {
+      "id": "ma-shan-zheng",
+      "name": "Ma Shan Zheng",
+      "category": "font",
+      "version": null,
+      "source_uri": "https://github.com/googlefonts/mashanzheng",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-ma-shan-zheng.txt",
+        "sha256": "d7bdb1cee215b689e23c2f95672a6084c790542170648267a55114103d756a08"
+      },
+      "notes": "Ma ShanZheng; font provenance, not manuscript originals. "
+    },
+    {
+      "id": "zhi-mang-xing",
+      "name": "Zhi Mang Xing",
+      "category": "font",
+      "version": null,
+      "source_uri": "https://github.com/m4rc1e/zhimangxing",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-zhi-mang-xing.txt",
+        "sha256": "10947328199e369a3e6b4a67e8e5507ed99d5bbb264a1f156415aa9b665e4d15"
+      },
+      "notes": "Wei Zhimang; font provenance, not manuscript originals. "
+    },
+    {
+      "id": "liu-jian-mao-cao",
+      "name": "Liu Jian Mao Cao",
+      "category": "font",
+      "version": null,
+      "source_uri": "https://github.com/googlefonts/liujianmaocao",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-liu-jian-mao-cao.txt",
+        "sha256": "ff56684b0212481e7c3886c26d5a655de9b211c8119e5ccc756138a97b066acc"
+      },
+      "notes": "Liu Zhengjiang, Kimberly Geswein, ZhongQi; font provenance, not manuscript originals. "
+    },
+    {
+      "id": "yuji-syuku",
+      "name": "Yuji Syuku",
+      "category": "font",
+      "version": "Version 3.002",
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-yuji-syuku.txt",
+        "sha256": "ef7c85c72ae94381c8bc4832ae4e6fbabdeafa2bb8a31313cd75dce95a690256"
+      },
+      "notes": "Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)"
+    },
+    {
+      "id": "yuji-mai",
+      "name": "Yuji Mai",
+      "category": "font",
+      "version": "Version 3.002",
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-yuji-mai.txt",
+        "sha256": "ef7c85c72ae94381c8bc4832ae4e6fbabdeafa2bb8a31313cd75dce95a690256"
+      },
+      "notes": "Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)"
+    },
+    {
+      "id": "yuji-boku",
+      "name": "Yuji Boku",
+      "category": "font",
+      "version": "Version 3.002",
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-yuji-boku.txt",
+        "sha256": "ef7c85c72ae94381c8bc4832ae4e6fbabdeafa2bb8a31313cd75dce95a690256"
+      },
+      "notes": "Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)"
+    },
+    {
+      "id": "yuji-akari",
+      "name": "Yuji Akari",
+      "category": "font",
+      "version": "Version 3.002",
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-yuji-akari.txt",
+        "sha256": "ef7c85c72ae94381c8bc4832ae4e6fbabdeafa2bb8a31313cd75dce95a690256"
+      },
+      "notes": "Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)"
+    },
+    {
+      "id": "yuji-akebono",
+      "name": "Yuji Akebono",
+      "category": "font",
+      "version": "Version 3.002",
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-yuji-akebono.txt",
+        "sha256": "ef7c85c72ae94381c8bc4832ae4e6fbabdeafa2bb8a31313cd75dce95a690256"
+      },
+      "notes": "Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)"
+    },
+    {
+      "id": "codh",
+      "name": "CODH Kuzushiji sample",
+      "category": "historical",
+      "version": "v2 (2019-11-11)",
+      "source_uri": "https://codh.rois.ac.jp/char-shape/",
+      "license": "CC-BY-SA-4.0",
+      "license_text": {
+        "path": "japanese/licenses/CC-BY-SA-4.0.txt",
+        "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+      },
+      "notes": "20 crops and ink-mask derivatives; 日本古典籍くずし字データセット (国文研所蔵／CODH加工), DOI 10.20676/00000340. Changes and original checksums are in japanese/glyphs.json. Not MIT."
+    },
+    {
+      "id": "nccu",
+      "name": "NCCU Cursive Chinese Calligraphy Dataset",
+      "category": "historical",
+      "version": null,
+      "source_uri": "https://github.com/nccuviplab/CursiveChineseCalligraphyDataset",
+      "license": "MIT",
+      "license_text": {
+        "path": "demo/licenses/nccu-mit.txt",
+        "sha256": "abd7aa8222b1fa2185b8fb70a61b8bba0ab59c2157880dee0a21b1d734fcc08e"
+      },
+      "notes": "VIPLab, National Chengchi University; bundled Test subset."
+    },
+    {
+      "id": "arphic",
+      "name": "Hanzi Writer / Make Me A Hanzi / Arphic",
+      "category": "structural",
+      "version": null,
+      "source_uri": "https://github.com/chanind/hanzi-writer-data",
+      "license": "ARPHIC-PUBLIC-LICENSE",
+      "license_text": {
+        "path": "demo/licenses/arphic-public-license.txt",
+        "sha256": "5590533436c70f10f2f524ee61456238c290175c6662fbe1c700b5f038a6d328"
+      },
+      "notes": "Modified structural SVGs retain Arphic licence/notice obligations; fallback provenance."
+    },
+    {
+      "id": "demo",
+      "name": "Synthetic demonstration glyphs",
+      "category": "fixture",
+      "version": null,
+      "source_uri": "https://github.com/styayur/calligraphy-studio",
+      "license": "CC0-1.0",
+      "license_text": {
+        "path": "demo/licenses/CC0-1.0.txt",
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+      },
+      "notes": "Synthetic examples, not historical manuscripts."
+    },
+    {
+      "id": "harfbuzz",
+      "name": "HarfBuzz WASM engine",
+      "category": "software",
+      "version": "863d3f7787c6df18d20e4535c5906bf3eb803bd5",
+      "source_uri": "https://github.com/harfbuzz/harfbuzz",
+      "license": "Old-MIT",
+      "license_text": {
+        "path": "licenses/HarfBuzz-COPYING.txt",
+        "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+      },
+      "notes": ""
+    },
+    {
+      "id": "android-native",
+      "name": "AndroidX / Kotlin / Cordova native dependencies",
+      "category": "native",
+      "version": null,
+      "source_uri": "https://source.android.com/docs/setup/about/licenses",
+      "license": "Apache-2.0",
+      "license_text": {
+        "path": "licenses/android-native-Apache-2.0.txt",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "notes": "AndroidX copyright The Android Open Source Project; Kotlin copyright JetBrains; Cordova copyright The Apache Software Foundation. Exact resolved native versions are recorded in the Android build dependency report. Capacitor MIT licences are included below. Locked coordinates: androidx.activity:activity-ktx:1.11.0, androidx.activity:activity:1.11.0, androidx.annotation:annotation-experimental:1.4.1, androidx.annotation:annotation-jvm:1.8.1, androidx.annotation:annotation:1.8.1, androidx.appcompat:appcompat-resources:1.7.1, androidx.appcompat:appcompat:1.7.1, androidx.arch.core:core-common:2.2.0, androidx.arch.core:core-runtime:2.2.0, androidx.collection:collection-jvm:1.4.2, androidx.collection:collection:1.4.2, androidx.concurrent:concurrent-futures:1.1.0, androidx.coordinatorlayout:coordinatorlayout:1.3.0, androidx.core:core-ktx:1.17.0, androidx.core:core-splashscreen:1.2.0, androidx.core:core-viewtree:1.0.0, androidx.core:core:1.17.0, androidx.cursoradapter:cursoradapter:1.0.0, androidx.customview:customview:1.0.0, androidx.drawerlayout:drawerlayout:1.0.0, androidx.emoji2:emoji2-views-helper:1.3.0, androidx.emoji2:emoji2:1.3.0, androidx.fragment:fragment:1.8.9, androidx.interpolator:interpolator:1.0.0, androidx.lifecycle:lifecycle-common:2.6.2, androidx.lifecycle:lifecycle-livedata-core:2.6.2, androidx.lifecycle:lifecycle-livedata:2.6.2, androidx.lifecycle:lifecycle-process:2.6.2, androidx.lifecycle:lifecycle-runtime-ktx:2.6.2, androidx.lifecycle:lifecycle-runtime:2.6.2, androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2, androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2, androidx.lifecycle:lifecycle-viewmodel:2.6.2, androidx.loader:loader:1.0.0, androidx.profileinstaller:profileinstaller:1.4.0, androidx.resourceinspection:resourceinspection-annotation:1.0.1, androidx.savedstate:savedstate-ktx:1.2.1, androidx.savedstate:savedstate:1.2.1, androidx.startup:startup-runtime:1.1.1, androidx.tracing:tracing:1.2.0, androidx.vectordrawable:vectordrawable-animated:1.1.0, androidx.vectordrawable:vectordrawable:1.1.0, androidx.versionedparcelable:versionedparcelable:1.1.1, androidx.viewpager:viewpager:1.0.0, androidx.webkit:webkit:1.14.0, com.google.guava:listenablefuture:1.0, org.apache.cordova:framework:14.0.1, org.jetbrains.kotlin:kotlin-stdlib:2.2.20, org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2, org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.2, org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2, org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2, org.jetbrains:annotations:23.0.0, org.jspecify:jspecify:1.0.0. Cordova NOTICE is preserved separately.",
+      "additional_notices": [
+        {
+          "path": "licenses/Cordova-NOTICE.txt",
+          "sha256": "e94707080ab2781d5ba4ceac999f31db2539d2477783287969c52580b9fa84b0"
+        }
+      ],
+      "resolved_dependencies": [
+        "androidx.activity:activity-ktx:1.11.0",
+        "androidx.activity:activity:1.11.0",
+        "androidx.annotation:annotation-experimental:1.4.1",
+        "androidx.annotation:annotation-jvm:1.8.1",
+        "androidx.annotation:annotation:1.8.1",
+        "androidx.appcompat:appcompat-resources:1.7.1",
+        "androidx.appcompat:appcompat:1.7.1",
+        "androidx.arch.core:core-common:2.2.0",
+        "androidx.arch.core:core-runtime:2.2.0",
+        "androidx.collection:collection-jvm:1.4.2",
+        "androidx.collection:collection:1.4.2",
+        "androidx.concurrent:concurrent-futures:1.1.0",
+        "androidx.coordinatorlayout:coordinatorlayout:1.3.0",
+        "androidx.core:core-ktx:1.17.0",
+        "androidx.core:core-splashscreen:1.2.0",
+        "androidx.core:core-viewtree:1.0.0",
+        "androidx.core:core:1.17.0",
+        "androidx.cursoradapter:cursoradapter:1.0.0",
+        "androidx.customview:customview:1.0.0",
+        "androidx.drawerlayout:drawerlayout:1.0.0",
+        "androidx.emoji2:emoji2-views-helper:1.3.0",
+        "androidx.emoji2:emoji2:1.3.0",
+        "androidx.fragment:fragment:1.8.9",
+        "androidx.interpolator:interpolator:1.0.0",
+        "androidx.lifecycle:lifecycle-common:2.6.2",
+        "androidx.lifecycle:lifecycle-livedata-core:2.6.2",
+        "androidx.lifecycle:lifecycle-livedata:2.6.2",
+        "androidx.lifecycle:lifecycle-process:2.6.2",
+        "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2",
+        "androidx.lifecycle:lifecycle-runtime:2.6.2",
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2",
+        "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2",
+        "androidx.lifecycle:lifecycle-viewmodel:2.6.2",
+        "androidx.loader:loader:1.0.0",
+        "androidx.profileinstaller:profileinstaller:1.4.0",
+        "androidx.resourceinspection:resourceinspection-annotation:1.0.1",
+        "androidx.savedstate:savedstate-ktx:1.2.1",
+        "androidx.savedstate:savedstate:1.2.1",
+        "androidx.startup:startup-runtime:1.1.1",
+        "androidx.tracing:tracing:1.2.0",
+        "androidx.vectordrawable:vectordrawable-animated:1.1.0",
+        "androidx.vectordrawable:vectordrawable:1.1.0",
+        "androidx.versionedparcelable:versionedparcelable:1.1.1",
+        "androidx.viewpager:viewpager:1.0.0",
+        "androidx.webkit:webkit:1.14.0",
+        "com.google.guava:listenablefuture:1.0",
+        "org.apache.cordova:framework:14.0.1",
+        "org.jetbrains.kotlin:kotlin-stdlib:2.2.20",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.2",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2",
+        "org.jetbrains:annotations:23.0.0",
+        "org.jspecify:jspecify:1.0.0"
+      ]
+    },
+    {
+      "id": "ionic-native",
+      "name": "Ionic Android filesystem",
+      "category": "native",
+      "version": "1.1.0",
+      "source_uri": "https://github.com/ionic-team/ion-android-filesystem",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/Ionic-filesystem-MIT.txt",
+        "sha256": "de884404585ed20280150b0768082b6004d3548aaa0d6e596d6bfa0538ab331d"
+      },
+      "notes": "Copyright 2025 Ionic. Licence verified against the official repository and resolved Maven POM.",
+      "resolved_dependencies": [
+        "io.ionic.libs:ionfilesystem-android:1.1.0"
+      ]
+    },
+    {
+      "id": "npm:@capacitor/android",
+      "name": "@capacitor/android",
+      "category": "locked-production-dependency",
+      "version": "8.4.3",
+      "source_uri": "https://www.npmjs.com/package/@capacitor/android",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_capacitor_android/LICENSE",
+        "sha256": "9c6ebf3e5ab832ba4d5af38f340978e1fedbfee6e3d23662dfdb8917a9d864dd"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@capacitor/core",
+      "name": "@capacitor/core",
+      "category": "locked-production-dependency",
+      "version": "8.4.3",
+      "source_uri": "https://www.npmjs.com/package/@capacitor/core",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_capacitor_core/LICENSE",
+        "sha256": "9c6ebf3e5ab832ba4d5af38f340978e1fedbfee6e3d23662dfdb8917a9d864dd"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@capacitor/filesystem",
+      "name": "@capacitor/filesystem",
+      "category": "locked-production-dependency",
+      "version": "8.1.3",
+      "source_uri": "https://www.npmjs.com/package/@capacitor/filesystem",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_capacitor_filesystem/LICENSE",
+        "sha256": "de884404585ed20280150b0768082b6004d3548aaa0d6e596d6bfa0538ab331d"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@capacitor/share",
+      "name": "@capacitor/share",
+      "category": "locked-production-dependency",
+      "version": "8.0.2",
+      "source_uri": "https://www.npmjs.com/package/@capacitor/share",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_capacitor_share/LICENSE",
+        "sha256": "eb99a0d61b507ad0182e18e9d2a91537c1d9025c94e098e4e7603a53b4b5218a"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@capacitor/synapse",
+      "name": "@capacitor/synapse",
+      "category": "locked-production-dependency",
+      "version": "1.0.4",
+      "source_uri": "https://www.npmjs.com/package/@capacitor/synapse",
+      "license": "ISC",
+      "license_text": {
+        "path": "licenses/npm/_capacitor_synapse/LICENSE.md",
+        "sha256": "de884404585ed20280150b0768082b6004d3548aaa0d6e596d6bfa0538ab331d"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@radix-ui/react-compose-refs",
+      "name": "@radix-ui/react-compose-refs",
+      "category": "locked-production-dependency",
+      "version": "1.1.5",
+      "source_uri": "https://www.npmjs.com/package/@radix-ui/react-compose-refs",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_radix-ui_react-compose-refs/LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@radix-ui/react-slot",
+      "name": "@radix-ui/react-slot",
+      "category": "locked-production-dependency",
+      "version": "1.3.3",
+      "source_uri": "https://www.npmjs.com/package/@radix-ui/react-slot",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_radix-ui_react-slot/LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@types/prop-types",
+      "name": "@types/prop-types",
+      "category": "locked-production-dependency",
+      "version": "15.7.15",
+      "source_uri": "https://www.npmjs.com/package/@types/prop-types",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_types_prop-types/LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@types/react",
+      "name": "@types/react",
+      "category": "locked-production-dependency",
+      "version": "18.3.31",
+      "source_uri": "https://www.npmjs.com/package/@types/react",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_types_react/LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:@types/react-reconciler",
+      "name": "@types/react-reconciler",
+      "category": "locked-production-dependency",
+      "version": "0.28.9",
+      "source_uri": "https://www.npmjs.com/package/@types/react-reconciler",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/_types_react-reconciler/LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:class-variance-authority",
+      "name": "class-variance-authority",
+      "category": "locked-production-dependency",
+      "version": "0.7.1",
+      "source_uri": "https://www.npmjs.com/package/class-variance-authority",
+      "license": "Apache-2.0",
+      "license_text": {
+        "path": "licenses/npm/class-variance-authority/LICENSE",
+        "sha256": "0ccbf956cffc8dcf515809433cb5242ee67c94513d46e48c261d68d0880de406"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:clsx",
+      "name": "clsx",
+      "category": "locked-production-dependency",
+      "version": "2.1.1",
+      "source_uri": "https://www.npmjs.com/package/clsx",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/clsx/license",
+        "sha256": "9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:csstype",
+      "name": "csstype",
+      "category": "locked-production-dependency",
+      "version": "3.2.3",
+      "source_uri": "https://www.npmjs.com/package/csstype",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/csstype/LICENSE",
+        "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:harfbuzzjs",
+      "name": "harfbuzzjs",
+      "category": "locked-production-dependency",
+      "version": "1.6.2",
+      "source_uri": "https://www.npmjs.com/package/harfbuzzjs",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/harfbuzzjs/LICENSE",
+        "sha256": "5d09767b2cc476f08028b56d9384dc45061c5a3e90f9ad966e44addc8d26c8b1"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:its-fine",
+      "name": "its-fine",
+      "category": "locked-production-dependency",
+      "version": "1.2.5",
+      "source_uri": "https://www.npmjs.com/package/its-fine",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/its-fine/LICENSE",
+        "sha256": "cd14add33d47bcecae9fed5559224ae135c5ec41e1d3a126601f5fbd82291834"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:js-tokens",
+      "name": "js-tokens",
+      "category": "locked-production-dependency",
+      "version": "4.0.0",
+      "source_uri": "https://www.npmjs.com/package/js-tokens",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/js-tokens/LICENSE",
+        "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:konva",
+      "name": "konva",
+      "category": "locked-production-dependency",
+      "version": "9.3.22",
+      "source_uri": "https://www.npmjs.com/package/konva",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/konva/LICENSE",
+        "sha256": "7190132c82df30243dc2ba512c9509ea3b629329b4266e9f2c3b5dbd04029613"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:loose-envify",
+      "name": "loose-envify",
+      "category": "locked-production-dependency",
+      "version": "1.4.0",
+      "source_uri": "https://www.npmjs.com/package/loose-envify",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/loose-envify/LICENSE",
+        "sha256": "4eb7543b08d955a6d23fcc224601d43ff566e775be918805e26210d7f6eb4893"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:lucide-react",
+      "name": "lucide-react",
+      "category": "locked-production-dependency",
+      "version": "0.468.0",
+      "source_uri": "https://www.npmjs.com/package/lucide-react",
+      "license": "ISC",
+      "license_text": {
+        "path": "licenses/npm/lucide-react/LICENSE",
+        "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:react",
+      "name": "react",
+      "category": "locked-production-dependency",
+      "version": "18.3.1",
+      "source_uri": "https://www.npmjs.com/package/react",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/react/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:react-dom",
+      "name": "react-dom",
+      "category": "locked-production-dependency",
+      "version": "18.3.1",
+      "source_uri": "https://www.npmjs.com/package/react-dom",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/react-dom/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:react-konva",
+      "name": "react-konva",
+      "category": "locked-production-dependency",
+      "version": "18.2.16",
+      "source_uri": "https://www.npmjs.com/package/react-konva",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/react-konva/LICENSE",
+        "sha256": "0874c25d40dcf71ff12256d30e15e59fd3e21a163c53448ea8bcbe6c03b663e4"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:react-reconciler",
+      "name": "react-reconciler",
+      "category": "locked-production-dependency",
+      "version": "0.29.2",
+      "source_uri": "https://www.npmjs.com/package/react-reconciler",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/react-reconciler/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:scheduler",
+      "name": "scheduler",
+      "category": "locked-production-dependency",
+      "version": "0.23.2",
+      "source_uri": "https://www.npmjs.com/package/scheduler",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/scheduler/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:tailwind-merge",
+      "name": "tailwind-merge",
+      "category": "locked-production-dependency",
+      "version": "2.6.1",
+      "source_uri": "https://www.npmjs.com/package/tailwind-merge",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/tailwind-merge/LICENSE.md",
+        "sha256": "d4c70c7ce38cea8778f0aed3fc0bef0a9dbd27f13bd8b6773cbd6d37941971e5"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:tslib",
+      "name": "tslib",
+      "category": "locked-production-dependency",
+      "version": "2.6.2",
+      "source_uri": "https://www.npmjs.com/package/tslib",
+      "license": "0BSD",
+      "license_text": {
+        "path": "licenses/npm/tslib/LICENSE.txt",
+        "sha256": "0e8d2550baea17eb3072c4f919b36fbf9852bb49dba948549872e713863c0834"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    },
+    {
+      "id": "npm:zustand",
+      "name": "zustand",
+      "category": "locked-production-dependency",
+      "version": "5.0.15",
+      "source_uri": "https://www.npmjs.com/package/zustand",
+      "license": "MIT",
+      "license_text": {
+        "path": "licenses/npm/zustand/LICENSE",
+        "sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417"
+      },
+      "additional_notices": [],
+      "notes": "Includes installed production dependency notices; some type-only entries are not emitted in renderer code."
+    }
+  ]
+}

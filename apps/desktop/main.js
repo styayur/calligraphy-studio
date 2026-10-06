@@ -52,7 +52,8 @@ function createWindow() {
     },
   })
 
-  window.once('ready-to-show', () => window.show())
+  // Explicit automation switch keeps native RC smoke tests out of the user's desktop.
+  window.once('ready-to-show', () => { if (!app.commandLine.hasSwitch('release-smoke-test')) window.show() })
   window.webContents.setWindowOpenHandler(({ url }) => {
     if (url.startsWith('https://') || url.startsWith('http://')) shell.openExternal(url)
     return { action: 'deny' }

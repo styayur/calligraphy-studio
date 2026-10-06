@@ -1,4 +1,5 @@
 import type { BatchLayout, Glyph, GlyphInstance } from '../types'
+import { textCharacters } from './identity'
 
 export interface LayoutOptions {
   layout: BatchLayout
@@ -13,7 +14,7 @@ export function textLines(text: string, punctuation: boolean): string[][] {
     .replace(/\r\n?/g, '\n')
     .split('\n')
     .map((line) =>
-      [...line].filter((char) => !/\s/u.test(char) && (punctuation || !/\p{P}/u.test(char))),
+      textCharacters(line).filter((char) => !/\s/u.test(char) && (punctuation || !/\p{P}/u.test(char))),
     )
     .filter((line) => line.length)
 }

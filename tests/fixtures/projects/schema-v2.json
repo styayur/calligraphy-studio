@@ -1,0 +1,691 @@
+{
+  "$defs": {
+    "CanvasConfig": {
+      "properties": {
+        "width": {
+          "default": 1200,
+          "maximum": 12000,
+          "minimum": 100,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "default": 800,
+          "maximum": 12000,
+          "minimum": 100,
+          "title": "Height",
+          "type": "integer"
+        },
+        "background": {
+          "default": "#ffffff",
+          "title": "Background",
+          "type": "string"
+        }
+      },
+      "title": "CanvasConfig",
+      "type": "object"
+    },
+    "CharacterIdentity": {
+      "properties": {
+        "text": {
+          "maxLength": 32,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "codepoints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Codepoints",
+          "type": "array"
+        },
+        "script": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Script"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "locale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locale"
+        },
+        "canonical": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Canonical"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "CharacterIdentity",
+      "type": "object"
+    },
+    "GlyphAppearanceSchema": {
+      "properties": {
+        "opacity": {
+          "default": 1,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Opacity",
+          "type": "number"
+        },
+        "blendMode": {
+          "default": "source-over",
+          "title": "Blendmode",
+          "type": "string"
+        }
+      },
+      "title": "GlyphAppearanceSchema",
+      "type": "object"
+    },
+    "GlyphAssetSchema": {
+      "properties": {
+        "type": {
+          "enum": [
+            "raster",
+            "svg",
+            "generated"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "bbox": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "checksum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Checksum"
+        },
+        "processing": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Processing"
+        }
+      },
+      "required": [
+        "type",
+        "url",
+        "width",
+        "height",
+        "bbox"
+      ],
+      "title": "GlyphAssetSchema",
+      "type": "object"
+    },
+    "GlyphInstance": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "character": {
+          "title": "Character",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/GlyphSourceSchema"
+        },
+        "asset": {
+          "$ref": "#/$defs/GlyphAssetSchema"
+        },
+        "transform": {
+          "$ref": "#/$defs/GlyphTransformSchema"
+        },
+        "appearance": {
+          "$ref": "#/$defs/GlyphAppearanceSchema"
+        },
+        "provenance": {
+          "$ref": "#/$defs/GlyphProvenanceSchema"
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CharacterIdentity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "variant": {
+          "$ref": "#/$defs/GlyphVariant"
+        },
+        "metadata": {
+          "additionalProperties": true,
+          "title": "Metadata",
+          "type": "object"
+        },
+        "glyph_id": {
+          "title": "Glyph Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "character",
+        "source",
+        "asset",
+        "glyph_id"
+      ],
+      "title": "GlyphInstance",
+      "type": "object"
+    },
+    "GlyphProvenanceSchema": {
+      "properties": {
+        "type": {
+          "default": "original",
+          "enum": [
+            "original",
+            "font",
+            "fallback",
+            "generated"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        }
+      },
+      "title": "GlyphProvenanceSchema",
+      "type": "object"
+    },
+    "GlyphSourceSchema": {
+      "properties": {
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "locale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locale"
+        },
+        "script": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Script"
+        },
+        "writing_tradition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Writing Tradition"
+        },
+        "orthography": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Orthography"
+        },
+        "period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period"
+        },
+        "region": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region"
+        },
+        "source_collection": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Collection"
+        },
+        "dataset": {
+          "title": "Dataset",
+          "type": "string"
+        },
+        "calligrapher": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calligrapher"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Style"
+        },
+        "dynasty": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dynasty"
+        },
+        "work": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Work"
+        },
+        "license": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License"
+        },
+        "license_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License Url"
+        },
+        "rights": {
+          "additionalProperties": true,
+          "title": "Rights",
+          "type": "object"
+        },
+        "source_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Uri"
+        },
+        "attribution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attribution"
+        },
+        "designer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Designer"
+        },
+        "dataset_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dataset Version"
+        },
+        "source_checksum": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Checksum"
+        },
+        "license_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License Text"
+        }
+      },
+      "required": [
+        "dataset"
+      ],
+      "title": "GlyphSourceSchema",
+      "type": "object"
+    },
+    "GlyphTransformSchema": {
+      "properties": {
+        "x": {
+          "default": 0,
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "default": 0,
+          "title": "Y",
+          "type": "number"
+        },
+        "scaleX": {
+          "default": 1,
+          "title": "Scalex",
+          "type": "number"
+        },
+        "scaleY": {
+          "default": 1,
+          "title": "Scaley",
+          "type": "number"
+        },
+        "rotation": {
+          "default": 0,
+          "title": "Rotation",
+          "type": "number"
+        },
+        "skewX": {
+          "default": 0,
+          "title": "Skewx",
+          "type": "number"
+        },
+        "skewY": {
+          "default": 0,
+          "title": "Skewy",
+          "type": "number"
+        }
+      },
+      "title": "GlyphTransformSchema",
+      "type": "object"
+    },
+    "GlyphVariant": {
+      "properties": {
+        "type": {
+          "anyOf": [
+            {
+              "enum": [
+                "modern",
+                "traditional",
+                "simplified",
+                "shinjitai",
+                "kyujitai",
+                "hentaigana",
+                "historical",
+                "regional",
+                "font-alternate"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Type"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "glyph_name": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Glyph Name"
+        },
+        "font_glyph_id": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Font Glyph Id"
+        }
+      },
+      "title": "GlyphVariant",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "version": {
+      "default": 2,
+      "enum": [
+        1,
+        2
+      ],
+      "title": "Version",
+      "type": "integer"
+    },
+    "canvas": {
+      "$ref": "#/$defs/CanvasConfig"
+    },
+    "glyphs": {
+      "items": {
+        "$ref": "#/$defs/GlyphInstance"
+      },
+      "title": "Glyphs",
+      "type": "array"
+    },
+    "text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Text"
+    },
+    "composition": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Composition"
+    }
+  },
+  "title": "ProjectDocument",
+  "type": "object"
+}

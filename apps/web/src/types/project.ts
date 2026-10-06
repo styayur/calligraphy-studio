@@ -1,5 +1,6 @@
 import type { GlyphInstance } from './glyph'
 import type { BatchLayout } from './composition'
+import type { CandidatePolicy } from '../lib/candidatePolicy'
 
 export interface CompositionSettings {
   layout: BatchLayout
@@ -9,7 +10,8 @@ export interface CompositionSettings {
   margin: number
   punctuation: boolean
   style: string
-  source: 'fonts' | 'original'
+  source: 'fonts' | 'original' | 'all' | 'fallback'
+  policy?: CandidatePolicy
 }
 
 export interface CanvasConfig {
@@ -19,7 +21,7 @@ export interface CanvasConfig {
 }
 
 export interface ProjectDocument {
-  version: 1
+  version: 1 | 2
   canvas: CanvasConfig
   glyphs: GlyphInstance[]
   text?: string

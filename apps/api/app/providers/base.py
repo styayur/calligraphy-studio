@@ -29,6 +29,9 @@ class RawGlyphRecord:
     confidence: float | None = None
     metadata: dict = field(default_factory=dict)
     source_index: int | None = None
+    identity: dict = field(default_factory=dict)
+    variant: dict = field(default_factory=dict)
+    culture: dict = field(default_factory=dict)
 
 
 class DatasetProvider(ABC):

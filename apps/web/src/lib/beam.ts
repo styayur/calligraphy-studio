@@ -1,14 +1,19 @@
 import { profileCost, type VisualProfile } from './visual'
+import type { Glyph } from '../types'
+import { candidateCompatible, candidateCost, type CandidatePolicy, type CandidateWeights } from './candidatePolicy'
 export interface ProfileCandidate {
   id: string
   character: string
   profile: VisualProfile
+  glyph?: Glyph
 }
 export interface BeamOptions {
   width: number
   variation: number
   signal?: AbortSignal
   progress?: (done: number) => void
+  policy?: CandidatePolicy
+  weights?: CandidateWeights
 }
 interface State {
   cost: number
@@ -39,7 +44,7 @@ export async function selectSequence(
   let beam: State[] = [{ cost: 0, candidate: null, parent: null, recent: [] }]
   for (let i = 0; i < characters.length; i++) {
     options.signal?.throwIfAborted()
-    const choices = candidates.get(characters[i]) || [],
+    const choices = (candidates.get(characters[i]) || []).filter((c) => !c.glyph || candidateCompatible(c.glyph,options.policy || {})),
       next: State[] = []
     for (const state of beam) {
       if (!choices.length) {
@@ -65,11 +70,12 @@ export async function selectSequence(
             ? repeats.filter((c) => c.id === candidate.id).length / repeats.length
             : 0
         next.push({
-          cost:
-            state.cost +
+          cost: state.cost + (candidate.glyph ? candidateCost(candidate.glyph,
+            .65 * unary.get(candidate.id)! + .35 * adjacent, options.policy || {},
+            state.recent.flatMap((c) => c.glyph ? [c.glyph] : []), options.variation * repeatCost, options.weights) :
             0.65 * unary.get(candidate.id)! +
             0.35 * adjacent +
-            options.variation * repeatCost,
+            options.variation * repeatCost),
           candidate,
           parent: state,
           recent: [...state.recent, candidate].slice(-32),

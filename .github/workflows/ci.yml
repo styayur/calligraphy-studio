@@ -28,6 +28,15 @@ jobs:
       - name: API tests
         working-directory: apps/api
         run: python -m pytest -q
+      - name: Runtime dependency security
+        run: |
+          python -m pip install -r scripts/requirements-security.txt
+          python -m pip_audit -r apps/api/requirements.txt
+      - name: Licence and provenance validation
+        run: |
+          python scripts/validate_assets.py
+          python scripts/validate_third_party.py
+          python scripts/validate_version.py
 
   web:
     runs-on: ubuntu-latest
@@ -45,6 +54,8 @@ jobs:
       - name: Type check
         working-directory: apps/web
         run: npm run typecheck
+      - name: Canonical software notices
+        run: node scripts/build_third_party_notices.cjs --check
       - name: Deterministic visual tests
         working-directory: apps/web
         run: npm run test:visual
@@ -54,3 +65,75 @@ jobs:
           VITE_STATIC_MODE: 'true'
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
         run: npm run build:pages
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Built browser regression tests
+        run: |
+          python scripts/audit_dependencies.py
+          npm --prefix apps/web run build:desktop
+          python -m pip install playwright pillow
+          python -m playwright install --with-deps chromium
+          python -m http.server 5178 --directory apps/web/dist > /tmp/calligraphy-http.log 2>&1 &
+          python scripts/test_studio_browser.py --url http://127.0.0.1:5178
+          python scripts/test_visual_browser.py --url http://127.0.0.1:5178 --built
+          python scripts/test_japanese_browser.py --url http://127.0.0.1:5178
+
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate desktop brand resources
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          python -m pip install pillow
+          python scripts/build_desktop_icon.py
+      - name: Build Windows packages
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          npm --prefix apps/web ci
+          npm --prefix apps/web run build:desktop
+          npm --prefix apps/desktop ci
+          node scripts/test_desktop_proxy.cjs
+          npm --prefix apps/desktop run dist:win
+          node scripts/validate_desktop_package.cjs
+          python scripts/validate_windows_distributables.py apps/desktop/release/CalligraphyStudio-Setup-0.7.0-x64.exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe
+      - name: Actual packaged Windows renderer smoke
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          python -m pip install playwright pillow
+          python scripts/test_windows_native.py --exe "apps/desktop/release/win-unpacked/Calligraphy Studio.exe" --output work/windows-native-unpacked.json
+          python scripts/test_windows_native.py --exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe --output work/windows-native-portable.json
+
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: ''
+      - name: Build Android release APK
+        run: |
+          sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+          npm --prefix apps/web ci
+          npm --prefix apps/web run cap:sync
+          cd apps/web/android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+          python ../../../scripts/validate_package.py --apk app/build/outputs/apk/release/app-release.apk
+          python ../../../scripts/validate_android_release.py --apk app/build/outputs/apk/release/app-release.apk --allow-preview

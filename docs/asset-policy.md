@@ -2,6 +2,20 @@
 
 Calligraphy Studio keeps source assets for reproducibility while excluding runtime and generated data.
 
+## East Asian tiers (schema 2)
+
+`samples/asset-manifest.json` is the canonical asset pack list and release version. All platform builds use `apps/web/public/fonts/asset-manifest.json`, which records its SHA-256. Run `python scripts/validate_assets.py` before packaging.
+
+- **Core:** original Chinese fonts plus five redistributable Yuji fonts. Japanese TTF originals live in `samples/fonts/japanese/yuji/`; lossless gzip runtime copies are generated, checksummed and lazily loaded from `apps/web/public/fonts/`.
+- **Historical sample:** 20 legally redistributable CODH source crops, original receipts and explicit CC-BY-SA ink-mask derivatives. Source images: `samples/japanese/historical/sample/`; runtime derivatives: `apps/web/public/japanese/`.
+- **Full corpus:** ignored `data/imports/` contains verified archives and import receipts; ignored `storage/assets/` contains content-addressed runtime crops. No startup download, no upstream script execution, no multi-gigabyte release assets.
+
+Importer reads archives in place, validates paths (including Windows paths), symlinks, types, checksums, image dimensions, expansion limits and manifests; streams coordinate CSVs and persists one crop at a time. Checkpoint commits every 100 records make repeated/cancelled imports idempotent. Files use content checksums; glyph identity remains separate so different variants sharing a bitmap coexist. Optional corpus queries are indexed and paginated; browser loads selected pages and images lazily.
+
+Bundling requires explicit `redistribution_allowed=true`. Commercial-only selection/export requires explicit `commercial_use=true`. ND image masks/adaptations are rejected. Share-alike flags, source licences, attribution and checksums survive composition and export. Unknown values remain null. Licence obligations apply to third-party assets independently of the MIT code licence.
+
+Japanese runtime font files use `.ttf.gzip`, not `.gz`: Android AAPT strips/decompresses the latter suffix, breaking a canonical cross-platform path and checksum. Lossless bytes and manifest paths are verified inside the actual APK, web ZIP and Windows ASAR by `validate_package.py` / `validate_desktop_package.cjs`.
+
 ## Tracked source assets
 
 | Area | Purpose | Rule |
