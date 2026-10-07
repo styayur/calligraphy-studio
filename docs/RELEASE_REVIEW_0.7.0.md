@@ -78,3 +78,7 @@ remain as documented in the release notes. No unchecked native test is labelled
 passed, and unsigned Windows publication does not imply trusted signing.
 
 Pre-commit CodeForge regression gate: no new findings, ambiguous matches or human-review findings; configured syntax, build and 90 Python tests passed. Raw local JSON/SARIF evidence remains in ignored `work/`. Two superseded baseline fingerprints are retained as resolved history.
+
+Hosted clean-checkout validation caught a Windows CRLF versus Git LF canonical asset hash mismatch. Canonical text hashing now uses LF consistently, the runtime receipt is regenerated, and the font builder writes deterministic LF JSON. The release was held before tagging while this cross-platform gate was repaired.
+
+Hosted Android validation selected an unrelated newer preinstalled SDK tool. The signature verifier now explicitly uses the documented build-tools 36.0.0 and fails closed on unrecognised certificate output. CodeQL also flagged manual dispatch of arbitrary tags under the default-branch cache context: dispatch now selects its tag through the workflow ref, rejects branch refs, and downstream checkouts do not persist credentials. No checks or security rules were disabled.

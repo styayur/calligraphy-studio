@@ -16,7 +16,7 @@ def main():
     catalog=json.loads((runtime/'fonts/catalog.json').read_text(encoding='utf-8'))
     packed=json.loads((runtime/'fonts/asset-manifest.json').read_text(encoding='utf-8'))
     if manifest['schema_version']!=2 or packed['schema_version']!=2: raise ValueError('Schema version mismatch')
-    if packed['canonical_sha256']!=hashlib.sha256(canonical.read_bytes()).hexdigest(): raise ValueError('Stale canonical runtime manifest')
+    if packed['canonical_sha256']!=hashlib.sha256(canonical.read_text(encoding='utf-8').encode('utf-8')).hexdigest(): raise ValueError('Stale canonical runtime manifest')
     originals={}
     for pack in manifest['font_packs']:
         file=ROOT/'samples'/pack

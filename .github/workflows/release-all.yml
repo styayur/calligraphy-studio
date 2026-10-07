@@ -5,10 +5,6 @@ on:
     tags: ['v*']
   workflow_dispatch:
     inputs:
-      tag:
-        description: Existing version tag to build
-        required: true
-        default: v0.7.0
       release_channel:
         description: Production publishes; preview only builds non-production RC artifacts
         type: choice
@@ -19,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: release-${{ inputs.tag || github.ref_name }}
+  group: release-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
@@ -34,13 +30,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.tag || github.ref_name }}
+          ref: ${{ github.ref }}
           fetch-depth: 0
       - name: Validate tag and application versions
         id: version
         env:
-          TAG: ${{ inputs.tag || github.ref_name }}
+          TAG: ${{ github.ref_name }}
         run: |
+          [[ "$GITHUB_REF" == refs/tags/* ]] || { echo "Select an existing version tag as the workflow ref."; exit 1; }
           [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
           test "$(git rev-parse HEAD)" = "$(git rev-list -n 1 "$TAG")"
           VERSION="${TAG#v}"
@@ -79,6 +76,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -97,6 +95,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -157,6 +156,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -235,6 +235,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -291,6 +292,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
           fetch-depth: 0
       - uses: actions/download-artifact@v4
         with:

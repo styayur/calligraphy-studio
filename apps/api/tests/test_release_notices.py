@@ -19,3 +19,10 @@ def test_missing_or_changed_packaged_licence_fails(missing):
 def test_relabelled_third_party_manifest_fails():
     with pytest.raises(AssertionError):
         gate.validate_reader(lambda path:b'{"components":[]}' if path=='third-party-manifest.json' else (PUBLIC/path).read_bytes())
+
+
+def test_canonical_asset_receipt_is_current():
+    asset_spec = importlib.util.spec_from_file_location('asset_gate', ROOT / 'scripts/validate_assets.py')
+    asset_gate = importlib.util.module_from_spec(asset_spec)
+    asset_spec.loader.exec_module(asset_gate)
+    asset_gate.main()

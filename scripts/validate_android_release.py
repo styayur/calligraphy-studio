@@ -3,8 +3,9 @@ import argparse,json,os,re,subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def validate(apk,sdk,allow_preview=False):
-    folders=sorted((sdk/'build-tools').iterdir(),key=lambda p:tuple(int(x) for x in p.name.split('.') if x.isdigit()))
-    tools=folders[-1]
+    # Match the installed/pinned release SDK, not an unrelated newer runner tool.
+    tools=sdk/'build-tools'/'36.0.0'
+    if not tools.is_dir(): raise ValueError('Android build-tools 36.0.0 are required')
     def command(name,*args):
         exe=tools/(name+('.bat' if name=='apksigner' and os.name=='nt' else '.exe' if os.name=='nt' else ''))
         result=subprocess.run([str(exe),*map(str,args)],capture_output=True,text=True,check=True)
@@ -14,8 +15,11 @@ def validate(apk,sdk,allow_preview=False):
     info=re.search(r"package: name='([^']+)' versionCode='(\d+)' versionName='([^']+)'",badging)
     expected=json.loads((ROOT/'release/version.json').read_text(encoding='utf-8'))
     assert info and info.groups()==(expected['application_id'],str(expected['android_version_code']),expected['version']),'APK identity/version mismatch'
-    dn=re.search(r'Signer #1 certificate DN: (.+)',signature).group(1)
-    fingerprint=re.search(r'Signer #1 certificate SHA-256 digest: ([0-9a-f]+)',signature).group(1)
+    signer=re.search(r'^Signer #1 certificate DN: (.+)$',signature,re.MULTILINE)
+    digest=re.search(r'^Signer #1 certificate SHA-256 digest: ([0-9a-f]{64})$',signature,re.MULTILINE)
+    if not signer or not digest: raise ValueError('Unrecognised apksigner certificate output; cannot establish signing identity')
+    dn=signer.group(1)
+    fingerprint=digest.group(1)
     preview='android debug' in dn.lower()
     if preview and not allow_preview: raise ValueError('Debug-signed preview APK cannot be a production release')
     pinned=os.environ.get('CALLIGRAPHY_ANDROID_CERT_SHA256')

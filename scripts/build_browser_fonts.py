@@ -60,8 +60,11 @@ def main():
                                "runtime": {"path": f"apps/web/public/fonts/{file}", "sha256": record["runtime_sha256"]},
                                "source_uri": entry["source_uri"], "upstream_commit": entry.get("upstream_commit"),
                                "license": entry["license"], "license_text": record["license_text"]})
-    (target / "catalog.json").write_text(json.dumps(entries, ensure_ascii=False), encoding="utf-8")
-    (target / "asset-manifest.json").write_text(json.dumps({**manifest, "canonical_sha256": hashlib.sha256(canonical.read_bytes()).hexdigest(), "fonts": provenance}, indent=2), encoding="utf-8")
+    (target / "catalog.json").write_text(json.dumps(entries, ensure_ascii=False), encoding="utf-8", newline="\n")
+    # Git stores this text as LF; universal-newline reading also handles an older
+    # Windows working copy that predates the repository's .gitattributes rules.
+    canonical_bytes = canonical.read_text(encoding="utf-8").encode("utf-8")
+    (target / "asset-manifest.json").write_text(json.dumps({**manifest, "canonical_sha256": hashlib.sha256(canonical_bytes).hexdigest(), "fonts": provenance}, indent=2), encoding="utf-8", newline="\n")
     shutil.copyfile(ROOT / 'LICENSE', target.parent / 'LICENSE')
     shutil.copyfile(ROOT / 'third_party/NOTICE.md', target.parent / 'THIRD_PARTY_NOTICE.md')
     (target.parent / 'licenses').mkdir(exist_ok=True)
