@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, HTTPException
 from sqlalchemy.orm import Session
 
 from app.routes.deps import get_session
@@ -23,7 +23,7 @@ def _service(request: Request) -> BatchComposeService:
         hanzi_cache_dir=settings.hanzi_data_dir,
         fetch_remote_hanzi=settings.fetch_remote_hanzi,
     )
-    return BatchComposeService(glyph_service, fallback)
+    return BatchComposeService(glyph_service, fallback, AssetStore(settings.assets_dir))
 
 
 @router.post("/compose/batch", response_model=BatchComposeResponse)
@@ -32,4 +32,7 @@ def compose_batch(
     request: Request,
     session: Session = Depends(get_session),
 ) -> BatchComposeResponse:
-    return _service(request).compose(session, payload)
+    try:
+        return _service(request).compose(session, payload)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc

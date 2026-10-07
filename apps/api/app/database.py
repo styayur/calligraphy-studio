@@ -37,7 +37,10 @@ class Database:
     def create_schema(self) -> None:
         from app import models  # noqa: F401
 
+        from app.migrations import migrate, record_version
+        migrate(self.engine)
         Base.metadata.create_all(self.engine)
+        record_version(self.engine)
 
     @contextmanager
     def session(self) -> Iterator[Session]:

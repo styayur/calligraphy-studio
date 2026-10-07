@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-10-06",
+  "review_before": "2026-11-05",
+  "development_only_advisories": ["https://github.com/advisories/GHSA-vfj7-8cjw-p6xm"],
+  "affected_tooling": ["braces", "chokidar", "fast-glob", "micromatch", "tailwindcss"],
+  "justification": "Unpatched braces recursion DoS in Tailwind 3's build-only glob chain. Content globs are fixed repository paths; project/data inputs never enter this toolchain. Vulnerable packages must be absent from renderer module and package inventories. No production vulnerabilities are accepted. See docs/DEPENDENCY_AUDIT_0.7.0.md."
+}

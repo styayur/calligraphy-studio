@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "source_uri": "https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/kanji/",
+  "description": "Reviewed small subset of Japanese new/old character pairs. Discovery links only; never automatic replacement, NFKC folding, or authentication of a particular outline. Characters outside this subset remain regional/unknown.",
+  "pairs": {
+    "国": "國",
+    "学": "學",
+    "体": "體",
+    "旧": "舊",
+    "広": "廣"
+  }
+}

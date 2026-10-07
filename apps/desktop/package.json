@@ -1,6 +1,6 @@
 {
   "name": "calligraphy-studio-desktop",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "description": "Offline desktop build of Calligraphy Studio",
   "main": "main.js",
@@ -12,16 +12,20 @@
     "electron": "44.3.0",
     "electron-builder": "26.15.3"
   },
+  "overrides": {
+    "global-agent": "4.1.3"
+  },
   "build": {
     "appId": "io.github.styayur.calligraphystudio",
     "productName": "Calligraphy Studio",
-    "copyright": "Copyright © 2026 Calligraphy Studio contributors",
+    "copyright": "Copyright \u00a9 2026 Calligraphy Studio contributors",
     "directories": {
       "output": "release",
       "buildResources": "build"
     },
     "files": [
       "main.js",
+      "build/icon.png",
       {
         "from": "../web/dist",
         "to": "dist",

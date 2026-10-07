@@ -10,6 +10,10 @@ import type {
   SimilarityResponse,
 } from '../types'
 import type { GlyphListResponse, GlyphSearchParams } from './client'
+import { candidateCompatible } from '../lib/candidatePolicy'
+import { migrateGlyph, textCharacters } from '../lib/identity'
+import { historicalSample } from './historical'
+import { fontCatalog, fontGlyphs } from './fonts'
 
 interface StaticSimilarityEntry {
   id: string
@@ -28,11 +32,11 @@ export async function loadStaticGlyphs(): Promise<Glyph[]> {
         if (!response.ok) throw new Error('无法加载静态 Glyph 数据')
         return response.json() as Promise<Glyph[]>
       })
-      .then((glyphs) =>
-        glyphs.map((glyph) => ({
+      .then(async (glyphs) =>
+        [...glyphs.map((glyph) => migrateGlyph({
           ...glyph,
           asset: { ...glyph.asset, url: staticAssetUrl(glyph.asset.url) },
-        })),
+        })), ...await historicalSample()],
       )
   }
   return glyphPromise
@@ -49,16 +53,23 @@ export async function loadStaticSimilarity(): Promise<StaticSimilarity> {
   return similarityPromise
 }
 
-export async function loadStaticMetadata(): Promise<MetadataResponse> {
+export async function loadStaticMetadata(writingTradition = 'Chinese'): Promise<MetadataResponse> {
   const response = await fetch(`${import.meta.env.BASE_URL}demo/meta.json`)
   if (!response.ok) throw new Error('无法加载静态元数据')
-  return response.json() as Promise<MetadataResponse>
+  const legacy = await response.json() as MetadataResponse
+  if (writingTradition === 'Chinese') return legacy
+  const fonts = (await fontCatalog()).filter((f) => writingTradition === '*' || f.writing_tradition === writingTradition)
+  return { ...legacy,
+    calligraphers: [...new Set(fonts.map((f) => f.designer))].map((name,i) => ({id:i+1,name})),
+    styles: [...new Set(fonts.map((f) => f.style))].map((name,i) => ({id:i+1,name})),
+    datasets: [...new Set([...legacy.datasets, 'Yuji Japanese Fonts','CODH Kuzushiji'])] }
 }
 
 export async function staticSearch(params: GlyphSearchParams): Promise<GlyphListResponse> {
   const glyphs = await loadStaticGlyphs()
   const query = params.q?.trim()
   const items = glyphs.filter((glyph) => {
+    if (!candidateCompatible(glyph, params)) return false
     if (params.character && glyph.character !== params.character) return false
     if (params.calligrapher && glyph.source.calligrapher !== params.calligrapher) return false
     if (params.style && glyph.source.style !== params.style) return false
@@ -94,10 +105,11 @@ export async function staticSearch(params: GlyphSearchParams): Promise<GlyphList
 export async function staticSimilar(glyphId: string, limit: number): Promise<SimilarityResponse> {
   const [glyphs, similarity] = await Promise.all([loadStaticGlyphs(), loadStaticSimilarity()])
   const byId = new Map(glyphs.map((glyph) => [glyph.id, glyph]))
+  const target = byId.get(glyphId)
   const items: SimilarGlyphItem[] = (similarity[glyphId] ?? [])
     .slice(0, limit)
     .map((entry) => ({ glyph: byId.get(entry.id)!, score: entry.score }))
-    .filter((entry) => entry.glyph)
+    .filter((entry) => entry.glyph && candidateCompatible(entry.glyph, { writing_tradition:target?.source.writing_tradition || undefined, locale:target?.source.locale || undefined, mode:'strict' }))
   return { target_id: glyphId, model_name: 'visual-geometry-256-v1', items }
 }
 
@@ -105,7 +117,7 @@ function staticLines(text: string): string[][] {
   const normalized = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n')
   const lines = normalized
     .split('\n')
-    .map((line) => [...line].filter((character) => !/\s/.test(character)))
+    .map((line) => textCharacters(line).filter((character) => !/\s/.test(character)))
     .filter((line) => line.length)
   return lines.length ? lines : [[...normalized].filter((character) => !/\s/.test(character))]
 }
@@ -138,12 +150,13 @@ export async function staticCompose(request: BatchComposeRequest): Promise<Batch
   for (const position of staticPositions(request, lines)) {
     if (!cache.has(position.character)) {
       const glyph = glyphs.find((candidate) => {
+        if (!candidateCompatible(candidate, request)) return false
         if (candidate.character !== position.character) return false
         if (request.calligrapher && candidate.source.calligrapher !== request.calligrapher) return false
         if (request.style && candidate.source.style !== request.style) return false
         if (request.dataset && candidate.source.dataset !== request.dataset) return false
         return true
-      }) ?? null
+      }) ?? (request.writing_tradition === 'Japanese' ? (await fontGlyphs(position.character, request.style, request.calligrapher, { ...request, vertical:request.layout === 'vertical-rtl' }))[0] : null) ?? null
       cache.set(position.character, glyph)
     }
     const glyph = cache.get(position.character)

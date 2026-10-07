@@ -82,6 +82,7 @@ class NCCUCursiveProvider(DatasetProvider):
                 index += 1
                 emitted_by_character[character] = emitted_by_character.get(character, 0) + 1
                 yield RawGlyphRecord(
+                    culture={"writing_tradition": "Chinese", "language": "zh", "script": "Han"},
                     character=character,
                     dataset=self.dataset_name,
                     style="草书",

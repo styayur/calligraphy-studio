@@ -3,6 +3,7 @@ import { useEditorStore } from '../../stores/editor'
 import { SimilarGlyphs } from './SimilarGlyphs'
 import { Button } from '../ui'
 import type { GlyphTransform } from '../../types'
+import { semanticIdentity } from '../../lib/identity'
 
 export function Inspector() {
   const glyph = useEditorStore((s) => s.project.glyphs.find((g) => g.id === s.selectedId))
@@ -196,6 +197,25 @@ export function Inspector() {
           {glyph.asset.processing === 'ink-mask' && <span>已净底</span>}
           <span>{glyph.source.license || '授权未标注'}</span>
         </div>
+        <details className="advanced provenance-details"><summary>来源详情 / Glyph details</summary>
+          <dl>
+            <dt>Semantic character</dt><dd>{semanticIdentity(glyph).text}</dd>
+            <dt>Unicode</dt><dd>{semanticIdentity(glyph).codepoints.join(' ')}</dd>
+            <dt>Variant</dt><dd>{glyph.variant?.type || 'Unknown'} · {glyph.variant?.id || 'Unknown'}</dd>
+            <dt>Font glyph</dt><dd>{glyph.variant?.font_glyph_id ?? 'Unknown'} · {glyph.variant?.glyph_name || 'Unknown'}</dd>
+            <dt>Locale / script</dt><dd>{glyph.source.locale || 'Unknown'} / {glyph.source.script || 'Unknown'}</dd>
+            <dt>Tradition / period</dt><dd>{glyph.source.writing_tradition || 'Unknown'} / {glyph.source.period || 'Unknown'}</dd>
+            <dt>Collection / work</dt><dd>{glyph.source.source_collection || glyph.source.dataset} / {glyph.source.work || 'Unknown'}</dd>
+            <dt>Author / designer</dt><dd>{glyph.source.designer || glyph.source.calligrapher || 'Unknown'}</dd>
+            <dt>Licence</dt><dd>{glyph.source.license || 'Unknown'}{glyph.source.license_url && /^https?:\/\//.test(glyph.source.license_url) && <a href={glyph.source.license_url} target="_blank" rel="noreferrer"> · Licence terms</a>}{glyph.source.license_text && /^(fonts\/licenses\/OFL-[a-z-]+\.txt|japanese\/licenses\/CC-BY-SA-4\.0\.txt|demo\/licenses\/[a-zA-Z0-9.-]+\.txt)$/.test(glyph.source.license_text) && <a href={`${import.meta.env.BASE_URL}${glyph.source.license_text}`} target="_blank" rel="noreferrer"> · Bundled licence</a>}</dd>
+            <dt>Attribution</dt><dd>{glyph.source.attribution || 'Unknown'}</dd>
+            <dt>Source URI</dt><dd>{glyph.source.source_uri && /^https?:\/\//.test(glyph.source.source_uri) ? <a href={glyph.source.source_uri} target="_blank" rel="noreferrer">{glyph.source.source_uri}</a> : 'Unknown'}</dd>
+            <dt>Source checksum</dt><dd>{glyph.source.source_checksum || 'Unknown'}</dd>
+            <dt>Asset checksum</dt><dd>{glyph.asset.checksum || 'Unknown'}</dd>
+            <dt>Page / source bbox</dt><dd>{String(glyph.metadata?.page || 'Unknown')} / {JSON.stringify(glyph.metadata?.source_bbox || null)}</dd>
+            <dt>Rights</dt><dd>{Object.entries(glyph.source.rights || {}).map(([key,value]) => <div key={key}>{key}: {value === null ? 'Unknown' : String(value)}</div>)}</dd>
+          </dl>
+        </details>
       </section>
       <p className="field-hint px-4">方向键微移，Shift 加速；Delete 删除。</p>
     </aside>

@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+// Credentials come only from environment/secrets, never a committed keystore.
+def signingNames = ['CALLIGRAPHY_ANDROID_KEYSTORE', 'CALLIGRAPHY_ANDROID_STORE_PASSWORD', 'CALLIGRAPHY_ANDROID_KEY_ALIAS', 'CALLIGRAPHY_ANDROID_KEY_PASSWORD']
+def providedSigning = signingNames.collect { System.getenv(it) }
+def hasReleaseSigning = providedSigning.every { it != null && !it.isEmpty() }
+if (providedSigning.any { it != null && !it.isEmpty() } && !hasReleaseSigning) {
+    throw new GradleException('Incomplete Android release signing configuration. Supply all four CALLIGRAPHY_ANDROID_* variables.')
+}
+if (System.getenv('CALLIGRAPHY_REQUIRE_PRODUCTION_SIGNING') == '1' && !hasReleaseSigning) {
+    throw new GradleException('Production Android release requires private signing credentials; preview/debug signing is forbidden.')
+}
+
 android {
     namespace = "io.github.styayur.calligraphystudio"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -7,8 +18,8 @@ android {
         applicationId "io.github.styayur.calligraphystudio"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
-        versionName "0.6.0"
+        versionCode 7
+        versionName "0.7.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -16,11 +27,19 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        if (hasReleaseSigning) {
+            production {
+                storeFile file(providedSigning[0])
+                storePassword providedSigning[1]
+                keyAlias providedSigning[2]
+                keyPassword providedSigning[3]
+            }
+        }
+    }
     buildTypes {
         release {
-            // Preview signing uses the Android debug key so the APK is installable.
-            // Replace this with a private release keystore before publishing to an app store.
-            signingConfig signingConfigs.debug
+            signingConfig hasReleaseSigning ? signingConfigs.production : signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -46,6 +65,11 @@ dependencies {
 }
 
 apply from: 'capacitor.build.gradle'
+
+// Freeze the actually distributed native dependency graph; debug/test configs stay usable.
+configurations.matching { it.name == 'releaseRuntimeClasspath' }.configureEach {
+    resolutionStrategy.activateDependencyLocking()
+}
 
 try {
     def servicesJSON = file('google-services.json')

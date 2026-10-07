@@ -15,6 +15,12 @@ export interface BatchComposeRequest {
   calligrapher?: string
   style?: string
   dataset?: string
+  writing_tradition?: string
+  locale?: string
+  script?: string
+  variant_type?: string
+  mode?: 'strict' | 'related' | 'cross-tradition'
+  commercial_only?: boolean
   use_structural_fallback: boolean
 }
 

@@ -1,8 +1,11 @@
 {
   "name": "calligraphy-studio-web",
   "private": true,
-  "version": "0.6.0",
+  "version": "0.7.0",
   "type": "module",
+  "overrides": {
+    "postcss-selector-parser": "7.1.6"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && vite build",
@@ -22,6 +25,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "harfbuzzjs": "1.6.2",
     "konva": "^9.3.22",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",

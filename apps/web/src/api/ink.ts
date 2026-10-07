@@ -1,16 +1,18 @@
 import type { Glyph } from '../types'
+import { sha256 } from '../lib/fontShaper'
 
 const masks = new Map<string, Promise<Glyph>>()
 /** NCCU supplies monochrome, white-on-black scans. Keep the source metadata,
  * but produce a transparent ink mask for composition (MIT permits adaptation). */
 export async function prepareInk(glyph: Glyph): Promise<Glyph> {
   if (
-    !glyph.source.dataset.includes('NCCU') ||
+    !(glyph.source.dataset.includes('NCCU') || glyph.source.dataset === 'CODH Kuzushiji') ||
     glyph.asset.type !== 'raster' ||
     glyph.asset.processing === 'ink-mask'
   )
     return glyph
   const key = glyph.asset.url
+  if (glyph.source.rights?.derivatives_allowed === false) throw new Error('Glyph rights prohibit ink-mask adaptation')
   if (!masks.has(key))
     masks.set(
       key,
@@ -18,8 +20,9 @@ export async function prepareInk(glyph: Glyph): Promise<Glyph> {
         const image = new Image()
         image.crossOrigin = 'anonymous'
         image.onerror = () => reject(new Error(`「${glyph.character}」原帖图片加载失败，请重试`))
-        image.onload = () => {
+        image.onload = async () => {
           try {
+            if (Math.max(image.naturalWidth,image.naturalHeight) > 16000 || image.naturalWidth*image.naturalHeight > 32_000_000) throw new Error('Excessive image dimensions')
             const canvas = document.createElement('canvas')
             canvas.width = image.naturalWidth
             canvas.height = image.naturalHeight
@@ -44,9 +47,12 @@ export async function prepareInk(glyph: Glyph): Promise<Glyph> {
               data[i + 2] = 26
             }
             context.putImageData(pixels, 0, 0)
+            const url = canvas.toDataURL('image/png')
+            const checksum = await sha256(await (await fetch(url)).arrayBuffer())
             resolve({
               ...glyph,
-              asset: { ...glyph.asset, url: canvas.toDataURL('image/png'), processing: 'ink-mask' },
+              asset: { ...glyph.asset, url, checksum, processing: 'ink-mask' },
+              metadata: { ...glyph.metadata, original_asset_checksum:glyph.asset.checksum, processing:'transparent ink-mask from source crop', derivative_license:glyph.source.license },
             })
           } catch {
             reject(new Error(`「${glyph.character}」无法净底，请检查图片来源`))

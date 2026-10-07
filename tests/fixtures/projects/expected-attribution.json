@@ -1,0 +1,1004 @@
+{
+  "legacy-v1-chinese": {
+    "schema_version": 2,
+    "artwork_license": null,
+    "share_alike_licences": [],
+    "licence_boundary": "Third-party source licences do not inherit the MIT application licence. OFL font licences do not automatically apply to artwork.",
+    "glyphs": [
+      {
+        "id": "fixture:chinese",
+        "character": "山",
+        "identity": {
+          "text": "山",
+          "codepoints": [
+            "U+5C71"
+          ]
+        },
+        "variant": {},
+        "provenance": {
+          "type": "fallback",
+          "confidence": null
+        },
+        "source": {
+          "dataset": "Demo",
+          "license": "CC0-1.0",
+          "rights": {
+            "commercial_use": null,
+            "derivatives_allowed": null,
+            "redistribution_allowed": null,
+            "research_use": null,
+            "attribution_required": null,
+            "font_license": null,
+            "share_alike_required": null
+          }
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {},
+        "changes": "Glyph composition"
+      }
+    ]
+  },
+  "v2-chinese": {
+    "schema_version": 2,
+    "artwork_license": null,
+    "share_alike_licences": [],
+    "licence_boundary": "Third-party source licences do not inherit the MIT application licence. OFL font licences do not automatically apply to artwork.",
+    "glyphs": [
+      {
+        "id": "fixture:chinese",
+        "character": "山",
+        "identity": {
+          "text": "山",
+          "codepoints": [
+            "U+5C71"
+          ]
+        },
+        "variant": {},
+        "provenance": {
+          "type": "fallback",
+          "confidence": null
+        },
+        "source": {
+          "dataset": "Demo",
+          "calligrapher": "演示·王体",
+          "style": "楷书",
+          "dynasty": "当代",
+          "work": "示例集字",
+          "license": "CC0-1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": null,
+            "font_license": null,
+            "share_alike_required": null
+          }
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "fixture_asset": "Synthetic 1px test raster, not a manuscript crop"
+        },
+        "changes": "Glyph composition"
+      }
+    ]
+  },
+  "v2-japanese-modern": {
+    "schema_version": 2,
+    "artwork_license": null,
+    "share_alike_licences": [],
+    "licence_boundary": "Third-party source licences do not inherit the MIT application licence. OFL font licences do not automatically apply to artwork.",
+    "glyphs": [
+      {
+        "id": "fixture:yuji-syuku:あ",
+        "character": "あ",
+        "identity": {
+          "text": "あ",
+          "codepoints": [
+            "U+3042"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Hiragana",
+          "canonical": null
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:あ",
+          "type": "regional",
+          "font_glyph_id": 470,
+          "glyph_name": "uni3042"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Hiragana",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "あ",
+            "font_glyph_ids": [
+              470
+            ],
+            "glyph_names": [
+              "uni3042"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Hiragana",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:yuji-syuku:が",
+        "character": "が",
+        "identity": {
+          "text": "が",
+          "codepoints": [
+            "U+304B",
+            "U+3099"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Hiragana",
+          "canonical": null
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:が",
+          "type": "regional",
+          "font_glyph_id": 482,
+          "glyph_name": "uni304C"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Hiragana",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "が",
+            "font_glyph_ids": [
+              482
+            ],
+            "glyph_names": [
+              "uni304C"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Hiragana",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:yuji-syuku:国",
+        "character": "国",
+        "identity": {
+          "text": "国",
+          "codepoints": [
+            "U+56FD"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Han",
+          "canonical": "国"
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:国",
+          "type": "shinjitai",
+          "font_glyph_id": 3231,
+          "glyph_name": "uni56FD"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Han",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "国",
+            "font_glyph_ids": [
+              3231
+            ],
+            "glyph_names": [
+              "uni56FD"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Han",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:yuji-syuku:國",
+        "character": "國",
+        "identity": {
+          "text": "國",
+          "codepoints": [
+            "U+570B"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Han",
+          "canonical": "国"
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:國",
+          "type": "kyujitai",
+          "font_glyph_id": 3238,
+          "glyph_name": "uni570B"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Han",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "國",
+            "font_glyph_ids": [
+              3238
+            ],
+            "glyph_names": [
+              "uni570B"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Han",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      }
+    ]
+  },
+  "v2-hentaigana": {
+    "schema_version": 2,
+    "artwork_license": null,
+    "share_alike_licences": [],
+    "licence_boundary": "Third-party source licences do not inherit the MIT application licence. OFL font licences do not automatically apply to artwork.",
+    "glyphs": [
+      {
+        "id": "fixture:yuji-akari:あ",
+        "character": "あ",
+        "identity": {
+          "text": "あ",
+          "codepoints": [
+            "U+3042"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Hiragana",
+          "canonical": null
+        },
+        "variant": {
+          "id": "fixture:yuji-akari:あ",
+          "type": "hentaigana",
+          "font_glyph_id": 1,
+          "glyph_name": "uni3042"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "historical-kana",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Akari",
+          "script": "Hiragana",
+          "source_checksum": "6fa6bfaff8851fd20f32a807dfb9a7dc15f54780af564ddc8f32e074004bde27",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-akari.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "あ",
+            "font_glyph_ids": [
+              1
+            ],
+            "glyph_names": [
+              "uni3042"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Hiragana",
+            "direction": "ltr",
+            "font_sha256": "6fa6bfaff8851fd20f32a807dfb9a7dc15f54780af564ddc8f32e074004bde27"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:yuji-akebono:あ",
+        "character": "あ",
+        "identity": {
+          "text": "あ",
+          "codepoints": [
+            "U+3042"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Hiragana",
+          "canonical": null
+        },
+        "variant": {
+          "id": "fixture:yuji-akebono:あ",
+          "type": "hentaigana",
+          "font_glyph_id": 1,
+          "glyph_name": "uni3042"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "historical-kana",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Akebono",
+          "script": "Hiragana",
+          "source_checksum": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-akebono.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "あ",
+            "font_glyph_ids": [
+              1
+            ],
+            "glyph_names": [
+              "uni3042"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Hiragana",
+            "direction": "ltr",
+            "font_sha256": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      }
+    ]
+  },
+  "v2-codh-historical": {
+    "schema_version": 2,
+    "artwork_license": "CC-BY-SA-4.0",
+    "share_alike_licences": [
+      "CC-BY-SA-4.0"
+    ],
+    "licence_boundary": "Third-party source licences do not inherit the MIT application licence. OFL font licences do not automatically apply to artwork.",
+    "glyphs": [
+      {
+        "id": "codh:v2:200006663_00002_2:C0003:1688:585",
+        "character": "は",
+        "identity": {
+          "text": "は",
+          "codepoints": [
+            "U+306F"
+          ],
+          "script": "Hiragana",
+          "language": null,
+          "locale": null,
+          "canonical": null
+        },
+        "variant": {
+          "type": "historical",
+          "id": "codh:v2:200006663_00002_2:C0003:1688:585"
+        },
+        "provenance": {
+          "type": "original"
+        },
+        "source": {
+          "language": null,
+          "locale": null,
+          "script": "Hiragana",
+          "writing_tradition": "Japanese",
+          "orthography": null,
+          "period": null,
+          "region": null,
+          "source_collection": "National Institute of Japanese Literature / CODH",
+          "dataset": "CODH Kuzushiji",
+          "work": "ぢぐち",
+          "calligrapher": null,
+          "license": "CC-BY-SA-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": false,
+            "share_alike_required": true
+          },
+          "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+          "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+          "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+          "dataset_version": "v2",
+          "license_text": "japanese/licenses/CC-BY-SA-4.0.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "page": "200006663_00002_2",
+          "source_bbox": [
+            1688,
+            585,
+            102,
+            58
+          ],
+          "upstream_unicode": [
+            "U+306F"
+          ],
+          "mapping_policy": "CODH v2 transcription; kyujitai and historical kana may be folded to modern codepoints",
+          "source_collection": "National Institute of Japanese Literature / CODH",
+          "source_uri": "https://codh.rois.ac.jp/char-shape/book/200006663/",
+          "source_checksum": "3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671",
+          "asset_sha256": "a0eb65e91cae3e578dcc55fb84baf5d23d0948e98ee69068e3dbb9ce4b071256",
+          "dataset_version": "v2",
+          "book_id": "200006663",
+          "attribution": "日本古典籍くずし字データセット (国文研所蔵／CODH加工), doi:10.20676/00000340",
+          "license_text": "japanese/licenses/CC-BY-SA-4.0.txt",
+          "processing": "ink-mask",
+          "derivative_license": "CC-BY-SA-4.0",
+          "changes": "Converted CODH's existing crop to grayscale alpha ink mask; original crop retained in samples.",
+          "original_crop_checksum": "a0eb65e91cae3e578dcc55fb84baf5d23d0948e98ee69068e3dbb9ce4b071256",
+          "fixture_asset": "Synthetic 1px test raster; source receipt retained only for metadata regression"
+        },
+        "changes": "ink-mask"
+      }
+    ]
+  },
+  "v2-mixed-cjk": {
+    "schema_version": 2,
+    "artwork_license": null,
+    "share_alike_licences": [],
+    "licence_boundary": "Third-party source licences do not inherit the MIT application licence. OFL font licences do not automatically apply to artwork.",
+    "glyphs": [
+      {
+        "id": "fixture:yuji-syuku:骨",
+        "character": "骨",
+        "identity": {
+          "text": "骨",
+          "codepoints": [
+            "U+9AA8"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Han",
+          "canonical": null
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:骨",
+          "type": "regional",
+          "font_glyph_id": 9043,
+          "glyph_name": "uni9AA8"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Han",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "骨",
+            "font_glyph_ids": [
+              9043
+            ],
+            "glyph_names": [
+              "uni9AA8"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Han",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:zh-Hant:骨",
+        "character": "骨",
+        "identity": {
+          "text": "骨",
+          "codepoints": [
+            "U+9AA8"
+          ],
+          "language": "zh",
+          "locale": "zh-Hant",
+          "script": "Han"
+        },
+        "variant": {
+          "id": "fixture:zh-Hant:骨",
+          "type": "regional"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "dataset": "Synthetic regional regression fixture",
+          "work": "Fixture only",
+          "language": "zh",
+          "locale": "zh-Hant",
+          "script": "Han",
+          "writing_tradition": "Chinese",
+          "license": "MIT",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": false,
+            "font_license": false,
+            "share_alike_required": false
+          },
+          "attribution": "Synthetic test metadata",
+          "source_checksum": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {},
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:yuji-syuku:辻",
+        "character": "辻",
+        "identity": {
+          "text": "辻",
+          "codepoints": [
+            "U+8FBB"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Han",
+          "canonical": null
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:辻",
+          "type": "regional",
+          "font_glyph_id": 8205,
+          "glyph_name": "uni8FBB"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Han",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "辻",
+            "font_glyph_ids": [
+              8205
+            ],
+            "glyph_names": [
+              "uni8FBB"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Han",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:zh-Hant:辻",
+        "character": "辻",
+        "identity": {
+          "text": "辻",
+          "codepoints": [
+            "U+8FBB"
+          ],
+          "language": "zh",
+          "locale": "zh-Hant",
+          "script": "Han"
+        },
+        "variant": {
+          "id": "fixture:zh-Hant:辻",
+          "type": "regional"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "dataset": "Synthetic regional regression fixture",
+          "work": "Fixture only",
+          "language": "zh",
+          "locale": "zh-Hant",
+          "script": "Han",
+          "writing_tradition": "Chinese",
+          "license": "MIT",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": false,
+            "font_license": false,
+            "share_alike_required": false
+          },
+          "attribution": "Synthetic test metadata",
+          "source_checksum": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {},
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:yuji-syuku:国",
+        "character": "国",
+        "identity": {
+          "text": "国",
+          "codepoints": [
+            "U+56FD"
+          ],
+          "language": "ja",
+          "locale": "ja-JP",
+          "script": "Han",
+          "canonical": "国"
+        },
+        "variant": {
+          "id": "fixture:yuji-syuku:国",
+          "type": "shinjitai",
+          "font_glyph_id": 3231,
+          "glyph_name": "uni56FD"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "language": "ja",
+          "locale": "ja-JP",
+          "writing_tradition": "Japanese",
+          "orthography": "Japanese",
+          "license": "OFL-1.1",
+          "license_url": "https://openfontlicense.org",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": true,
+            "font_license": true,
+            "share_alike_required": false
+          },
+          "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+          "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+          "designer": "Yuji Kataoka; Kinuta Font Factory",
+          "source_collection": "Yuji",
+          "dataset": "Yuji Japanese Fonts",
+          "work": "Yuji Syuku",
+          "script": "Han",
+          "source_checksum": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+          "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+          "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {
+          "shaping": {
+            "engine": "harfbuzz-freetype",
+            "harfbuzz_version": "14.5.0",
+            "source_sequence": "国",
+            "font_glyph_ids": [
+              3231
+            ],
+            "glyph_names": [
+              "uni56FD"
+            ],
+            "features": {
+              "locl": 1,
+              "vert": 0,
+              "vrt2": 0
+            },
+            "locale": "ja-JP",
+            "script": "Han",
+            "direction": "ltr",
+            "font_sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+          },
+          "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+        },
+        "changes": "Font outline rasterisation and composition"
+      },
+      {
+        "id": "fixture:zh-Hant:国",
+        "character": "国",
+        "identity": {
+          "text": "国",
+          "codepoints": [
+            "U+56FD"
+          ],
+          "language": "zh",
+          "locale": "zh-Hant",
+          "script": "Han"
+        },
+        "variant": {
+          "id": "fixture:zh-Hant:国",
+          "type": "regional"
+        },
+        "provenance": {
+          "type": "font"
+        },
+        "source": {
+          "dataset": "Synthetic regional regression fixture",
+          "work": "Fixture only",
+          "language": "zh",
+          "locale": "zh-Hant",
+          "script": "Han",
+          "writing_tradition": "Chinese",
+          "license": "MIT",
+          "rights": {
+            "commercial_use": true,
+            "derivatives_allowed": true,
+            "redistribution_allowed": true,
+            "research_use": true,
+            "attribution_required": false,
+            "font_license": false,
+            "share_alike_required": false
+          },
+          "attribution": "Synthetic test metadata",
+          "source_checksum": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "asset_checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf",
+        "metadata": {},
+        "changes": "Font outline rasterisation and composition"
+      }
+    ]
+  }
+}

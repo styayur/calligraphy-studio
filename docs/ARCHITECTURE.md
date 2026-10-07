@@ -2,6 +2,26 @@
 
 ## Core invariant
 
+0.7.0 extends the existing layers with semantic identity, cultural policy and Japanese providers. It retains React/Konva, Zustand, offline packs, Visual Profile workers/cache, composition, beam search and existing Chinese providers.
+
+```mermaid
+flowchart TD
+  T[Unicode / grapheme input] --> I[CharacterIdentity + GlyphVariant]
+  I --> P[Tradition / locale / script policy]
+  P --> F[FontManifestProvider / HarfBuzz]
+  P --> H[JapaneseHistoricalProvider / CODH]
+  F --> G[Glyph + asset + source rights]
+  H --> G
+  G --> V[Visual Profile / content cache]
+  V --> C[Candidate policy + compatibility weights]
+  C --> E[Existing composition / long-roll engine]
+  E --> O[Project v2 / PNG / ZIP + attribution]
+```
+
+`Glyph.character` remains plain text; `identity` captures semantic Unicode while `variant` captures visual occurrence/font identity. Indexed tradition/language/locale/script/variant/period columns support paginated corpus search. Glyph uniqueness uses identity + source + checksum, not character alone. Source/work authorship is distinct from a font designer and from the crop processing operation.
+
+Font shapers are lazy: Python HB/FreeType for imported assets; local browser WASM HB plus canvas outlines for Japanese offline font candidates. Chinese legacy rendering is unchanged. Strict culture filters run before visual scoring. Explicit weights cover visual cost, locale, tradition, script, period, work and repeated-glyph variation; cross-tradition mode is opt-in. See [model](JAPANESE_GLYPH_MODEL.md), [migration](MIGRATIONS.md) and [asset tiers](asset-policy.md).
+
 前端、项目文件和 API 永远操作 `Glyph`，而不是直接操作任意图片路径。
 
 ```ts

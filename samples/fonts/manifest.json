@@ -19,8 +19,15 @@
         "redistribution_allowed": true,
         "research_use": true,
         "attribution_required": true,
-        "font_license": true
-      }
+        "font_license": true,
+        "share_alike_required": false
+      },
+      "language": "zh",
+      "writing_tradition": "Chinese",
+      "locale": null,
+      "variant_type": "regional",
+      "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb",
+      "license_text": "licenses/OFL-ma-shan-zheng.txt"
     },
     {
       "id": "zhi-mang-xing",
@@ -40,8 +47,15 @@
         "redistribution_allowed": true,
         "research_use": true,
         "attribution_required": true,
-        "font_license": true
-      }
+        "font_license": true,
+        "share_alike_required": false
+      },
+      "language": "zh",
+      "writing_tradition": "Chinese",
+      "locale": null,
+      "variant_type": "regional",
+      "sha256": "644e0cae9b40f0b10ab729a01bd32032e3973bac22be3dccae01bf6ae7fde969",
+      "license_text": "licenses/OFL-zhi-mang-xing.txt"
     },
     {
       "id": "liu-jian-mao-cao",
@@ -61,8 +75,15 @@
         "redistribution_allowed": true,
         "research_use": true,
         "attribution_required": true,
-        "font_license": true
-      }
+        "font_license": true,
+        "share_alike_required": false
+      },
+      "language": "zh",
+      "writing_tradition": "Chinese",
+      "locale": null,
+      "variant_type": "regional",
+      "sha256": "cab396b91a5b7c0b4005a35891180d06e6751f5ac261fe680aec65c1ae209033",
+      "license_text": "licenses/OFL-liu-jian-mao-cao.txt"
     }
   ]
 }

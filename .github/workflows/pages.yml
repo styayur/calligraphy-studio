@@ -29,6 +29,15 @@ jobs:
           cache-dependency-path: apps/web/package-lock.json
       - run: npm ci
         working-directory: apps/web
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate canonical assets and licences
+        run: |
+          python scripts/validate_assets.py
+          python scripts/validate_third_party.py
+          python scripts/validate_version.py
+          node scripts/build_third_party_notices.cjs --check
       - name: Type check
         working-directory: apps/web
         run: npm run typecheck

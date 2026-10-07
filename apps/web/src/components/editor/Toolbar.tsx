@@ -5,6 +5,9 @@ import { useEditorStore } from '../../stores/editor'
 import { validateProject } from '../../lib/project'
 import { saveFile } from '../../lib/download'
 import { Button } from '../ui'
+import { assertExportRights, attributionFiles, hasShareAlike } from '../../lib/rights'
+import { zipFiles } from '../../lib/longRoll'
+import { APP_VERSION } from '../../lib/version'
 
 export function Toolbar() {
   const fileRef = useRef<HTMLInputElement>(null)
@@ -12,6 +15,8 @@ export function Toolbar() {
   const [exportOpen, setExportOpen] = useState(false)
   const [transparent, setTransparent] = useState(false)
   const [scale, setScale] = useState(2)
+  const [commercialOnly, setCommercialOnly] = useState(false)
+  const [licensesOpen, setLicensesOpen] = useState(false)
   const {
     projectName,
     project,
@@ -39,8 +44,16 @@ export function Toolbar() {
   }
   const exportPng = async () => {
     try {
+      assertExportRights(project.glyphs, { commercialOnly })
       const response = await fetch(exportStagePng({ scale, transparent }))
-      const result = await saveFile(`${projectName || '集字作品'}.png`, await response.blob())
+      const artwork = await response.blob()
+      const files = await attributionFiles(project.glyphs, { commercialOnly })
+      // Share-alike material travels as one package so obligations cannot be lost.
+      const packaged = hasShareAlike(project.glyphs)
+      const result = packaged
+        ? await saveFile(`${projectName || '集字作品'}.zip`, zipFiles([{ name:'artwork.png', data:new Uint8Array(await artwork.arrayBuffer()) }, ...files]))
+        : await saveFile(`${projectName || '集字作品'}.png`, artwork)
+      if (!packaged) await saveFile(`${projectName || '集字作品'}-attribution.zip`, zipFiles(files))
       setStatus(result === 'shared' ? '作品已交给系统保存或分享' : '作品已导出')
       setExportOpen(false)
     } catch (error) {
@@ -144,8 +157,14 @@ export function Toolbar() {
             新建空白作品
           </button>
           <p>项目文件保留字形、排版和来源，可再次编辑。</p>
+          <p>Calligraphy Studio · <span data-testid="app-version">{APP_VERSION}</span></p>
+          <button onClick={() => setLicensesOpen(true)}>第三方许可 / Third-party licences</button>
         </div>
       </details>
+      {licensesOpen && <div role="dialog" aria-label="Third-party licences" style={{position:'fixed',inset:'5vh 5vw',zIndex:100,background:'#fff',border:'1px solid #cad4cc',boxShadow:'0 8px 40px #0003',display:'flex',flexDirection:'column'}}>
+        <button onClick={() => setLicensesOpen(false)} aria-label="关闭第三方许可" style={{padding:12,alignSelf:'flex-end'}}>关闭 / Close</button>
+        <iframe title="Bundled third-party licence texts" src={`${import.meta.env.BASE_URL}third-party-licenses.html`} style={{border:0,flex:1,width:'100%'}} />
+      </div>}
       <Button variant="secondary" className="save-project-button" onClick={exportJson}>
         <FolderOpen size={15} />
         保存项目
@@ -191,6 +210,8 @@ export function Toolbar() {
               透明背景
             </label>
             <p className="field-hint">导出不包含选框。图片字形的清晰度受原图分辨率限制。</p>
+            <label className="check-field"><input type="checkbox" checked={commercialOnly} onChange={(e) => setCommercialOnly(e.target.checked)} />商用导出 / Commercial-only export</label>
+            <p className="field-hint">附机器可读与文字来源清单；含 CC BY-SA 字形时，PNG 与授权清单一起打包为 ZIP。</p>
             <Button className="w-full" onClick={exportPng}>
               下载 PNG
             </Button>

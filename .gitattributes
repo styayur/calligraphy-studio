@@ -1,0 +1,27 @@
+# Preserve canonical receipt bytes across Linux and Windows checkouts.
+samples/asset-manifest.json text eol=lf
+apps/web/public/fonts/asset-manifest.json text eol=lf
+third_party/harfbuzz/*.txt text eol=lf
+apps/web/public/licenses/*.txt text eol=lf
+*.ttf binary
+*.woff2 binary
+*.gz binary
+*.gzip binary
+*.jpg binary
+*.png binary
+third_party/manifest.json text eol=lf
+third_party/NOTICE.md text eol=lf
+third_party/CC0-1.0.txt text eol=lf
+apps/web/public/third-party-manifest.json text eol=lf
+apps/web/public/THIRD_PARTY_NOTICE.md text eol=lf
+apps/web/public/LICENSE text eol=lf
+apps/web/public/third-party-licenses.html text eol=lf
+apps/web/public/fonts/licenses/*.txt text eol=lf
+apps/web/public/demo/licenses/*.txt text eol=lf
+apps/web/public/japanese/licenses/*.txt text eol=lf
+apps/web/public/licenses/npm/** text eol=lf
+# Preserve upstream licence text verbatim, including its original whitespace.
+apps/web/public/fonts/licenses/*.txt -whitespace
+apps/web/public/japanese/licenses/*.txt -whitespace
+apps/web/public/third-party-licenses.html -whitespace
+third_party/japanese/**/*.txt -whitespace

@@ -4,6 +4,39 @@ This file records what was actually integrated and why other links were not trea
 
 ## Integrated
 
+### Yuji Japanese font pack
+
+Official source: [Kinutafontfactory/Yuji](https://github.com/Kinutafontfactory/Yuji), commit `efec977b14b57c19eb85d468edcfbbad13139e67`; all five files report **Version 3.002**. Yuji Syuku, Mai, Boku cover kanji/hiragana/katakana and punctuation; Akari/Akebono provide historical kana font alternates in modern hiragana slots. Designer: Yuji Kataoka / Kinuta Font Factory. License: OFL-1.1. Exact paths, authorship, checksums, copyright, original OFL text and source URLs are in `third_party/japanese/yuji/provenance.json` and `samples/fonts/japanese/manifest.json`. All glyphs have `font` provenance. These fonts are not historical originals.
+
+Reproduce source files with `python scripts/fetch_japanese_fonts.py`, then `python scripts/build_browser_fonts.py`. Each download is pinned to the reviewed commit and checksum; no upstream scripts run. Browser compressed fonts retain exact original font bytes; all platforms ship the same manifest and independently visible licences.
+
+### CODH Japanese historical sample
+
+Authoritative resource: [CODH / ROIS character shapes](https://codh.rois.ac.jp/char-shape/), **v2, 2019-11-11**, DOI [10.20676/00000340](https://doi.org/10.20676/00000340). Source attribution: 日本古典籍くずし字データセット (国文研所蔵／CODH加工). CC BY-SA 4.0; not MIT. Dataset transcriptions can merge kyūjitai with modern kanji and hentaigana with modern hiragana. Preserve source transcriptions and occurrence identity rather than claiming unique historical semantic mappings.
+
+Bundled subset: 20 upstream display crops from book `200006663` (ぢぐち), selected from official [v2 archive](https://codh.rois.ac.jp/char-shape/dataset/v2/200006663.zip). Archive SHA-256: `3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671`. The original archive is roughly 7.71 MB; full upstream dataset ZIP is roughly 7.35 GB, which is unsuitable for platform packaging. [Provenance receipt](../third_party/japanese/codh/provenance.json) and [sample manifest](../samples/japanese/historical/sample/manifest.json) retain each original checksum, book/page/bbox, source URI and Unicode mapping. Period, language and calligrapher are unknown. Writing tradition identifies the Japanese collection, not necessarily the language of every text.
+
+`python scripts/build_japanese_sample.py` reproducibly generates transparent masks with explicit processing notices and CC-BY-SA-4.0 derivative licence. Artwork exports containing adapted CODH glyphs include JSON/TXT attribution and complete licence; share-alike obligations stay attached. No KMNIST, Kuzushiji-49, Kuzushiji-Kanji, Kaggle mirrors or unofficial reuploads are bundled.
+
+### Japanese historical corpus installation
+
+Normal offline editing requires no corpus download. Optional corpus imports need the existing local Python API; standalone web/APK/desktop core packs include only fonts and the small sample.
+
+```sh
+pip install -r apps/api/requirements.txt
+python scripts/import_codh.py --url https://codh.rois.ac.jp/char-shape/dataset/v2/200006663.zip --sha256 3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671 --book-id 200006663 --work ぢぐち
+```
+
+For another official v2 book/archive, supply its independently reviewed SHA-256. Do not reuse the sample checksum or invent an upstream release checksum. For fully offline import, create a schema-2 receipt next to downloaded archives and use `--manifest data/imports/receipt.json`:
+
+```json
+{"schema_version":2,"dataset_version":"v2","archives":[{"file":"200006663.zip","sha256":"3e47c4f1f4b12dec83732dad8e398780851751bd225114395d420857d2bb3671","books":{"200006663":{"work":"ぢぐち"}}}]}
+```
+
+Use `--characters あい国` / `--limit 100` for a small local corpus; `--db-url` / `--assets-dir` override destinations. Ctrl+C leaves committed checkpoints; repeating the same command skips existing identity/source/checksum records. Downloads restart after interruption; import is repeatable, not a byte-range resumable downloader. Archives are streamed in place and never extracted. No network is needed after assets are installed; API lists are indexed/paginated and images remain lazy.
+
+Raw archives/receipts live under ignored `data/imports/`; runtime images under ignored `storage/assets/`. Historical original crops are `original` source records; any mask/composition records its changes. Never assign source period or calligrapher without evidence.
+
 ### NCCU Cursive Chinese Calligraphy Dataset
 
 - Repository: https://github.com/nccuviplab/CursiveChineseCalligraphyDataset

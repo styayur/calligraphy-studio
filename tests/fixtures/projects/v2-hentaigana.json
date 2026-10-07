@@ -1,0 +1,211 @@
+{
+  "version": 2,
+  "canvas": {
+    "width": 800,
+    "height": 600,
+    "background": "#ffffff"
+  },
+  "text": "ああ",
+  "glyphs": [
+    {
+      "id": "fixture:yuji-akari:あ",
+      "glyph_id": "fixture:yuji-akari:あ",
+      "character": "あ",
+      "source": {
+        "language": "ja",
+        "locale": "ja-JP",
+        "writing_tradition": "Japanese",
+        "orthography": "historical-kana",
+        "license": "OFL-1.1",
+        "license_url": "https://openfontlicense.org",
+        "rights": {
+          "commercial_use": true,
+          "derivatives_allowed": true,
+          "redistribution_allowed": true,
+          "research_use": true,
+          "attribution_required": true,
+          "font_license": true,
+          "share_alike_required": false
+        },
+        "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+        "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+        "designer": "Yuji Kataoka; Kinuta Font Factory",
+        "source_collection": "Yuji",
+        "dataset": "Yuji Japanese Fonts",
+        "work": "Yuji Akari",
+        "script": "Hiragana",
+        "source_checksum": "6fa6bfaff8851fd20f32a807dfb9a7dc15f54780af564ddc8f32e074004bde27",
+        "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+        "license_text": "fonts/licenses/OFL-yuji-akari.txt"
+      },
+      "asset": {
+        "type": "raster",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aJ1sAAAAASUVORK5CYII=",
+        "width": 1,
+        "height": 1,
+        "bbox": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf"
+      },
+      "transform": {
+        "x": 10,
+        "y": 20,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "skewX": 0,
+        "skewY": 0
+      },
+      "appearance": {
+        "opacity": 1,
+        "blendMode": "multiply"
+      },
+      "provenance": {
+        "type": "font"
+      },
+      "identity": {
+        "text": "あ",
+        "codepoints": [
+          "U+3042"
+        ],
+        "language": "ja",
+        "locale": "ja-JP",
+        "script": "Hiragana",
+        "canonical": null
+      },
+      "variant": {
+        "id": "fixture:yuji-akari:あ",
+        "type": "hentaigana",
+        "font_glyph_id": 1,
+        "glyph_name": "uni3042"
+      },
+      "metadata": {
+        "shaping": {
+          "engine": "harfbuzz-freetype",
+          "harfbuzz_version": "14.5.0",
+          "source_sequence": "あ",
+          "font_glyph_ids": [
+            1
+          ],
+          "glyph_names": [
+            "uni3042"
+          ],
+          "features": {
+            "locl": 1,
+            "vert": 0,
+            "vrt2": 0
+          },
+          "locale": "ja-JP",
+          "script": "Hiragana",
+          "direction": "ltr",
+          "font_sha256": "6fa6bfaff8851fd20f32a807dfb9a7dc15f54780af564ddc8f32e074004bde27"
+        },
+        "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+      }
+    },
+    {
+      "id": "fixture:yuji-akebono:あ",
+      "glyph_id": "fixture:yuji-akebono:あ",
+      "character": "あ",
+      "source": {
+        "language": "ja",
+        "locale": "ja-JP",
+        "writing_tradition": "Japanese",
+        "orthography": "historical-kana",
+        "license": "OFL-1.1",
+        "license_url": "https://openfontlicense.org",
+        "rights": {
+          "commercial_use": true,
+          "derivatives_allowed": true,
+          "redistribution_allowed": true,
+          "research_use": true,
+          "attribution_required": true,
+          "font_license": true,
+          "share_alike_required": false
+        },
+        "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+        "attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+        "designer": "Yuji Kataoka; Kinuta Font Factory",
+        "source_collection": "Yuji",
+        "dataset": "Yuji Japanese Fonts",
+        "work": "Yuji Akebono",
+        "script": "Hiragana",
+        "source_checksum": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3",
+        "dataset_version": "efec977b14b57c19eb85d468edcfbbad13139e67",
+        "license_text": "fonts/licenses/OFL-yuji-akebono.txt"
+      },
+      "asset": {
+        "type": "raster",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aJ1sAAAAASUVORK5CYII=",
+        "width": 1,
+        "height": 1,
+        "bbox": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf"
+      },
+      "transform": {
+        "x": 10,
+        "y": 20,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "skewX": 0,
+        "skewY": 0
+      },
+      "appearance": {
+        "opacity": 1,
+        "blendMode": "multiply"
+      },
+      "provenance": {
+        "type": "font"
+      },
+      "identity": {
+        "text": "あ",
+        "codepoints": [
+          "U+3042"
+        ],
+        "language": "ja",
+        "locale": "ja-JP",
+        "script": "Hiragana",
+        "canonical": null
+      },
+      "variant": {
+        "id": "fixture:yuji-akebono:あ",
+        "type": "hentaigana",
+        "font_glyph_id": 1,
+        "glyph_name": "uni3042"
+      },
+      "metadata": {
+        "shaping": {
+          "engine": "harfbuzz-freetype",
+          "harfbuzz_version": "14.5.0",
+          "source_sequence": "あ",
+          "font_glyph_ids": [
+            1
+          ],
+          "glyph_names": [
+            "uni3042"
+          ],
+          "features": {
+            "locl": 1,
+            "vert": 0,
+            "vrt2": 0
+          },
+          "locale": "ja-JP",
+          "script": "Hiragana",
+          "direction": "ltr",
+          "font_sha256": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3"
+        },
+        "fixture_asset": "Synthetic 1px test raster, not a source font rendering"
+      }
+    }
+  ]
+}

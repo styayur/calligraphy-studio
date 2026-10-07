@@ -1,7 +1,9 @@
 import { searchGlyphs } from './client'
 import { fontGlyphs } from './fonts'
 import type { Glyph } from '../types'
-export type CandidateSource = 'fonts' | 'original' | 'all'
+import { candidateCompatible, type CandidatePolicy } from '../lib/candidatePolicy'
+import { historicalGlyphs } from './historical'
+export type CandidateSource = 'fonts' | 'original' | 'all' | 'fallback'
 export interface CandidatePage {
   items: Glyph[]
   hasMore: boolean
@@ -15,28 +17,33 @@ export function candidatePage(
   style = '',
   offset = 0,
   limit = 12,
+  policy: CandidatePolicy = {},
 ): Promise<CandidatePage> {
-  const key = JSON.stringify([character, source, style, offset, limit]),
+  const key = JSON.stringify([character, source, style, offset, limit, policy]),
     hit = pages.get(key)
   if (hit && Date.now() - hit.time < 60_000) return hit.value
   const value = (async () => {
-    const [fonts, library] = await Promise.allSettled([
-      source !== 'original' && offset === 0
-        ? fontGlyphs(character, style)
+    const [fonts, library, historical] = await Promise.allSettled([
+      (source === 'fonts' || source === 'all') && offset === 0
+        ? fontGlyphs(character, style, '', policy)
         : Promise.resolve([]),
       source !== 'fonts'
-        ? searchGlyphs({ character, style, offset, limit })
+        ? searchGlyphs({ character, style, offset, limit, ...policy,
+            writing_tradition: policy.mode === 'cross-tradition' ? undefined : policy.writing_tradition,
+            provenance_type: source === 'fallback' ? 'fallback' : 'original' })
         : Promise.resolve({ items: [] as Glyph[], total: 0 }),
+      (source === 'original' || source === 'all') && offset === 0 ? historicalGlyphs(character, policy) : Promise.resolve([]),
     ])
     if (source === 'fonts' && fonts.status === 'rejected') throw fonts.reason
-    if (source === 'original' && library.status === 'rejected') throw library.reason
+    if (source === 'original' && library.status === 'rejected' && historical.status === 'rejected') throw library.reason
     const items = [
       ...(fonts.status === 'fulfilled' ? fonts.value : []),
       ...(library.status === 'fulfilled'
         ? library.value.items.filter(
-            (g) => g.provenance.type === 'original' && g.source.dataset !== 'Demo',
+            (g) => g.provenance.type === (source === 'fallback' ? 'fallback' : 'original') && g.source.dataset !== 'Demo' && candidateCompatible(g, policy),
           )
         : []),
+      ...(historical.status === 'fulfilled' ? historical.value : []),
     ]
     const warning = [
       fonts.status === 'rejected' ? '内置字体加载失败' : '',
@@ -45,7 +52,7 @@ export function candidatePage(
       .filter(Boolean)
       .join('；')
     return {
-      items,
+      items: Array.from(new Map(items.map((g) => [g.variant?.id || g.id, g])).values()),
       hasMore: library.status === 'fulfilled' && offset + limit < library.value.total,
       warning,
     }
@@ -64,11 +71,12 @@ export async function initialCandidates(
   style: string,
   limit: number,
   signal?: AbortSignal,
+  policy: CandidatePolicy = {},
 ) {
   let offset = 0
   while (true) {
     signal?.throwIfAborted()
-    const page = await candidatePage(character, source, style, offset, limit)
+    const page = await candidatePage(character, source, style, offset, limit, policy)
     if (page.items.length || !page.hasMore) return page
     offset += limit
   }

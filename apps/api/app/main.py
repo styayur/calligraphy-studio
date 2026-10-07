@@ -12,7 +12,7 @@ from app.database import Database
 from app.models import Glyph
 from app.routes import compose, fallback, glyphs, metadata, projects, search, similarity
 from app.schemas import HealthResponse
-from app.seed import seed_cursive_if_missing, seed_demo_if_empty, seed_fonts_if_missing
+from app.seed import seed_cursive_if_missing, seed_demo_if_empty, seed_fonts_if_missing, seed_japanese_if_missing
 from app.services.embedding_service import EmbeddingService
 
 
@@ -27,6 +27,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         seed_demo_if_empty(database, config)
         seed_cursive_if_missing(database, config)
         seed_fonts_if_missing(database, config)
+        seed_japanese_if_missing(database, config)
         if config.auto_index_embeddings:
             with database.session() as session:
                 EmbeddingService(config.assets_dir).index(
@@ -37,8 +38,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     app = FastAPI(
         title=config.app_name,
-        version="0.1.0",
-        description="Phase 1 Glyph API: import, search, compose, export.",
+        version="0.7.0",
+        description="East Asian Calligraphy Workbench: glyph identity, provenance, search and composition.",
         lifespan=lifespan,
     )
     app.state.settings = config

@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "release": "0.7.0",
+  "font_packs": [
+    "fonts/manifest.json",
+    "fonts/japanese/manifest.json"
+  ],
+  "historical_samples": [
+    "japanese/historical/sample/manifest.json"
+  ],
+  "tiers": [
+    "core",
+    "historical-sample",
+    "optional-local-corpus"
+  ],
+  "canonical_sha256": "fa1f1ee667e5a47c29511959515886f3460f702835303f323167bb8ac1e6a39f",
+  "fonts": [
+    {
+      "id": "ma-shan-zheng",
+      "original": {
+        "path": "samples/fonts/ofl/mashanzheng/MaShanZheng-Regular.ttf",
+        "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/ma-shan-zheng.woff2",
+        "sha256": "4757400310bfa920fcdb98713a71b93d26b08c233a43bf25338b0a9d08da0c3b"
+      },
+      "source_uri": "https://github.com/googlefonts/mashanzheng",
+      "upstream_commit": null,
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-ma-shan-zheng.txt"
+    },
+    {
+      "id": "zhi-mang-xing",
+      "original": {
+        "path": "samples/fonts/ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+        "sha256": "644e0cae9b40f0b10ab729a01bd32032e3973bac22be3dccae01bf6ae7fde969"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/zhi-mang-xing.woff2",
+        "sha256": "8e4673e82ebbdff48700ff80fa91c4f51955c0f880806d5fec089a76bf2c54f6"
+      },
+      "source_uri": "https://github.com/m4rc1e/zhimangxing",
+      "upstream_commit": null,
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-zhi-mang-xing.txt"
+    },
+    {
+      "id": "liu-jian-mao-cao",
+      "original": {
+        "path": "samples/fonts/ofl/liujianmaocao/LiuJianMaoCao-Regular.ttf",
+        "sha256": "cab396b91a5b7c0b4005a35891180d06e6751f5ac261fe680aec65c1ae209033"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/liu-jian-mao-cao.woff2",
+        "sha256": "92acddf5a5c6ea6d42b452c6edb53fdabbc887238625982d7975e275c1141b52"
+      },
+      "source_uri": "https://github.com/googlefonts/liujianmaocao",
+      "upstream_commit": null,
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-liu-jian-mao-cao.txt"
+    },
+    {
+      "id": "yuji-syuku",
+      "original": {
+        "path": "samples/fonts/japanese/yuji/YujiSyuku-Regular.ttf",
+        "sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/yuji-syuku.ttf.gzip",
+        "sha256": "890a2ff05e3468dccc2137fa3ffde3f6467fe0ae3aa9f452569894220ee5a95a"
+      },
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+    },
+    {
+      "id": "yuji-mai",
+      "original": {
+        "path": "samples/fonts/japanese/yuji/YujiMai-Regular.ttf",
+        "sha256": "05d83b65204a5de6fc34c222057fc082f8c6e2e44c05a0d28f4189b3e54c54c2"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/yuji-mai.ttf.gzip",
+        "sha256": "0c74e3fda016a3aa727a9cfb44ab80341713aa43ef77b56655387ce97cef2328"
+      },
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-yuji-mai.txt"
+    },
+    {
+      "id": "yuji-boku",
+      "original": {
+        "path": "samples/fonts/japanese/yuji/YujiBoku-Regular.ttf",
+        "sha256": "94fda16384f3bdac24376a000c57e99abfa314961bd89ef27badfb7410322003"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/yuji-boku.ttf.gzip",
+        "sha256": "04ca49db5a73decc9cc9d06f4aa556a4104892acd034cbbf2dc21a57ea41f4c5"
+      },
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-yuji-boku.txt"
+    },
+    {
+      "id": "yuji-akari",
+      "original": {
+        "path": "samples/fonts/japanese/yuji/YujiHentaiganaAkari-Regular.ttf",
+        "sha256": "6fa6bfaff8851fd20f32a807dfb9a7dc15f54780af564ddc8f32e074004bde27"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/yuji-akari.ttf.gzip",
+        "sha256": "f31671cc6570cdcd63cc4b190d893facf285b40948e828db06af0fcb6ece030e"
+      },
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-yuji-akari.txt"
+    },
+    {
+      "id": "yuji-akebono",
+      "original": {
+        "path": "samples/fonts/japanese/yuji/YujiHentaiganaAkebono-Regular.ttf",
+        "sha256": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/yuji-akebono.ttf.gzip",
+        "sha256": "1c62e6256f961e4e60d0f0d2e03baea644d858c03e59f77fd8f5d34a96fb99c7"
+      },
+      "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-yuji-akebono.txt"
+    }
+  ]
+}

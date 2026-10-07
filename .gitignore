@@ -1,5 +1,10 @@
 # secrets and local configuration
 .env
+.env.*
+!.env.example
+!apps/web/.env.android
+!apps/web/.env.desktop
+!apps/web/.env.pages
 
 # Python
 __pycache__/
@@ -17,6 +22,7 @@ dist/
 
 # Runtime data
 data/*.db
+data/*.db-*
 data/*.sqlite*
 data/raw/*
 data/processed/*
@@ -26,7 +32,25 @@ data/hanzi-writer/*
 storage/assets/*
 !storage/assets/.gitkeep
 work/
+data/imports/
+*.jks
+*.keystore
+*.p12
+*.pfx
+keystore.properties
+apps/desktop/release/
+apps/desktop/build/
+apps/web/android/local.properties
+apps/web/android/.gradle/
+apps/web/android/app/build/
+apps/web/android/build/
+apps/web/android/app/src/main/assets/public/
+apps/web/android/capacitor-cordova-android-plugins/
 *.log
+*.sarif
+/release-artifacts/
+/CalligraphyStudio-*.zip
+/CalligraphyStudio-*.apk
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts

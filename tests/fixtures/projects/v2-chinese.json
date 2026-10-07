@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "canvas": {
+    "width": 800,
+    "height": 600,
+    "background": "#ffffff"
+  },
+  "text": "山",
+  "glyphs": [
+    {
+      "id": "fixture:chinese",
+      "character": "山",
+      "source": {
+        "dataset": "Demo",
+        "calligrapher": "演示·王体",
+        "style": "楷书",
+        "dynasty": "当代",
+        "work": "示例集字",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "rights": {
+          "commercial_use": true,
+          "derivatives_allowed": true,
+          "redistribution_allowed": true,
+          "research_use": true
+        }
+      },
+      "asset": {
+        "type": "raster",
+        "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aJ1sAAAAASUVORK5CYII=",
+        "width": 1,
+        "height": 1,
+        "bbox": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "checksum": "36db88ec0edf5d67057323009a65cd0003b42844c802f0fb188e020892d8eddf"
+      },
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "skewX": 0,
+        "skewY": 0
+      },
+      "appearance": {
+        "opacity": 1,
+        "blendMode": "source-over"
+      },
+      "provenance": {
+        "type": "fallback",
+        "confidence": null
+      },
+      "glyph_id": "fixture:chinese",
+      "metadata": {
+        "fixture_asset": "Synthetic 1px test raster, not a manuscript crop"
+      }
+    }
+  ]
+}

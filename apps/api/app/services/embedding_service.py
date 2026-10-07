@@ -191,6 +191,7 @@ class EmbeddingService:
         limit: int = 20,
         same_style: bool = False,
         same_dataset: bool = False,
+        mode: str = "strict",
     ) -> SimilarityResponse:
         target = session.scalar(
             select(Glyph)
@@ -220,6 +221,11 @@ class EmbeddingService:
         if same_dataset:
             statement = statement.where(Glyph.source_id == target.source_id)
         rows = session.execute(statement).all()
+        from app.services.candidate_policy import CandidatePolicy, candidate_cost
+        policy = CandidatePolicy(tradition=target.writing_tradition, locale=target.locale, script=target.script,
+                                 period=target.period, work=target.source.work, mode=mode,
+                                 variant_type="hentaigana" if target.variant_type == "hentaigana" else None)
+        rows = [row for row in rows if policy.accepts(row[1])]
         if not rows:
             return SimilarityResponse(target_id=target.id, model_name=MODEL_NAME, items=[])
 
@@ -230,7 +236,8 @@ class EmbeddingService:
         scores = matrix @ target_vector
         count = min(limit, len(rows))
         best = np.argpartition(scores, -count)[-count:]
-        best = best[np.argsort(scores[best])[::-1]]
+        # Rank all culturally admissible candidates before truncating by visual score.
+        best = sorted(range(len(rows)), key=lambda i: (candidate_cost(rows[i][1], 1-float(scores[i]), policy), rows[i][1].id))[:count]
         items = [
             SimilarGlyphItem(glyph=glyph_to_schema(rows[index][1]), score=float(scores[index]))
             for index in best

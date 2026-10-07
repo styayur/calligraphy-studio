@@ -61,12 +61,23 @@ class GlyphSource(Base):
 class Glyph(Base):
     __tablename__ = "glyphs"
     __table_args__ = (
-        UniqueConstraint("character", "source_id", "checksum", name="uq_glyph_identity"),
+        UniqueConstraint("identity_key", "source_id", "checksum", name="uq_glyph_identity"),
         Index("ix_glyphs_character_created", "character", "created_at"),
     )
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
-    character: Mapped[str] = mapped_column(String(16), index=True)
+    character: Mapped[str] = mapped_column(String(128), index=True)
+    identity: Mapped[dict] = mapped_column(JSON, default=dict)
+    variant: Mapped[dict] = mapped_column(JSON, default=dict)
+    identity_key: Mapped[str] = mapped_column(String(500), default="")
+    language: Mapped[str | None] = mapped_column(String(32), nullable=True, index=True)
+    locale: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+    script: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+    writing_tradition: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+    variant_type: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+    orthography: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+    period: Mapped[str | None] = mapped_column(String(120), nullable=True, index=True)
+    region: Mapped[str | None] = mapped_column(String(120), nullable=True)
     calligrapher_id: Mapped[int | None] = mapped_column(
         ForeignKey("calligraphers.id"), nullable=True, index=True
     )

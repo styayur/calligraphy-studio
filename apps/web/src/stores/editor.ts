@@ -10,7 +10,7 @@ import type {
 const HISTORY_LIMIT = 60
 
 const emptyProject = (): ProjectDocument => ({
-  version: 1,
+  version: 2,
   canvas: { width: 1000, height: 1200, background: '#ffffff' },
   glyphs: [],
 })
