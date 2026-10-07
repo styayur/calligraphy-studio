@@ -1,6 +1,6 @@
 [project]
 name = "calligraphy-studio-api"
-version = "0.7.0"
+version = "0.7.1"
 description = "Glyph store and project API for Calligraphy Studio"
 requires-python = ">=3.11"
 dependencies = [

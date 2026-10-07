@@ -50,6 +50,7 @@ jobs:
       - name: Determine publishable Android signing availability
         id: signing
         env:
+          PRODUCTION: ${{ github.event_name == 'push' || inputs.release_channel == 'production' }}
           KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
@@ -60,6 +61,8 @@ jobs:
           provided = [bool(os.environ.get(key)) for key in ['KEYSTORE', 'STORE_PASSWORD', 'KEY_ALIAS', 'KEY_PASSWORD']]
           if any(provided) and not all(provided):
               raise SystemExit('Incomplete Android signing configuration')
+          if os.environ.get('PRODUCTION') == 'true' and not all(provided):
+              raise SystemExit('Production release requires all Android signing secrets')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               output.write('android=' + str(all(provided)).lower() + '\n')
           PY
@@ -132,10 +135,10 @@ jobs:
       - name: Verify final Windows payloads and native renderer
         run: |
           $PSNativeCommandUseErrorActionPreference = $true
-          python scripts/validate_windows_distributables.py apps/desktop/release/CalligraphyStudio-Setup-0.7.0-x64.exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe
+          python scripts/validate_windows_distributables.py apps/desktop/release/CalligraphyStudio-Setup-0.7.1-x64.exe apps/desktop/release/CalligraphyStudio-Portable-0.7.1-x64.exe
           python -m pip install playwright pillow
           python scripts/test_windows_native.py --exe "apps/desktop/release/win-unpacked/Calligraphy Studio.exe" --output work/windows-native-unpacked.json
-          python scripts/test_windows_native.py --exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe --output work/windows-native-portable.json
+          python scripts/test_windows_native.py --exe apps/desktop/release/CalligraphyStudio-Portable-0.7.1-x64.exe --output work/windows-native-portable.json
           Copy-Item apps/web/dist/build-meta.json apps/desktop/release/windows-build-provenance.json
           $taskSignatures = Get-ChildItem apps/desktop/release/*.exe | ForEach-Object { $taskSignature = Get-AuthenticodeSignature -LiteralPath $_.FullName; @{ name = $_.Name; status = [string]$taskSignature.Status; certificate_thumbprint = $taskSignature.SignerCertificate.Thumbprint } }
           $taskSignatures | ConvertTo-Json | Set-Content -Encoding utf8 apps/desktop/release/windows-signing.json
@@ -282,7 +285,7 @@ jobs:
           if-no-files-found: error
 
   publish:
-    if: always() && needs.prepare.outputs.production == 'true' && needs.prepare.result == 'success' && needs.api.result == 'success' && needs.windows.result == 'success' && needs.web.result == 'success' && (needs.android.result == 'success' || needs.android.result == 'skipped')
+    if: always() && needs.prepare.outputs.production == 'true' && needs.prepare.result == 'success' && needs.api.result == 'success' && needs.windows.result == 'success' && needs.web.result == 'success' && needs.android.result == 'success'
     needs: [prepare, api, windows, android, web]
     runs-on: ubuntu-latest
     permissions:
@@ -303,9 +306,8 @@ jobs:
           INCLUDE_ANDROID: ${{ needs.prepare.outputs.android }}
           RELEASE_COMMIT: ${{ needs.prepare.outputs.sha }}
         run: |
-          options=()
-          if [ "$INCLUDE_ANDROID" != "true" ]; then options+=(--without-android); fi
-          python scripts/create_release_manifest.py --directory release-artifacts --commit "$RELEASE_COMMIT" "${options[@]}"
+          test "$INCLUDE_ANDROID" = "true"
+          python scripts/create_release_manifest.py --directory release-artifacts --commit "$RELEASE_COMMIT"
       - name: Publish complete release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -315,6 +317,6 @@ jobs:
             echo "Release already exists; refusing to overwrite it."
             exit 1
           fi
-          gh release create "$TAG" --verify-tag --draft --title "East Asian Calligraphy Workbench $TAG" --notes-file release/RELEASE_NOTES_0.7.0.md
+          gh release create "$TAG" --verify-tag --draft --title "East Asian Calligraphy Workbench $TAG" --notes-file release/RELEASE_NOTES_0.7.1.md
           gh release upload "$TAG" release-artifacts/*
-          gh release edit "$TAG" --draft=false --latest --notes-file release/RELEASE_NOTES_0.7.0.md
+          gh release edit "$TAG" --draft=false --latest --notes-file release/RELEASE_NOTES_0.7.1.md

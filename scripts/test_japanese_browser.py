@@ -23,7 +23,7 @@ def main():
         page.goto(args.url); page.wait_for_load_state('networkidle')
         composer=page.locator('.composer')
         page.get_by_label('项目菜单').click()
-        expect(page.get_by_test_id('app-version')).to_have_text('0.7.0')
+        expect(page.get_by_test_id('app-version')).to_have_text('0.7.1')
         page.get_by_role('button',name='第三方许可 / Third-party licences',exact=True).click()
         notices=json.loads((Path(__file__).resolve().parents[1]/'third_party/manifest.json').read_text(encoding='utf-8'))
         expect(page.frame_locator('iframe').locator('details')).to_have_count(len(notices['components']))

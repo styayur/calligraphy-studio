@@ -19,7 +19,7 @@ def validate():
         manifest=json.loads((ROOT/file).read_text(encoding='utf-8'))
         assert manifest['release']==version and manifest['schema_version']==release['schema_version']
     assert f'content="{version}"' in (ROOT/'apps/web/index.html').read_text(encoding='utf-8')
-    assert version in (ROOT/'release/RELEASE_NOTES_0.7.0.md').read_text(encoding='utf-8')
+    assert version in (ROOT/f'release/RELEASE_NOTES_{version}.md').read_text(encoding='utf-8')
     workflow=(ROOT/'.github/workflows/release-all.yml').read_text(encoding='utf-8')
     # Dispatch selects a Git tag ref now; validate the concrete package/note names.
     assert set(re.findall(r'CalligraphyStudio-(?:Setup|Portable)-(\d+\.\d+\.\d+)-x64\.exe',workflow))=={version}
