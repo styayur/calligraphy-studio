@@ -31,12 +31,14 @@ class FontManifestProvider(DatasetProvider):
         characters: set[str] | None = None,
         include_noncommercial: bool = True,
         vertical: bool = False,
+        datasets: set[str] | None = None,
     ) -> None:
         self.manifest_path = Path(manifest_path).resolve()
         self.root = self.manifest_path.parent
         self.characters = characters
         self.include_noncommercial = include_noncommercial
         self.vertical = vertical
+        self.datasets = datasets
 
     def _manifest(self) -> dict[str, Any]:
         if self.manifest_path.stat().st_size > 16 * 1024 * 1024:
@@ -77,6 +79,8 @@ class FontManifestProvider(DatasetProvider):
         source_index = 0
 
         for entry in manifest.get("fonts", []):
+            if self.datasets is not None and entry.get("dataset") not in self.datasets:
+                continue
             enabled = entry.get("enabled", True)
             if not isinstance(enabled, bool):
                 raise ValueError("Font enabled must be a boolean")
@@ -151,6 +155,9 @@ class FontManifestProvider(DatasetProvider):
                         "font_id": entry.get("id"),
                         "font_family": entry.get("family"),
                         "font_version":entry.get('font_version'),
+                        "source_role": entry.get("source_role"),
+                        "original_sha256": entry.get("original_sha256"),
+                        "subset_command": entry.get("subset_command"),
                         "upstream_commit":entry.get('upstream_commit'),
                         "font_file": font_path.name,
                         "font_sha256": checksum,
@@ -162,7 +169,7 @@ class FontManifestProvider(DatasetProvider):
                         "source_checksum": checksum,
                         "dataset_version": entry.get("upstream_commit"),
                         "source_uri": entry.get("source_uri"),
-                        "license_text": entry.get("license_text"),
+                        "license_text": entry.get("bundle_license_text", entry.get("license_text")),
                     },
                     source_index=source_index,
                 )

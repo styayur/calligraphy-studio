@@ -37,11 +37,13 @@ def main():
                 if entry.get("language") == "ja":
                     # AAPT transparently decompresses/renames *.gz assets. Preserve the
                     # exact compressed bytes and manifest URI on Android with *.gzip.
-                    file = f"{entry['id']}.ttf.gzip"
+                    file = f"{entry['id']}{original.suffix}.gzip"
                     legacy = target / f"{entry['id']}.ttf.gz"
                     if legacy.is_file() and legacy.resolve().parent == target.resolve():
                         legacy.unlink()
-                    (target / file).write_bytes(gzip.compress(raw, compresslevel=9, mtime=0))
+                    compressed = target / file
+                    if not compressed.exists() or gzip.decompress(compressed.read_bytes()) != raw:
+                        compressed.write_bytes(gzip.compress(raw, compresslevel=9, mtime=0))
                     renderer = "harfbuzz"
                 else:
                     file = f"{entry['id']}.woff2"
@@ -49,7 +51,10 @@ def main():
                         font.flavor = "woff2"
                         font.save(target / file)
                     renderer = "browser-legacy"
-            license_path = ROOT / "third_party/japanese/yuji/OFL.txt" if entry.get("language") == "ja" else source.parent / entry["license_text"]
+            if entry.get("language") == "ja" and entry["id"].startswith("yuji-"):
+                license_path = ROOT / "third_party/japanese/yuji/OFL.txt"
+            else:
+                license_path = source.parent / entry["license_text"]
             license_file = f"licenses/OFL-{entry['id']}.txt"
             shutil.copyfile(license_path, target / license_file)
             record = {**entry, "path": file, "renderer": renderer, "characters": coverage,
@@ -59,7 +64,9 @@ def main():
             provenance.append({"id": entry["id"], "original": {"path": original.relative_to(ROOT).as_posix(), "sha256": checksum},
                                "runtime": {"path": f"apps/web/public/fonts/{file}", "sha256": record["runtime_sha256"]},
                                "source_uri": entry["source_uri"], "upstream_commit": entry.get("upstream_commit"),
-                               "license": entry["license"], "license_text": record["license_text"]})
+                               "license": entry["license"], "license_text": record["license_text"],
+                               "source_role": entry.get("source_role"), "original_sha256": entry.get("original_sha256"),
+                               "subset_command": entry.get("subset_command")})
     (target / "catalog.json").write_text(json.dumps(entries, ensure_ascii=False), encoding="utf-8", newline="\n")
     # Git stores this text as LF; universal-newline reading also handles an older
     # Windows working copy that predates the repository's .gitattributes rules.

@@ -22,6 +22,16 @@ assert.equal(candidateCompatible(zh,{ ...policy,mode:'related' }),false)
 assert.equal(candidateCompatible(zh,{ ...policy,mode:'cross-tradition' }),true)
 assert.equal(candidateCompatible({ ...ja,source:{ ...ja.source,writing_tradition:null } },policy),false)
 assert.equal(candidateCost(zh,0,policy),Infinity)
+const yuji = { ...ja,id:'yuji',source:{ ...ja.source,work:'Yuji Syuku',source_role:'calligraphy' as const } }
+const klee = { ...ja,id:'klee',source:{ ...ja.source,work:'Klee One',source_role:'handwriting' as const } }
+const coverage = { ...ja,id:'coverage',source:{ ...ja.source,work:'JP Coverage Serif',source_role:'coverage-fallback' as const,license:'OFL-1.1',source_checksum:'b'.repeat(64) } }
+assert.equal(candidateCompatible(coverage,policy),true)
+assert.ok(candidateCost(coverage,0,policy) > candidateCost(yuji,1,policy))
+assert.ok(candidateCost(coverage,0,policy) > candidateCost(klee,1,policy))
+assert.equal(candidateCompatible({...coverage,source:{...coverage.source,writing_tradition:'Chinese'}},policy),false)
+const exportedCoverage = attributionManifest([coverage])
+assert.equal(exportedCoverage.glyphs[0].source.source_role,'coverage-fallback')
+assert.equal(exportedCoverage.glyphs[0].source.license,'OFL-1.1')
 assert.ok(candidateCost(ja,.2,{ ...policy,mode:'cross-tradition' }) < candidateCost(zh,.2,{ ...policy,mode:'cross-tradition' }))
 assert.throws(() => candidateCost(ja,0,policy,[],0,{ ...CANDIDATE_WEIGHTS,visual:-1 }))
 const henta = glyph('Japanese','ja-JP','hentaigana')

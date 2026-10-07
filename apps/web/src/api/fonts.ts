@@ -20,6 +20,8 @@ export interface FontEntry extends GlyphSource {
   runtime_sha256: string
   upstream_commit?: string
   font_version?: string
+  original_sha256?: string
+  subset_command?: string
   variant_type?: VariantType
 }
 let catalog: Promise<FontEntry[]> | undefined
@@ -61,14 +63,15 @@ export async function fontGlyphs(character: string, style = '', designer = '', p
           id, character,
           identity: { text: character, codepoints: codepoints(character), language: font.language, locale: font.locale, script: unicodeScript(character), canonical:variant.canonical },
           variant: { type:variant.type, id, font_glyph_id: shaped.shaping.font_glyph_ids[0], glyph_name: shaped.shaping.glyph_names[0] },
-          source: { dataset: 'Yuji Japanese Fonts', work: font.family, source_checksum: font.sha256, dataset_version: font.upstream_commit,
+          source: { dataset: font.dataset, work: font.family, source_role: font.source_role, source_checksum: font.sha256, dataset_version: font.upstream_commit,
             language:font.language, locale:font.locale, script:unicodeScript(character), writing_tradition:font.writing_tradition,
             orthography:font.orthography, period:font.period, region:font.region, source_collection:font.source_collection,
             designer:font.designer, calligrapher:font.designer, style:font.style, source_uri:font.source_uri,
             license:font.license, license_url:font.license_url, license_text:font.license_text, attribution:font.attribution, rights:font.rights },
           asset: { type: 'raster', url: shaped.url, checksum: shaped.checksum, width: 512, height: 512, bbox: [0,0,512,512] },
           transform: { x:0,y:0,scaleX:.3,scaleY:.3,rotation:0,skewX:0,skewY:0 },
-          appearance: { opacity:1,blendMode:'multiply' }, provenance: { type:'font' }, metadata: { shaping: shaped.shaping, font_id:font.id, font_version:font.font_version, upstream_commit:font.upstream_commit },
+          appearance: { opacity:1,blendMode:'multiply' }, provenance: { type:'font' }, metadata: { shaping: shaped.shaping, font_id:font.id, font_version:font.font_version, upstream_commit:font.upstream_commit,
+            source_role:font.source_role, original_sha256:font.original_sha256, subset_command:font.subset_command },
         }
         glyphCache.set(id,glyph)
         if (glyphCache.size > 2048) glyphCache.delete(glyphCache.keys().next().value!)

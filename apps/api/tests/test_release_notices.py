@@ -8,10 +8,10 @@ gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
 PUBLIC=ROOT/'apps/web/public'
 
 def test_canonical_notices_and_all_codh_derivative_receipts():
-    assert gate.validate_reader(lambda path:(PUBLIC/path).read_bytes())==43
+    assert gate.validate_reader(lambda path:(PUBLIC/path).read_bytes())==45
     assert gate.validate_codh()==20
 
-@pytest.mark.parametrize('missing',['LICENSE','fonts/licenses/OFL-yuji-syuku.txt','demo/licenses/nccu-mit.txt','demo/licenses/arphic-public-license.txt'])
+@pytest.mark.parametrize('missing',['LICENSE','fonts/licenses/OFL-yuji-syuku.txt','fonts/licenses/OFL-klee-one.txt','fonts/licenses/OFL-jp-coverage-serif.txt','demo/licenses/nccu-mit.txt','demo/licenses/arphic-public-license.txt'])
 def test_missing_or_changed_packaged_licence_fails(missing):
     with pytest.raises(AssertionError):
         gate.validate_reader(lambda path:b'changed licence text' if path==missing else (PUBLIC/path).read_bytes())

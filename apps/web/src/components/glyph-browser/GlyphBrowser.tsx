@@ -36,8 +36,8 @@ export function GlyphBrowser() {
       const effectiveStyle = policy.writing_tradition === 'Japanese' ? '' : style
       const [library, fonts, historical] = await Promise.allSettled([
         searchGlyphs({ q: term, style: effectiveStyle, dataset, calligrapher, limit, ...policy, writing_tradition: policy.mode === 'cross-tradition' ? undefined : policy.writing_tradition }),
-        [...term].length === 1 && (!dataset || dataset === 'OFL Calligraphy Fonts' || dataset === 'Yuji Japanese Fonts')
-          ? fontGlyphs(term, effectiveStyle, calligrapher, policy)
+        [...term].length === 1 && (!dataset || ['OFL Calligraphy Fonts', 'Yuji Japanese Fonts', 'Klee One', 'Japanese Coverage Fonts'].includes(dataset))
+          ? fontGlyphs(term, effectiveStyle, calligrapher, { ...policy, dataset: dataset || undefined })
           : Promise.resolve([]),
         historicalSample().then((items) => items.filter((g) => (!term || g.character === term || g.source.work?.includes(term)) && (!dataset || g.source.dataset === dataset) && candidateCompatible(g, policy))),
       ])
@@ -109,7 +109,7 @@ export function GlyphBrowser() {
             onChange={(e) => setDataset(e.target.value)}
           >
             <option value="">全部字库</option>
-            {[...new Set([...(meta?.datasets || ['OFL Calligraphy Fonts']), 'Yuji Japanese Fonts', 'CODH Kuzushiji'])].map((item) => (
+            {[...new Set([...(meta?.datasets || ['OFL Calligraphy Fonts']), 'Yuji Japanese Fonts', 'Klee One', 'Japanese Coverage Fonts', 'CODH Kuzushiji'])].map((item) => (
               <option key={item}>{item}</option>
             ))}
           </select>
@@ -165,7 +165,7 @@ export function GlyphBrowser() {
                 <small>{glyph.source.work || glyph.source.dataset}</small>
                 <small className="glyph-kind">
                   {glyph.source.writing_tradition || 'Unknown tradition'} ·{' '}
-                  {glyph.source.dataset === 'Demo'
+                  {glyph.source.source_role === 'coverage-fallback' ? 'Coverage fallback' : glyph.source.source_role === 'handwriting' ? 'Handwriting' : glyph.source.source_role === 'calligraphy' ? 'Calligraphy' : glyph.source.dataset === 'Demo'
                     ? '演示字形'
                     : { font: '字体', original: '原帖', fallback: '结构替补', generated: '生成' }[
                         glyph.provenance.type

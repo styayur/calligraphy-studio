@@ -374,6 +374,24 @@
           "title": "Dataset",
           "type": "string"
         },
+        "source_role": {
+          "anyOf": [
+            {
+              "enum": [
+                "calligraphy",
+                "handwriting",
+                "historical-original",
+                "coverage-fallback"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Role"
+        },
         "calligrapher": {
           "anyOf": [
             {

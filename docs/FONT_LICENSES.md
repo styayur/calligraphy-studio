@@ -15,6 +15,8 @@ Bundled examples: Ma Shan Zheng (楷书), Zhi Mang Xing (行书), Liu Jian Mao C
 
 Also bundled: **Yuji Syuku / Mai / Boku / Akari / Akebono**, Version 3.002, Kinuta Font Factory / Yuji Kataoka, pinned commit `efec977b14b57c19eb85d468edcfbbad13139e67`. See [exact per-font checksums and attribution](../third_party/japanese/yuji/provenance.json), [original OFL text](../third_party/japanese/yuji/OFL.txt) and [font manifest](../samples/fonts/japanese/manifest.json). Runtime compressed TTFs decompress to the exact original binaries. No modified fonts are renamed or marketed as original manuscripts.
 
+The current source build also bundles **Klee One Regular** (Fontworks / Klee Project, Version 1.000, pinned commit `8b0532731b63ad8a445ca341d8d7d941079b83ab`) as Japanese handwriting, and a 2.17 MB subset of **Source Han Serif JP Regular** (Adobe, upstream 2.003R, commit `7889f11bf31170b5d092a083b357c8c8130f89e0`) for coverage only. Both remain OFL 1.1. The modified subset has the internal family name `Calligraphy JP Coverage Serif` to respect Adobe's reserved font name `Source`. Original and derivative SHA-256 hashes, subset command and author records are in the [manifest](../samples/fonts/japanese/manifest.json); licence texts are [Klee](../third_party/japanese/klee/OFL.txt) and [Source Han Serif](../third_party/japanese/source-han-serif/OFL.txt). The coverage font is neither ordinary calligraphy nor a historical original. [Coverage benchmark](JAPANESE_COVERAGE.md).
+
 Akari and Akebono historical kana outlines occupy modern hiragana codepoints. Their `hentaigana` visual variant and font ID remain distinct even though semantic text is identical; ordinary modern composition excludes them by default.
 
 ### CC BY-SA 4.0 historical images

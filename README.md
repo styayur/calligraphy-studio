@@ -26,9 +26,9 @@ Compose, compare and explore Chinese and Japanese calligraphy with an offline-fi
 
 ## Japanese support
 
-Use **Yuji Syuku, Mai and Boku** for modern Japanese kanji, hiragana and katakana. **Yuji Akari and Akebono** provide explicitly selected hentaigana variants. These are contemporary fonts, not historical manuscript originals.
+Use **Yuji Syuku, Mai and Boku** as the primary modern Japanese calligraphy sources. **Klee One** adds an independent handwriting candidate for kanji; a small Japanese **Source Han Serif JP derived subset** covers characters absent from both families and is clearly labelled as a coverage fallback. **Yuji Akari and Akebono** provide explicitly selected hentaigana variants. These are contemporary fonts, not historical manuscript originals. Klee and the coverage subset are in the current source build; the linked v0.7.0 downloads predate this addition.
 
-HarfBuzz-based shaping supports Japanese font features and glyph-cell composition, including vertical alternates and punctuation placement. The workbench preserves the distinction between a character's identity and its visual variant. Japanese layout is intentionally limited; see [known limitations](#known-limitations).
+HarfBuzz-based shaping supports Japanese font features and glyph-cell composition, including vertical alternates and punctuation placement. Strict Japanese mode uses only Japanese sources. The workbench preserves the distinction between a character's identity and its visual variant. See the [reproducible coverage benchmark](docs/JAPANESE_COVERAGE.md) and [known limitations](#known-limitations).
 
 ## Historical glyph sources
 
@@ -75,7 +75,7 @@ Japanese shaping uses bundled HarfBuzz WASM in the clients and HarfBuzz/FreeType
 | Content | Source / licence |
 | --- | --- |
 | Chinese fonts | Ma Shan Zheng, Zhi Mang Xing, Liu Jian Mao Cao · SIL OFL 1.1 |
-| Japanese fonts | Yuji Syuku, Mai, Boku, Akari, Akebono · SIL OFL 1.1 |
+| Japanese fonts | Yuji, Klee One and a renamed Source Han Serif JP coverage subset · SIL OFL 1.1; Klee and the subset are in the current source build |
 | Historical Japanese sample | CODH Kuzushiji v2 · CC BY-SA 4.0; attributed crops and derivatives |
 | Chinese cursive samples | NCCU Cursive Chinese Calligraphy Dataset · MIT |
 | Structural fallback data | Hanzi Writer · ARPHIC PUBLIC LICENSE |

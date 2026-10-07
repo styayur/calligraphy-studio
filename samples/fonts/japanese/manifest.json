@@ -34,7 +34,8 @@
         "attribution_required": true,
         "font_license": true,
         "share_alike_required": false
-      }
+      },
+      "source_role": "calligraphy"
     },
     {
       "id": "yuji-mai",
@@ -68,7 +69,8 @@
         "attribution_required": true,
         "font_license": true,
         "share_alike_required": false
-      }
+      },
+      "source_role": "calligraphy"
     },
     {
       "id": "yuji-boku",
@@ -102,7 +104,8 @@
         "attribution_required": true,
         "font_license": true,
         "share_alike_required": false
-      }
+      },
+      "source_role": "calligraphy"
     },
     {
       "id": "yuji-akari",
@@ -136,7 +139,8 @@
         "attribution_required": true,
         "font_license": true,
         "share_alike_required": false
-      }
+      },
+      "source_role": "calligraphy"
     },
     {
       "id": "yuji-akebono",
@@ -170,7 +174,82 @@
         "attribution_required": true,
         "font_license": true,
         "share_alike_required": false
-      }
+      },
+      "source_role": "calligraphy"
+    },
+    {
+      "language": "ja",
+      "locale": "ja-JP",
+      "writing_tradition": "Japanese",
+      "orthography": "Japanese",
+      "variant_type": "regional",
+      "period": null,
+      "region": null,
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "id": "klee-one",
+      "family": "Klee One",
+      "designer": "Fontworks / The Klee Project Authors",
+      "style": "日本語手書き",
+      "dataset": "Klee One",
+      "path": "klee/KleeOne-Regular.ttf",
+      "source_role": "handwriting",
+      "source_collection": "Klee One",
+      "license_text": "../../../third_party/japanese/klee/OFL.txt",
+      "attribution": "Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)",
+      "source_uri": "https://github.com/fontworks-fonts/Klee/tree/8b0532731b63ad8a445ca341d8d7d941079b83ab",
+      "upstream_commit": "8b0532731b63ad8a445ca341d8d7d941079b83ab",
+      "font_version": "Version 1.000",
+      "download_url": "https://raw.githubusercontent.com/fontworks-fonts/Klee/8b0532731b63ad8a445ca341d8d7d941079b83ab/fonts/ttf/KleeOne-Regular.ttf",
+      "sha256": "74cb0a6523cc22b221ceaa7b78b56cea66512ec14b4145fd0102ffe27c30d084",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true,
+        "share_alike_required": false
+      },
+      "bundle_license_text": "fonts/licenses/OFL-klee-one.txt"
+    },
+    {
+      "language": "ja",
+      "locale": "ja-JP",
+      "writing_tradition": "Japanese",
+      "orthography": "Japanese",
+      "variant_type": "regional",
+      "period": null,
+      "region": null,
+      "license": "OFL-1.1",
+      "license_url": "https://openfontlicense.org",
+      "id": "jp-coverage-serif",
+      "family": "JP Coverage Serif (Source Han Serif JP subset)",
+      "upstream_family": "Source Han Serif JP",
+      "designer": "Adobe / Source Han Serif Project",
+      "style": "日本語明朝",
+      "dataset": "Japanese Coverage Fonts",
+      "path": "coverage/CalligraphyJPCoverageSerif-Regular.otf",
+      "source_role": "coverage-fallback",
+      "source_collection": "Source Han Serif JP",
+      "license_text": "../../../third_party/japanese/source-han-serif/OFL.txt",
+      "attribution": "Copyright 2017-2022 Adobe; modified subset with renamed internal font family (OFL reserved name Source)",
+      "source_uri": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
+      "upstream_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+      "font_version": "Version 2.003R; Calligraphy Studio subset 1",
+      "original_sha256": "066dfd35dbcb96f953ebd72eb182169c3cec6b7c0f18be22f1b6e3936ac6ac20",
+      "subset_command": "python scripts/build_japanese_coverage.py --fetch",
+      "sha256": "6e9f4d2b25b63b85fd1a5fb04ec3652c13094124804b5b487355d6fe154952a4",
+      "rights": {
+        "commercial_use": true,
+        "derivatives_allowed": true,
+        "redistribution_allowed": true,
+        "research_use": true,
+        "attribution_required": true,
+        "font_license": true,
+        "share_alike_required": false
+      },
+      "bundle_license_text": "fonts/licenses/OFL-jp-coverage-serif.txt"
     }
   ]
 }

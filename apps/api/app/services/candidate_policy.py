@@ -43,7 +43,11 @@ def candidate_cost(glyph, visual_cost: float, policy: CandidatePolicy, weights: 
         raise ValueError("Invalid candidate weights")
     def mismatch(actual, expected):
         return int(bool(actual and expected and actual != expected))
-    return (w["visual"] * visual_cost + w["locale"] * mismatch(glyph.locale, policy.locale)
+    metadata = getattr(glyph, "metadata_json", None) or getattr(glyph, "metadata", None) or {}
+    role = metadata.get("source_role") if isinstance(metadata, dict) else None
+    role = role or getattr(glyph.source, "source_role", None)
+    coverage_cost = 2 if role == "coverage-fallback" else 0
+    return (coverage_cost + w["visual"] * visual_cost + w["locale"] * mismatch(glyph.locale, policy.locale)
             + w["tradition"] * mismatch(glyph.writing_tradition, policy.tradition)
             + w["script"] * mismatch(glyph.script, policy.script)
             + w["period"] * mismatch(glyph.period, policy.period)

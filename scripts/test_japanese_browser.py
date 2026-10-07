@@ -55,6 +55,9 @@ def main():
         again=project(); assert [g['asset']['checksum'] for g in original['glyphs']]==[g['asset']['checksum'] for g in again['glyphs']]
         page.get_by_role('button',name='选择第1字骨',exact=True).click()
         expect(page.locator('.visual-readout .profile-values')).to_be_visible(timeout=60000)
+        expect(page.locator('.variant-grid')).to_contain_text('Klee One',timeout=60000)
+        expect(page.locator('.variant-grid')).to_contain_text('Yuji Syuku',timeout=60000)
+        expect(page.locator('.variant-grid')).to_contain_text('Handwriting',timeout=60000)
         assert not any('Chinese' in t for t in page.locator('.variant-grid small').all_text_contents())
         inspector=page.locator('.inspector')
         inspector.locator('summary').filter(has_text='字形与跨传统探索').click()
@@ -75,6 +78,19 @@ def main():
                 alpha=Image.open(io.BytesIO(base64.b64decode(g['asset']['url'].split(',')[1]))).getchannel('A')
                 bounds=alpha.getbbox(); assert bounds and (bounds[0]+bounds[2])/2<200 and (bounds[1]+bounds[3])/2>300
         composer.get_by_role('button',name='竖排',exact=True).click()
+        composer.get_by_label('集字内容').fill('㐆')
+        page.get_by_role('button',name='生成作品',exact=True).click()
+        expect(composer.locator('.feedback')).to_contain_text('日文覆盖字体',timeout=120000)
+        rare=project(); assert len(rare['glyphs'])==1
+        fallback=rare['glyphs'][0]
+        assert fallback['source']['source_role']=='coverage-fallback'
+        assert fallback['source']['writing_tradition']=='Japanese' and fallback['source']['locale']=='ja-JP'
+        assert fallback['source']['license']=='OFL-1.1' and fallback['provenance']['type']=='font'
+        assert fallback['metadata']['shaping']['direction']=='ttb'
+        page.get_by_role('button',name='选择第1字㐆',exact=True).click()
+        expect(page.locator('.variant-grid')).to_contain_text('Coverage fallback',timeout=60000)
+        expect(page.locator('.variant-grid')).not_to_contain_text('Chinese')
+        page.get_by_label('关闭字形调整').click()
         composer.locator('summary').filter(has_text='字形与跨传统探索').click()
         composer.get_by_label('Variant type').select_option('hentaigana')
         composer.get_by_label('集字内容').fill('ああい')
@@ -121,7 +137,7 @@ def main():
         page.screenshot(path=str(out/'japanese-long-roll.png'))
         assert not errors,errors
         browser.close()
-    print('PASS: Japanese shaping, deterministic bitmap, CJK safety, hentaigana, vertical punctuation, Visual Profile, CODH, share-alike ZIP, persisted v2 project and 1015-character roll')
+    print('PASS: Yuji/Klee candidates, Japanese-only coverage fallback, shaping, CJK safety, hentaigana, vertical punctuation, Visual Profile, CODH, export, persisted v2 project and 1015-character roll')
 
 
 if __name__=='__main__': main()

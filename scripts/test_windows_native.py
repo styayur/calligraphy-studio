@@ -75,8 +75,14 @@ def main():
                 expect(page.locator('.variant-grid')).to_contain_text('Yuji Boku',timeout=60000)
                 expect(page.locator('.variant-grid')).to_contain_text('Yuji Mai')
                 expect(page.locator('.variant-grid')).to_contain_text('Yuji Syuku')
+                expect(page.locator('.variant-grid')).to_contain_text('Klee One')
                 page.get_by_label('关闭字形调整').click()
-                checks.append('three Japanese modern fonts / HarfBuzz glyph IDs')
+                checks.append('Yuji and Klee candidates / HarfBuzz glyph IDs')
+                compose('㐆',1)
+                rare=save('japanese-coverage.json')['glyphs'][0]
+                assert rare['source']['source_role']=='coverage-fallback' and rare['source']['locale']=='ja-JP'
+                assert rare['source']['license']=='OFL-1.1' and rare['metadata']['shaping']['direction']=='ttb'
+                checks.append('Japanese-only rare kanji coverage fallback')
                 composer.locator('summary').filter(has_text='字形与跨传统探索').click()
                 composer.get_by_label('Variant type').select_option('hentaigana');compose('ああ',2)
                 assert all(g['variant']['type']=='hentaigana' for g in save('hentaigana.json')['glyphs'])

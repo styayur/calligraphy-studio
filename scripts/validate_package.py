@@ -37,7 +37,7 @@ def validate(path: Path, prefix: str):
         for file in ['LICENSE','THIRD_PARTY_NOTICE.md','licenses/HarfBuzz-COPYING.txt','licenses/harfbuzzjs-MIT.txt']:
             if read(file) != (public / file).read_bytes():
                 raise ValueError(f'Packaged licence notice differs: {file}')
-    print(f'PASS: {path.name}: schema 2, 8 fonts, 20 historical assets, {notice_count} licence components, build provenance and tooling exclusion ({path.stat().st_size} bytes)')
+    print(f'PASS: {path.name}: schema 2, {len(canonical["fonts"])} fonts, 20 historical assets, {notice_count} licence components, build provenance and tooling exclusion ({path.stat().st_size} bytes)')
 
 
 if __name__ == '__main__':
