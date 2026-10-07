@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from sqlalchemy import func, or_, select
+from sqlalchemy import case, func, or_, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.models import Calligrapher, Dynasty, Glyph, GlyphSource, Style
@@ -24,6 +24,7 @@ def glyph_to_schema(glyph: Glyph) -> GlyphRead:
         metadata=glyph.metadata_json or {},
         source=GlyphSourceSchema(
             dataset=glyph.source.dataset,
+            source_role=(glyph.metadata_json or {}).get("source_role"),
             calligrapher=glyph.calligrapher.name if glyph.calligrapher else None,
             style=glyph.style.name if glyph.style else None,
             dynasty=glyph.dynasty.name if glyph.dynasty else None,
@@ -180,9 +181,17 @@ class GlyphService:
             commercial_only=commercial_only, mode=mode, designer=designer,
         )
         total = session.scalar(select(func.count()).select_from(statement.subquery())) or 0
-        rows = session.scalars(
-            statement.order_by(Glyph.created_at.desc(), Glyph.id).limit(limit).offset(offset)
-        ).all()
+        if writing_tradition == "Japanese":
+            role_order = case(
+                (Glyph.metadata_json["source_role"].as_string() == "handwriting", 1),
+                (Glyph.metadata_json["source_role"].as_string() == "coverage-fallback", 2),
+                (Glyph.provenance_type == "original", 3),
+                else_=0,
+            )
+            statement = statement.order_by(role_order, Glyph.created_at.desc(), Glyph.id)
+        else:
+            statement = statement.order_by(Glyph.created_at.desc(), Glyph.id)
+        rows = session.scalars(statement.limit(limit).offset(offset)).all()
         return GlyphListResponse(
             items=[glyph_to_schema(row) for row in rows],
             total=total,

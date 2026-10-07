@@ -35,4 +35,4 @@ for (const glyph of JSON.parse(read('japanese/glyphs.json'))) {
 }
 for (const path of ['LICENSE','THIRD_PARTY_NOTICE.md','licenses/HarfBuzz-COPYING.txt','licenses/harfbuzzjs-MIT.txt'])
   if (!read(path).equals(fs.readFileSync(resolve(root,'apps/web/public',path)))) throw Error('Packaged licence notice differs')
-console.log('PASS: Windows ASAR canonical receipt, 8 font checksums, 20 historical assets and independent licences')
+console.log(`PASS: Windows ASAR canonical receipt, ${manifest.fonts.length} font checksums, 20 historical assets and independent licences`)

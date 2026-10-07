@@ -1,0 +1,125 @@
+{
+  "source": {
+    "unicode_version": "16.0.0",
+    "source_url": "https://www.unicode.org/Public/16.0.0/ucd/Unihan.zip",
+    "source_sha256": "b8f000df69de7828d21326a2ffea462b04bc7560022989f7cc704f10521ef3e0",
+    "notes": "JIS properties count ideographs mapped by Unihan, not all JIS punctuation or kana. Jinmeiyo includes Unihan-marked variants."
+  },
+  "fonts": {
+    "yuji-syuku": {
+      "sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+      "original_sha256": null,
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "font_version": "Version 3.002",
+      "license": "OFL-1.1",
+      "source_role": "calligraphy",
+      "bytes": 8430348
+    },
+    "yuji-mai": {
+      "sha256": "05d83b65204a5de6fc34c222057fc082f8c6e2e44c05a0d28f4189b3e54c54c2",
+      "original_sha256": null,
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "font_version": "Version 3.002",
+      "license": "OFL-1.1",
+      "source_role": "calligraphy",
+      "bytes": 8496292
+    },
+    "yuji-boku": {
+      "sha256": "94fda16384f3bdac24376a000c57e99abfa314961bd89ef27badfb7410322003",
+      "original_sha256": null,
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "font_version": "Version 3.002",
+      "license": "OFL-1.1",
+      "source_role": "calligraphy",
+      "bytes": 8525588
+    },
+    "yuji-akari": {
+      "sha256": "6fa6bfaff8851fd20f32a807dfb9a7dc15f54780af564ddc8f32e074004bde27",
+      "original_sha256": null,
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "font_version": "Version 3.002",
+      "license": "OFL-1.1",
+      "source_role": "calligraphy",
+      "bytes": 93496
+    },
+    "yuji-akebono": {
+      "sha256": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3",
+      "original_sha256": null,
+      "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
+      "font_version": "Version 3.002",
+      "license": "OFL-1.1",
+      "source_role": "calligraphy",
+      "bytes": 99100
+    },
+    "klee-one": {
+      "sha256": "74cb0a6523cc22b221ceaa7b78b56cea66512ec14b4145fd0102ffe27c30d084",
+      "original_sha256": null,
+      "upstream_commit": "8b0532731b63ad8a445ca341d8d7d941079b83ab",
+      "font_version": "Version 1.000",
+      "license": "OFL-1.1",
+      "source_role": "handwriting",
+      "bytes": 8724704
+    },
+    "jp-coverage-serif": {
+      "sha256": "6e9f4d2b25b63b85fd1a5fb04ec3652c13094124804b5b487355d6fe154952a4",
+      "original_sha256": "066dfd35dbcb96f953ebd72eb182169c3cec6b7c0f18be22f1b6e3936ac6ac20",
+      "upstream_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+      "font_version": "Version 2.003R; Calligraphy Studio subset 1",
+      "license": "OFL-1.1",
+      "source_role": "coverage-fallback",
+      "bytes": 2169780
+    }
+  },
+  "repertoires": {
+    "joyo_2010": {
+      "total": 2136,
+      "covered": {
+        "Yuji": 2136,
+        "Klee One": 2136,
+        "Coverage fallback": 0,
+        "Combined Japanese library": 2136
+      },
+      "remaining_missing": ""
+    },
+    "jinmeiyo_2010": {
+      "total": 863,
+      "covered": {
+        "Yuji": 863,
+        "Klee One": 860,
+        "Coverage fallback": 0,
+        "Combined Japanese library": 863
+      },
+      "remaining_missing": ""
+    },
+    "jis_x_0208_kanji": {
+      "total": 6356,
+      "covered": {
+        "Yuji": 6356,
+        "Klee One": 6356,
+        "Coverage fallback": 0,
+        "Combined Japanese library": 6356
+      },
+      "remaining_missing": ""
+    },
+    "jis_x_0213_kanji": {
+      "total": 10051,
+      "covered": {
+        "Yuji": 6745,
+        "Klee One": 7680,
+        "Coverage fallback": 2359,
+        "Combined Japanese library": 10051
+      },
+      "remaining_missing": ""
+    },
+    "reviewed_project_corpus": {
+      "total": 46,
+      "covered": {
+        "Yuji": 45,
+        "Klee One": 46,
+        "Coverage fallback": 0,
+        "Combined Japanese library": 46
+      },
+      "remaining_missing": ""
+    }
+  }
+}

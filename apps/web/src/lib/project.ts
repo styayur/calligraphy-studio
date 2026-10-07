@@ -66,6 +66,7 @@ export function validateProject(value: unknown): ProjectDocument {
         const value = g.source[key as keyof typeof g.source]
         return value == null || typeof value === 'string'
       }) ||
+      (g.source.source_role !== undefined && g.source.source_role !== null && !['calligraphy','handwriting','historical-original','coverage-fallback'].includes(g.source.source_role)) ||
       !['font', 'original', 'fallback', 'generated'].includes(g.provenance.type)
     )
       throw new Error('项目字形来源无效')

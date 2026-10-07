@@ -93,7 +93,8 @@ def seed_japanese_if_missing(database: Database, settings: Settings) -> int:
     importer = GlyphImporter(AssetStore(settings.assets_dir), database)
     imported = 0
     for dataset, provider in [
-        ("Yuji Japanese Fonts", FontManifestProvider(PROJECT_ROOT / "samples/fonts/japanese/manifest.json")),
+        *[(dataset, FontManifestProvider(PROJECT_ROOT / "samples/fonts/japanese/manifest.json", datasets={dataset}))
+          for dataset in ("Yuji Japanese Fonts", "Klee One", "Japanese Coverage Fonts")],
         ("CODH Kuzushiji", CODHKuzushijiProvider(PROJECT_ROOT / "samples/japanese/historical/sample/manifest.json")),
     ]:
         with database.session() as session:

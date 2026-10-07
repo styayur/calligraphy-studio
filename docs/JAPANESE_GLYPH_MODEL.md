@@ -28,6 +28,8 @@ The same Han codepoint (for example 骨 or 辻) can have different Chinese and J
 
 Japanese path: exact Unicode sequence → script/language → HarfBuzz `locl` and optionally `vert`/`vrt2` → glyph IDs/names/positions → raster asset. Python uses uharfbuzz + FreeType; offline web/Windows/Android uses local HarfBuzz WASM and canvas outline rasterization. Record features, locale, script, glyph IDs/names, source font checksum and output checksum. Chinese legacy Pillow/canvas rendering remains to preserve existing output and is explicitly marked as not locale-aware shaping.
 
+Yuji remains the primary modern Japanese calligraphy source. Klee One adds independent handwriting candidates. A renamed, OFL-licensed Source Han Serif JP subset covers the reviewed characters missing from both; its `coverage-fallback` role ranks below those visual sources and is still Japanese / `ja-JP` in strict mode. CODH historical crops remain a separate `original` source category. [Pinned coverage results and reproduction](JAPANESE_COVERAGE.md).
+
 Rasterization is repeatable within each tested engine; Canvas and FreeType antialiasing are not promised to be byte-identical across platforms. Glyph-cell layout supports mixed kanji/kana, Japanese punctuation anchoring and font vertical alternates. Connected kana across cells, kinsoku line breaking, tate-chū-yoko, complete UAX #50 mixed Latin orientation and arbitrary IVS coverage are not implemented. Unsupported glyphs remain missing; do not synthesize an allegedly authentic shape.
 
 ## Provenance and rights

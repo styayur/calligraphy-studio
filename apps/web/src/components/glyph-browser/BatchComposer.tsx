@@ -114,7 +114,7 @@ export function BatchComposer() {
       setStatus(
         missing.length
           ? `已排入 ${glyphs.length}/${count} 字，缺字「${missing.join('、')}」已留空位。可换书体重新集字。`
-          : `已排入 ${glyphs.length} 字。${plan.fit < 1 ? '纸面已等比缩小；可调整每行或列字数改善阅读。' : ''}点击纸面上的字，可选择其他字形。`,
+          : `已排入 ${glyphs.length} 字。${glyphs.some((g) => g.source.source_role === 'coverage-fallback') ? '部分汉字使用日文覆盖字体。' : ''}${plan.fit < 1 ? '纸面已等比缩小；可调整每行或列字数改善阅读。' : ''}点击纸面上的字，可选择其他字形。`,
       )
     } catch (error) {
       setStatus(error instanceof Error ? error.message : '集字失败，请重试')
@@ -171,11 +171,11 @@ export function BatchComposer() {
           </select>
         </label>
       </div>
-      <p className="field-hint">
-        {source === 'fonts'
-          ? policy.writing_tradition === 'Japanese' ? 'Yuji 字体；変体仮名需明确选择。Font glyphs are not manuscripts.' : '内置三款开源字体，按实际字库覆盖集字。'
-          : '使用已收录的原帖图片；缺字会留空并提示。'}
-      </p>
+      <p className="field-hint">{source === 'fonts' ? (
+        policy.writing_tradition === 'Japanese'
+          ? 'Yuji 书道、Klee 手写；缺字时使用日文覆盖字体。変体仮名需明确选择。'
+          : '内置三款开源字体，按实际字库覆盖集字。'
+      ) : '使用已收录的原帖图片；缺字会留空并提示。'}</p>
       {policy.writing_tradition === 'Japanese' && layout === 'vertical-rtl' && <p className="field-hint">日文字体使用 vert / vrt2 与竖排句读点位置；不支持连绵字、禁则处理或縦中横。Japanese vertical layout is a glyph-cell composition.</p>}
       <div className="segmented" aria-label="排版方向">
         {(

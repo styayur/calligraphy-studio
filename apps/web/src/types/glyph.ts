@@ -34,6 +34,7 @@ export interface RightsRecord {
 }
 export interface GlyphSource extends ScriptMetadata {
   dataset: string
+  source_role?: 'calligraphy' | 'handwriting' | 'historical-original' | 'coverage-fallback' | null
   calligrapher?: string | null
   style?: string | null
   dynasty?: string | null

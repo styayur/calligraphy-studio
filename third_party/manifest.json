@@ -120,6 +120,32 @@
       "notes": "Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)"
     },
     {
+      "id": "klee-one",
+      "name": "Klee One",
+      "category": "font",
+      "version": "Version 1.000",
+      "source_uri": "https://github.com/fontworks-fonts/Klee/tree/8b0532731b63ad8a445ca341d8d7d941079b83ab",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-klee-one.txt",
+        "sha256": "f5f4f05e005b6495a0d1f5bd49d37f5ac3e369883e2b7e3e48cd5aefded912f4"
+      },
+      "notes": "Fontworks / The Klee Project Authors; font provenance, not manuscript originals. Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)"
+    },
+    {
+      "id": "jp-coverage-serif",
+      "name": "JP Coverage Serif (Source Han Serif JP subset)",
+      "category": "font",
+      "version": "Version 2.003R; Calligraphy Studio subset 1",
+      "source_uri": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
+      "license": "OFL-1.1",
+      "license_text": {
+        "path": "fonts/licenses/OFL-jp-coverage-serif.txt",
+        "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903"
+      },
+      "notes": "Adobe / Source Han Serif Project; font provenance, not manuscript originals. Copyright 2017-2022 Adobe; modified subset with renamed internal font family (OFL reserved name Source)"
+    },
+    {
       "id": "codh",
       "name": "CODH Kuzushiji sample",
       "category": "historical",

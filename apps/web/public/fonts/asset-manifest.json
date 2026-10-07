@@ -28,7 +28,10 @@
       "source_uri": "https://github.com/googlefonts/mashanzheng",
       "upstream_commit": null,
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-ma-shan-zheng.txt"
+      "license_text": "fonts/licenses/OFL-ma-shan-zheng.txt",
+      "source_role": null,
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "zhi-mang-xing",
@@ -43,7 +46,10 @@
       "source_uri": "https://github.com/m4rc1e/zhimangxing",
       "upstream_commit": null,
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-zhi-mang-xing.txt"
+      "license_text": "fonts/licenses/OFL-zhi-mang-xing.txt",
+      "source_role": null,
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "liu-jian-mao-cao",
@@ -58,7 +64,10 @@
       "source_uri": "https://github.com/googlefonts/liujianmaocao",
       "upstream_commit": null,
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-liu-jian-mao-cao.txt"
+      "license_text": "fonts/licenses/OFL-liu-jian-mao-cao.txt",
+      "source_role": null,
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "yuji-syuku",
@@ -73,7 +82,10 @@
       "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
       "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-yuji-syuku.txt"
+      "license_text": "fonts/licenses/OFL-yuji-syuku.txt",
+      "source_role": "calligraphy",
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "yuji-mai",
@@ -88,7 +100,10 @@
       "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
       "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-yuji-mai.txt"
+      "license_text": "fonts/licenses/OFL-yuji-mai.txt",
+      "source_role": "calligraphy",
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "yuji-boku",
@@ -103,7 +118,10 @@
       "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
       "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-yuji-boku.txt"
+      "license_text": "fonts/licenses/OFL-yuji-boku.txt",
+      "source_role": "calligraphy",
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "yuji-akari",
@@ -118,7 +136,10 @@
       "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
       "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-yuji-akari.txt"
+      "license_text": "fonts/licenses/OFL-yuji-akari.txt",
+      "source_role": "calligraphy",
+      "original_sha256": null,
+      "subset_command": null
     },
     {
       "id": "yuji-akebono",
@@ -133,7 +154,46 @@
       "source_uri": "https://github.com/Kinutafontfactory/Yuji/tree/efec977b14b57c19eb85d468edcfbbad13139e67",
       "upstream_commit": "efec977b14b57c19eb85d468edcfbbad13139e67",
       "license": "OFL-1.1",
-      "license_text": "fonts/licenses/OFL-yuji-akebono.txt"
+      "license_text": "fonts/licenses/OFL-yuji-akebono.txt",
+      "source_role": "calligraphy",
+      "original_sha256": null,
+      "subset_command": null
+    },
+    {
+      "id": "klee-one",
+      "original": {
+        "path": "samples/fonts/japanese/klee/KleeOne-Regular.ttf",
+        "sha256": "74cb0a6523cc22b221ceaa7b78b56cea66512ec14b4145fd0102ffe27c30d084"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/klee-one.ttf.gzip",
+        "sha256": "ac45e9b3393020cd065f73c838b740e725e854b1ed9997cb1b1816d13ec23438"
+      },
+      "source_uri": "https://github.com/fontworks-fonts/Klee/tree/8b0532731b63ad8a445ca341d8d7d941079b83ab",
+      "upstream_commit": "8b0532731b63ad8a445ca341d8d7d941079b83ab",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-klee-one.txt",
+      "source_role": "handwriting",
+      "original_sha256": null,
+      "subset_command": null
+    },
+    {
+      "id": "jp-coverage-serif",
+      "original": {
+        "path": "samples/fonts/japanese/coverage/CalligraphyJPCoverageSerif-Regular.otf",
+        "sha256": "6e9f4d2b25b63b85fd1a5fb04ec3652c13094124804b5b487355d6fe154952a4"
+      },
+      "runtime": {
+        "path": "apps/web/public/fonts/jp-coverage-serif.otf.gzip",
+        "sha256": "2e17f6640db8e104d18bf0230bfefe6e529f1035ef8becc74888cb36a2b609c2"
+      },
+      "source_uri": "https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R",
+      "upstream_commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+      "license": "OFL-1.1",
+      "license_text": "fonts/licenses/OFL-jp-coverage-serif.txt",
+      "source_role": "coverage-fallback",
+      "original_sha256": "066dfd35dbcb96f953ebd72eb182169c3cec6b7c0f18be22f1b6e3936ac6ac20",
+      "subset_command": "python scripts/build_japanese_coverage.py --fetch"
     }
   ]
 }

@@ -35,6 +35,7 @@ jobs:
       - name: Licence and provenance validation
         run: |
           python scripts/validate_assets.py
+          python scripts/report_japanese_coverage.py
           python scripts/validate_third_party.py
           python scripts/validate_version.py
 

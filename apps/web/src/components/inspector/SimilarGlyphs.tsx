@@ -111,7 +111,7 @@ export function SimilarGlyphs({ glyph }: { glyph: GlyphInstance }) {
             <span>
               {item.source.work || (item.provenance.type === 'original' ? '原帖' : item.source.style || '结构替补')}
             </span>
-            <small>{item.source.writing_tradition || 'Unknown'} · {item.provenance.type} · {item.source.license || 'Unknown licence'}</small>
+            <small>{item.source.writing_tradition || 'Unknown'} · {item.source.source_role === 'coverage-fallback' ? 'Coverage fallback' : item.source.source_role === 'handwriting' ? 'Handwriting' : item.source.source_role === 'calligraphy' ? 'Calligraphy' : item.provenance.type} · {item.source.license || 'Unknown licence'}</small>
             {sort && context.length > 0 && profiles.has(item.id) && (
               <small>{harmonyScore(profileCost(profiles.get(item.id)!, context))} / 100</small>
             )}

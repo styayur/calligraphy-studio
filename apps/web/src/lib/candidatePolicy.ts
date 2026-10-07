@@ -51,7 +51,8 @@ export function candidateCost(glyph: Glyph, visualCost: number, policy: Candidat
   if (Object.values(weights).some((v) => !Number.isFinite(v) || v < 0)) throw new Error('Invalid candidate weights')
   const mismatch = (actual?: string | null, expected?: string | null) => actual && expected && actual !== expected ? 1 : 0
   const work = neighbors.filter((g) => g.source.work && glyph.source.work)
-  return weights.visual * visualCost + weights.locale * mismatch(glyph.source.locale, policy.locale) +
+  const coverageCost = glyph.source.source_role === 'coverage-fallback' ? 2 : 0
+  return coverageCost + weights.visual * visualCost + weights.locale * mismatch(glyph.source.locale, policy.locale) +
     weights.tradition * mismatch(glyph.source.writing_tradition, policy.writing_tradition) +
     weights.script * mismatch(glyph.source.script, policy.script) + weights.period * mismatch(glyph.source.period, policy.period) +
     weights.work * (work.length ? work.filter((g) => g.source.work !== glyph.source.work).length / work.length : 0) +

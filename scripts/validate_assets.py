@@ -27,6 +27,14 @@ def main():
             originals[entry['id']]=entry
     if set(originals)!={font['id'] for font in catalog}: raise ValueError('Catalog packs differ')
     for entry in catalog:
+        source=originals[entry['id']]
+        for field in ('sha256','source_role','language','locale','writing_tradition','license','original_sha256'):
+            if entry.get(field) != source.get(field): raise ValueError(f'Catalog source metadata differs: {entry["id"]}.{field}')
+        if entry.get('source_role') == 'coverage-fallback':
+            if (entry.get('language'),entry.get('locale'),entry.get('writing_tradition'),entry.get('orthography')) != ('ja','ja-JP','Japanese','Japanese'):
+                raise ValueError('Coverage fallback must remain Japanese / ja-JP')
+            if entry.get('license') != 'OFL-1.1' or not entry.get('original_sha256'):
+                raise ValueError('Coverage fallback lost upstream licence/provenance')
         data=(runtime/'fonts'/entry['path']).read_bytes()
         if hashlib.sha256(data).hexdigest()!=entry['runtime_sha256']: raise ValueError('Runtime font checksum mismatch')
         if entry['renderer']=='harfbuzz' and hashlib.sha256(gzip.decompress(data)).hexdigest()!=entry['sha256']: raise ValueError('Source/runtime Japanese font differs')

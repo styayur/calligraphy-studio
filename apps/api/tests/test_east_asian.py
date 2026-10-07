@@ -46,15 +46,15 @@ def test_semantic_identity_and_unknown_rights():
 
 def test_pinned_japanese_font_provenance_and_hentaigana():
     entries = json.loads(JP.read_text(encoding='utf-8'))['fonts']
-    assert len(entries) == 5
-    for e in entries:
+    assert len(entries) == 7
+    for e in entries[:5]:
         assert hashlib.sha256((JP.parent / e['path']).read_bytes()).hexdigest() == e['sha256']
         assert e['upstream_commit'] == 'efec977b14b57c19eb85d468edcfbbad13139e67'
         assert e['font_version'] == 'Version 3.002'
         assert e['rights']['redistribution_allowed'] is True
     records = list(FontManifestProvider(JP, characters={'あ'}).iter_records())
-    assert len(records) == 5
-    assert len({r.variant['id'] for r in records}) == 5
+    assert len(records) == 6
+    assert len({r.variant['id'] for r in records}) == 6
     assert all(r.identity['text'] == 'あ' and r.identity['locale'] == 'ja-JP' for r in records)
     historical_kana = [r for r in records if r.variant['type'] == 'hentaigana']
     assert len(historical_kana) == 2
@@ -89,6 +89,8 @@ def test_regional_filtering_and_explicit_cross_tradition():
     assert candidate_cost(zh,0,strict) == float('inf')
     cross = CandidatePolicy(tradition='Japanese',locale='ja-JP',mode='cross-tradition')
     assert candidate_cost(ja,.2,cross) < candidate_cost(zh,.2,cross)
+    coverage = SimpleNamespace(**vars(ja), metadata_json={"source_role": "coverage-fallback"})
+    assert candidate_cost(coverage, 0, strict) > candidate_cost(ja, 1, strict)
     with pytest.raises(ValueError):
         candidate_cost(ja,0,cross,weights={'visual':-1})
 

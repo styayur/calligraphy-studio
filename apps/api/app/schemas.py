@@ -8,6 +8,7 @@ from app.domain import CharacterIdentity, GlyphVariant, ScriptMetadata, RightsRe
 
 class GlyphSourceSchema(ScriptMetadata):
     dataset: str
+    source_role: Literal["calligraphy", "handwriting", "historical-original", "coverage-fallback"] | None = None
     calligrapher: str | None = None
     style: str | None = None
     dynasty: str | None = None

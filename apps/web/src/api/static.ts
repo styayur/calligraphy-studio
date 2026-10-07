@@ -62,7 +62,7 @@ export async function loadStaticMetadata(writingTradition = 'Chinese'): Promise<
   return { ...legacy,
     calligraphers: [...new Set(fonts.map((f) => f.designer))].map((name,i) => ({id:i+1,name})),
     styles: [...new Set(fonts.map((f) => f.style))].map((name,i) => ({id:i+1,name})),
-    datasets: [...new Set([...legacy.datasets, 'Yuji Japanese Fonts','CODH Kuzushiji'])] }
+    datasets: [...new Set([...legacy.datasets, ...fonts.map((font) => font.dataset), 'CODH Kuzushiji'])] }
 }
 
 export async function staticSearch(params: GlyphSearchParams): Promise<GlyphListResponse> {

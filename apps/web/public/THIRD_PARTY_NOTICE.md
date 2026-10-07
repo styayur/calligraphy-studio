@@ -67,6 +67,20 @@ Licence: **OFL-1.1**. Source: https://github.com/Kinutafontfactory/Yuji/tree/efe
 Bundled text: `fonts/licenses/OFL-yuji-akebono.txt` (SHA-256 `ef7c85c72ae94381c8bc4832ae4e6fbabdeafa2bb8a31313cd75dce95a690256`).
 Yuji Kataoka; Kinuta Font Factory; font provenance, not manuscript originals. Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)
 
+## Klee One · Version 1.000
+
+Licence: **OFL-1.1**. Source: https://github.com/fontworks-fonts/Klee/tree/8b0532731b63ad8a445ca341d8d7d941079b83ab.
+
+Bundled text: `fonts/licenses/OFL-klee-one.txt` (SHA-256 `f5f4f05e005b6495a0d1f5bd49d37f5ac3e369883e2b7e3e48cd5aefded912f4`).
+Fontworks / The Klee Project Authors; font provenance, not manuscript originals. Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)
+
+## JP Coverage Serif (Source Han Serif JP subset) · Version 2.003R; Calligraphy Studio subset 1
+
+Licence: **OFL-1.1**. Source: https://github.com/adobe-fonts/source-han-serif/releases/tag/2.003R.
+
+Bundled text: `fonts/licenses/OFL-jp-coverage-serif.txt` (SHA-256 `9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903`).
+Adobe / Source Han Serif Project; font provenance, not manuscript originals. Copyright 2017-2022 Adobe; modified subset with renamed internal font family (OFL reserved name Source)
+
 ## CODH Kuzushiji sample · v2 (2019-11-11)
 
 Licence: **CC-BY-SA-4.0**. Source: https://codh.rois.ac.jp/char-shape/.
