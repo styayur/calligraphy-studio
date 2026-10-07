@@ -1,10 +1,21 @@
-# Android v0.6.0
+# Android v0.7.0
 
-- [下载 APK](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/CalligraphyStudio-Android-0.6.0.apk)
-- [SHA-256 校验值](https://github.com/styayur/calligraphy-studio/releases/download/v0.6.0/SHA256SUMS.txt)
+**本版不发布 APK。** Android 构建、包内容和签名校验已经通过，但可用签名是 debug 预览签名，不能作为生产发行包。
 
-要求 Android 7.0+。允许对应浏览器或文件管理器安装应用，安装后即可使用包内字库。
+源码支持 Android 7.0+。开发构建需要 Node.js 22+、Java 21、Android SDK 36 和 build-tools 36.0.0：
 
-通过“文字与字库 / 作品预览”切换工作区。项目和 PNG 导出会调起系统保存/分享面板，选择文件管理器或接收应用完成保存。
+```sh
+cd apps/web
+npm ci
+npm run cap:sync
+cd android
+./gradlew assembleRelease
+```
 
-APK 使用 debug 预览签名；若旧版签名不同，先导出 JSON 备份，再卸载旧版安装。原生分享功能尚未经过物理设备测试，不作为应用商店生产版本分发。
+Windows 使用 `gradlew.bat assembleRelease`。未配置生产签名时生成的 APK 仅供开发预览。
+生产签名配置、证书校验及升级兼容性见[签名说明](../../docs/RELEASE_SIGNING_0.7.0.md)。
+
+物理设备上的保存、分享、旋转、后台恢复和升级行为尚未验收，见[原生测试清单](../../docs/RELEASE_SMOKE_TEST_0.7.0.md)。
+变更签名可能要求卸载旧版；卸载前务必导出项目备份。
+
+[v0.6.0 历史预览版](https://github.com/styayur/calligraphy-studio/releases/tag/v0.6.0) 保留在旧 Release 中，不代表 v0.7.0 已提供 Android 下载。
