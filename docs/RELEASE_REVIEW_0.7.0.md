@@ -1,6 +1,6 @@
 # v0.7.0 release review
 
-Reviewed 6 October 2026. This record supplements the implementation, dependency,
+Reviewed 6–7 October 2026. This record supplements the implementation, dependency,
 signing and native smoke-test reports; those earlier RC records are retained.
 
 ## Repository hygiene
@@ -82,3 +82,5 @@ Pre-commit CodeForge regression gate: no new findings, ambiguous matches or huma
 Hosted clean-checkout validation caught a Windows CRLF versus Git LF canonical asset hash mismatch. Canonical text hashing now uses LF consistently, the runtime receipt is regenerated, and the font builder writes deterministic LF JSON. The release was held before tagging while this cross-platform gate was repaired.
 
 Hosted Android validation failed while using automatic newest-SDK selection rather than the documented release SDK. The signature verifier now explicitly uses the documented build-tools 36.0.0 and fails closed on unrecognised certificate output. CodeQL also flagged manual dispatch of arbitrary tags under the default-branch cache context: dispatch now selects its tag through the workflow ref, rejects branch refs, and all jobs check out the immutable event SHA. Downstream checkouts do not persist credentials. No checks or security rules were disabled.
+
+Publication is complete. See [final release verification](RELEASE_VERIFICATION_0.7.0.md) for the tagged commit, successful hosted runs, published payloads and integrity checks.
