@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.sha }}
           fetch-depth: 0
       - name: Validate tag and application versions
         id: version
@@ -75,7 +75,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.sha }}
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
@@ -94,7 +94,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.sha }}
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -155,7 +155,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.sha }}
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -234,7 +234,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.sha }}
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -291,7 +291,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.sha }}
+          ref: ${{ github.sha }}
           persist-credentials: false
           fetch-depth: 0
       - uses: actions/download-artifact@v4
