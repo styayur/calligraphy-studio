@@ -139,7 +139,7 @@ jobs:
           Copy-Item apps/web/dist/build-meta.json apps/desktop/release/windows-build-provenance.json
           $taskSignatures = Get-ChildItem apps/desktop/release/*.exe | ForEach-Object { $taskSignature = Get-AuthenticodeSignature -LiteralPath $_.FullName; @{ name = $_.Name; status = [string]$taskSignature.Status; certificate_thumbprint = $taskSignature.SignerCertificate.Thumbprint } }
           $taskSignatures | ConvertTo-Json | Set-Content -Encoding utf8 apps/desktop/release/windows-signing.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: windows-release
           path: |
@@ -222,7 +222,7 @@ jobs:
           cp apps/web/android/app/build/outputs/apk/release/app-release.apk "release-artifacts/CalligraphyStudio-Android-$VERSION.apk"
           cp apps/web/dist/build-meta.json release-artifacts/android-build-provenance.json
           cp android-signing.json release-artifacts/android-signing.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: android-release
           path: release-artifacts/*
@@ -273,7 +273,7 @@ jobs:
         env:
           VERSION: ${{ needs.prepare.outputs.version }}
         run: python scripts/validate_package.py --web-zip "CalligraphyStudio-Web-$VERSION.zip"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: web-release
           path: |
