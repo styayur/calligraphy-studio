@@ -1,8 +1,8 @@
-# Windows v0.7.0
+# Windows v0.7.1
 
-- [安装版](https://github.com/styayur/calligraphy-studio/releases/download/v0.7.0/CalligraphyStudio-Setup-0.7.0-x64.exe)
-- [便携版](https://github.com/styayur/calligraphy-studio/releases/download/v0.7.0/CalligraphyStudio-Portable-0.7.0-x64.exe)
-- [SHA-256 校验值](https://github.com/styayur/calligraphy-studio/releases/download/v0.7.0/SHA256SUMS.txt)
+- [安装版](https://github.com/styayur/calligraphy-studio/releases/download/v0.7.1/CalligraphyStudio-Setup-0.7.1-x64.exe)
+- [便携版](https://github.com/styayur/calligraphy-studio/releases/download/v0.7.1/CalligraphyStudio-Portable-0.7.1-x64.exe)
+- [SHA-256 校验值](https://github.com/styayur/calligraphy-studio/releases/download/v0.7.1/SHA256SUMS.txt)
 
 适用于 Windows x64。字库随 Electron 应用分发，无需启动 API。草稿存于应用本机数据，长期保存请下载项目 JSON。
 

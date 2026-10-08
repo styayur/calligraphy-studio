@@ -105,13 +105,13 @@ jobs:
           node scripts/test_desktop_proxy.cjs
           npm --prefix apps/desktop run dist:win
           node scripts/validate_desktop_package.cjs
-          python scripts/validate_windows_distributables.py apps/desktop/release/CalligraphyStudio-Setup-0.7.0-x64.exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe
+          python scripts/validate_windows_distributables.py apps/desktop/release/CalligraphyStudio-Setup-0.7.1-x64.exe apps/desktop/release/CalligraphyStudio-Portable-0.7.1-x64.exe
       - name: Actual packaged Windows renderer smoke
         run: |
           $PSNativeCommandUseErrorActionPreference = $true
           python -m pip install playwright pillow
           python scripts/test_windows_native.py --exe "apps/desktop/release/win-unpacked/Calligraphy Studio.exe" --output work/windows-native-unpacked.json
-          python scripts/test_windows_native.py --exe apps/desktop/release/CalligraphyStudio-Portable-0.7.0-x64.exe --output work/windows-native-portable.json
+          python scripts/test_windows_native.py --exe apps/desktop/release/CalligraphyStudio-Portable-0.7.1-x64.exe --output work/windows-native-portable.json
 
   android:
     runs-on: ubuntu-latest

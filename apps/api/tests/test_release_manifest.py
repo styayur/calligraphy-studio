@@ -18,7 +18,7 @@ def release_files(tmp_path, monkeypatch):
     def digest(path):
         return hashlib.sha256((ROOT / path).read_text(encoding='utf-8').replace('\r\n', '\n').encode()).hexdigest()
     receipt = {
-        'commit': 'release-test', 'version': '0.7.0', 'working_tree_dirty': False,
+        'commit': 'release-test', 'version': '0.7.1', 'working_tree_dirty': False,
         'build_timestamp': '2026-10-06T00:00:00Z',
         'locks': {key: digest(path) for key, path in {
             'web': 'apps/web/package-lock.json', 'desktop': 'apps/desktop/package-lock.json',
@@ -30,8 +30,8 @@ def release_files(tmp_path, monkeypatch):
     for platform in ['windows', 'web', 'android']:
         (tmp_path / f'{platform}-build-provenance.json').write_text(json.dumps(receipt))
     (tmp_path / 'windows-signing.json').write_text('[]')
-    (tmp_path / 'android-signing.json').write_text(json.dumps({'version': '0.7.0', 'production_ready': False}))
-    for name in ['Setup-0.7.0-x64.exe', 'Portable-0.7.0-x64.exe', 'Web-0.7.0.zip', 'Android-0.7.0.apk']:
+    (tmp_path / 'android-signing.json').write_text(json.dumps({'version': '0.7.1', 'production_ready': False}))
+    for name in ['Setup-0.7.1-x64.exe', 'Portable-0.7.1-x64.exe', 'Web-0.7.1.zip', 'Android-0.7.1.apk']:
         (tmp_path / f'CalligraphyStudio-{name}').write_bytes(b'test payload')
     monkeypatch.setattr(gate.subprocess, 'check_output', lambda *a, **kw: 'release-test')
     monkeypatch.setattr(sys, 'argv', ['manifest', '--directory', str(tmp_path), '--commit', 'release-test'])

@@ -23,7 +23,7 @@ def test_pinned_sdk_and_fail_closed_signing(tmp_path, monkeypatch, certificate_o
     def run(command, **kwargs):
         assert Path(command[0]).parent.name == '36.0.0'
         output = certificate_output if 'apksigner' in Path(command[0]).name else (
-            "package: name='io.github.styayur.calligraphystudio' versionCode='7' versionName='0.7.0'"
+            "package: name='io.github.styayur.calligraphystudio' versionCode='8' versionName='0.7.1'"
         )
         return SimpleNamespace(stdout=output)
 

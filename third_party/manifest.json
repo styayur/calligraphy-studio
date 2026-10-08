@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "version": "0.7.0",
+  "version": "0.7.1",
   "components": [
     {
       "id": "application",
       "name": "Calligraphy Studio",
       "category": "application",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "source_uri": "https://github.com/styayur/calligraphy-studio",
       "license": "MIT",
       "license_text": {

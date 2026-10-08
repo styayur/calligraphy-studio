@@ -16,7 +16,7 @@ def validate(path: Path, prefix: str):
         read = lambda file: archive.read(prefix + file)
         notice_count=validate_reader(read)
         metadata=json.loads(read('build-meta.json'))
-        assert metadata['version']=='0.7.0' and len(metadata['commit'])==40
+        assert metadata['version']==json.loads((ROOT/'release/version.json').read_text(encoding='utf-8'))['version'] and len(metadata['commit'])==40
         modules=json.loads(read('build-modules.json'))['packages']
         assert not set(modules)&{'braces','chokidar','fast-glob','micromatch','tailwindcss'}
         if json.loads(read('fonts/asset-manifest.json')) != canonical:

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "release": "0.7.0",
+  "release": "0.7.1",
   "font_packs": [
     "fonts/manifest.json",
     "fonts/japanese/manifest.json"
