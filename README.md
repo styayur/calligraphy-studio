@@ -1,11 +1,7 @@
-<div align="center">
-  <img src="docs/assets/brand/logo-mark.svg" width="84" alt="Calligraphy Studio logo" />
-
 # Calligraphy Studio — East Asian Calligraphy Workbench
 
 Compose, compare and explore Chinese and Japanese calligraphy with an offline-first, provenance-aware workbench.
 
-</div>
 
 ![Japanese composition with Yuji font candidates, vertical layout and Visual Profile](docs/japanese-workbench.png)
 
